@@ -12,6 +12,7 @@ data/generator/fonts. Two reasons, both measured:
 from __future__ import annotations
 
 import os
+import re
 import tempfile
 import unicodedata
 from dataclasses import dataclass
@@ -196,7 +197,27 @@ class PdfRenderer:
         pages = len(pdfium.PdfDocument(data))
         if pages != 1:
             raise RenderError(f"{doc_id}: rendered {pages} pages, expected exactly one.")
-        return data
+        return pin_pdf_dates(data)
+
+
+# Chromium stamps the wall clock into /CreationDate and /ModDate, so every regeneration
+# changed all 70 PDFs and `make bench` left the tree dirty. The replacement has the same
+# length, so the cross-reference offsets stay valid.
+PINNED_PDF_DATE = b"D:20261120000000+00'00'"
+_PDF_DATE = re.compile(rb"/(CreationDate|ModDate) \(D:\d{14}[^)]{0,7}\)")
+
+
+def pin_pdf_dates(data: bytes) -> bytes:
+    def fixed(m: re.Match[bytes]) -> bytes:
+        out = b"/" + m.group(1) + b" (" + PINNED_PDF_DATE + b")"
+        if len(out) != len(m.group(0)):
+            raise RenderError(
+                f"PDF date {m.group(0)!r} has an unexpected length; update PINNED_PDF_DATE "
+                "to the same format so the file offsets do not move."
+            )
+        return out
+
+    return _PDF_DATE.sub(fixed, data)
 
 
 def scan_image(pdf: bytes | Path, params: dict[str, float]) -> Image.Image:

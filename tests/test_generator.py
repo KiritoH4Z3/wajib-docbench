@@ -306,3 +306,19 @@ def test_scan_check_fails_on_a_swapped_scan(tmp_path) -> None:
     shutil.copy(tmp_path / "docs" / "tl-en-02.scan.jpg", good)
     problems = check_scan_pixels("tl-ar-01.scan", golds_["tl-ar-01.scan"], good, tmp_path)
     assert problems
+
+
+def test_regenerated_pdfs_carry_a_fixed_date_so_make_bench_leaves_the_tree_clean():
+    """Silent failure: Chromium writes the wall clock into every PDF, so each `make bench`
+    rewrote all 70 documents and the tree never matched the commit it claims to reproduce."""
+    from data.generator.render import PINNED_PDF_DATE, pin_pdf_dates
+
+    raw = (
+        b"<</Producer (Skia/PDF m159)\n/CreationDate (D:20261120161743+00'00')\n"
+        b"/ModDate (D:20261120161743+00'00')>>"
+    )
+    pinned = pin_pdf_dates(raw)
+    assert len(pinned) == len(raw)
+    assert pinned.count(PINNED_PDF_DATE) == 2
+    assert b"161743" not in pinned
+    assert pin_pdf_dates(pinned) == pinned
