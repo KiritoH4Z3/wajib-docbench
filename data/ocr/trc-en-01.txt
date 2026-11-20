@@ -1,6 +1,6 @@
 Federal Tax Authority
 
-Corporate Tax Registration Certificate
+Value Added Tax Registration Certificate
 
 Tax Registration Number          100107999112743
 
@@ -8,9 +8,9 @@ Legal Name                         Sama Al Khaleej Building Materials FZ-LLC
 Registered Address                  Warehouse 2072, Business Bay, Dubai
 Effective Registration Date         February 24,2024
 
-Date of Issue                         March 4, 2024
+Date of Issue                             March 4, 2024
 
-Financial Year                      1 January to 31 December
+Tax Period                              Monthly
 
 This certificate confirms registration with the Federal Tax Authority.
 

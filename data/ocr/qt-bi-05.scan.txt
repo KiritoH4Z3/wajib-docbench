@@ -11,8 +11,9 @@ Date                        24/05/2025                                          
 
 Client in English                       Al safwa Cleaning Services Branch
 
- العميلبالإز
- العميل                                                                     بالعربية فرع الصفوة لخدمات                        التنظيف‎Client in Arabic‏
+ فرع الصفوة لخدمات                       التنظيف‎Client in Arabic‏
+
+ العميلبالعربية
 ‎No.        Description                                                                                Qty    ;         Unit Price               Amount AED‏
  المبلغ                     ‎AED‏ سعر                الوحدة                                                                                        الكمية           الوصفم
             ‎LED panel light 0                                                                          35                     180.75                        6,326.25‏1

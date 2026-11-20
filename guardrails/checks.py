@@ -152,8 +152,20 @@ def check_total_sum(final: dict, doc_type: str) -> list[CheckResult]:
     if doc_type not in ("tax_invoice", "quotation"):
         return []
     subtotal, vat, total = (_amount(final, k) for k in ("subtotal", "vat_amount", "total"))
-    if subtotal is None or vat is None or total is None:
+    if total is None:
         return []
+    if subtotal is None or vat is None:
+        # A wrong total with its siblings nulled must not skip the check silently.
+        missing = [n for n, v in (("subtotal", subtotal), ("vat_amount", vat)) if v is None]
+        verb = "is" if len(missing) == 1 else "are"
+        return [
+            _fail(
+                "total_sum",
+                f"total {_money(total)} cannot be checked because {' and '.join(missing)} "
+                f"{verb} empty. Read the amounts by hand.",
+                "total",
+            )
+        ]
     expected = subtotal + vat
     if abs(total - expected) <= TOLERANCE:
         return [_ok("total_sum", "total")]
@@ -274,22 +286,33 @@ _FIELD_NAMES_AR = _alt(
 )
 _AI_TARGETS_AR = _alt(
     "للمساعد", "الى المساعد", "للذكاء الاصطناعي", "الى الذكاء الاصطناعي",
-    "للنموذج", "الى النموذج", "للنظام", "الى النظام", "النظام",
+    "للنموذج", "الى النموذج", "للنظام", "الى النظام",
 )
+# A role word after "you are now": "you are now an assistant" is an injection, "you are now
+# registered" is a letter.
+_ROLE_EN = (
+    r"(?:assistant|ai|model|agent|bot|chatbot|llm|auditor|reviewer|approver|validator|"
+    r"system|expert)"
+)
+_ROLE_AR = _alt("مساعد", "مساعدا", "نموذج", "نموذجا", "ذكاء", "وكيل", "مدقق", "مراجع")
 _NOTE_HEADS_AR = _alt("ملاحظة", "تعليمات", "تنبيه", "رسالة")
 
 _INJECTION_SOURCES = [
     # English
     # "ignore previous instructions", "disregard the figures above": up to three words between
+    # "ignore any previous invoice" is a business sentence, so a document noun after the
+    # marker word clears it.
     r"\b(?:ignore|disregard|forget)\s+(?:\S+\s+){0,3}?"
-    r"(?:previous|prior|above|earlier|preceding)\b",
+    r"(?:previous|prior|above|earlier|preceding)\b"
+    r"(?!\s+(?:invoices?|quotations?|quotes?|payments?|reminders?|notices?|statements?|"
+    r"orders?|receipts?|bills?|balance))",
     # addressed to a machine reader rather than a person
     r"\b(?:to|for)\s+(?:the\s+|any\s+)?(?:automated|automatic|machine)\s+"
-    r"(?:readers?|processing|processors?|systems?|tools?|extraction)\b",
+    r"(?:readers?|processing|processors?|extraction|models?|assistants?)\b",
     r"\bsystem\s+(?:prompt|note|message|instructions?)\b",
     r"\b(?:note|message|instructions?|attention)\s+(?:to|for)\s+(?:the\s+)?"
     r"(?:ai|assistant|model|language\s+model|llm|extraction\s+(?:system|model|tool))\b",
-    r"\byou\s+are\s+now\b",
+    rf"\byou\s+are\s+now\s+(?:(?:an?|the)\s+)?(?:\S+\s+)?{_ROLE_EN}\b",
     rf"\b(?:set|change|make|update|replace|record|report|enter|output|return)\s+"
     rf"(?:the\s+)?(?:\S+\s+)?{_FIELD_NAMES_EN}\s+"
     r"(?:(?:to|as|be|equal\s+to)\s+\S|\d)",
@@ -305,23 +328,41 @@ _INJECTION_SOURCES = [
     rf"{_w('اعتبر')}\s+{_alt('هذه', 'هذا')}\s+"
     rf"{_alt('الرخصة', 'الشهادة', 'الفاتورة', 'المستند', 'الوثيقة')}\s+"
     rf"{_alt('سارية', 'ساري', 'صالحة', 'صالح', 'مدفوعة', 'مدفوع')}",
-    rf"{_w('أنت')}\s+{_w('الآن')}",
+    rf"{_w('أنت')}\s+{_w('الآن')}\s+(?:\S+\s+)?{_ROLE_AR}",
 ]
 INJECTION_PATTERNS = [re.compile(p) for p in _INJECTION_SOURCES]
 
 
+def _original_line(raw: str, norm: str, start: int) -> str | None:
+    """The first raw line whose normalised form holds the first tokens of the match at
+    `start`. Three tokens first, then fewer, because an OCR line wrap can split a match."""
+    tokens = norm[start:].split()[:3]
+    lines = [(line.strip(), f" {norm_text(line)} ") for line in raw.splitlines()]
+    for n in range(len(tokens), 0, -1):
+        needle = " " + " ".join(tokens[:n])
+        for original, normed in lines:
+            if original and needle in normed:
+                return original
+    return None
+
+
 def check_injection_text(input_text: str) -> CheckResult:
+    # Detection runs on the whole normalised text so an OCR line wrap cannot split a phrase.
+    # Only the quote shown to the reviewer comes from the original line.
     text = norm_text(input_text)
     hits = [m for p in INJECTION_PATTERNS if (m := p.search(text))]
     if not hits:
         return _ok("injection_text")
     first = min(hits, key=lambda m: m.start())
-    quote = text[first.start() : first.start() + MAX_QUOTE_CHARS].strip()
-    if first.start() + MAX_QUOTE_CHARS < len(text):
-        quote += "..."
+    quote = _original_line(input_text, text, first.start())
+    if quote is None:
+        quote = text[first.start() : first.start() + MAX_QUOTE_CHARS].strip()
+    if len(quote) > MAX_QUOTE_CHARS:
+        quote = quote[:MAX_QUOTE_CHARS].rstrip() + "..."
+    more = f" (and {len(hits) - 1} more)" if len(hits) > 1 else ""
     return _fail(
         "injection_text",
-        f"The document contains an instruction aimed at an AI model: '{quote}'",
+        f"The document contains an instruction aimed at an AI model: '{quote}'{more}",
     )
 
 

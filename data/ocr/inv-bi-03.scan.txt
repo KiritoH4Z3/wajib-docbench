@@ -36,6 +36,4 @@ Customer Name in English          Rajesh Kumar Nair
 
  للتحقق ‎dno a‏ هذه الوثيقة استخدم الرمز ‎BHRE-M3XY‏ على الموقع‎verify.docbench example‏
 
-Synthetic sample for benchmarking / ‏للاختبار‎
-
- نموذجاصطناعن
+Synthetic sample for benchmarking / ‏نموذج اصطناعن للاختبار‎

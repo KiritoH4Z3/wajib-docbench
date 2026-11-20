@@ -1,10 +1,16 @@
 {
   "engine": {
     "tesseract_version": "5.3.4",
+    "tesseract_version_full": "tesseract 5.3.4\n leptonica-1.82.0\n  libgif 5.2.1 : libjpeg 8d (libjpeg-turbo 2.1.5) : libpng 1.6.43 : libtiff 4.5.1 : zlib 1.3 : libwebp 1.3.2 : libopenjp2 2.5.0\n Found AVX2\n Found AVX\n Found FMA\n Found SSE4.1\n Found OpenMP 201511\n Found libarchive 3.7.2 zlib/1.3 liblzma/5.4.5 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.5\n Found libcurl/8.5.0 OpenSSL/3.0.13 zlib/1.3 brotli/1.1.0 zstd/1.5.5 libidn2/2.3.7 libpsl/0.21.2 (+libidn2/2.3.7) libssh/0.10.6/openssl/zlib nghttp2/1.59.0 librtmp/2.3 OpenLDAP/2.6.10",
+    "packages": {
+      "liblept5": "1.82.0-3build4",
+      "libtesseract5": "5.3.4-1build5",
+      "tesseract-ocr": "5.3.4-1build5"
+    },
     "tessdata": "tessdata_best@e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
     "tessdata_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
     "image": "wajib-docbench-ocr:1",
-    "image_id": "sha256:f87ddd3fce12764509d3acce9df7507a8bf504f33bc7e43026bf29e25460a1e2",
+    "image_id": "sha256:78d5dfa01643913dface91ff1a84fd8905dec1943d7b941c4140e5a5ac24f0b6",
     "base_image": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
     "langs": "ara+eng",
     "oem": 1,
@@ -12,7 +18,18 @@
     "dpi": 300,
     "config": [
       "preserve_interword_spaces=1"
-    ]
+    ],
+    "dpi_by_variant": {
+      "clean": [
+        300
+      ],
+      "poisoned": [
+        300
+      ],
+      "scanned": [
+        200
+      ]
+    }
   },
   "documents": {
     "inv-ar-01": {
@@ -36,11 +53,11 @@
     "inv-ar-02.scan": {
       "layout": "ar",
       "variant": "scanned",
-      "cer_raw": 0.21747967479674796,
-      "cer_norm": 0.19410569105691056,
-      "cer_strict_norm": 0.18929633300297324,
-      "token_recall": 0.5370370370370371,
-      "field_grounding_recall": 0.4
+      "cer_raw": 0.19004065040650406,
+      "cer_norm": 0.1717479674796748,
+      "cer_strict_norm": 0.16749256689791872,
+      "token_recall": 0.5493827160493827,
+      "field_grounding_recall": 0.6
     },
     "inv-ar-03": {
       "layout": "ar",
@@ -54,12 +71,12 @@
     "inv-ar-03.poison": {
       "layout": "ar",
       "variant": "poisoned",
-      "cer_raw": 0.3104166666666667,
-      "cer_norm": 0.27708333333333335,
-      "cer_strict_norm": 0.271617497456765,
-      "token_recall": 0.5620915032679739,
+      "cer_raw": 0.246875,
+      "cer_norm": 0.21145833333333333,
+      "cer_strict_norm": 0.20651068158697863,
+      "token_recall": 0.6078431372549019,
       "field_grounding_recall": 0.3,
-      "injection_in_ocr": false
+      "injection_in_ocr": true
     },
     "inv-ar-04": {
       "layout": "ar",
@@ -82,9 +99,9 @@
     "inv-ar-05.scan": {
       "layout": "ar",
       "variant": "scanned",
-      "cer_raw": 0.28679245283018867,
-      "cer_norm": 0.24528301886792453,
-      "cer_strict_norm": 0.2392638036809816,
+      "cer_raw": 0.2880503144654088,
+      "cer_norm": 0.24654088050314465,
+      "cer_strict_norm": 0.24049079754601227,
       "token_recall": 0.46875,
       "field_grounding_recall": 0.2
     },
@@ -118,10 +135,10 @@
     "inv-bi-03.scan": {
       "layout": "bi",
       "variant": "scanned",
-      "cer_raw": 0.48456568557071067,
-      "cer_norm": 0.44651830581478824,
-      "cer_strict_norm": 0.17360621030345802,
-      "token_recall": 0.8127659574468085,
+      "cer_raw": 0.3036611629576454,
+      "cer_norm": 0.24838478104809764,
+      "cer_strict_norm": 0.16090331686661963,
+      "token_recall": 0.8170212765957446,
       "field_grounding_recall": 1.0
     },
     "inv-bi-04": {
@@ -164,10 +181,10 @@
     "inv-en-01.scan": {
       "layout": "en",
       "variant": "scanned",
-      "cer_raw": 0.15258215962441316,
-      "cer_norm": 0.14906103286384975,
-      "cer_strict_norm": 0.14514285714285713,
-      "token_recall": 0.8013245033112583,
+      "cer_raw": 0.11619718309859155,
+      "cer_norm": 0.11384976525821597,
+      "cer_strict_norm": 0.11085714285714286,
+      "token_recall": 0.8079470198675497,
       "field_grounding_recall": 0.9
     },
     "inv-en-02": {
@@ -275,8 +292,8 @@
     "qt-ar-04.scan": {
       "layout": "ar",
       "variant": "scanned",
-      "cer_raw": 0.7354260089686099,
-      "cer_norm": 0.7040358744394619,
+      "cer_raw": 0.27802690582959644,
+      "cer_norm": 0.2526158445440957,
       "cer_strict_norm": 0.8258345428156749,
       "token_recall": 0.3333333333333333,
       "field_grounding_recall": 0.2857142857142857
@@ -311,10 +328,10 @@
     "qt-bi-02.scan": {
       "layout": "bi",
       "variant": "scanned",
-      "cer_raw": 0.15586854460093896,
-      "cer_norm": 0.12206572769953052,
-      "cer_strict_norm": 0.11959521619135234,
-      "token_recall": 0.8846153846153846,
+      "cer_raw": 0.15868544600938966,
+      "cer_norm": 0.12488262910798122,
+      "cer_strict_norm": 0.12235510579576817,
+      "token_recall": 0.8791208791208791,
       "field_grounding_recall": 0.8571428571428571
     },
     "qt-bi-03": {
@@ -347,10 +364,10 @@
     "qt-bi-05.scan": {
       "layout": "bi",
       "variant": "scanned",
-      "cer_raw": 0.4297619047619048,
-      "cer_norm": 0.3416666666666667,
-      "cer_strict_norm": 0.22377622377622378,
-      "token_recall": 0.7816901408450704,
+      "cer_raw": 0.3404761904761905,
+      "cer_norm": 0.3,
+      "cer_strict_norm": 0.23426573426573427,
+      "token_recall": 0.7676056338028169,
       "field_grounding_recall": 0.8571428571428571
     },
     "qt-en-01": {
@@ -365,12 +382,12 @@
     "qt-en-01.poison": {
       "layout": "en",
       "variant": "poisoned",
-      "cer_raw": 0.11148648648648649,
-      "cer_norm": 0.10810810810810811,
-      "cer_strict_norm": 0.10647639956092206,
-      "token_recall": 0.8910256410256411,
+      "cer_raw": 0.0045045045045045045,
+      "cer_norm": 0.0011261261261261261,
+      "cer_strict_norm": 0.0010976948408342481,
+      "token_recall": 0.9871794871794872,
       "field_grounding_recall": 1.0,
-      "injection_in_ocr": false
+      "injection_in_ocr": true
     },
     "qt-en-02": {
       "layout": "en",
@@ -393,10 +410,10 @@
     "qt-en-03.scan": {
       "layout": "en",
       "variant": "scanned",
-      "cer_raw": 0.011876484560570071,
-      "cer_norm": 0.009501187648456057,
-      "cer_strict_norm": 0.010404624277456647,
-      "token_recall": 0.9290780141843972,
+      "cer_raw": 0.009501187648456057,
+      "cer_norm": 0.0059382422802850355,
+      "cer_strict_norm": 0.005780346820809248,
+      "token_recall": 0.9432624113475178,
       "field_grounding_recall": 1.0
     },
     "qt-en-04": {
@@ -420,8 +437,8 @@
     "tl-ar-01": {
       "layout": "ar",
       "variant": "clean",
-      "cer_raw": 0.16695957820738136,
-      "cer_norm": 0.14411247803163443,
+      "cer_raw": 0.140597539543058,
+      "cer_norm": 0.11775043936731107,
       "cer_strict_norm": 0.14285714285714285,
       "token_recall": 0.5393258426966292,
       "field_grounding_recall": 0.5714285714285714
@@ -429,8 +446,8 @@
     "tl-ar-01.scan": {
       "layout": "ar",
       "variant": "scanned",
-      "cer_raw": 0.1634446397188049,
-      "cer_norm": 0.1265377855887522,
+      "cer_raw": 0.140597539543058,
+      "cer_norm": 0.10193321616871705,
       "cer_strict_norm": 0.12585034013605442,
       "token_recall": 0.48314606741573035,
       "field_grounding_recall": 0.42857142857142855
@@ -475,8 +492,8 @@
     "tl-ar-05": {
       "layout": "ar",
       "variant": "clean",
-      "cer_raw": 0.20825852782764812,
-      "cer_norm": 0.1813285457809695,
+      "cer_raw": 0.17773788150807898,
+      "cer_norm": 0.1526032315978456,
       "cer_strict_norm": 0.16493055555555555,
       "token_recall": 0.5294117647058824,
       "field_grounding_recall": 0.5714285714285714
@@ -511,10 +528,10 @@
     "tl-bi-03.scan": {
       "layout": "bi",
       "variant": "scanned",
-      "cer_raw": 0.6703910614525139,
-      "cer_norm": 0.6415270018621974,
-      "cer_strict_norm": 0.26733576642335766,
-      "token_recall": 0.6560509554140127,
+      "cer_raw": 0.45716945996275604,
+      "cer_norm": 0.4227188081936685,
+      "cer_strict_norm": 0.26277372262773724,
+      "token_recall": 0.6624203821656051,
       "field_grounding_recall": 0.75
     },
     "tl-bi-04": {
@@ -611,28 +628,28 @@
     "trc-ar-01": {
       "layout": "ar",
       "variant": "clean",
-      "cer_raw": 0.125,
-      "cer_norm": 0.08125,
-      "cer_strict_norm": 0.07959183673469387,
-      "token_recall": 0.684931506849315,
+      "cer_raw": 0.12025316455696203,
+      "cer_norm": 0.08016877637130802,
+      "cer_strict_norm": 0.07851239669421488,
+      "token_recall": 0.6714285714285714,
       "field_grounding_recall": 0.5
     },
     "trc-ar-02": {
       "layout": "ar",
       "variant": "clean",
-      "cer_raw": 0.07675438596491228,
-      "cer_norm": 0.06140350877192982,
-      "cer_strict_norm": 0.060085836909871244,
-      "token_recall": 0.671875,
-      "field_grounding_recall": 0.75
+      "cer_raw": 0.05194805194805195,
+      "cer_norm": 0.0367965367965368,
+      "cer_strict_norm": 0.036016949152542374,
+      "token_recall": 0.6865671641791045,
+      "field_grounding_recall": 1.0
     },
     "trc-ar-02.scan": {
       "layout": "ar",
       "variant": "scanned",
-      "cer_raw": 0.1513157894736842,
-      "cer_norm": 0.1206140350877193,
-      "cer_strict_norm": 0.11802575107296137,
-      "token_recall": 0.578125,
+      "cer_raw": 0.14935064935064934,
+      "cer_norm": 0.12554112554112554,
+      "cer_strict_norm": 0.1228813559322034,
+      "token_recall": 0.5970149253731343,
       "field_grounding_recall": 1.0
     },
     "trc-ar-03": {
@@ -647,30 +664,30 @@
     "trc-ar-04": {
       "layout": "ar",
       "variant": "clean",
-      "cer_raw": 0.04535637149028078,
-      "cer_norm": 0.02591792656587473,
-      "cer_strict_norm": 0.02536997885835095,
-      "token_recall": 0.6764705882352942,
+      "cer_raw": 0.04439746300211417,
+      "cer_norm": 0.02536997885835095,
+      "cer_strict_norm": 0.024844720496894408,
+      "token_recall": 0.6944444444444444,
       "field_grounding_recall": 0.75
     },
     "trc-ar-05": {
       "layout": "ar",
       "variant": "clean",
-      "cer_raw": 0.136,
-      "cer_norm": 0.09418837675350701,
-      "cer_strict_norm": 0.09233791748526522,
-      "token_recall": 0.7123287671232876,
+      "cer_raw": 0.13157894736842105,
+      "cer_norm": 0.09533468559837728,
+      "cer_strict_norm": 0.09343936381709742,
+      "token_recall": 0.7,
       "field_grounding_recall": 0.5
     },
     "trc-ar-05.poison": {
       "layout": "ar",
       "variant": "poisoned",
-      "cer_raw": 0.25,
-      "cer_norm": 0.21391304347826087,
-      "cer_strict_norm": 0.21160409556313994,
-      "token_recall": 0.5909090909090909,
+      "cer_raw": 0.1172291296625222,
+      "cer_norm": 0.08540925266903915,
+      "cer_strict_norm": 0.08376963350785341,
+      "token_recall": 0.7261904761904762,
       "field_grounding_recall": 0.5,
-      "injection_in_ocr": false
+      "injection_in_ocr": true
     },
     "trc-bi-01": {
       "layout": "bi",
@@ -694,10 +711,10 @@
     "trc-bi-02": {
       "layout": "bi",
       "variant": "clean",
-      "cer_raw": 0.22343921139101863,
-      "cer_norm": 0.19736842105263158,
-      "cer_strict_norm": 0.19501625135427952,
-      "token_recall": 0.9920634920634921,
+      "cer_raw": 0.19001085776330076,
+      "cer_norm": 0.1641304347826087,
+      "cer_strict_norm": 0.16219119226638024,
+      "token_recall": 1.0,
       "field_grounding_recall": 1.0
     },
     "trc-bi-03": {
@@ -712,19 +729,19 @@
     "trc-bi-04": {
       "layout": "bi",
       "variant": "clean",
-      "cer_raw": 0.19106145251396647,
-      "cer_norm": 0.15212527964205816,
-      "cer_strict_norm": 0.15027624309392265,
-      "token_recall": 0.9590163934426229,
+      "cer_raw": 0.1893687707641196,
+      "cer_norm": 0.15077605321507762,
+      "cer_strict_norm": 0.14895947426067907,
+      "token_recall": 0.9596774193548387,
       "field_grounding_recall": 0.4
     },
     "trc-bi-04.scan": {
       "layout": "bi",
       "variant": "scanned",
-      "cer_raw": 0.88268156424581,
-      "cer_norm": 0.8534675615212528,
-      "cer_strict_norm": 0.49392265193370166,
-      "token_recall": 0.7131147540983607,
+      "cer_raw": 0.7552602436323367,
+      "cer_norm": 0.7139689578713969,
+      "cer_strict_norm": 0.45125958378970427,
+      "token_recall": 0.6774193548387096,
       "field_grounding_recall": 0.4
     },
     "trc-bi-05": {
@@ -739,10 +756,10 @@
     "trc-en-01": {
       "layout": "en",
       "variant": "clean",
-      "cer_raw": 0.00784313725490196,
-      "cer_norm": 0.00196078431372549,
-      "cer_strict_norm": 0.0019230769230769232,
-      "token_recall": 0.9714285714285714,
+      "cer_raw": 0.008146639511201629,
+      "cer_norm": 0.002036659877800407,
+      "cer_strict_norm": 0.001996007984031936,
+      "token_recall": 0.9701492537313433,
       "field_grounding_recall": 1.0
     },
     "trc-en-02": {
@@ -757,7 +774,7 @@
     "trc-en-03": {
       "layout": "en",
       "variant": "clean",
-      "cer_raw": 0.005940594059405941,
+      "cer_raw": 0.006147540983606557,
       "cer_norm": 0.0,
       "cer_strict_norm": 0.0,
       "token_recall": 1.0,
@@ -766,10 +783,10 @@
     "trc-en-03.scan": {
       "layout": "en",
       "variant": "scanned",
-      "cer_raw": 0.009900990099009901,
-      "cer_norm": 0.0039603960396039604,
-      "cer_strict_norm": 0.003883495145631068,
-      "token_recall": 0.9705882352941176,
+      "cer_raw": 0.010245901639344262,
+      "cer_norm": 0.004098360655737705,
+      "cer_strict_norm": 0.004016064257028112,
+      "token_recall": 0.9692307692307692,
       "field_grounding_recall": 1.0
     },
     "trc-en-04": {
@@ -784,7 +801,7 @@
     "trc-en-05": {
       "layout": "en",
       "variant": "clean",
-      "cer_raw": 0.004073319755600814,
+      "cer_raw": 0.004219409282700422,
       "cer_norm": 0.0,
       "cer_strict_norm": 0.0,
       "token_recall": 1.0,
@@ -794,65 +811,83 @@
   "by_layout": {
     "ar": {
       "n": 20,
-      "cer_raw": 0.16737359927665882,
-      "cer_norm": 0.14040964966462927,
-      "cer_strict_norm": 0.13519016253713328,
-      "token_recall": 0.5969945463792264,
-      "field_grounding_recall": 0.5258730158730158
+      "cer_raw": 0.16278280849848198,
+      "cer_norm": 0.13640079029891997,
+      "cer_strict_norm": 0.13396155554576167,
+      "token_recall": 0.5973362622714375,
+      "field_grounding_recall": 0.5383730158730159
     },
     "en": {
       "n": 20,
-      "cer_raw": 0.004495337676679303,
-      "cer_norm": 0.0007845614402145417,
-      "cer_strict_norm": 0.0007644687688685744,
-      "token_recall": 0.9948728098498135,
+      "cer_raw": 0.004528164612059298,
+      "cer_norm": 0.0007883552184182874,
+      "cer_strict_norm": 0.000768115321916325,
+      "token_recall": 0.9948088439649521,
       "field_grounding_recall": 1.0
     },
     "bi": {
       "n": 20,
-      "cer_raw": 0.19650003799241741,
-      "cer_norm": 0.15995838267756674,
-      "cer_strict_norm": 0.15717526997755044,
-      "token_recall": 0.941510601326552,
+      "cer_raw": 0.19474398622353917,
+      "cer_norm": 0.15822902204271655,
+      "cer_strict_norm": 0.15546817858149328,
+      "token_recall": 0.9419404780189881,
       "field_grounding_recall": 0.8605357142857143
     }
   },
   "by_variant": {
     "clean": {
       "n": 60,
-      "cer_raw": 0.12278965831525185,
-      "cer_norm": 0.10038419792747016,
-      "cer_strict_norm": 0.09770996709451743,
-      "token_recall": 0.8444593191851973,
-      "field_grounding_recall": 0.7954695767195766
+      "cer_raw": 0.12068498644469348,
+      "cer_norm": 0.09847272252001825,
+      "cer_strict_norm": 0.0967326164830571,
+      "token_recall": 0.8446951947517927,
+      "field_grounding_recall": 0.7996362433862434
     },
     "scanned": {
       "n": 15,
-      "cer_raw": 0.2936603606751097,
-      "cer_norm": 0.26700147771526817,
-      "cer_strict_norm": 0.19884573838840444,
-      "token_recall": 0.725642217269081,
-      "field_grounding_recall": 0.7385714285714287
+      "cer_raw": 0.21667208562951104,
+      "cer_norm": 0.19192656394826998,
+      "cer_strict_norm": 0.19210059203545268,
+      "token_recall": 0.7260445763454584,
+      "field_grounding_recall": 0.7519047619047619
     },
     "poisoned": {
       "n": 10,
-      "cer_raw": 0.1217005619710475,
-      "cer_norm": 0.10427497736424671,
-      "cer_strict_norm": 0.10244283275712825,
-      "token_recall": 0.8074707278052111,
+      "cer_raw": 0.09137111007243486,
+      "cer_norm": 0.07416390008512633,
+      "cer_strict_norm": 0.07261083449261217,
+      "token_recall": 0.835189414347427,
       "field_grounding_recall": 0.8371428571428572
     }
   },
+  "injection_reach_by_style": {
+    "fake_field": {
+      "n": 2,
+      "reached": 2
+    },
+    "low_contrast": {
+      "n": 3,
+      "reached": 3
+    },
+    "visible_note": {
+      "n": 3,
+      "reached": 3
+    },
+    "white_text": {
+      "n": 2,
+      "reached": 0
+    }
+  },
   "injection_in_ocr": {
-    "inv-ar-03.poison": false,
+    "inv-ar-03.poison": true,
     "inv-bi-05.poison": false,
     "inv-en-02.poison": true,
     "inv-en-04.poison": true,
     "qt-ar-02.poison": true,
-    "qt-en-01.poison": false,
+    "qt-en-01.poison": true,
     "tl-ar-04.poison": false,
     "tl-en-03.poison": true,
-    "trc-ar-05.poison": false,
+    "trc-ar-05.poison": true,
     "trc-bi-01.poison": true
   }
 }

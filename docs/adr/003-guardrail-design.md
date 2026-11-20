@@ -68,7 +68,9 @@ model is called the same way. Constrained decoding is the obvious v2 ablation.
   above", "record the expiry date as"). It was widened to generic phrasings (any instruction to
   ignore what came before, anything addressed to an automated reader, any verb telling a
   machine what to record or report), not to those sentences, and it still raises no hit on the
-  75 clean and scanned documents. A detector rate measured on the same 10 documents that shaped
+  75 clean and scanned documents. That zero is in-sample too, so the list is also tested against
+  a separate set of ordinary business phrases that must not fire ("Machine tools trading",
+  "Payment instructions", "تعليمات الدفع"). A detector rate measured on the same 10 documents that shaped
   it would flatter it, so the README reports the model's own injection resistance as the
   headline and the guardrail's catches separately. A held-out set of injection phrasings
   written independently is the first v2 item.

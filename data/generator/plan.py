@@ -86,6 +86,7 @@ class BasePlan:
     currency_marker: str | None  # invoices and quotations only
     masked_trn: bool  # invoices and certificates only
     b2c: bool  # invoices only
+    tax_type: str | None = None  # certificates only, fixed per plan so layout does not predict it
 
 
 @dataclass(frozen=True)
@@ -130,6 +131,13 @@ def _currency_marker(prefix: str, layout: str, index: int) -> str | None:
     return AED if index % 2 == 1 else AR_CURRENCY
 
 
+def _tax_type(prefix: str, index: int) -> str | None:
+    """Odd indices are VAT, even are CORPORATE_TAX, so every layout shows both."""
+    if prefix != "trc":
+        return None
+    return "VAT" if index % 2 == 1 else "CORPORATE_TAX"
+
+
 def make_base_plan(prefix: str, layout: str, index: int) -> BasePlan:
     doc_id = base_id(prefix, layout, index)
     return BasePlan(
@@ -145,6 +153,7 @@ def make_base_plan(prefix: str, layout: str, index: int) -> BasePlan:
         currency_marker=_currency_marker(prefix, layout, index),
         masked_trn=index in _MASKED_TRN.get((prefix, layout), set()),
         b2c=prefix == "inv" and index in _B2C[layout],
+        tax_type=_tax_type(prefix, index),
     )
 
 

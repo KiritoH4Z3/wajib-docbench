@@ -15,6 +15,7 @@ from datetime import date, timedelta
 from decimal import ROUND_HALF_UP, Decimal
 from pathlib import Path
 
+import numpy as np
 from dateutil.relativedelta import relativedelta
 from PIL import Image
 from pydantic import ValidationError
@@ -448,6 +449,40 @@ def check_determinism(out_root: Path) -> list[str]:
 # ---------------------------------------------------------------- rendered files
 
 
+SCAN_MAX_MEAN_DIFF = 12.0
+
+
+def check_scan_pixels(doc_id: str, g: GoldDoc, path: Path, out_root: Path) -> list[str]:
+    """A scan JPEG that is swapped, stale or from another seed still passes a format check.
+    Rebuild it from the base PDF and the stored scan parameters and compare pixels."""
+    from data.generator.render import scan_image
+
+    problems = []
+    with Image.open(path) as image:
+        if image.format != "JPEG" or image.mode != "L" or image.width < 1600:
+            return [f"{doc_id}: scan is {image.format} {image.mode} {image.size}"]
+        if g.scan is None or "dpi" not in g.scan:
+            return [f"{doc_id}: ground truth has no scan dpi; regenerate"]
+        dpi = g.scan["dpi"]
+        if tuple(round(float(v)) for v in image.info.get("dpi", (0, 0))) != (round(dpi),) * 2:
+            problems.append(f"{doc_id}: JPEG dpi metadata {image.info.get('dpi')} is not {dpi}")
+        on_disk = np.asarray(image.convert("L"), dtype=np.float32)
+    base_pdf = out_root / "docs" / f"{g.base_doc_id}.pdf"
+    if not base_pdf.exists():
+        return problems + [f"{doc_id}: base PDF {base_pdf.name} is missing; regenerate"]
+    expected = np.asarray(scan_image(base_pdf, g.scan), dtype=np.float32)
+    if expected.shape != on_disk.shape:
+        problems.append(f"{doc_id}: scan is {on_disk.shape}, rebuilt scan is {expected.shape}")
+        return problems
+    diff = float(np.abs(expected - on_disk).mean())
+    if diff > SCAN_MAX_MEAN_DIFF:
+        problems.append(
+            f"{doc_id}: scan differs from a rebuild of {g.base_doc_id} "
+            f"(mean pixel difference {diff:.1f} > {SCAN_MAX_MEAN_DIFF}); regenerate"
+        )
+    return problems
+
+
 def check_files(golds: dict[str, GoldDoc], out_root: Path) -> list[str]:
     """A label the page does not show (clipped, overflowed, wrong font), a PDF with more than
     one page, or an unreadable scan. Reads the PDF text layer through pypdfium2."""
@@ -460,9 +495,7 @@ def check_files(golds: dict[str, GoldDoc], out_root: Path) -> list[str]:
             problems.append(f"{doc_id}: {path} is missing; run the generator without --skip-render")
             continue
         if g.variant == "scanned":
-            with Image.open(path) as image:
-                if image.format != "JPEG" or image.mode != "L" or image.width < 1600:
-                    problems.append(f"{doc_id}: scan is {image.format} {image.mode} {image.size}")
+            problems += check_scan_pixels(doc_id, g, path, out_root)
             continue
         pdf = read_pdf(path, rtl_page=g.layout == "ar")
         if pdf.pages != 1:

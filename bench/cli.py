@@ -109,26 +109,84 @@ def perf(
 
     from perf.throughput import measure_throughput
 
+    cfg = get_model(model)
     levels = tuple(int(c) for c in concurrency.split(","))
-    result = asyncio.run(measure_throughput(get_model(model), _doc_ids(None, "clean"), levels))
+    slots = _server_slots(cfg) if cfg.served_by == "llamacpp" else None
+    result = asyncio.run(
+        measure_throughput(cfg, _doc_ids(None, "clean"), levels, parallel_slots=slots)
+    )
     typer.echo(result)
+
+
+def _server_slots(cfg) -> int | None:
+    """The running llama.cpp server's slot count, read from its /props endpoint."""
+    try:
+        import httpx2 as httpx
+    except ImportError:  # older openai SDKs depend on httpx
+        import httpx
+    root = cfg.base_url.rstrip("/").removesuffix("/v1")
+    try:
+        return int(httpx.get(f"{root}/props", timeout=5).json()["total_slots"])
+    except Exception as exc:  # noqa: BLE001 - recorded as unknown, the run still proceeds
+        typer.echo(f"Could not read the server's slot count from {root}/props: {exc}", err=True)
+        return None
+
+
+def _sample_subset() -> list[str]:
+    """One base document per (document type, layout): 12 documents, fixed."""
+    from bench.inputs import list_doc_ids, load_gold
+
+    seen: dict[tuple[str, str], str] = {}
+    for doc_id in list_doc_ids("clean"):
+        g = load_gold(doc_id)
+        seen.setdefault((g.doc_type, g.layout), doc_id)
+    return sorted(seen.values())
+
+
+@app.command()
+def samples(
+    model: str = typer.Option(...),
+    source: str = typer.Option("ocr"),
+    count: int = typer.Option(3, help="Repeat draws per document"),
+) -> None:
+    """Repeat a fixed 12-document subset to measure run-to-run variance (API model)."""
+    from extract.runner import run_extraction_sync
+
+    cfg = get_model(model)
+    ids = _sample_subset()
+    for k in range(1, count + 1):
+        try:
+            records = run_extraction_sync(cfg, ids, source, sample=k)
+        except MissingApiKey as exc:
+            typer.echo(str(exc), err=True)
+            raise typer.Exit(2) from exc
+        errors = sum(r.api_error is not None for r in records)
+        typer.echo(f"{model}/{source} sample {k}: {len(records)} documents, {errors} API errors")
 
 
 @app.command()
 def replay(fresh: bool = typer.Option(False)) -> None:
-    """Rerun extraction and guardrails for every active model from cached responses."""
+    """Rerun extraction and guardrails for every active model from cached responses.
+
+    Without --fresh this never calls a model: a document with no cached response stops the
+    run with its name, instead of being scored as an empty extraction."""
+    from bench.paths import run_dir
+    from extract.client import CacheMiss
     from extract.runner import run_extraction_sync
     from guardrails.runner import run_guardrails
 
     ids = _doc_ids(None)
     for cfg in load_models():
         for source in ("ocr", "oracle"):
-            from bench.paths import run_dir
-
             if not fresh and not run_dir(cfg.slug, source, "extract").exists():
                 continue
             try:
-                run_extraction_sync(cfg, ids, source, concurrency=1, fresh=fresh)
+                run_extraction_sync(
+                    cfg, ids, source, concurrency=1, fresh=fresh, cache_only=not fresh
+                )
+            except CacheMiss as exc:
+                typer.echo(str(exc), err=True)
+                raise typer.Exit(1) from exc
             except MissingApiKey as exc:
                 typer.echo(f"Skipping {cfg.slug}/{source}: {exc}", err=True)
                 continue

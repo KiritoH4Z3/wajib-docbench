@@ -216,9 +216,9 @@ def scan_image(pdf: bytes | Path, params: dict[str, float]) -> Image.Image:
     return Image.fromarray(np.clip(pixels, 0, 255).astype(np.uint8))
 
 
-def save_jpeg(image: Image.Image, path: Path, quality: float) -> None:
+def save_jpeg(image: Image.Image, path: Path, quality: float, dpi: int = 200) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    image.save(path, format="JPEG", quality=int(quality), optimize=True)
+    image.save(path, format="JPEG", quality=int(quality), optimize=True, dpi=(dpi, dpi))
 
 
 def render_outputs(built: list[Built], out_root: Path) -> RenderStats:
@@ -239,5 +239,6 @@ def render_outputs(built: list[Built], out_root: Path) -> RenderStats:
             if base not in pdfs:
                 pdfs[base] = renderer.pdf(base, html_for(base, b.doc, b.doc.rows))
             image = scan_image(pdfs[base], b.gold.scan)
-            save_jpeg(image, docs_dir / f"{b.doc_id}.jpg", b.gold.scan["jpeg_quality"])
+            scan = b.gold.scan
+            save_jpeg(image, docs_dir / f"{b.doc_id}.jpg", scan["jpeg_quality"], int(scan["dpi"]))
         return renderer.stats

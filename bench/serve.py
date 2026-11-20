@@ -61,8 +61,26 @@ def fetch_weights(model: ModelConfig) -> Path:
             for chunk in r.iter_bytes(1 << 20):
                 f.write(chunk)
     partial.rename(dest)
-    write_sha256(dest)
+    verify_weights(model, dest)
     return dest
+
+
+class WeightsMismatch(RuntimeError):
+    pass
+
+
+def verify_weights(model: ModelConfig, path: Path) -> str:
+    """Hash the file and compare it with `serve.weights_sha256` from config/models.yaml when
+    one is declared. Returns the digest; raises WeightsMismatch on a difference."""
+    value = write_sha256(path)
+    expected = model.serve.get("weights_sha256")
+    if expected and value != str(expected).lower():
+        raise WeightsMismatch(
+            f"{path.name} has sha256 {value}, but config/models.yaml pins {expected} for "
+            f"{model.slug}. Delete the file and rerun `make models MODEL={model.slug}`, or "
+            "update weights_sha256 if you chose a new revision on purpose."
+        )
+    return value
 
 
 def write_sha256(path: Path) -> str:
@@ -102,6 +120,7 @@ def serve(model: ModelConfig, parallel: int = 4, extra_args: list[str] | None = 
         raise FileNotFoundError(f"{weights} is missing. Run: make models MODEL={model.slug}")
     port = int(model.serve.get("port", 8080))
     ctx_per_slot = int(model.serve.get("ctx_per_slot", 4096))
+    weights_digest = verify_weights(model, weights)
     stop()
     before = gpu_memory_used_mib()
     cmd = [
@@ -144,11 +163,7 @@ def serve(model: ModelConfig, parallel: int = 4, extra_args: list[str] | None = 
             check=False,
         ).stdout.strip(),
         "weights_file": model.hf_file,
-        "weights_sha256": (
-            weights.with_suffix(".sha256").read_text().strip()
-            if weights.with_suffix(".sha256").exists()
-            else write_sha256(weights)
-        ),
+        "weights_sha256": weights_digest,
         "parallel_slots": parallel,
         "ctx_per_slot": ctx_per_slot,
         "args": cmd[cmd.index(LLAMACPP_IMAGE) + 1 :],

@@ -613,7 +613,8 @@ def build_certificate(plan: BasePlan) -> Document:
 
     company = make_company(rv, MAINLAND_FORMS + FREE_ZONE_FORMS)
     trn = random_trn(rv)
-    tax_type = rv.choice(["VAT", "CORPORATE_TAX"])
+    rv.choice(["VAT", "CORPORATE_TAX"])  # draw kept so later fields do not shift
+    tax_type = str(plan.tax_type)
     effective = random_date(rv, FIRST_DAY, date(2027, 6, 30))
     issued = effective + timedelta(days=rv.randint(0, 120))
     address = make_address(rv, rv.choice(sorted(AREAS)))

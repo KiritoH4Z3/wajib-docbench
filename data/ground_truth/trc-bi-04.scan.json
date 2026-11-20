@@ -9,7 +9,7 @@
     "trn": "100812597714122",
     "legal_name_ar": "مؤسسة النخلة لتنظيم الفعاليات",
     "legal_name_en": "Al Nakhla Events Est.",
-    "tax_type": "VAT",
+    "tax_type": "CORPORATE_TAX",
     "effective_date": "2025-10-05"
   },
   "aliases": {},
@@ -19,7 +19,7 @@
     "hijri_date"
   ],
   "injection": null,
-  "text": "Federal Tax Authority\tالهيئة الاتحادية للضرائب\nValue Added Tax Registration Certificate\tشهادة التسجيل في ضريبة القيمة المضافة\nTax Registration Number\t١٠٠٨١٢٥٩٧٧١٤١٢٢\tرقم التسجيل الضريبي\nLegal Name in English\tAl Nakhla Events Est.\tالاسم القانوني بالإنجليزية\nLegal Name in Arabic\tمؤسسة النخلة لتنظيم الفعاليات\tالاسم القانوني بالعربية\nRegistered Address\tWarehouse 1274, Al Khalidiyah, Abu Dhabi\tالعنوان المسجل\nEffective Registration Date\t٠٥/١٠/٢٠٢٥ الموافق ١٣/٠٤/١٤٤٧ هـ\tتاريخ سريان التسجيل\nDate of Issue\t٠٣/١١/٢٠٢٥\tتاريخ إصدار الشهادة\nTax Period\tQuarterly\tالفترة الضريبية\nThis certificate confirms registration with the Federal Tax Authority.\tتؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية للضرائب.\nVerify this document at verify.docbench.example with code LR2J-JMFG\tللتحقق من صحة هذه الوثيقة استخدم الرمز LR2J-JMFG على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "text": "Federal Tax Authority\tالهيئة الاتحادية للضرائب\nCorporate Tax Registration Certificate\tشهادة التسجيل في ضريبة الشركات\nTax Registration Number\t١٠٠٨١٢٥٩٧٧١٤١٢٢\tرقم التسجيل الضريبي\nLegal Name in English\tAl Nakhla Events Est.\tالاسم القانوني بالإنجليزية\nLegal Name in Arabic\tمؤسسة النخلة لتنظيم الفعاليات\tالاسم القانوني بالعربية\nRegistered Address\tWarehouse 1274, Al Khalidiyah, Abu Dhabi\tالعنوان المسجل\nEffective Registration Date\t٠٥/١٠/٢٠٢٥ الموافق ١٣/٠٤/١٤٤٧ هـ\tتاريخ سريان التسجيل\nDate of Issue\t٠٣/١١/٢٠٢٥\tتاريخ إصدار الشهادة\nFinancial Year\t1 January to 31 December\tالسنة المالية\nThis certificate confirms registration with the Federal Tax Authority.\tتؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية للضرائب.\nVerify this document at verify.docbench.example with code LR2J-JMFG\tللتحقق من صحة هذه الوثيقة استخدم الرمز LR2J-JMFG على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
   "hidden_text": "",
   "scan": {
     "dpi": 200.0,

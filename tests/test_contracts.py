@@ -193,3 +193,96 @@ def test_written_date_with_the_year_glued_to_the_month_grounds():
     assert not value_present(
         "tax_invoice", "invoice_date", "2027-09-30", TextIndex("الفاتورة 130 سبتمبر2027")
     )
+
+
+# ---------------------------------------------------------------- G1 and G5 (review fixes)
+# Silent failures: an id grounded because it is a SUBSTRING of a longer one (a truncated or
+# prefix-dropped id passed the hallucination check), and an amount such as 30.00 grounded
+# by the "30" in "within 30 days".
+
+
+def _licence(text: str, value: str) -> bool:
+    return value_present("trade_licence", "licence_number", value, TextIndex(text))
+
+
+def test_truncated_id_does_not_ground():
+    assert _licence("Licence No. 884213", "884213")
+    assert not _licence("Licence No. 884213", "88421")
+    assert not _licence("Licence No. 884213", "84213")
+    assert not _licence("Licence No. 884213", "4213")
+
+
+def test_prefix_dropped_id_does_not_ground():
+    assert _licence("Licence No. Q/27/2845", "Q/27/2845")
+    assert not _licence("Licence No. Q/27/2845", "27/2845")
+    assert not _licence("Licence No. Q-27-2845", "27-2845")
+
+
+def test_id_grounds_through_separators_labels_and_invisible_marks():
+    assert _licence("Licence No.884213", "884213")
+    assert _licence("No: 884 213", "884213")
+    assert _licence("CN-1234-5678", "CN 1234 5678")
+    # Tesseract leaves an LRM between an id and the next label: it must act as a space.
+    assert _licence("4955763" + chr(0x200E) + "Licence", "4955763")
+
+
+def _gold_docs():
+    import json
+
+    from bench.paths import GROUND_TRUTH
+
+    files = sorted(p for p in GROUND_TRUTH.glob("*.json") if not p.name.startswith("_"))
+    if not files:
+        pytest.skip("no ground truth generated yet")
+    return [json.loads(p.read_text(encoding="utf-8")) for p in files]
+
+
+def test_every_gold_id_and_amount_still_grounds_in_its_gold_text():
+    from extract.schemas import FIELD_SPECS
+
+    checked = 0
+    for gold in _gold_docs():
+        idx = TextIndex(gold["text"] + "\n" + gold.get("hidden_text", ""))
+        for name, value in gold["fields"].items():
+            spec = FIELD_SPECS[gold["doc_type"]].get(name)
+            if spec is None or spec.kind not in ("id", "amount") or value is None:
+                continue
+            checked += 1
+            assert value_present(gold["doc_type"], name, value, idx), (gold["doc_id"], name)
+    assert checked > 50
+
+
+def test_ocr_id_grounding_matches_the_substring_rule_it_replaced():
+    from bench.paths import ROOT
+    from extract.schemas import FIELD_SPECS
+
+    ocr_dir = ROOT / "data" / "ocr"
+    compared = 0
+    for gold in _gold_docs():
+        path = ocr_dir / f"{gold['doc_id']}.txt"
+        if not path.exists():
+            continue
+        idx = TextIndex(path.read_text(encoding="utf-8"))
+        for name, value in gold["fields"].items():
+            spec = FIELD_SPECS[gold["doc_type"]].get(name)
+            if spec is None or spec.kind != "id" or value is None:
+                continue
+            old = len(norm_id(value)) >= 3 and norm_id(value) in idx.idform
+            if old:
+                compared += 1
+                assert value_present(gold["doc_type"], name, value, idx), (gold["doc_id"], name)
+    assert compared > 0
+
+
+def test_whole_number_amount_needs_a_currency_marker():
+    def total(text: str, value: str) -> bool:
+        return value_present("tax_invoice", "total", value, TextIndex(text))
+
+    assert not total("Payment within 30 days", "30.00")
+    assert not total("VAT 5% applies", "5.00")
+    assert total("Total AED 12,500.00", "12500.00")
+    assert total("Total AED 12,500", "12500.00")
+    assert total("المجموع 12,500 درهم", "12500.00")
+    assert total("Total 12,500 Dhs", "12500.00")
+    assert total("Total د.إ 30", "30.00")
+    assert not total("Total AED 1,250", "12500.00")

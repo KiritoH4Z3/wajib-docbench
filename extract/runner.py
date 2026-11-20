@@ -9,7 +9,7 @@ from bench.config import ModelConfig
 from bench.inputs import load_gold, load_input_text
 from bench.paths import run_dir
 from bench.records import Attempt, ExtractionRecord, TextSource, write_json
-from extract.client import ApiError, CallResult, Pacer, get_completion
+from extract.client import ApiError, CacheMiss, CallResult, Pacer, get_completion
 from extract.parse import extract_json, validate
 from extract.prompts import PROMPT_VERSION, build_messages
 
@@ -29,6 +29,9 @@ def _attempt(result: CallResult, parsed: dict | None, error: str | None, conc: i
         started_at=result.started_at,
         concurrency=conc,
         cached=result.cached,
+        reasoning_tokens=result.reasoning_tokens,
+        prompt_cached_tokens=result.prompt_cached_tokens,
+        prompt_evaluated_tokens=result.prompt_evaluated_tokens,
     )
 
 
@@ -60,6 +63,8 @@ async def _extract_one(
     pacer: Pacer,
     use_cache: bool,
     fresh: bool,
+    sample: int = 0,
+    cache_only: bool = False,
 ) -> ExtractionRecord:
     doc_type = load_gold(doc_id).doc_type
     messages = build_messages(doc_type, load_input_text(doc_id, text_source))
@@ -70,7 +75,12 @@ async def _extract_one(
     async with sem:
         try:
             for _ in range(2):
-                result = await get_completion(model, messages, use_cache, fresh, pacer)
+                try:
+                    result = await get_completion(
+                        model, messages, use_cache, fresh, pacer, sample, cache_only
+                    )
+                except CacheMiss as miss:
+                    raise CacheMiss(doc_id, miss.key, model.slug) from None
                 parsed, error = _check(doc_type, result.raw)
                 attempts.append(_attempt(result, parsed, error, conc))
                 if parsed is not None:
@@ -104,22 +114,37 @@ async def run_extraction(
     use_cache: bool = True,
     fresh: bool = False,
     write: bool = True,
+    cache_only: bool = False,
+    sample: int = 0,
 ) -> list[ExtractionRecord]:
+    """Extract every document.
+
+    cache_only=True replays stored responses and never calls the server; a miss raises
+    CacheMiss naming the document, and no record is written for the run (records are written
+    after every document has been replayed). sample=k > 0 re-draws into its own cache entries
+    and run directory `extract-s{k}`. Samples are meant for the API model: a local model at
+    temperature 0 is expected to repeat itself exactly.
+    """
     conc = max(1, min(concurrency, model.max_concurrency))
     sem = asyncio.Semaphore(conc)
     pacer = Pacer(model.min_interval_s)
-    out = run_dir(model.slug, text_source, "extract")
+    out = run_dir(model.slug, text_source, f"extract-s{sample}" if sample > 0 else "extract")
 
     async def one(doc_id: str) -> ExtractionRecord:
-        rec = await _extract_one(model, doc_id, text_source, conc, sem, pacer, use_cache, fresh)
+        rec = await _extract_one(
+            model, doc_id, text_source, conc, sem, pacer, use_cache, fresh, sample, cache_only
+        )
         # Written as soon as the document finishes, so a crash or an interrupted free-tier run
-        # keeps every record it already paid for.
-        if write:
+        # keeps every record it already paid for. A cache-only run writes after all hits.
+        if write and not cache_only:
             write_json(out / f"{rec.doc_id}.json", rec)
         return rec
 
-    records = await asyncio.gather(*(one(d) for d in doc_ids))
-    return list(records)
+    records = list(await asyncio.gather(*(one(d) for d in doc_ids)))
+    if write and cache_only:
+        for rec in records:
+            write_json(out / f"{rec.doc_id}.json", rec)
+    return records
 
 
 def run_extraction_sync(
@@ -130,7 +155,11 @@ def run_extraction_sync(
     use_cache: bool = True,
     fresh: bool = False,
     write: bool = True,
+    cache_only: bool = False,
+    sample: int = 0,
 ) -> list[ExtractionRecord]:
     return asyncio.run(
-        run_extraction(model, doc_ids, text_source, concurrency, use_cache, fresh, write)
+        run_extraction(
+            model, doc_ids, text_source, concurrency, use_cache, fresh, write, cache_only, sample
+        )
     )

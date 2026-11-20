@@ -1,18 +1,17 @@
 Federal Tax Authority
 
- الهيئة الاتحاذيةللضرائبب
- شهادة التسجيل في ضريبة القيمة      المضافة      :‎Value Added Tax Registration Certificate‏
- رقم التسجيلٍ                                                                                                   الضريبي‎Tax Registration Number       Ve -A) YOR WE) YY‏
+ الهيئة الاتحاديةللضرائب
+ شهادة التسجيل فى ضريبة                  الشركات‎Corporate Tax Registration Certificate‏
+ رقم التسجيل                                                                         الضريبي‎Tax Registration Number     V+ =A YORWN EN YY‏
  الاسم القانوني                                                                 بالإنجليزية‎Legal Name in English                Al Nakhla Events Est.‏
- الاسم القانوني                                                                      بالعرنية مؤسسة النخلة لتنظيم                   القعاليات‎Legal Name in Arabic‏
- العنوان                                                 المسجل‎Registered Address                  Warehouse 1274, Al Khalidiyah, Abu Dhabi‏
- تاريخ سريان                                                التسنجيل                2 ‎w0/a-/Y Yo‏ الموافق 17/4/1147            2‎Effective Registration Date‏
- تاريخ إصدار                                              الشهادة                                      :‎Date of Issue             Ek        RIAVARY)‏
-‎Tax Period                               Quarterly‏
+ الاسم القانوني                                                                بالعربية مؤسسة ‎As‏ لتنظيم                  الفعاليات‎Legal Name in‘Arabic‏
+ العنوان‎Registered Address                 Warehouse 1274, Al Khalidiyah, Abu Dhabi                                         Joist‏
+ تاريخ سريان                                                                 التسنجيل 6٠/١٠/د.‏ الموافق 13/4/17            ه‎Effective Registration Date‏
+ تاريخ إصدار                                                                                         الشهادة        ‎RE‏      ا‎Date of Issue‏
+‎Financial Year                    1January to 31 December‏
 
- الفترةالضريبية
- 3585 هذه الشهادة التسجيل لدئ الهيئة الاتحادية                                         للضرائب.‎This certificate confirms registration with the Federal Tax Authority.‏
-
-Verify this document at verify.docbench.example'with code LR2JJMFG       verify.docbench.example ‏قع‎ sall ‏على‎ LR2JJMFG ‏للتحقق من صحة هذه الوثيقة استخدم: الرمز‎
+ السبنة.المالية
+ تؤكد هذه الشهادة التسجيل لدئ الهيئة الاتحادية                                       للضرائب.‎This certificate confirms registration with the Federal Tax Authority.‏
+ للتحقق من صحة هذه الوثيقةاستخدم الرمزّ ‎LR2JJMFG‏ على الموقع‎Verify this document at verify.docbench.example with code LR2J MFG       verify.docbench.example‏
 
 Synthetic sample for benchmarking ‏نموذج اصظناعي للاختبار/‎

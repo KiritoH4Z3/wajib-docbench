@@ -12,6 +12,7 @@ import unicodedata
 from dataclasses import dataclass, field
 
 from bench.normalize import (
+    _INVISIBLES,
     AR_MONTHS_GULF,
     AR_MONTHS_LEVANT,
     EN_MONTHS,
@@ -39,6 +40,7 @@ class TextIndex:
     spaced: str = field(init=False)
     compacted: str = field(init=False)
     idform: str = field(init=False)
+    idtext: str = field(init=False)
     numeric: str = field(init=False)
     western: str = field(init=False)
     dateview: str = field(init=False)
@@ -49,6 +51,10 @@ class TextIndex:
         self.spaced = f" {norm_text(self.raw)} "
         self.compacted = compact(self.raw)
         self.idform = norm_id(self.raw)
+        # Identifier view: invisibles become SPACES, not nothing. Tesseract leaves an LRM
+        # between an id and the next label ("4955763<LRM>Licence"); deleting it would glue
+        # the two tokens and the id would no longer end on a boundary.
+        self.idtext = _INVISIBLES.sub(" ", western).upper()
         # Thousands separators between digit groups removed: "12,500.00" -> "12500.00".
         self.numeric = re.sub(r"(?<=\d)[,٬](?=\d{3}(?!\d))", "", western)
         # Date separators unified to "/" for numeric date matching.
@@ -67,9 +73,24 @@ def phrase_present(value: str, idx: TextIndex) -> bool:
     return len(packed) >= MIN_COMPACT_SUBSTRING and packed in idx.compacted
 
 
+_ID_SEP = r"[\s\-/._:#]*"
+
+
 def id_present(value: str, idx: TextIndex) -> bool:
+    """An identifier grounds only as a whole token. Separators between its characters are
+    optional (OCR adds and drops them), but no letter or digit may touch either end, and
+    a letter or digit plus a hyphen, slash or underscore may not touch the start either:
+    "88421" is not in "884213" and "27/2845" is not in "Q/27/2845"."""
     v = norm_id(value)
-    return len(v) >= 3 and v in idx.idform
+    if len(v) < 3:
+        return False
+    pattern = _ID_SEP.join(re.escape(c) for c in v)
+    return (
+        re.search(
+            rf"(?<![A-Z0-9])(?<![A-Z0-9][\-/_]){pattern}(?![\-/_]?[A-Z0-9])", idx.idtext
+        )
+        is not None
+    )
 
 
 def trn_present(value: str, idx: TextIndex) -> bool:
@@ -83,6 +104,9 @@ def trn_present(value: str, idx: TextIndex) -> bool:
     return re.search(rf"(?<!\d){pattern}(?!\d)", idx.western) is not None
 
 
+_CURRENCY_NEAR = r"(?:AED|DHS|DH|درهم|دراهم|د\.إ|د\.ا|د٫إ)"
+
+
 def amount_present(value: object, idx: TextIndex) -> bool:
     d = parse_amount(value)
     if d is None:
@@ -90,8 +114,15 @@ def amount_present(value: object, idx: TextIndex) -> bool:
     text = f"{d:f}"
     candidates = [rf"(?<![\d.]){re.escape(text)}(?!\d)"]
     if text.endswith(".00"):
-        whole = text[:-3]
-        candidates.append(rf"(?<![\d.]){whole}(?!\.?\d)")
+        # A bare whole number ("30" in "within 30 days", "5" in "VAT 5%") is not the amount.
+        # It counts only when a currency marker sits right next to it.
+        whole = re.escape(text[:-3])
+        candidates.append(
+            rf"(?i:{_CURRENCY_NEAR})\s{{0,3}}(?<![\d.]){whole}(?!\.?\d)"
+        )
+        candidates.append(
+            rf"(?<![\d.]){whole}(?!\.?\d)\s{{0,3}}(?i:{_CURRENCY_NEAR})"
+        )
     elif text.endswith("0"):
         candidates.append(rf"(?<![\d.]){re.escape(text[:-1])}(?!\d)")
     return any(re.search(p, idx.numeric) for p in candidates)

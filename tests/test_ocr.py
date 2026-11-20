@@ -7,18 +7,27 @@ Silent failures caught here:
 - the injection check passing on noise, or missing an instruction with a few OCR slips;
 - the pilot choosing a page segmentation mode by CER when field recall says otherwise;
 - PDFs rasterised at the wrong resolution, which Tesseract degrades on without any error;
-- a form feed left at the end of every OCR file.
+- a form feed left at the end of every OCR file;
+- a wrapped or merged OCR line scored as a near-total error by the line-aligned CER;
+- scanned JPEGs OCRed with the 300 dpi of the PDFs, whatever their real resolution;
+- an OCR image whose tesseract or leptonica drifted from the pinned versions, and OCR text
+  that drifts from the committed files without anyone noticing (`run --check`);
+- a page segmentation mode picked on a recall margin smaller than the noise;
+- poisoned documents whose injection never reached the OCR text, padding the pass rate.
 """
 
 from __future__ import annotations
 
+import json
 import shutil
 from pathlib import Path
 
 import pytest
 from PIL import Image, ImageDraw, ImageFont
+from typer.testing import CliRunner
 
 from bench.records import GoldDoc, Injection
+from ocr import __main__ as ocr_cli
 from ocr import cer, config, engine, scoring
 
 LRM = chr(0x200E)
@@ -105,6 +114,38 @@ def test_extra_ocr_line_counts_as_insertions() -> None:
     ref = "one line"
     hyp = "one line\nnoise"
     assert cer.cer_norm(ref, hyp) == pytest.approx(len("noise") / len("one line"))
+
+
+def test_wrapped_ocr_line_is_not_an_error() -> None:
+    """OCR split one printed line in two: the old pairing scored it as about 50% wrong."""
+    assert cer.cer_norm("a b c d e f g h i j", "a b c d e\nf g h i j") == 0.0
+    assert cer.cer_norm("a b c d e f g h i j", "f g h i j\na b c d e") > 0.0  # reordered halves
+
+
+def test_merged_ocr_lines_are_not_an_error() -> None:
+    """OCR joined two printed lines into one: the old pairing charged the lost line in full."""
+    assert cer.cer_norm("a b c d e\nf g h i j", "a b c d e f g h i j") == 0.0
+
+
+def test_wrapped_line_still_counts_a_real_slip() -> None:
+    assert cer.cer_norm("alpha beta gamma delta", "alpha beta\ngamma delXa") == pytest.approx(
+        1 / len("alpha beta gamma delta")
+    )
+
+
+def test_wrap_does_not_hide_noise_or_lost_lines() -> None:
+    """The join needs a strict gain: unrelated noise and lost lines keep their full cost."""
+    assert cer.cer_norm("one line\nother", "one line\nzzzzzz") == pytest.approx(6 / 13)
+    assert cer.cer_norm("abcdef\nghijkl", "abcdef") == pytest.approx(6 / 12)
+
+
+def test_swapped_halves_of_a_bilingual_line_are_a_documented_nonzero_case() -> None:
+    """Known limit, kept on purpose: when OCR emits the Arabic half and the English half of
+    one printed line in the other order, characters are in the wrong place inside a line, so
+    it still counts as error. Whole-line moves are free; reordering inside a line is not."""
+    ref = "Total AED 105.00 " + KAF + YEH + HEH + ALEF + KAF + YEH
+    swapped = KAF + YEH + HEH + ALEF + KAF + YEH + " Total AED 105.00"
+    assert 0.0 < cer.cer_norm(ref, swapped) < 1.0
 
 
 def test_empty_hypothesis_is_total_loss_and_empty_reference_is_safe() -> None:
@@ -267,9 +308,18 @@ def _r(recall: float, cer_value: float) -> dict:
     return {"field_grounding_recall": recall, "cer_norm": cer_value}
 
 
-def test_select_psm_prefers_recall_over_cer() -> None:
-    results = {3: _r(0.90, 0.30), 4: _r(0.92, 0.35), 6: _r(0.91, 0.05)}
-    assert scoring.select_psm(results) == 4
+def test_select_psm_prefers_recall_when_the_gap_is_real() -> None:
+    results = {3: _r(0.80, 0.05), 4: _r(0.92, 0.35), 6: _r(0.85, 0.01)}
+    assert scoring.select_psm(results) == 4  # 7 points ahead of the next mode, CER ignored
+
+
+def test_select_psm_treats_modes_within_one_point_as_tied_and_lets_cer_decide() -> None:
+    """Pilot on 60 documents: a 0.8 point recall lead is noise, so CER picks the mode."""
+    assert scoring.select_psm({3: _r(0.912, 0.33), 4: _r(0.920, 0.10)}) == 4
+    assert scoring.select_psm({3: _r(0.912, 0.05), 4: _r(0.920, 0.10)}) == 3
+    # exactly one point behind is still tied; 1.5 points behind is not
+    assert scoring.select_psm({3: _r(0.91, 0.05), 4: _r(0.92, 0.10)}) == 3
+    assert scoring.select_psm({3: _r(0.905, 0.05), 4: _r(0.92, 0.10)}) == 4
 
 
 def test_select_psm_breaks_recall_ties_by_cer_then_by_psm() -> None:
@@ -288,6 +338,7 @@ def test_pilot_metrics_pool_values() -> None:
     assert metrics["n_docs"] == 2
     assert metrics["n_values"] == 12
     assert metrics["field_grounding_recall"] == pytest.approx(4 / 12)
+    assert metrics["cer_strict_norm"] is not None  # both CER forms are recorded
 
 
 def test_configured_psm_is_one_the_pilot_compares() -> None:
@@ -323,6 +374,256 @@ def test_rasterise_leaves_jpeg_alone(tmp_path: Path) -> None:
     jpg = tmp_path / "x.scan.jpg"
     Image.new("L", (10, 10)).save(jpg)
     assert engine.rasterise("x.scan", jpg, tmp_path / "raster") == [jpg]
+
+
+# ---- dpi per image, version pins, drift check -------------------------------------------
+
+
+def _scan_gold(doc_id: str, scan: dict | None) -> GoldDoc:
+    gold = make_gold(doc_id=doc_id, variant="scanned")
+    return gold.model_copy(update={"scan": scan})
+
+
+def test_document_dpi_matches_the_variant(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """A 200 dpi scan JPEG OCRed with --dpi 300 degrades silently: the dpi column must be
+    300 for PDFs, the scan's own dpi for JPEGs, and 200 when the ground truth has none."""
+    golds = {
+        "inv-en-01.scan": _scan_gold("inv-en-01.scan", {"dpi": 206.0}),
+        "inv-en-02.scan": _scan_gold("inv-en-02.scan", None),
+    }
+    monkeypatch.setattr(engine, "load_gold", lambda i: golds[i])
+    assert engine.document_dpi("inv-en-01", Path("x.pdf")) == 300
+    assert engine.document_dpi("inv-en-01.poison", Path("x.pdf")) == 300
+    assert engine.document_dpi("inv-en-01.scan", Path("x.jpg")) == 206
+    assert engine.document_dpi("inv-en-02.scan", Path("x.jpg")) == config.DEFAULT_SCAN_DPI == 200
+
+
+def test_run_documents_passes_each_variants_dpi_to_the_batch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    pdf = tmp_path / "inv-en-01.pdf"
+    Image.new("RGB", (100, 100), "white").save(pdf, resolution=72.0)
+    jpg = tmp_path / "inv-en-01.scan.jpg"
+    Image.new("L", (10, 10)).save(jpg)
+    sources = {"inv-en-01": pdf, "inv-en-01.scan": jpg}
+    monkeypatch.setattr(engine, "find_source", lambda i: sources[i])
+    monkeypatch.setattr(engine, "RASTER", tmp_path / "raster")
+    monkeypatch.setattr(
+        engine, "load_gold", lambda i: _scan_gold(i, {"dpi": 200.0})
+    )
+    seen = []
+
+    def fake_batch(jobs, psm, jobs_parallel=None):
+        seen.extend(jobs)
+        for _, txt, *_ in jobs:
+            txt.write_text("x\n", encoding="utf-8")
+
+    monkeypatch.setattr(engine, "run_batch", fake_batch)
+    out = tmp_path / "out"
+    out.mkdir()
+    engine.run_documents(["inv-en-01", "inv-en-01.scan"], 4, out)
+    by_name = {job[1].stem: job[2] for job in seen}
+    assert by_name == {"inv-en-01": 300, "inv-en-01.scan": 200}
+    assert engine.dpi_by_variant(["inv-en-01", "inv-en-01.scan"]) == {
+        "clean": [300],
+        "scanned": [200],
+    }
+
+
+def test_batch_manifest_has_a_dpi_column_and_the_loop_uses_it(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setattr(engine, "ROOT", tmp_path)
+    monkeypatch.setattr(engine, "RASTER", tmp_path / "raster")
+    monkeypatch.setattr(engine, "ensure_image", lambda: None)
+    (tmp_path / "a.png").write_bytes(b"")
+    (tmp_path / "b.jpg").write_bytes(b"")
+    captured = {}
+
+    def fake_docker(args, check=True):
+        captured["script"] = args[-1]
+
+        class P:
+            stderr = ""
+
+        return P()
+
+    monkeypatch.setattr(engine, "_docker", fake_docker)
+    jobs = [
+        (tmp_path / "a.png", tmp_path / "out" / "a.txt", 300),
+        (tmp_path / "b.jpg", tmp_path / "out" / "b.txt", 206),
+    ]
+    with pytest.raises(engine.OcrError):  # no tesseract ran, so outputs are missing
+        engine.run_batch(jobs, 4, jobs_parallel=1)
+    manifest = (tmp_path / "raster" / "_manifest.txt").read_text().splitlines()
+    assert manifest == ["a.png out/a 300", "b.jpg out/b 206"]
+    assert '--dpi "$2"' in captured["script"] and "-n 3" in captured["script"]
+    assert "--dpi 300" not in captured["script"]
+
+
+def _fake_engine(monkeypatch: pytest.MonkeyPatch, version: str, packages: dict, lept: str) -> None:
+    monkeypatch.setattr(engine, "ensure_image", lambda: None)
+    pkg_out = "".join(f"{k} {v}\n" for k, v in packages.items())
+
+    def fake_docker(args, check=True):
+        class P:
+            stdout = ""
+            stderr = ""
+
+        p = P()
+        if "--version" in args:
+            p.stdout = f"tesseract {version}\n leptonica-{lept}\n libjpeg 8d\n"
+        elif "dpkg-query" in args:
+            p.stdout = pkg_out
+        elif "{{.Id}}" in args:
+            p.stdout = "sha256:abc\n"
+        else:
+            p.stdout = config.TESSDATA_COMMIT + "\n"
+        return p
+
+    monkeypatch.setattr(engine, "_docker", fake_docker)
+
+
+def test_engine_metadata_records_full_version_and_packages(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _fake_engine(
+        monkeypatch, config.EXPECTED_TESSERACT, config.EXPECTED_PACKAGES, config.EXPECTED_LEPTONICA
+    )
+    meta = engine.engine_metadata()
+    assert "leptonica-1.82.0" in meta["tesseract_version_full"]
+    assert meta["packages"] == config.EXPECTED_PACKAGES
+
+
+@pytest.mark.parametrize(
+    ("version", "pkg_change", "lept"),
+    [
+        ("5.5.0", {}, config.EXPECTED_LEPTONICA),
+        (config.EXPECTED_TESSERACT, {"liblept5": "1.84.1-3"}, config.EXPECTED_LEPTONICA),
+        (config.EXPECTED_TESSERACT, {}, "1.84.1"),
+    ],
+)
+def test_engine_metadata_refuses_a_drifted_image(
+    monkeypatch: pytest.MonkeyPatch, version: str, pkg_change: dict, lept: str
+) -> None:
+    """A rebuilt image with a newer tesseract or leptonica changes OCR text, and with it the
+    extraction cache keys, without any error. It must stop the run with a fix."""
+    _fake_engine(monkeypatch, version, {**config.EXPECTED_PACKAGES, **pkg_change}, lept)
+    with pytest.raises(engine.OcrError, match="Rebuild it"):
+        engine.engine_metadata()
+
+
+def test_dockerfile_pins_the_packages_in_config() -> None:
+    text = (Path(config.__file__).parent / "Dockerfile").read_text()
+    for name, version in config.EXPECTED_PACKAGES.items():
+        assert f"{name}={version}" in text
+
+
+def test_differing_outputs_names_changed_and_missing_files(tmp_path: Path) -> None:
+    fresh, old = tmp_path / "fresh", tmp_path / "old"
+    fresh.mkdir()
+    old.mkdir()
+    for name, a, b in (("same", "x\n", "x\n"), ("changed", "x\n", "y\n")):
+        (fresh / f"{name}.txt").write_text(a)
+        (old / f"{name}.txt").write_text(b)
+    (fresh / "nocommit.txt").write_text("x\n")
+    assert engine.differing_outputs(["same", "changed", "nocommit", "nofresh"], fresh, old) == [
+        "changed.txt", "nocommit.txt", "nofresh.txt",
+    ]  # fmt: skip
+
+
+def _check_env(monkeypatch: pytest.MonkeyPatch, tmp_path: Path, fresh_text: str) -> None:
+    committed = tmp_path / "committed"
+    committed.mkdir()
+    (committed / "d1.txt").write_text("same\n")
+    monkeypatch.setattr(ocr_cli, "OCR_TEXT", committed)
+    monkeypatch.setattr(config, "CHECK_WORK", tmp_path / "scratch")
+    monkeypatch.setattr(engine, "engine_metadata", lambda: {"tesseract_version": "5.3.4"})
+
+    def fake_run(ids, psm, out_dir):
+        for i in ids:
+            (out_dir / f"{i}.txt").write_text(fresh_text)
+
+    monkeypatch.setattr(engine, "run_documents", fake_run)
+
+
+def test_run_check_fails_and_names_drifted_files_without_touching_committed_text(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    _check_env(monkeypatch, tmp_path, "different\n")
+    result = CliRunner().invoke(ocr_cli.app, ["run", "--check", "--doc", "d1"])
+    assert result.exit_code == 1
+    assert "d1.txt" in result.output
+    assert (tmp_path / "committed" / "d1.txt").read_text() == "same\n"
+
+
+def test_run_check_passes_when_nothing_drifted(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    _check_env(monkeypatch, tmp_path, "same\n")
+    result = CliRunner().invoke(ocr_cli.app, ["run", "--check", "--doc", "d1"])
+    assert result.exit_code == 0, result.output
+
+
+# ---- injection reach --------------------------------------------------------------------
+
+
+def _poison(doc_id: str, style: str) -> GoldDoc:
+    inj = Injection(
+        style=style,  # type: ignore[arg-type]
+        language="en",
+        text=INJECTION,
+        target_field="total",
+        injected_value="1.00",
+    )
+    return make_gold(doc_id=doc_id, variant="poisoned", injection=inj)
+
+
+def test_unreached_injections_lists_non_white_text_styles_only() -> None:
+    """Five low_contrast injections once vanished from OCR, leaving their documents identical
+    to the clean twins. white_text is expected to vanish; the others are a generator defect."""
+    seen = scoring.score_document(_poison("a.poison", "visible_note"), INJECTION)
+    gone = {"injection_in_ocr": False}
+    pairs = [
+        (_poison("a.poison", "visible_note"), seen),
+        (_poison("b.poison", "low_contrast"), gone),
+        (_poison("c.poison", "white_text"), gone),
+        (_poison("d.poison", "fake_field"), gone),
+        (make_gold(), {}),
+    ]
+    assert scoring.unreached_injections(pairs) == ["b.poison", "d.poison"]
+    assert scoring.injection_reach_by_style(pairs) == {
+        "fake_field": {"n": 1, "reached": 0},
+        "low_contrast": {"n": 1, "reached": 0},
+        "visible_note": {"n": 1, "reached": 1},
+        "white_text": {"n": 1, "reached": 0},
+    }
+
+
+def test_build_scores_records_reach_by_style() -> None:
+    gold = _poison("inv-en-01.poison", "low_contrast")
+    payload = scoring.build_scores([(gold, gold.text)], {})
+    assert payload["injection_reach_by_style"] == {"low_contrast": {"n": 1, "reached": 0}}
+
+
+def test_score_command_prints_a_warning_for_unreached_injections(
+    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
+) -> None:
+    gold = _poison("inv-en-01.poison", "low_contrast")
+    engine_file = tmp_path / "_engine.json"
+    engine_file.write_text("{}")
+    txt = tmp_path / "inv-en-01.poison.txt"
+    txt.write_text(gold.text)
+    monkeypatch.setattr(config, "ENGINE_FILE", engine_file)
+    monkeypatch.setattr(ocr_cli, "list_doc_ids", lambda: [gold.doc_id])
+    monkeypatch.setattr(ocr_cli, "load_gold", lambda i: gold)
+    monkeypatch.setattr(ocr_cli, "ocr_path", lambda i: txt)
+    monkeypatch.setattr(ocr_cli, "OCR_SCORES", tmp_path / "_scores.json")
+    result = CliRunner().invoke(ocr_cli.app, ["score"])
+    assert result.exit_code == 0, result.output
+    assert "WARNING" in result.output and "inv-en-01.poison" in result.output
+    written = json.loads((tmp_path / "_scores.json").read_text())
+    assert written["injection_reach_by_style"]["low_contrast"] == {"n": 1, "reached": 0}
 
 
 # ---- the container (slow) ---------------------------------------------------------------

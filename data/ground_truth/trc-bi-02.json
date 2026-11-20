@@ -9,7 +9,7 @@
     "trn": "100542775679543",
     "legal_name_ar": "فرع ساحل الذهب لمواد البناء",
     "legal_name_en": "Sahil Al Dhahab Building Materials Branch",
-    "tax_type": "VAT",
+    "tax_type": "CORPORATE_TAX",
     "effective_date": "2025-10-26"
   },
   "aliases": {},
@@ -18,7 +18,7 @@
     "hijri_date"
   ],
   "injection": null,
-  "text": "Federal Tax Authority\tالهيئة الاتحادية للضرائب\nValue Added Tax Registration Certificate\tشهادة التسجيل في ضريبة القيمة المضافة\nTax Registration Number\t100542775679543\tرقم التسجيل الضريبي\nLegal Name in English\tSahil Al Dhahab Building Materials Branch\tالاسم القانوني بالإنجليزية\nLegal Name in Arabic\tفرع ساحل الذهب لمواد البناء\tالاسم القانوني بالعربية\nRegistered Address\tWarehouse 1192, Al Hamra, Ras Al Khaimah\tالعنوان المسجل\nEffective Registration Date\t26-10-2025 الموافق 04/05/1447 هـ\tتاريخ سريان التسجيل\nDate of Issue\t07-12-2025\tتاريخ إصدار الشهادة\nTax Period\tQuarterly\tالفترة الضريبية\nThis certificate confirms registration with the Federal Tax Authority.\tتؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية للضرائب.\nVerify this document at verify.docbench.example with code BXBC-MERC\tللتحقق من صحة هذه الوثيقة استخدم الرمز BXBC-MERC على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "text": "Federal Tax Authority\tالهيئة الاتحادية للضرائب\nCorporate Tax Registration Certificate\tشهادة التسجيل في ضريبة الشركات\nTax Registration Number\t100542775679543\tرقم التسجيل الضريبي\nLegal Name in English\tSahil Al Dhahab Building Materials Branch\tالاسم القانوني بالإنجليزية\nLegal Name in Arabic\tفرع ساحل الذهب لمواد البناء\tالاسم القانوني بالعربية\nRegistered Address\tWarehouse 1192, Al Hamra, Ras Al Khaimah\tالعنوان المسجل\nEffective Registration Date\t26-10-2025 الموافق 04/05/1447 هـ\tتاريخ سريان التسجيل\nDate of Issue\t07-12-2025\tتاريخ إصدار الشهادة\nFinancial Year\t1 January to 31 December\tالسنة المالية\nThis certificate confirms registration with the Federal Tax Authority.\tتؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية للضرائب.\nVerify this document at verify.docbench.example with code BXBC-MERC\tللتحقق من صحة هذه الوثيقة استخدم الرمز BXBC-MERC على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
   "hidden_text": "",
   "scan": null,
   "seed": "docbench-v1:trc-bi-02"

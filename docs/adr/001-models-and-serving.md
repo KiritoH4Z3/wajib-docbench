@@ -50,7 +50,15 @@ built for document parsing and extraction, and it speaks the OpenAI chat API. Tw
 are recorded rather than hidden:
 
 - It ignores `temperature`, so its sampling cannot be pinned the way the open models' can.
-  Its run-to-run variance is measured by repeating a subset.
+  `make samples MODEL=gemini-3.5-flash-lite` repeats 12 documents (one per document type and
+  layout) three times into separate run directories, and the report publishes the
+  disagreement between draws. Until that has run, the
+  API row is a single draw and the README says so.
+- It thinks before answering at its default (minimal) setting and gets a 4,096-token output
+  budget so thinking cannot truncate the JSON; the open models get 1,024. Its latency and cost
+  include the thinking, which is recorded separately where the API reports it. This is the same
+  kind of confound that kept Jais 3 out, accepted here because the baseline is the product a
+  buyer would actually call, as configured by default.
 - Free-tier inputs and outputs may be used to improve Google's products and may be read by
   human reviewers. Every document here is synthetic, which is the only reason this is
   acceptable, and it is exactly the data-residency point the self-hosted models answer.
@@ -102,8 +110,11 @@ switched off (`max_retries=0`) so a rate-limit retry is always visible in the lo
   llama.cpp" unless the Kaggle vLLM run happens.
 - Self-hosted cost is a cloud equivalent: measured throughput on the laptop GPU, priced at an
   AWS g4dn.xlarge (T4 16 GB) at USD 0.526 per hour on demand in us-east-1 (20 November 2026),
-  with an L4 and an RTX 4090 as sensitivity rows. A T4 has more memory bandwidth than this
-  laptop GPU (320 against 256 GB/s), so the assumption does not flatter the open models.
+  with an L4 and an RTX 4090 as sensitivity rows, assuming the instance is busy 100% of the
+  time. What is known about the match: a T4 has more memory bandwidth than this laptop GPU
+  (320 against 256 GB/s), which favours the T4 when generating tokens; prefill compute and
+  sustained clocks under load were not measured on a T4, so the self-hosted cost is an
+  estimate, not a measurement. A measured Kaggle T4 run would replace it.
 - Quantisation is part of the result. The open models run at 4 bits; their vendors evaluated
   them at 16. The README says so next to every score.
 

@@ -26,6 +26,7 @@ except ImportError:  # pragma: no cover
 
 from bench import paths
 from bench.config import ModelConfig
+from bench.serve import LLAMACPP_IMAGE
 
 BACKOFF_START_S = 30.0  # first wait after a rate limit; doubles each retry. Tests patch it.
 
@@ -35,6 +36,9 @@ _http_client_factory: Callable[[], httpx.AsyncClient | None] = lambda: None  # n
 
 @dataclass
 class CallResult:
+    """One completion. `itl_s` holds inter-chunk gaps between content or reasoning chunks
+    (about one token per chunk on llama.cpp, so not strictly per token on other servers)."""
+
     raw: str
     prompt_tokens: int | None
     completion_tokens: int | None
@@ -45,6 +49,9 @@ class CallResult:
     started_at: str
     finish_reason: str | None = None
     cached: bool = False
+    reasoning_tokens: int | None = None
+    prompt_cached_tokens: int | None = None
+    prompt_evaluated_tokens: int | None = None
 
 
 @dataclass
@@ -58,6 +65,20 @@ class ApiError(Exception):
 
     def __str__(self) -> str:
         return f"{self.code}: {self.message}"
+
+
+class CacheMiss(Exception):
+    """A cache-only run found no stored response for a document."""
+
+    def __init__(self, doc_id: str, key: str, slug: str = "<slug>") -> None:
+        self.doc_id = doc_id
+        self.key = key
+        self.slug = slug
+        super().__init__(
+            f"No cached response for document {doc_id or '(unknown)'} (key {key[:12]}). "
+            f"Run `make extract MODEL={slug} FRESH=1` with the server up to store it. "
+            "Nothing was written."
+        )
 
 
 class Pacer:
@@ -199,6 +220,10 @@ def estimate_tokens(chars: int) -> int:
     return math.ceil(chars / 4)
 
 
+def _int_or_none(value: object) -> int | None:
+    return value if isinstance(value, int) and not isinstance(value, bool) else None
+
+
 async def _stream_once(model: ModelConfig, messages: list[dict]) -> CallResult:
     key = model.api_key()  # raises MissingApiKey here, only on a real request
     client = openai.AsyncOpenAI(
@@ -215,6 +240,7 @@ async def _stream_once(model: ModelConfig, messages: list[dict]) -> CallResult:
     itl: list[float] = []
     last_content_t: float | None = None
     usage = None
+    timings: dict = {}
     finish_reason = None
     try:
         stream = await client.chat.completions.create(
@@ -228,6 +254,9 @@ async def _stream_once(model: ModelConfig, messages: list[dict]) -> CallResult:
             now = time.perf_counter()
             if chunk.usage is not None:
                 usage = chunk.usage
+            chunk_timings = (getattr(chunk, "model_extra", None) or {}).get("timings")
+            if isinstance(chunk_timings, dict):
+                timings = chunk_timings
             if not chunk.choices:
                 continue
             choice = chunk.choices[0]
@@ -240,7 +269,9 @@ async def _stream_once(model: ModelConfig, messages: list[dict]) -> CallResult:
             if (content or reasoning) and ttft is None:
                 ttft = now - t0
                 last_content_t = now
-            elif content and last_content_t is not None:
+            elif (content or reasoning) and last_content_t is not None:
+                # Gaps run between consecutive content-or-reasoning chunks, so a gap never
+                # spans the whole thinking phase.
                 itl.append(now - last_content_t)
                 last_content_t = now
             parts.append(content)
@@ -263,8 +294,13 @@ async def _stream_once(model: ModelConfig, messages: list[dict]) -> CallResult:
         prompt = estimate_tokens(sum(len(m["content"]) for m in messages))
         completion = estimate_tokens(len(raw))
         estimated = True
+    details = getattr(usage, "completion_tokens_details", None) if usage is not None else None
+    reasoning_tokens = getattr(details, "reasoning_tokens", None)
     return CallResult(
-        raw, prompt, completion, estimated, ttft, itl, total, started_at, finish_reason
+        raw, prompt, completion, estimated, ttft, itl, total, started_at, finish_reason,
+        reasoning_tokens=reasoning_tokens if isinstance(reasoning_tokens, int) else None,
+        prompt_cached_tokens=_int_or_none(timings.get("cache_n")),
+        prompt_evaluated_tokens=_int_or_none(timings.get("prompt_n")),
     )
 
 
@@ -290,14 +326,32 @@ async def call_model(
 # ---------------------------------------------------------------- cache
 
 
-def cache_key(model: ModelConfig, messages: list[dict]) -> str:
+def model_identity(model: ModelConfig) -> dict:
+    """The declared identity of the weights and the server that produced a response. Read
+    from config and constants only, never from disk or the server, so a replay needs neither."""
+    identity: dict = {
+        "hf_repo": model.hf_repo,
+        "hf_file": model.hf_file,
+        "hf_revision": model.hf_revision,
+        "quant": model.quant,
+        "serve": model.serve,
+    }
+    if model.served_by == "llamacpp":
+        identity["llamacpp_image"] = LLAMACPP_IMAGE
+    return identity
+
+
+def cache_key(model: ModelConfig, messages: list[dict], sample: int = 0) -> str:
     payload = {
         "slug": model.slug,
         "model": model.model,
         "base_url": model.base_url,
         "messages": messages,
         "sampling": sampling_params(model),
+        "identity": model_identity(model),
     }
+    if sample > 0:
+        payload["sample"] = sample
     canonical = json.dumps(payload, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
@@ -320,6 +374,9 @@ def _from_cache(path: Path) -> CallResult | None:
             started_at=d["started_at"],
             finish_reason=d.get("finish_reason"),
             cached=True,
+            reasoning_tokens=d["usage"].get("reasoning_tokens"),
+            prompt_cached_tokens=d["usage"].get("prompt_cached_tokens"),
+            prompt_evaluated_tokens=d["usage"].get("prompt_evaluated_tokens"),
         )
     except (OSError, ValueError, KeyError, TypeError):
         return None  # unreadable entry: treat as a miss and overwrite it
@@ -332,6 +389,9 @@ def _to_cache(path: Path, r: CallResult) -> None:
             "prompt_tokens": r.prompt_tokens,
             "completion_tokens": r.completion_tokens,
             "estimated": r.usage_estimated,
+            "reasoning_tokens": r.reasoning_tokens,
+            "prompt_cached_tokens": r.prompt_cached_tokens,
+            "prompt_evaluated_tokens": r.prompt_evaluated_tokens,
         },
         "timings": {"ttft_s": r.ttft_s, "itl_s": r.itl_s, "total_s": r.total_s},
         "started_at": r.started_at,
@@ -349,14 +409,20 @@ async def get_completion(
     use_cache: bool = True,
     fresh: bool = False,
     pacer: Pacer | None = None,
+    sample: int = 0,
+    cache_only: bool = False,
 ) -> CallResult:
     """Cached replay when possible, else a real call that is stored. fresh=True skips the
-    read but still writes. use_cache=False neither reads nor writes."""
-    path = _cache_path(model, cache_key(model, messages))
+    read but still writes. use_cache=False neither reads nor writes. cache_only=True never
+    calls the server: a miss raises CacheMiss and nothing is written."""
+    key = cache_key(model, messages, sample)
+    path = _cache_path(model, key)
     if use_cache and not fresh:
         hit = _from_cache(path)
         if hit is not None:
             return hit
+    if cache_only:
+        raise CacheMiss("", key, model.slug)
     result = await call_model(model, messages, pacer)
     if use_cache:
         _to_cache(path, result)

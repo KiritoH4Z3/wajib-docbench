@@ -1,25 +1,33 @@
 {
   "selected_psm": 4,
-  "rule": "highest field grounding recall; lower normalised CER breaks ties",
+  "rule": "highest field grounding recall; modes within 1 percentage point of the best are tied and the lower normalised CER (line-aligned cer_norm) decides; the lower psm number breaks a remaining tie. cer_strict_norm (line order counts) is recorded beside it.",
+  "recall_tie_band": 0.01,
+  "cer_forms": {
+    "cer_norm": "line-aligned, order-agnostic, tolerant of wrapped and merged lines",
+    "cer_strict_norm": "whole text, line order counts"
+  },
   "documents": "base (variant clean)",
   "per_psm": {
     "3": {
       "n_docs": 60,
       "n_values": 425,
-      "field_grounding_recall": 0.7741176470588236,
-      "cer_norm": 0.33244869102876323
+      "field_grounding_recall": 0.7905882352941176,
+      "cer_norm": 0.19874524639975896,
+      "cer_strict_norm": 0.3466483060058527
     },
     "4": {
       "n_docs": 60,
       "n_values": 425,
-      "field_grounding_recall": 0.7764705882352941,
-      "cer_norm": 0.10038419792747016
+      "field_grounding_recall": 0.7929411764705883,
+      "cer_norm": 0.09847272252001825,
+      "cer_strict_norm": 0.0967326164830571
     },
     "6": {
       "n_docs": 60,
       "n_values": 425,
-      "field_grounding_recall": 0.7576470588235295,
-      "cer_norm": 0.11558115940817745
+      "field_grounding_recall": 0.7717647058823529,
+      "cer_norm": 0.11558277531865382,
+      "cer_strict_norm": 0.11229302063579268
     }
   }
 }

@@ -9,7 +9,7 @@
     "trn": "100716316798689",
     "legal_name_ar": null,
     "legal_name_en": "Al Marjan Perfumes FZ-LLC",
-    "tax_type": "CORPORATE_TAX",
+    "tax_type": "VAT",
     "effective_date": "2025-11-19"
   },
   "aliases": {},
@@ -18,7 +18,7 @@
     "absent_field"
   ],
   "injection": null,
-  "text": "Federal Tax Authority\nCorporate Tax Registration Certificate\nTax Registration Number\t100716316798689\nLegal Name\tAl Marjan Perfumes FZ-LLC\nRegistered Address\tWarehouse 1579, Industrial Area 6, Sharjah\nEffective Registration Date\t19.11.2025\nDate of Issue\t23.11.2025\nFinancial Year\t1 January to 31 December\nThis certificate confirms registration with the Federal Tax Authority.\nVerify this document at verify.docbench.example with code H3ZE-NFXD\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "text": "Federal Tax Authority\nValue Added Tax Registration Certificate\nTax Registration Number\t100716316798689\nLegal Name\tAl Marjan Perfumes FZ-LLC\nRegistered Address\tWarehouse 1579, Industrial Area 6, Sharjah\nEffective Registration Date\t19.11.2025\nDate of Issue\t23.11.2025\nTax Period\tQuarterly\nThis certificate confirms registration with the Federal Tax Authority.\nVerify this document at verify.docbench.example with code H3ZE-NFXD\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
   "hidden_text": "",
   "scan": null,
   "seed": "docbench-v1:trc-en-05"

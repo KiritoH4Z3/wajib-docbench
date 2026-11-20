@@ -1,6 +1,6 @@
 Federal Tax Authority
 
-Corporate Tax Registration Certificate
+Value Added Tax Registration Certificate
 
 Tax Registration Number           100066312085688
 
@@ -11,7 +11,7 @@ Effective Registration Date         2026-02-15
 
 Date of Issue                          2026-06-08
 
-Financial Year                              1 January to 31 December
+Tax Period                           Quarterly
 
 This certificate confirms registration with the Federal Tax Authority.
 

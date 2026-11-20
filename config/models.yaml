@@ -14,6 +14,7 @@ models:
     vendor: Technology Innovation Institute (Abu Dhabi)
     hf_repo: tiiuae/Falcon-H1-7B-Instruct-GGUF
     hf_file: Falcon-H1-7B-Instruct-Q4_K_M.gguf
+    hf_revision: 058c8c8f08e57da131ba5f070f9ff1280d141c39
     quant: Q4_K_M (4.60 GB)
     licence: TII Falcon License (December 2024) and its acceptable use policy
     licence_url: https://falconllm.tii.ae/falcon-terms-and-conditions.html
@@ -25,6 +26,7 @@ models:
       engine: llamacpp
       port: 8080
       ctx_per_slot: 4096
+      weights_sha256: 145def0b4cd36500bf538ed7ac895b5c1851e02e802b2d1c12ffa6afdbaff25d
       args: ["-ngl", "99", "-fa", "on", "--jinja"]
 
   - slug: jais-2-8b

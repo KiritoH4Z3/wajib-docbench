@@ -53,27 +53,29 @@ def make_model(**kw) -> ModelConfig:
     return ModelConfig(**(base | kw))
 
 
-def sse(content_parts, usage=None, reasoning=None) -> bytes:
+def sse(content_parts, usage=None, reasoning=None, timings=None) -> bytes:
     def chunk(delta, usage=None, choices=True):
         body = {"id": "c", "object": "chat.completion.chunk", "created": 1, "model": "fake-1"}
+        if timings is not None and not choices:
+            body["timings"] = timings
         body["choices"] = [{"index": 0, "delta": delta, "finish_reason": None}] if choices else []
         if usage is not None:
             body["usage"] = usage
         return "data: " + json.dumps(body) + "\n\n"
 
     out = []
-    if reasoning:
-        out.append(chunk({"reasoning_content": reasoning}))
+    for part in ([reasoning] if isinstance(reasoning, str) else reasoning or []):
+        out.append(chunk({"reasoning_content": part}))
     out += [chunk({"content": p}) for p in content_parts]
     out.append(chunk({}, usage, choices=False) if usage else "")
     out.append("data: [DONE]\n\n")
     return "".join(out).encode()
 
 
-def stream_response(content_parts, usage=None, reasoning=None) -> httpx.Response:
+def stream_response(content_parts, usage=None, reasoning=None, timings=None) -> httpx.Response:
     return httpx.Response(
         200,
-        content=sse(content_parts, usage, reasoning),
+        content=sse(content_parts, usage, reasoning, timings),
         headers={"content-type": "text/event-stream"},
     )
 
@@ -237,6 +239,112 @@ def test_request_parameters(env):
     assert body["stream"] is True and body["stream_options"] == {"include_usage": True}
     assert "temperature" not in body and "seed" not in body and body["top_k"] == 1
     assert body["max_tokens"] == 1024
+
+
+def test_gap_list_never_spans_the_reasoning_phase(env, monkeypatch):
+    """Silent failure: the first gap ran from the first reasoning chunk to the first content
+    chunk, so a thinking model's inter-token latency included its whole thinking phase."""
+    ticks = iter([0.0] + [1.0 + 0.1 * i for i in range(20)])
+    monkeypatch.setattr(client.time, "perf_counter", lambda: next(ticks))
+    env.script = [stream_response(["a", "b"], reasoning=["t1", "t2", "t3"])]
+    result = client_call(make_model())
+    # chunks at 1.0, 1.1, 1.2 (reasoning), 1.3, 1.4 (content): four gaps of about 0.1 s
+    assert len(result.itl_s) == 4 and max(result.itl_s) < 0.15
+
+
+def test_reasoning_tokens_and_llamacpp_timings_are_read(env):
+    """Silent failure: thinking tokens and llama.cpp prompt reuse were reported by the server
+    and dropped, so a cached prompt looked like a fast one."""
+    usage = {"prompt_tokens": 50, "completion_tokens": 10, "total_tokens": 60,
+             "completion_tokens_details": {"reasoning_tokens": 7}}
+    env.script = [stream_response([json.dumps(INVOICE_OK)], usage,
+                                  timings={"cache_n": 30, "prompt_n": 20})]
+    (rec,) = run(make_model())
+    a = rec.attempts[0]
+    assert (a.reasoning_tokens, a.prompt_cached_tokens, a.prompt_evaluated_tokens) == (7, 30, 20)
+    env.script = []
+    (again,) = run(make_model())  # replay keeps them
+    assert again.attempts[0].prompt_cached_tokens == 30 and again.attempts[0].cached
+
+
+def test_cache_key_follows_declared_model_identity():
+    """Silent failure: swapping the quant, revision, weights file or server flags replayed
+    the old model's answers under the new model's name."""
+    msgs = [{"role": "user", "content": "q"}]
+    base = dict(kind="local", served_by="llamacpp", api_key_env=None, hf_repo="r",
+                hf_file="f.gguf", hf_revision="aaa", quant="Q4", serve={"args": ["-ngl", "99"]})
+    k0 = client.cache_key(make_model(**base), msgs)
+    for change in ({"hf_revision": "bbb"}, {"quant": "Q8"}, {"hf_file": "g.gguf"},
+                   {"hf_repo": "r2"}, {"serve": {"args": ["-ngl", "0"]}}):
+        assert client.cache_key(make_model(**(base | change)), msgs) != k0, change
+    assert client.cache_key(make_model(**base), msgs) == k0
+
+
+def test_cache_key_includes_pinned_image_for_llamacpp_only(monkeypatch):
+    msgs = [{"role": "user", "content": "q"}]
+    local = make_model(kind="local", served_by="llamacpp", api_key_env=None)
+    k0 = client.cache_key(local, msgs)
+    monkeypatch.setattr(client, "LLAMACPP_IMAGE", "other:tag")
+    assert client.cache_key(local, msgs) != k0
+    api = make_model()
+    k_api = client.cache_key(api, msgs)
+    monkeypatch.setattr(client, "LLAMACPP_IMAGE", "third:tag")
+    assert client.cache_key(api, msgs) == k_api
+
+
+def test_cache_only_miss_raises_naming_the_document_and_writes_nothing(env):
+    """Silent failure: a replay with a missing cache entry became an empty record scored as
+    an F1 of 0, or called the server."""
+    with pytest.raises(client.CacheMiss, match=r"tl-1.*make extract MODEL=fake FRESH=1"):
+        run(make_model(), cache_only=True)
+    assert env.requests == []
+    assert not (paths.RUNS / "fake").exists() and not (paths.CACHE / "fake").exists()
+
+
+def test_cache_only_replays_a_hit_without_a_key(env, monkeypatch):
+    env.script = [reply(INVOICE_OK)]
+    run(make_model())
+    monkeypatch.delenv("FAKE_KEY")
+    (rec,) = run(make_model(), cache_only=True)
+    assert rec.attempts[0].cached and len(env.requests) == 1
+
+
+def test_samples_have_their_own_key_and_run_dir(env):
+    """Silent failure: a second draw replayed the first draw's cached answer, so the API
+    row's run-to-run variance was always zero."""
+    env.script = [reply(INVOICE_OK), reply(INVOICE_OK)]
+    run(make_model())
+    (rec,) = run(make_model(), sample=1)
+    assert len(env.requests) == 2 and not rec.attempts[0].cached
+    assert (paths.run_dir("fake", "ocr", "extract-s1") / "tl-1.json").exists()
+    assert (paths.run_dir("fake", "ocr", "extract") / "tl-1.json").exists()
+    msgs = [{"role": "user", "content": "q"}]
+    assert client.cache_key(make_model(), msgs, 0) == client.cache_key(make_model(), msgs)
+    assert client.cache_key(make_model(), msgs, 2) != client.cache_key(make_model(), msgs, 1)
+
+
+def test_weights_sha256_is_verified_when_pinned(tmp_path):
+    """Silent failure: a truncated or substituted GGUF was served under the pinned model name."""
+    import hashlib
+
+    from bench import serve
+
+    f = tmp_path / "w.gguf"
+    f.write_bytes(b"weights")
+    good = hashlib.sha256(b"weights").hexdigest()
+    ok = make_model(serve={"weights_sha256": good})
+    assert serve.verify_weights(ok, f) == good
+    with pytest.raises(serve.WeightsMismatch, match="make models MODEL=fake"):
+        serve.verify_weights(make_model(serve={"weights_sha256": "0" * 64}), f)
+    assert serve.verify_weights(make_model(), f) == good  # nothing pinned: no check
+
+
+def test_falcon_config_pins_revision_and_weights_hash():
+    from bench.config import load_models
+
+    falcon = next(m for m in load_models() if m.slug == "falcon-h1-7b")
+    assert falcon.hf_revision == "058c8c8f08e57da131ba5f070f9ff1280d141c39"
+    assert len(falcon.serve["weights_sha256"]) == 64
 
 
 def client_call(model):

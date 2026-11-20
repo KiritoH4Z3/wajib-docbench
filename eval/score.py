@@ -13,7 +13,7 @@ from typing import Any
 from bench.inputs import list_doc_ids, load_gold, load_input_text
 from bench.paths import OCR_SCORES, run_dir
 from bench.records import HARD_CASES, ExtractionRecord, GuardrailRecord, TextSource, read_model
-from eval import metrics
+from eval import metrics, uncertainty
 from eval.consequences import licence_consequences
 from eval.metrics import DocResult
 
@@ -70,6 +70,8 @@ def score_results(
         "attribution": metrics.attribution(base),
         "consequences": licence_consequences(base),
         "scanned": metrics.scanned(scanned_results, clean_by_id),
+        # Stratified bootstrap 95% intervals over the base documents (eval.uncertainty).
+        "ci95": uncertainty.bootstrap_ci(base),
     }
 
 
@@ -82,7 +84,10 @@ def score_model(model_slug: str, text_source: TextSource) -> dict:
     else:
         # The oracle text carries every injection, hidden ones included.
         reached = {r.gold.doc_id: True for r in poison_results}
-    return score_results(base, scanned_results, poison_results, reached)
+    block = score_results(base, scanned_results, poison_results, reached)
+    # Run-to-run spread when extract-s<k> sample runs exist, else None.
+    block["sample_variance"] = uncertainty.sample_variance(model_slug, text_source)
+    return block
 
 
 def score_dataset() -> dict:

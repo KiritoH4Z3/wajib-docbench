@@ -12,7 +12,7 @@ Attention                           David John Wilson                           
 ‎No.     Description                                                              Qty         Unit Price            Amount ‏د.!‎
 ‏م‎        Cao! .. ‏المبلغ.                    د.! سعر             الوحدة                                                                الكمية‎
 1         LED panel light 60x60                                                    30                92.50                 2,775.00
-2        Ceramic floor tiles, per sqm                                             31                44.19                 1,369.89
+2          Ceramic floor tiles, per sqm                                            EET                   44.19                    1,369.89
 3        Steel rebar, per tonne                                                      3             2,965.72        8,897.16
 4           Cement, 50 kg bag                                                                      15                    19.75                       296.25
 Subtotal excl. VAT                                   113,338.30 ‏الإجمالي قبل                     الضريبة‎

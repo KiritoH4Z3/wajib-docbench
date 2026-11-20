@@ -8,7 +8,7 @@ PARALLEL ?= 4
 FRESH ?= 0
 PY := uv run python
 
-.PHONY: help setup data check ocr models serve stop extract guard perf aiperf report bench test lint demo-poison
+.PHONY: help setup data check ocr ocr-check models serve stop extract samples guard perf aiperf report bench test lint demo-poison
 
 help:
 	@echo "make setup            install Python deps, Chromium and the OCR image"
@@ -18,6 +18,7 @@ help:
 	@echo "make serve MODEL=x    start llama.cpp for a local model (PARALLEL slots)"
 	@echo "make stop             stop the model server"
 	@echo "make extract MODEL=x  extract fields (SOURCE=ocr|oracle, FRESH=1 to skip the cache)"
+	@echo "make samples MODEL=x  repeat 12 documents 3 times to measure run-to-run variance"
 	@echo "make perf MODEL=x     throughput and latency at concurrency 1, 4 and 16"
 	@echo "make report           write results/results.json, the chart and the README table"
 	@echo "make bench            everything above from cached responses"
@@ -39,6 +40,11 @@ ocr:
 	$(PY) -m ocr run
 	$(PY) -m ocr score
 
+# Reruns OCR into a scratch directory and fails if any text differs from the committed output.
+ocr-check:
+	$(PY) -m ocr run --check
+	$(PY) -m ocr score
+
 models:
 	$(PY) -m bench models --model $(MODEL)
 
@@ -52,6 +58,9 @@ extract:
 	$(PY) -m bench extract --model $(MODEL) --source $(SOURCE) $(if $(filter 1,$(FRESH)),--fresh,)
 	$(PY) -m bench guard --model $(MODEL) --source $(SOURCE)
 
+samples:
+	$(PY) -m bench samples --model $(MODEL) --source $(SOURCE)
+
 guard:
 	$(PY) -m bench guard --model $(MODEL) --source $(SOURCE)
 
@@ -64,7 +73,7 @@ aiperf:
 report:
 	$(PY) -m bench report
 
-bench: data ocr
+bench: data ocr-check
 	$(PY) -m bench replay $(if $(filter 1,$(FRESH)),--fresh,)
 	$(PY) -m bench report
 

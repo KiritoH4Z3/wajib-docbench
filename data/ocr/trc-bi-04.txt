@@ -1,13 +1,13 @@
 Federal Tax Authority ‏الهيئة الاتحادية                                                        للضرائب‎
 
-Value Added Tax Registration Certificate ‏شهادة التسجيل في ضريبة القيمة            المضافة‎
+Corporate Tax Registration Certificate ‏شهادة التسجيل في ضريبة                  الشركات‎
 Tax Registration Number             Ve AVYORVVI EV YY ‏رقم التسجيل                                                                          الضريبي‎
 Legal Name in English               Al Nakhla Events Est. ‏الاسم القانوني                                                           بالإنجليزية‎
 Legal Name in Arabic ‏لتنظيم                الفعاليات‎ dsl ‏الاسم القانوني                                                            بالعربية مؤسسة‎
 Registered Address                 Warehouse 1274, Al Khalidiyah, Abu Dhabi ‏العنوان                                         المسجل‎
 Effective Registration Date ‏الموافق 13/0/1247          ه‎ 0/٠١١0 ‏تاريخ سريان                                                       التسجيل‎
 Date of Issue                             1/1/0 ‏تاريخ إصدار                                                                                        الشهادة‎
-Tax Period                               Quarterly ‏الفترة                                                                                        الضريبية‎
+Financial Year                           1 January to 31 December ‏السنة                                                                       المالية‎
 This certificate confirms registration with the Federal Tax Authority. ‏تؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية                                   للضرائب.‎
 
 Verify this document at verify.docbench.example with code LR2J-JMFG      verify.docbench.example ‏على الموقع‎ LR2J-JMFG ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎

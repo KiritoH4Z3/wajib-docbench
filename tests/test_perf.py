@@ -93,7 +93,7 @@ PRICING = {
 
 
 def test_api_cost_includes_completion_tokens_priced_as_output():
-    perf = {"mean_prompt_tokens": 1000, "mean_completion_tokens": 400}
+    perf = {"mean_prompt_tokens_per_doc": 1000, "mean_completion_tokens_per_doc": 400}
     out = cost_per_1000(_model("api", 1), perf, PRICING)
     # (1000 * 0.30 + 400 * 2.50) / 1e6 * 1000 = 1.30
     assert out["per_1000_docs_usd"] == pytest.approx(1.30)
@@ -101,18 +101,22 @@ def test_api_cost_includes_completion_tokens_priced_as_output():
 
 
 def test_self_hosted_cost_uses_best_concurrency_and_sensitivity():
-    perf = {"throughput": {"1": {"docs_per_min": 5.0}, "4": {"docs_per_min": 10.0},
-                           "16": {"docs_per_min": 8.0}}}
+    perf = {"throughput": {"1": {"docs_per_min": 5.0, "api_errors": 0},
+                           "4": {"docs_per_min": 10.0, "api_errors": 0},
+                           "16": {"docs_per_min": 8.0, "api_errors": 0}}}
     out = cost_per_1000(_model(), perf, PRICING)
     # 10 docs/min = 600 docs/hour; 0.60 / 600 * 1000 = 1.00
     assert out["per_1000_docs_usd"] == pytest.approx(1.0)
     assert out["sensitivity"][0]["per_1000_docs_usd"] == pytest.approx(2.0)
     assert "concurrency 4" in out["basis"] and "$0.6/hour" in out["basis"]
+    assert out["basis"].endswith("assuming the instance is busy 100% of the time.")
 
 
-def test_self_hosted_cost_accepts_flat_contract_map():
+def test_flat_map_without_error_counts_cannot_price_a_document():
+    """A flat docs-per-minute map carries no api_errors, so it cannot show the level was
+    healthy; cost refuses it with a reason instead of trusting the number."""
     out = cost_per_1000(_model(), {"throughput_docs_per_min": {"1": 6.0, "4": 12.0}}, PRICING)
-    assert out["per_1000_docs_usd"] == pytest.approx(0.6 / 720 * 1000)
+    assert out["per_1000_docs_usd"] is None and "api_errors" in out["basis"]
 
 
 @pytest.mark.parametrize("kind,perf", [("api", {}), ("local", {}), ("local", {"throughput": {}})])
@@ -243,3 +247,82 @@ def test_build_inputs_writes_one_prompt_per_base_doc(monkeypatch, tmp_path):
     rows = [json.loads(x) for x in (out / "prompts.jsonl").read_text("utf-8").splitlines()]
     assert len(rows) == 2 and "text a" in rows[0]["text"] and "<document>" in rows[0]["text"]
     assert (out / "system_prompt.txt").read_text("utf-8").strip()
+
+
+# ---------------------------------------------------------------- review fixes
+
+
+def test_cost_skips_levels_where_requests_failed():
+    """Silent failure: a level where every request errored finishes fast, tops the docs per
+    minute ranking and prices a document at almost nothing."""
+    perf = {"throughput": {"1": {"docs_per_min": 5.0, "api_errors": 0},
+                           "4": {"docs_per_min": 500.0, "api_errors": 60},
+                           "16": {"docs_per_min": 900.0}}}
+    out = cost_per_1000(_model(), perf, PRICING)
+    assert out["per_1000_docs_usd"] == pytest.approx(0.6 / 300 * 1000)  # c=1 only
+    assert "concurrency 1" in out["basis"]
+
+
+def test_cost_has_a_reason_when_every_level_failed():
+    perf = {"throughput": {"1": {"docs_per_min": 500.0, "api_errors": 3}}}
+    out = cost_per_1000(_model(), perf, PRICING)
+    assert out["per_1000_docs_usd"] is None and "API errors" in out["basis"]
+
+
+def _doc_record(doc_id, *attempts):
+    r = _record(*attempts)
+    return r.model_copy(update={"doc_id": doc_id})
+
+
+def test_per_document_token_means_sum_the_retry():
+    """Silent failure: a document that needed a schema retry was priced as two cheap
+    documents because the mean was taken over attempts."""
+    two = (_attempt(prompt=100, completion=10), _attempt(prompt=150, completion=20))
+    recs = [_doc_record("a", *two), _doc_record("b", _attempt(prompt=100, completion=10))]
+    s = latency_stats(recs)
+    assert s["mean_prompt_tokens_per_doc"] == pytest.approx(175)
+    assert s["mean_completion_tokens_per_doc"] == pytest.approx(20)
+    assert s["mean_prompt_tokens"] == pytest.approx(350 / 3)  # per attempt, unchanged
+
+
+def test_doc_ids_filter_keeps_variants_out_of_the_mean():
+    recs = [_doc_record("a", _attempt(prompt=100)), _doc_record("a.poison", _attempt(prompt=900))]
+    s = latency_stats(recs, doc_ids={"a"})
+    assert s["mean_prompt_tokens_per_doc"] == 100 and s["n_requests"] == 1
+
+
+def test_api_cost_refuses_estimated_usage():
+    """Silent failure: a cost built from chars/4 estimates was published as a billed number."""
+    perf = {"mean_prompt_tokens_per_doc": 1000, "mean_completion_tokens_per_doc": 400,
+            "n_usage_estimated": 2}
+    out = cost_per_1000(_model("api", 1), perf, PRICING)
+    assert out["per_1000_docs_usd"] is None and "estimates" in out["basis"]
+
+
+def test_throughput_separates_api_errors_and_disables_prompt_cache(monkeypatch, tmp_path):
+    """Silent failures: failed documents counted as fast answers in docs_per_min, and
+    llama.cpp serving repeated prompts from its cache so higher levels look faster."""
+    import extract.runner as runner_mod
+    from perf import throughput
+
+    seen = []
+
+    async def fake_run(model, doc_ids, text_source, **kw):
+        seen.append(model.extra_body)
+        ok = _record(_attempt(), final={"a": 1})
+        ok.attempts[0].prompt_cached_tokens = 40
+        return [ok, _record(api_error="rate_limit"), _record(_attempt(), final=None)]
+
+    monkeypatch.setattr(runner_mod, "run_extraction", fake_run)
+    monkeypatch.setattr(throughput, "PERF", tmp_path)
+    m = _model().model_copy(update={"extra_body": {"top_k": 1}})
+    out = asyncio.run(throughput.measure_throughput(
+        m, ["a", "b", "c"], (1,), clock=iter([0.0, 60.0]).__next__, parallel_slots=4))
+    assert seen == [{"top_k": 1, "cache_prompt": False}]
+    assert m.extra_body == {"top_k": 1}  # the caller's config is not mutated
+    lvl = out["levels"]["1"]
+    assert (lvl["api_errors"], lvl["invalid_outputs"]) == (1, 1)
+    assert lvl["docs_per_min"] == pytest.approx(2.0)  # 2 answered in 60 s
+    assert lvl["prompt_cached_tokens"] == 40
+    assert out["parallel_slots"] == 4
+    assert json.loads((tmp_path / "m" / "throughput.json").read_text())["parallel_slots"] == 4

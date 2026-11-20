@@ -83,11 +83,14 @@ class Attempt(_Model):
     completion_tokens: int | None = None
     usage_estimated: bool = False  # True when the server reported no usage
     ttft_s: float | None = None  # time to first content token, streaming
-    itl_s: list[float] = Field(default_factory=list)  # gaps between streamed chunks
+    itl_s: list[float] = Field(default_factory=list)  # gaps between content/reasoning chunks
     total_s: float | None = None
     started_at: str  # ISO 8601 UTC
     concurrency: int = 1
     cached: bool = False  # replayed from results/cache, timings are from the original call
+    reasoning_tokens: int | None = None  # thinking tokens, when the server reports them
+    prompt_cached_tokens: int | None = None  # llama.cpp timings cache_n (prompt reused)
+    prompt_evaluated_tokens: int | None = None  # llama.cpp timings prompt_n (prompt computed)
 
 
 class ExtractionRecord(_Model):

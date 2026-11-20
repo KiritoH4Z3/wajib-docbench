@@ -106,7 +106,14 @@ The API baseline needs `GEMINI_API_KEY` in `.env` (see `.env.example`).
 - **The TII model is the general Falcon-H1, not Falcon-H1-Arabic**, which has no public weights
   yet. It is the first model swapped in when they appear.
 - **The API model's sampling cannot be pinned.** Gemini 3.5 Flash-Lite ignores `temperature`,
-  so its run-to-run variance is reported beside its score.
+  so one run is one draw. A repeat run on a subset measures how much its answers move between
+  draws; until it has run, the API row is marked as a single draw.
+- **The API model thinks first.** It runs at its default thinking setting with a 4,096-token
+  output budget (the open models get 1,024), and its latency and cost include the thinking.
+- **60 documents is a small sample.** Every headline number carries a 95% interval, and a
+  target whose interval straddles the line is reported as inconclusive rather than met.
+- **OCR settings were tuned on the scored documents.** The page segmentation mode was picked
+  by a pilot on the same 60 documents (ADR-002).
 - **Self-hosted cost is a cloud equivalent:** throughput measured on a laptop GPU, priced at a
   cloud GPU's hourly rate. The assumed price sits next to every cost figure.
 - **The document type is given to the model.** Classifying the document is a separate step and

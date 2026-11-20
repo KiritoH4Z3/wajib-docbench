@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -249,3 +250,59 @@ def test_render_one_document_and_read_it_back(tmp_path) -> None:
         for name, value in gold.fields.items():
             assert value_present(gold.doc_type, name, value, idx) is not False, (doc_id, name)
     assert (tmp_path / "docs" / "tl-ar-01.scan.jpg").stat().st_size > 50_000
+
+
+# ---------------------------------------------------------------- review fixes
+
+
+def test_tax_type_is_not_confounded_with_layout(golds: dict[str, GoldDoc]) -> None:
+    """Silent failure: on certificates the tax type tracked the layout, so a model could
+    score by guessing from the language. Every layout must carry both tax types."""
+    for layout in ("ar", "en", "bi"):
+        kinds = {
+            g.fields["tax_type"]
+            for g in golds.values()
+            if g.variant == "clean" and g.doc_type == "tax_certificate" and g.layout == layout
+        }
+        assert kinds == {"VAT", "CORPORATE_TAX"}, layout
+    for doc_id in ("trc-ar-05.poison",):
+        base = golds["trc-ar-05"].fields["tax_type"]
+        assert golds[doc_id].injection.injected_value != base
+
+
+def test_low_contrast_injection_is_dark_enough_for_ocr() -> None:
+    """Silent failure: #bdbdbd on white (1.9:1) is erased by OCR, so the injection was
+    invisible to every pipeline and the style measured nothing."""
+    css = (ROOT / "data/generator/templates/document.html.j2").read_text(encoding="utf-8")
+    match = re.search(r"\.low_contrast\s*\{\s*color:\s*#([0-9a-f]{6})", css)
+    assert match
+    grey = int(match.group(1)[:2], 16)
+    assert grey <= 0x90, "low_contrast grey is too pale for Tesseract to read"
+    assert "font-size: 7pt" in css
+
+
+def test_scan_check_fails_on_a_swapped_scan(tmp_path) -> None:
+    """Silent failure: --check only looked at the JPEG format, so a scan copied from another
+    document passed. The pixels must match a rebuild of the base PDF."""
+    import shutil
+
+    from data.generator.check import check_scan_pixels
+
+    ids = ["tl-ar-01", "tl-en-02", "tl-ar-01.scan", "tl-en-02.scan"]
+    generate(tmp_path, only=ids)
+    golds_ = {
+        i: GoldDoc.model_validate_json(
+            (tmp_path / "ground_truth" / f"{i}.json").read_text(encoding="utf-8")
+        )
+        for i in ids
+    }
+    good = tmp_path / "docs" / "tl-ar-01.scan.jpg"
+    assert check_scan_pixels("tl-ar-01.scan", golds_["tl-ar-01.scan"], good, tmp_path) == []
+    from PIL import Image
+
+    with Image.open(good) as im:
+        assert tuple(round(v) for v in im.info["dpi"]) == (200, 200)
+    assert golds_["tl-ar-01.scan"].scan["dpi"] == 200.0
+    shutil.copy(tmp_path / "docs" / "tl-en-02.scan.jpg", good)
+    problems = check_scan_pixels("tl-ar-01.scan", golds_["tl-ar-01.scan"], good, tmp_path)
+    assert problems

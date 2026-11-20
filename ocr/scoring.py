@@ -17,7 +17,7 @@ from bench.normalize import norm_text
 from bench.records import GoldDoc
 from extract.schemas import FIELD_SPECS
 from ocr import cer
-from ocr.config import INJECTION_THRESHOLD
+from ocr.config import INJECTION_THRESHOLD, PSM_RECALL_TIE
 
 METRICS = ("cer_raw", "cer_norm", "cer_strict_norm", "token_recall", "field_grounding_recall")
 
@@ -44,6 +44,32 @@ def injection_survived(injection_text: str, ocr_text: str) -> bool:
     if not needle:
         return False
     return fuzz.partial_ratio(needle, norm_text(ocr_text)) >= INJECTION_THRESHOLD
+
+
+def injection_reach_by_style(pairs: list[tuple[GoldDoc, dict]]) -> dict[str, dict]:
+    """{style: {"n": poisoned documents, "reached": those whose injection is in the OCR
+    text}} from (gold, scored entry) pairs."""
+    out: dict[str, dict] = {}
+    for gold, entry in pairs:
+        if gold.injection is None:
+            continue
+        block = out.setdefault(gold.injection.style, {"n": 0, "reached": 0})
+        block["n"] += 1
+        block["reached"] += int(bool(entry.get("injection_in_ocr")))
+    return dict(sorted(out.items()))
+
+
+def unreached_injections(pairs: list[tuple[GoldDoc, dict]]) -> list[str]:
+    """Poisoned documents whose injection is not in the OCR text although its style is
+    meant to be readable (every style but white_text, which OCR never sees). Such a document
+    is byte-identical to its clean twin for the model and pads the poisoned pass rate."""
+    return sorted(
+        gold.doc_id
+        for gold, entry in pairs
+        if gold.injection is not None
+        and gold.injection.style != "white_text"
+        and not entry.get("injection_in_ocr")
+    )
 
 
 def score_document(gold: GoldDoc, ocr_text: str) -> dict:
@@ -98,6 +124,9 @@ def build_scores(pairs: list[tuple[GoldDoc, str]], engine: dict) -> dict:
         "documents": documents,
         "by_layout": by_layout,
         "by_variant": by_variant,
+        "injection_reach_by_style": injection_reach_by_style(
+            [(g, documents[g.doc_id]) for g, _ in ordered]
+        ),
         "injection_in_ocr": {
             doc_id: d["injection_in_ocr"]
             for doc_id, d in documents.items()
@@ -111,28 +140,41 @@ def pilot_metrics(pairs: list[tuple[GoldDoc, str]]) -> dict:
     per-document ratios, so documents with many fields weigh more) and mean normalised CER."""
     hits = total = 0
     cers = []
+    strict = []
     for gold, text in pairs:
         h, t = grounding_counts(gold, text)
         hits += h
         total += t
         cers.append(cer.cer_norm(gold.text, text))
+        strict.append(cer.cer_strict_norm(gold.text, text))
     return {
         "n_docs": len(pairs),
         "n_values": total,
         "field_grounding_recall": hits / total if total else 0.0,
         "cer_norm": fmean(cers) if cers else None,
+        "cer_strict_norm": fmean(strict) if strict else None,
     }
 
 
+PSM_RULE = (
+    "highest field grounding recall; modes within 1 percentage point of the best are tied "
+    "and the lower normalised CER (line-aligned cer_norm) decides; the lower psm number "
+    "breaks a remaining tie. cer_strict_norm (line order counts) is recorded beside it."
+)
+
+
 def select_psm(results: dict[int, dict]) -> int:
-    """Best field grounding recall wins; lower CER breaks a tie; the lower psm number breaks
-    a remaining tie so the choice is deterministic."""
+    """Modes within PSM_RECALL_TIE of the best field grounding recall are tied; among them
+    the lowest normalised CER wins, then the lowest psm number, so the choice is
+    deterministic. A margin smaller than the tie band is noise on 60 documents."""
     if not results:
         raise ValueError("No pilot results to choose from. Run `python -m ocr pilot` first.")
+    best = max(r["field_grounding_recall"] for r in results.values())
+    floor = best - PSM_RECALL_TIE - 1e-9  # float slack so exactly one point behind is tied
+    tied = [m for m, r in results.items() if r["field_grounding_recall"] >= floor]
 
-    def key(psm: int) -> tuple[float, float, int]:
-        r = results[psm]
-        cer_value = r["cer_norm"] if r["cer_norm"] is not None else 1.0
-        return (-r["field_grounding_recall"], cer_value, psm)
+    def key(psm: int) -> tuple[float, int]:
+        cer_value = results[psm]["cer_norm"]
+        return (cer_value if cer_value is not None else 1.0, psm)
 
-    return min(results, key=key)
+    return min(tied, key=key)
