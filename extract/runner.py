@@ -108,16 +108,17 @@ async def run_extraction(
     conc = max(1, min(concurrency, model.max_concurrency))
     sem = asyncio.Semaphore(conc)
     pacer = Pacer(model.min_interval_s)
-    records = await asyncio.gather(
-        *(
-            _extract_one(model, d, text_source, conc, sem, pacer, use_cache, fresh)
-            for d in doc_ids
-        )
-    )
-    if write:
-        out = run_dir(model.slug, text_source, "extract")
-        for rec in records:
+    out = run_dir(model.slug, text_source, "extract")
+
+    async def one(doc_id: str) -> ExtractionRecord:
+        rec = await _extract_one(model, doc_id, text_source, conc, sem, pacer, use_cache, fresh)
+        # Written as soon as the document finishes, so a crash or an interrupted free-tier run
+        # keeps every record it already paid for.
+        if write:
             write_json(out / f"{rec.doc_id}.json", rec)
+        return rec
+
+    records = await asyncio.gather(*(one(d) for d in doc_ids))
     return list(records)
 
 

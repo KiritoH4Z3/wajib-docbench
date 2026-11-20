@@ -15,7 +15,10 @@ import subprocess
 import time
 from pathlib import Path
 
-import httpx
+try:  # the installed openai SDK ships httpx2; plain httpx is not a dependency
+    import httpx2 as httpx
+except ImportError:  # pragma: no cover
+    import httpx
 
 from bench.config import ModelConfig
 from bench.paths import PERF, ROOT

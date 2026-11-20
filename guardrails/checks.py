@@ -280,13 +280,18 @@ _NOTE_HEADS_AR = _alt("ملاحظة", "تعليمات", "تنبيه", "رسال�
 
 _INJECTION_SOURCES = [
     # English
-    r"\b(?:ignore|disregard|forget)\s+(?:(?:all|any|the|your|of)\s+)*"
+    # "ignore previous instructions", "disregard the figures above": up to three words between
+    r"\b(?:ignore|disregard|forget)\s+(?:\S+\s+){0,3}?"
     r"(?:previous|prior|above|earlier|preceding)\b",
+    # addressed to a machine reader rather than a person
+    r"\b(?:to|for)\s+(?:the\s+|any\s+)?(?:automated|automatic|machine)\s+"
+    r"(?:readers?|processing|processors?|systems?|tools?|extraction)\b",
     r"\bsystem\s+(?:prompt|note|message|instructions?)\b",
     r"\b(?:note|message|instructions?|attention)\s+(?:to|for)\s+(?:the\s+)?"
     r"(?:ai|assistant|model|language\s+model|llm|extraction\s+(?:system|model|tool))\b",
     r"\byou\s+are\s+now\b",
-    rf"\b(?:set|change|make|update|replace)\s+(?:the\s+)?{_FIELD_NAMES_EN}\s+"
+    rf"\b(?:set|change|make|update|replace|record|report|enter|output|return)\s+"
+    rf"(?:the\s+)?(?:\S+\s+)?{_FIELD_NAMES_EN}\s+"
     r"(?:(?:to|as|be|equal\s+to)\s+\S|\d)",
     rf"\b{_FIELD_NAMES_EN}\s+(?:should|must|shall)\s+(?:be|read)\s+\d",
     r"\b(?:treat|consider|mark|regard)\s+this\s+(?:licen[cs]e|certificate|invoice|document)"

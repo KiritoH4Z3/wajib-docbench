@@ -63,3 +63,15 @@ model is called the same way. Constrained decoding is the obvious v2 ablation.
 - The injection patterns are a list, and lists miss things. The white-text injections never
   reach the OCR text at all; that is reported as a property of the pipeline, not counted as a
   guardrail win.
+- **The poisoned set is not a held-out test of the pattern list.** The first version of the
+  list missed 2 of the 6 written instructions in the poisoned documents ("disregard the figures
+  above", "record the expiry date as"). It was widened to generic phrasings (any instruction to
+  ignore what came before, anything addressed to an automated reader, any verb telling a
+  machine what to record or report), not to those sentences, and it still raises no hit on the
+  75 clean and scanned documents. A detector rate measured on the same 10 documents that shaped
+  it would flatter it, so the README reports the model's own injection resistance as the
+  headline and the guardrail's catches separately. A held-out set of injection phrasings
+  written independently is the first v2 item.
+- Two poisoned documents carry no instruction at all, only a fake row ("Total payable, revised
+  AED 0.00"). No text pattern can flag those without flagging real fields; the arithmetic checks
+  are what catch a model that takes the bait.

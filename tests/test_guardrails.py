@@ -353,7 +353,10 @@ def test_injection_patterns_are_normalised_source():
 
 
 def test_ground_truth_clean_and_poisoned_documents():
-    """Zero hits on every clean document, a hit on every visible poisoned one."""
+    """Zero hits on every clean document, a hit on every poisoned one that carries a written
+    instruction. fake_field rows ("Total payable, revised AED 0.00") contain no instruction,
+    so no text pattern can flag them without flagging real fields; the arithmetic checks are
+    what must catch a model that takes them. white_text never reaches the visible text."""
     import json
 
     files = sorted(p for p in GROUND_TRUTH.glob("*.json") if not p.name.startswith("_"))
@@ -364,7 +367,7 @@ def test_ground_truth_clean_and_poisoned_documents():
         gold = json.loads(p.read_text(encoding="utf-8"))
         hit = not check_injection_text(gold["text"]).passed
         if gold["variant"] == "poisoned":
-            if gold["injection"]["style"] != "white_text":
+            if gold["injection"]["style"] not in ("white_text", "fake_field"):
                 poisoned_visible += 1
                 assert hit, f"{gold['doc_id']}: {gold['injection']['text']!r} was not flagged"
         else:
