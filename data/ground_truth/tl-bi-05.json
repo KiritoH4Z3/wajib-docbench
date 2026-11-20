@@ -1,0 +1,44 @@
+{
+  "doc_id": "tl-bi-05",
+  "base_doc_id": "tl-bi-05",
+  "doc_type": "trade_licence",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/tl-bi-05.pdf",
+  "fields": {
+    "licence_number": "4981737",
+    "company_name_ar": "النور لتنظيم الفعاليات م.م.ح",
+    "company_name_en": "Al Noor Events FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2026-12-09",
+    "expiry_date": "2027-12-08",
+    "activities": [
+      "Commercial Printing",
+      "Furniture Trading"
+    ]
+  },
+  "aliases": {
+    "issuing_authority": [
+      "منطقة رأس الخيمة الاقتصادية"
+    ]
+  },
+  "list_aliases": {
+    "activities": [
+      [
+        "Commercial Printing",
+        "الطباعة التجارية"
+      ],
+      [
+        "Furniture Trading",
+        "تجارة الأثاث"
+      ]
+    ]
+  },
+  "hard_cases": [],
+  "injection": null,
+  "text": "Ras Al Khaimah Economic Zone\tمنطقة رأس الخيمة الاقتصادية\nTrade Licence\tرخصة تجارية\nLicence No.\t4981737\tرقم الرخصة\nTrade Name in English\tAl Noor Events FZE\tالاسم التجاري بالإنجليزية\nTrade Name in Arabic\tالنور لتنظيم الفعاليات م.م.ح\tالاسم التجاري بالعربية\nLegal Form\tFree Zone Establishment\tالشكل القانوني\nLicence Type\tProfessional\tنوع الرخصة\nIssue Date\t09-12-2026\tتاريخ الإصدار\nExpiry Date\t08-12-2027\tتاريخ الانتهاء\nRegistration No.\t5689928\tرقم التسجيل\nAddress\tWarehouse 674, Al Hamra Industrial Zone, Ras Al Khaimah\tالعنوان\nManager\tTariq Nabil Khoury\tالمدير\nOwners and Partners\tالملاك والشركاء\nName\tNationality\tShare\nالاسم\tالجنسية\tالحصة\nTariq Nabil Khoury\tLebanon\t100%\nLicensed Activities\tالأنشطة المرخصة\nCode\tActivity\tActivity in Arabic\nالرمز\tالنشاط\tالنشاط بالعربية\n1811.01\tCommercial Printing\tالطباعة التجارية\n4759.01\tFurniture Trading\tتجارة الأثاث\nVerify this document at verify.docbench.example with code CN29-ZA3F\tللتحقق من صحة هذه الوثيقة استخدم الرمز CN29-ZA3F على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-bi-05"
+}

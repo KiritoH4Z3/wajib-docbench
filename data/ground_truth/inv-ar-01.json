@@ -1,0 +1,34 @@
+{
+  "doc_id": "inv-ar-01",
+  "base_doc_id": "inv-ar-01",
+  "doc_type": "tax_invoice",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/inv-ar-01.pdf",
+  "fields": {
+    "supplier_name": "مؤسسة دار الياسمين للعطور",
+    "supplier_trn": "100638827881700",
+    "invoice_number": "2027/17713",
+    "invoice_date": "2027-02-01",
+    "customer_name": "راجيش كومار ناير",
+    "customer_trn": null,
+    "subtotal": "7669.50",
+    "vat_amount": "383.48",
+    "total": "8052.98",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "written_month",
+    "arabic_currency_marker",
+    "thousands_commas",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "مؤسسة دار الياسمين للعطور\nمكتب ١٧٦٢، المنطقة الصناعية ٦، الشارقة\nهاتف +٩٧١ ٦ ٥٠١ ٨٩١٨  |  ص.ب ٧٨٨٣\nفاتورة ضريبية\nالرقم الضريبي للمورد\t١٠٠٦٣٨٨٢٧٨٨١٧٠٠\nرقم الفاتورة\t٢٠٢٧/١٧٧١٣\nتاريخ الفاتورة\t١ فبراير ٢٠٢٧\nفاتورة إلى\nاسم العميل\tراجيش كومار ناير\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ د.إ\n١\tدهن عود 12 مل\t٤\t٩٦٣٫٥٠\t٥٪\t٣٬٨٥٤٫٠٠\n٢\tبخور 500 جرام\t٢٦\t١٤٦٫٧٥\t٥٪\t٣٬٨١٥٫٥٠\nالإجمالي قبل الضريبة\t٧٬٦٦٩٫٥٠ د.إ\nضريبة القيمة المضافة ٥٪\t٣٨٣٫٤٨ د.إ\nالإجمالي شامل الضريبة\t٨٬٠٥٢٫٩٨ د.إ\nشروط الدفع\tالدفع نقدا أو بالبطاقة عند التسليم\nرقم الحساب المصرفي الدولي\tAE74 7147 1835 1707 7559 161\nللتحقق من صحة هذه الوثيقة استخدم الرمز PJ4D-2AJ8 على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-ar-01"
+}

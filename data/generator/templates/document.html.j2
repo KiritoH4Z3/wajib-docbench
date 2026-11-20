@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ dir }}">
+<head>
+<meta charset="utf-8">
+<title>{{ doc_id }}</title>
+<style>
+@font-face { font-family: "DocSans"; font-weight: 400; src: url("{{ fonts.sans_regular }}") format("truetype"); }
+@font-face { font-family: "DocSans"; font-weight: 700; src: url("{{ fonts.sans_bold }}") format("truetype"); }
+@font-face { font-family: "DocNaskh"; font-weight: 400; src: url("{{ fonts.naskh_regular }}") format("truetype"); }
+@font-face { font-family: "DocNaskh"; font-weight: 700; src: url("{{ fonts.naskh_bold }}") format("truetype"); }
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #ffffff; }
+body {
+  font-family: "DocSans", "DocNaskh";
+  font-size: {{ base_pt }}pt;
+  line-height: 1.32;
+  color: #1a1a1a;
+}
+.ar { font-family: "DocNaskh", "DocSans"; }
+.page {
+  width: 210mm;
+  height: 296mm;
+  padding: 13mm 15mm 10mm;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: grid;
+  column-gap: 4mm;
+  align-items: baseline;
+  padding: 0.7mm 0;
+}
+.cell { white-space: nowrap; overflow: hidden; min-width: 0; }
+.force-ltr { unicode-bidi: isolate-override; }
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+.label { color: #4d4d4d; }
+.head { font-weight: 700; }
+.num { font-variant-numeric: tabular-nums; }
+.k-authority { font-size: 1.15em; font-weight: 700; padding-top: 0; }
+.k-brand { font-size: 1.3em; font-weight: 700; }
+.k-sub { font-size: 0.88em; color: #4d4d4d; padding: 0.2mm 0; }
+.k-title {
+  font-size: 1.55em; font-weight: 700; letter-spacing: 0.02em;
+  margin: 2mm 0 3mm; padding: 1.2mm 0; border-top: 0.4mm solid #1a1a1a; border-bottom: 0.4mm solid #1a1a1a;
+}
+.k-section { font-weight: 700; margin-top: 3mm; border-bottom: 0.3mm solid #1a1a1a; }
+.k-kv { border-bottom: 0.15mm solid #dddddd; }
+.k-thead { font-weight: 700; background: #efefef; margin-top: 2.5mm; }
+.k-thead + .k-thead { margin-top: 0; }
+.k-trow { border-bottom: 0.15mm solid #dddddd; }
+.k-total { margin-inline-start: 46%; }
+.k-total.bi { margin-inline-start: 22%; }
+.k-trow + .k-total { margin-top: 2mm; }
+.strong { font-weight: 700; border-top: 0.3mm solid #1a1a1a; }
+.k-note { font-size: 0.9em; margin-top: 1.2mm; }
+.k-footer {
+  margin-top: auto; padding-top: 1.5mm; border-top: 0.2mm solid #999999;
+  font-size: 0.8em; color: #555555;
+}
+.low_contrast { color: #bdbdbd; font-size: 7pt; }
+.white_text { color: #ffffff; font-size: 7pt; }
+</style>
+</head>
+<body>
+<main class="page">
+{%- for row in rows %}
+<div class="row k-{{ row.kind }}{% if row.style %} {{ row.style }}{% endif %}{% if row.cells | length == 3 and row.kind == 'total' %} bi{% endif %}" style="grid-template-columns: {{ row.cols | grid }}">
+{%- for cell in row.cells %}<span class="cell {{ cell.role }} {{ cell | side(dir) }}{% if cell.rtl %} ar{% endif %}" dir="{{ 'rtl' if cell.rtl else 'ltr' }}"{% if cell.rtl %} lang="ar"{% endif %}>{{ cell | bidi }}</span>{% endfor -%}
+</div>
+{%- endfor %}
+</main>
+</body>
+</html>

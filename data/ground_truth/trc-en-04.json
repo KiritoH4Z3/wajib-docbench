@@ -1,0 +1,26 @@
+{
+  "doc_id": "trc-en-04",
+  "base_doc_id": "trc-en-04",
+  "doc_type": "tax_certificate",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/trc-en-04.pdf",
+  "fields": {
+    "trn": "100867512609848",
+    "legal_name_ar": null,
+    "legal_name_en": "Al Mizan Events FZE",
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2025-11-26"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Federal Tax Authority\nCorporate Tax Registration Certificate\nTax Registration Number\t100867512609848\nLegal Name\tAl Mizan Events FZE\nRegistered Address\tShop 269, Mussafah Industrial Area, Abu Dhabi\nEffective Registration Date\t26 November 2025\nDate of Issue\t21 January 2026\nFinancial Year\t1 January to 31 December\nThis certificate confirms registration with the Federal Tax Authority.\nVerify this document at verify.docbench.example with code WMFZ-FV26\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:trc-en-04"
+}

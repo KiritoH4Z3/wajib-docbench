@@ -1,0 +1,109 @@
+# Models in the benchmark. Checked against Hugging Face and vendor pages on 2026-11-20.
+# Only `status: active` models run. Licences and the reasons for every swap: docs/adr/001.
+
+models:
+  - slug: falcon-h1-7b
+    display_name: Falcon-H1 7B Instruct
+    status: active
+    status_note: >-
+      Stands in for Falcon-H1-Arabic, which TII has released only as a chat playground
+      (no downloadable weights as of 2026-11-20). Falcon-H1 is trained natively on 18
+      languages including Arabic.
+    kind: local
+    served_by: llamacpp
+    vendor: Technology Innovation Institute (Abu Dhabi)
+    hf_repo: tiiuae/Falcon-H1-7B-Instruct-GGUF
+    hf_file: Falcon-H1-7B-Instruct-Q4_K_M.gguf
+    quant: Q4_K_M (4.60 GB)
+    licence: TII Falcon License (December 2024) and its acceptable use policy
+    licence_url: https://falconllm.tii.ae/falcon-terms-and-conditions.html
+    base_url: http://127.0.0.1:8080/v1
+    model: falcon-h1-7b
+    max_tokens: 1024
+    max_concurrency: 16
+    serve:
+      engine: llamacpp
+      port: 8080
+      ctx_per_slot: 4096
+      args: ["-ngl", "99", "-fa", "on", "--jinja"]
+
+  - slug: jais-2-8b
+    display_name: Jais 2 8B Chat
+    status: active
+    status_note: >-
+      Gated on Hugging Face (instant approval). Needs HF_TOKEN from an account that has
+      accepted the gate before `make models` can download it.
+    kind: local
+    served_by: llamacpp
+    vendor: Inception, MBZUAI and Cerebras
+    hf_repo: inception42/Jais-2-8B-Chat-GGUF
+    hf_file: Q4_K_M.gguf
+    hf_revision: 61365d41aad6a2ffa9d7b7f79dfce21b65833254
+    quant: Q4_K_M (5.10 GB)
+    licence: Apache-2.0
+    licence_url: https://huggingface.co/inception42/Jais-2-8B-Chat
+    base_url: http://127.0.0.1:8080/v1
+    model: jais-2-8b
+    max_tokens: 1024
+    max_concurrency: 16
+    serve:
+      engine: llamacpp
+      port: 8080
+      # Multi-head attention makes the KV cache large (416 KiB per token at fp16), so the
+      # context is 4096 per slot with a q8_0 cache. Measured fit is recorded in ADR-001.
+      ctx_per_slot: 4096
+      args: ["-ngl", "99", "-fa", "on", "-ctk", "q8_0", "-ctv", "q8_0", "--jinja"]
+
+  - slug: gemini-3.5-flash-lite
+    display_name: Gemini 3.5 Flash-Lite (API)
+    status: active
+    status_note: >-
+      Free tier. Google may use free-tier inputs and outputs to improve its products; every
+      document here is synthetic. The model ignores temperature, so its sampling cannot be
+      pinned and run-to-run variance is reported instead.
+    kind: api
+    served_by: api
+    vendor: Google
+    licence: Gemini API Terms of Service
+    licence_url: https://ai.google.dev/gemini-api/terms
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    model: gemini-3.5-flash-lite
+    api_key_env: GEMINI_API_KEY
+    send_temperature: false
+    seed: null
+    max_tokens: 4096  # thinking tokens count against this; 1024 could truncate the JSON
+    max_concurrency: 1
+    min_interval_s: 8.0  # at most 7.5 requests a minute until the AI Studio limit is read
+    max_rate_limit_retries: 5
+
+  # Considered and deferred. Reasons in docs/adr/001.
+  - slug: jais-3-7b
+    display_name: Jais 3 7B
+    status: v2
+    status_note: >-
+      Released October 2026, ungated, Apache-2.0. A reasoning model that always thinks, so it
+      is not a like-for-like comparison with the two non-reasoning extractors in v1, and its
+      Q4_K_M (5.59 GB) does not fit 6 GB of free VRAM with a KV cache.
+    kind: local
+    served_by: llamacpp
+    vendor: Inception and MBZUAI (IFM)
+    hf_repo: IFM/Jais-3-7B-GGUF
+    licence: Apache-2.0
+    licence_url: https://huggingface.co/IFM/Jais-3-7B-GGUF
+    base_url: http://127.0.0.1:8080/v1
+    model: jais-3-7b
+
+  - slug: falcon-h1-arabic-7b
+    display_name: Falcon-H1-Arabic 7B
+    status: pending
+    status_note: >-
+      Announced by TII in January 2026 with a vendor-reported 71.7% on the Open Arabic LLM
+      Leaderboard. Available only at chat.falconllm.tii.ae as of 2026-11-20. First swap-in if
+      weights appear.
+    kind: local
+    served_by: llamacpp
+    vendor: Technology Innovation Institute (Abu Dhabi)
+    licence: not released
+    licence_url: https://falconllm.tii.ae/falcon-h1-arabic.html
+    base_url: http://127.0.0.1:8080/v1
+    model: falcon-h1-arabic-7b

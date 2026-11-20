@@ -1,0 +1,29 @@
+{
+  "doc_id": "qt-ar-02",
+  "base_doc_id": "qt-ar-02",
+  "doc_type": "quotation",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/qt-ar-02.pdf",
+  "fields": {
+    "quote_number": "Q/27/2845",
+    "quote_date": "2027-02-14",
+    "valid_until": "2027-03-31",
+    "client_name": "ساحل الذهب للتصميم الداخلي م.م.ح",
+    "line_item_count": 1,
+    "subtotal": "4545.75",
+    "vat_amount": "227.29",
+    "total": "4773.04"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_currency_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "شركة سما الخليج للتصميم الداخلي\nمحل 373، آل نهيان، أبوظبي\nهاتف +971 2 667 5818  |  ص.ب 85112\nعرض سعر\nرقم عرض السعر\tQ/27/2845\nالتاريخ\t14.02.2027\nصالح حتى\t31.03.2027\nالعميل\tساحل الذهب للتصميم الداخلي م.م.ح\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ د.إ\n1\tورق تصوير A4، كرتونة 5 رزم\t33\t137.75\t4,545.75\nالإجمالي قبل الضريبة\tد.إ 4,545.75\nضريبة القيمة المضافة 5%\tد.إ 227.29\nالإجمالي\tد.إ 4,773.04\nشروط الدفع\tالدفع كاملا عند التسليم\nالتسليم\tخلال 14 يوما من أمر الشراء\nأعده\tحمدان عبيد السويدي\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-ar-02"
+}

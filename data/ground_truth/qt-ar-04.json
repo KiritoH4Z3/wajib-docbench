@@ -1,0 +1,30 @@
+{
+  "doc_id": "qt-ar-04",
+  "base_doc_id": "qt-ar-04",
+  "doc_type": "quotation",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/qt-ar-04.pdf",
+  "fields": {
+    "quote_number": "QT-2026-6834",
+    "quote_date": "2026-02-13",
+    "valid_until": "2026-02-27",
+    "client_name": "مؤسسة الصفوة للعطور",
+    "line_item_count": 5,
+    "subtotal": "35344.50",
+    "vat_amount": "1767.23",
+    "total": "37111.73"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "arabic_currency_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "فرع المنارة لقطع غيار السيارات\nمستودع 628، ديرة، الرقة، دبي\nهاتف +971 4 258 8206  |  ص.ب 37223\nعرض سعر\nرقم عرض السعر\tQT-2026-6834\nالتاريخ\t13 شباط 2026\nصالح حتى\t27 شباط 2026\nالعميل\tمؤسسة الصفوة للعطور\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ د.إ\n1\tفحمات فرامل أمامية\t36\t415.75\t14,967.00\n2\tبطارية سيارة 70 أمبير\t14\t622.25\t8,711.50\n3\tإطار 265/65 R17\t10\t724.00\t7,240.00\n4\tزيت محرك 4 لتر\t6\t121.00\t726.00\n5\tورق تصوير A4، كرتونة 5 رزم\t37\t100.00\t3,700.00\nالإجمالي قبل الضريبة\t35,344.50 د.إ\nضريبة القيمة المضافة 5%\t1,767.23 د.إ\nالإجمالي\t37,111.73 د.إ\nشروط الدفع\t50% دفعة مقدمة والباقي عند التسليم\nالتسليم\tمن المخزون حسب التوفر\nأعده\tسارة أحمد الزعابي\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-ar-04"
+}

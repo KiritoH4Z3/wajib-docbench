@@ -1,0 +1,33 @@
+{
+  "doc_id": "inv-en-03",
+  "base_doc_id": "inv-en-03",
+  "doc_type": "tax_invoice",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/inv-en-03.pdf",
+  "fields": {
+    "supplier_name": "Al Waha Interior Design FZCO",
+    "supplier_trn": "100510182961000",
+    "invoice_number": "TI-04678",
+    "invoice_date": "2024-09-03",
+    "customer_name": "Al Fajr Consultancy LLC",
+    "customer_trn": "100351610854929",
+    "subtotal": "4630.25",
+    "vat_amount": "231.51",
+    "total": "4861.76",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "iso_date",
+    "aed_marker",
+    "thousands_commas",
+    "masked_trn"
+  ],
+  "injection": null,
+  "text": "Al Waha Interior Design FZCO\nOffice 1572, Business Bay, Dubai\nTel +971 4 350 1257  |  P.O. Box 36601\nTax Invoice\nSupplier TRN\t100-5101-8296-1000\nInvoice No.\tTI-04678\nInvoice Date\t2024-09-03\nDate of Supply\t2024-09-03\nBill To\nCustomer Name\tAl Fajr Consultancy LLC\nCustomer TRN\t100-3516-1085-4929\nCustomer Address\tWarehouse 135, Al Qusais Industrial Area 2, Dubai\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\n1\tDelivery charges\t1\t280.75\t5%\t280.75\n2\tA4 copy paper, carton of 5 reams\t6\t110.50\t5%\t663.00\n3\tOffice desk, 160 cm\t2\t1,843.25\t5%\t3,686.50\nSubtotal excl. VAT\tAED 4,630.25\nVAT 5%\tAED 231.51\nTotal incl. VAT\tAED 4,861.76\nAmount in words: UAE Dirhams Four Thousand Eight Hundred Sixty-One and Seventy-Six Fils Only\nPayment Terms\tCash or card on delivery\nDue Date\t2024-10-03\nIBAN\tAE06 3467 0855 1689 9923 085\nVerify this document at verify.docbench.example with code NER7-9AKW\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-en-03"
+}

@@ -1,0 +1,46 @@
+{
+  "doc_id": "tl-bi-02",
+  "base_doc_id": "tl-bi-02",
+  "doc_type": "trade_licence",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/tl-bi-02.pdf",
+  "fields": {
+    "licence_number": "94874",
+    "company_name_ar": "نجم الصحراء لقطع غيار السيارات ش.م.ح",
+    "company_name_en": "Najm Al Sahra Auto Parts FZCO",
+    "legal_form": "FZCO",
+    "issuing_authority": "International Free Zone Authority",
+    "issue_date": "2026-03-01",
+    "expiry_date": "2027-02-28",
+    "activities": [
+      "Auto Spare Parts Trading",
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "aliases": {
+    "issuing_authority": [
+      "سلطة المنطقة الحرة الدولية"
+    ]
+  },
+  "list_aliases": {
+    "activities": [
+      [
+        "Auto Spare Parts Trading",
+        "تجارة قطع غيار السيارات"
+      ],
+      [
+        "Perfumes and Cosmetics Trading",
+        "تجارة العطور ومستحضرات التجميل"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "hijri_date"
+  ],
+  "injection": null,
+  "text": "International Free Zone Authority\tسلطة المنطقة الحرة الدولية\nTrade Licence\tرخصة تجارية\nLicence No.\t94874\tرقم الرخصة\nTrade Name in English\tNajm Al Sahra Auto Parts FZCO\tالاسم التجاري بالإنجليزية\nTrade Name in Arabic\tنجم الصحراء لقطع غيار السيارات ش.م.ح\tالاسم التجاري بالعربية\nLegal Form\tFree Zone Company\tالشكل القانوني\nLicence Type\tCommercial\tنوع الرخصة\nIssue Date\t01.03.2026 الموافق 12/09/1447 هـ\tتاريخ الإصدار\nExpiry Date\t28.02.2027 الموافق 21/09/1448 هـ\tتاريخ الانتهاء\nRegistration No.\t7821422\tرقم التسجيل\nAddress\tShop 1366, Dubai Silicon Oasis, Dubai\tالعنوان\nManager\tLayla Mahmoud Saleh\tالمدير\nOwners and Partners\tالملاك والشركاء\nName\tNationality\tShare\nالاسم\tالجنسية\tالحصة\nImran Tariq Qureshi\tPakistan\t51%\nOmar Hassan Al Shamsi\tUnited Arab Emirates\t34%\nLayla Mahmoud Saleh\tEgypt\t15%\nLicensed Activities\tالأنشطة المرخصة\nCode\tActivity\tActivity in Arabic\nالرمز\tالنشاط\tالنشاط بالعربية\n4530.01\tAuto Spare Parts Trading\tتجارة قطع غيار السيارات\n4772.01\tPerfumes and Cosmetics Trading\tتجارة العطور ومستحضرات التجميل\nVerify this document at verify.docbench.example with code K9FD-EF3G\tللتحقق من صحة هذه الوثيقة استخدم الرمز K9FD-EF3G على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-bi-02"
+}

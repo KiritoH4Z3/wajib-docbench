@@ -1,0 +1,32 @@
+{
+  "doc_id": "inv-en-04",
+  "base_doc_id": "inv-en-04",
+  "doc_type": "tax_invoice",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/inv-en-04.pdf",
+  "fields": {
+    "supplier_name": "Al Safwa Building Materials LLC",
+    "supplier_trn": "100503301910114",
+    "invoice_number": "INV/2026/39712",
+    "invoice_date": "2026-03-08",
+    "customer_name": "Sama Al Khaleej Events Co.",
+    "customer_trn": "100254864736427",
+    "subtotal": "9591.00",
+    "vat_amount": "479.55",
+    "total": "10070.55",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Safwa Building Materials LLC\nOffice 282, Al Nakheel, Ras Al Khaimah\nTel +971 7 677 4957  |  P.O. Box 74233\nTax Invoice\nSupplier TRN\t100503301910114\nInvoice No.\tINV/2026/39712\nInvoice Date\t08-Mar-2026\nBill To\nCustomer Name\tSama Al Khaleej Events Co.\nCustomer TRN\t100254864736427\nCustomer Address\tShop 2108, Mussafah Industrial Area, Abu Dhabi\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\n1\tSteel rebar, per tonne\t3\t3,197.00\t5%\t9,591.00\nSubtotal excl. VAT\tAED 9,591.00\nVAT 5%\tAED 479.55\nTotal incl. VAT\tAED 10,070.55\nAmount in words: UAE Dirhams Ten Thousand Seventy and Fifty-Five Fils Only\nPayment Terms\tPayment within 30 days by bank transfer\nIBAN\tAE17 5889 3004 0956 6134 772\nVerify this document at verify.docbench.example with code KH2F-2GGQ\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-en-04"
+}

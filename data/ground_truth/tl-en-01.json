@@ -1,0 +1,37 @@
+{
+  "doc_id": "tl-en-01",
+  "base_doc_id": "tl-en-01",
+  "doc_type": "trade_licence",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/tl-en-01.pdf",
+  "fields": {
+    "licence_number": "73436",
+    "company_name_ar": null,
+    "company_name_en": "Al Marjan Building Materials Est.",
+    "legal_form": "SOLE_ESTABLISHMENT",
+    "issuing_authority": "Ajman Department of Economic Development",
+    "issue_date": "2026-02-15",
+    "expiry_date": "2027-02-14",
+    "activities": [
+      "Building Materials Trading"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "Building Materials Trading"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Ajman Department of Economic Development\nTrade Licence\nLicence No.\t73436\nTrade Name\tAl Marjan Building Materials Est.\nLegal Form\tSole Establishment\nLicence Type\tIndustrial\nIssue Date\t15 February 2026\nExpiry Date\t14 February 2027\nCommercial Register No.\t5309696\nAddress\tShop 341, Al Jurf Industrial 1, Ajman\nManager\tHamdan Obaid Al Suwaidi\nOwners and Partners\nName\tNationality\tShare\nHamdan Obaid Al Suwaidi\tUnited Arab Emirates\t100%\nLicensed Activities\nCode\tActivity\n4663.01\tBuilding Materials Trading\nVerify this document at verify.docbench.example with code Z2BV-8BBN\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-en-01"
+}

@@ -1,0 +1,30 @@
+{
+  "doc_id": "qt-en-01",
+  "base_doc_id": "qt-en-01",
+  "doc_type": "quotation",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/qt-en-01.pdf",
+  "fields": {
+    "quote_number": "QT-2025-0180",
+    "quote_date": "2025-06-13",
+    "valid_until": "2025-06-27",
+    "client_name": "Sahil Al Dhahab Auto Parts Est.",
+    "line_item_count": 6,
+    "subtotal": "17459.83",
+    "vat_amount": "872.99",
+    "total": "18332.82"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Nakhla General Trading FZE\nWarehouse 1301, Al Qusais Industrial Area 2, Dubai\nTel +971 4 229 3528  |  P.O. Box 37889\nQuotation\nQuotation No.\tQT-2025-0180\nDate\tJune 13, 2025\nValid Until\tJune 27, 2025\nClient\tSahil Al Dhahab Auto Parts Est.\nAttention\tAhmed Saeed Al Ketbi\nNo.\tDescription\tQty\tUnit Price\tAmount AED\n1\tFiling cabinet, 4 drawers\t7\t620.87\t4,346.09\n2\tA4 copy paper, carton of 5 reams\t23\t144.25\t3,317.75\n3\tErgonomic office chair\t4\t897.50\t3,590.00\n4\tOffice desk, 160 cm\t1\t755.25\t755.25\n5\tDelivery charges\t1\t92.00\t92.00\n6\tWindow cleaning, per floor\t17\t315.22\t5,358.74\nSubtotal excl. VAT\t17,459.83 AED\nVAT 5%\t872.99 AED\nGrand Total\t18,332.82 AED\nPayment Terms\t30 days from invoice date\nDelivery\tWithin 7 working days\nPrepared by\tNoura Salem Al Dhaheri\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-en-01"
+}

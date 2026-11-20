@@ -1,0 +1,29 @@
+# Prices used for cost per 1,000 documents. Fetched 2026-11-20. Change a price here and
+# `make report` recomputes every cost; nothing is typed into the README by hand.
+
+api:
+  gemini-3.5-flash-lite:
+    input_usd_per_mtok: 0.30
+    output_usd_per_mtok: 2.50  # thinking tokens are billed as output
+    tier: Standard paid list price (the benchmark itself runs on the free tier)
+    source: https://ai.google.dev/gemini-api/docs/pricing
+    fetched: "2026-11-20"
+
+gpu:
+  # Self-hosted cost is a cloud equivalent: the measured throughput on the RTX 4060 Laptop
+  # GPU, priced at the hourly rate of a cloud GPU of similar class. Local electricity is
+  # not billed.
+  primary:
+    name: AWS g4dn.xlarge (NVIDIA T4 16 GB), on demand, us-east-1, Linux
+    usd_per_hour: 0.526
+    source: https://aws.amazon.com/ec2/pricing/on-demand/
+    fetched: "2026-11-20"
+  sensitivity:
+    - name: Google Cloud g2-standard-4 (NVIDIA L4 24 GB), on demand
+      usd_per_hour: 0.7068
+      source: https://cloud.google.com/compute/gpus-pricing
+      fetched: "2026-11-20"
+    - name: RunPod RTX 4090, community cloud (floating price)
+      usd_per_hour: 0.34
+      source: https://www.runpod.io/pricing
+      fetched: "2026-11-20"

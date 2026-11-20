@@ -1,0 +1,48 @@
+{
+  "doc_id": "tl-en-05.scan",
+  "base_doc_id": "tl-en-05",
+  "doc_type": "trade_licence",
+  "layout": "en",
+  "variant": "scanned",
+  "input_file": "data/docs/tl-en-05.scan.jpg",
+  "fields": {
+    "licence_number": "7171475",
+    "company_name_ar": null,
+    "company_name_en": "Durrat Al Shati Consultancy FZ-LLC",
+    "legal_form": "FZ_LLC",
+    "issuing_authority": "Sharjah Media City",
+    "issue_date": "2025-02-02",
+    "expiry_date": "2026-02-01",
+    "activities": [
+      "Management Consultancy",
+      "IT Consultancy"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "Management Consultancy"
+      ],
+      [
+        "IT Consultancy"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Sharjah Media City\nTrade Licence\nLicence No.\t7171475\nTrade Name\tDurrat Al Shati Consultancy FZ-LLC\nLegal Form\tFree Zone Limited Liability Company\nLicence Type\tProfessional\nIssue Date\t02.02.2025\nExpiry Date\t01.02.2026\nRegistration No.\t3795654\nAddress\tWarehouse 1797, Sharjah Media City, Sharjah\nManager\tNoura Salem Al Dhaheri\nOwners and Partners\nName\tNationality\tShare\nNoura Salem Al Dhaheri\tUnited Arab Emirates\t50%\nAhmed Saeed Al Ketbi\tUnited Arab Emirates\t50%\nLicensed Activities\nCode\tActivity\n7020.01\tManagement Consultancy\n6202.01\tIT Consultancy\nVerify this document at verify.docbench.example with code YRD2-F986\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": 1.743,
+    "blur_radius": 0.56,
+    "noise_sigma": 4.17,
+    "speckle_density": 0.00116,
+    "jpeg_quality": 49.0,
+    "noise_seed": 178525596.0
+  },
+  "seed": "docbench-v1:tl-en-05.scan"
+}

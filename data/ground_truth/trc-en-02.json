@@ -1,0 +1,26 @@
+{
+  "doc_id": "trc-en-02",
+  "base_doc_id": "trc-en-02",
+  "doc_type": "tax_certificate",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/trc-en-02.pdf",
+  "fields": {
+    "trn": "100532571113080",
+    "legal_name_ar": null,
+    "legal_name_en": "Al Reem Technical Services FZ-LLC",
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2026-09-30"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "absent_field",
+    "masked_trn"
+  ],
+  "injection": null,
+  "text": "Federal Tax Authority\nCorporate Tax Registration Certificate\nTax Registration Number\t100-5325-7111-3080\nLegal Name\tAl Reem Technical Services FZ-LLC\nRegistered Address\tOffice 1591, Business Bay, Dubai\nEffective Registration Date\t30-09-2026\nDate of Issue\t08-10-2026\nFinancial Year\t1 January to 31 December\nThis certificate confirms registration with the Federal Tax Authority.\nVerify this document at verify.docbench.example with code 3WWE-YMHJ\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:trc-en-02"
+}

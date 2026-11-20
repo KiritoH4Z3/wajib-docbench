@@ -1,0 +1,41 @@
+{
+  "doc_id": "qt-bi-05.scan",
+  "base_doc_id": "qt-bi-05",
+  "doc_type": "quotation",
+  "layout": "bi",
+  "variant": "scanned",
+  "input_file": "data/docs/qt-bi-05.scan.jpg",
+  "fields": {
+    "quote_number": "Q/25/9333",
+    "quote_date": "2025-05-24",
+    "valid_until": "2025-06-23",
+    "client_name": "Al Safwa Cleaning Services Branch",
+    "line_item_count": 1,
+    "subtotal": "6326.25",
+    "vat_amount": "316.31",
+    "total": "6642.56"
+  },
+  "aliases": {
+    "client_name": [
+      "فرع الصفوة لخدمات التنظيف"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Reem Building Materials Branch\tفرع الريم لمواد البناء\nShop 2238, Al Khalidiyah, Abu Dhabi\tمحل 2238، الخالدية، أبوظبي\nTel +971 2 630 9888  |  P.O. Box 91685\tهاتف +971 2 630 9888  |  ص.ب 91685\nQuotation\tعرض سعر\nQuotation No.\tQ/25/9333\tرقم عرض السعر\nDate\t24/05/2025\tالتاريخ\nValid Until\t23/06/2025\tصالح حتى\nClient in English\tAl Safwa Cleaning Services Branch\tالعميل بالإنجليزية\nClient in Arabic\tفرع الصفوة لخدمات التنظيف\tالعميل بالعربية\nNo.\tDescription\tQty\tUnit Price\tAmount AED\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ AED\n1\tLED panel light 60x60\t35\t180.75\t6,326.25\nSubtotal excl. VAT\t6,326.25 AED\tالإجمالي قبل الضريبة\nVAT 5%\t316.31 AED\tضريبة القيمة المضافة 5%\nGrand Total\t6,642.56 AED\tالإجمالي\nPayment Terms\t100% on delivery\tشروط الدفع\nDelivery\tWithin 7 working days\tالتسليم\nPrepared by\tTariq Nabil Khoury\tأعده\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": -1.319,
+    "blur_radius": 0.588,
+    "noise_sigma": 5.74,
+    "speckle_density": 0.00109,
+    "jpeg_quality": 53.0,
+    "noise_seed": 1165219299.0
+  },
+  "seed": "docbench-v1:qt-bi-05.scan"
+}

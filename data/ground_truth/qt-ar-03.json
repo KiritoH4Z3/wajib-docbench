@@ -1,0 +1,30 @@
+{
+  "doc_id": "qt-ar-03",
+  "base_doc_id": "qt-ar-03",
+  "doc_type": "quotation",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/qt-ar-03.pdf",
+  "fields": {
+    "quote_number": "QTN-07897",
+    "quote_date": "2027-07-18",
+    "valid_until": "2027-09-16",
+    "client_name": "الهدف للخدمات اللوجستية م.م.ح",
+    "line_item_count": 2,
+    "subtotal": "18787.25",
+    "vat_amount": "939.36",
+    "total": "19726.61"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "arabic_currency_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "المنارة للعطور م.م.ح\nمحل ١٤٦، الجرف الصناعية ١، عجمان\nهاتف +٩٧١ ٦ ٤٣٨ ٢٦١٦  |  ص.ب ١٤٨١٢\nعرض سعر\nرقم عرض السعر\tQTN-07897\nالتاريخ\t١٨/٠٧/٢٠٢٧\nصالح حتى\t١٦/٠٩/٢٠٢٧\nالعميل\tالهدف للخدمات اللوجستية م.م.ح\nعناية\tحصة خلفان المهيري\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ د.إ\n١\tدهن عود 12 مل\t٣\t٩٨٨٫٧٥\t٢٬٩٦٦٫٢٥\n٢\tطقم عطور للهدايا\t٢٦\t٦٠٨٫٥٠\t١٥٬٨٢١٫٠٠\nالإجمالي قبل الضريبة\t١٨٬٧٨٧٫٢٥ د.إ\nضريبة القيمة المضافة ٥٪\t٩٣٩٫٣٦ د.إ\nالإجمالي\t١٩٬٧٢٦٫٦١ د.إ\nشروط الدفع\t٥٠% دفعة مقدمة والباقي عند التسليم\nالتسليم\tمن المخزون حسب التوفر\nأعده\tعمران طارق قريشي\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-ar-03"
+}

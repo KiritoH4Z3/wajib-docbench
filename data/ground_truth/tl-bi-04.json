@@ -1,0 +1,42 @@
+{
+  "doc_id": "tl-bi-04",
+  "base_doc_id": "tl-bi-04",
+  "doc_type": "trade_licence",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/tl-bi-04.pdf",
+  "fields": {
+    "licence_number": "3187195",
+    "company_name_ar": "وادي السدر للعطور منطقة حرة ذ.م.م",
+    "company_name_en": "Wadi Al Sidr Perfumes FZ-LLC",
+    "legal_form": "FZ_LLC",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2025-05-21",
+    "expiry_date": "2026-05-20",
+    "activities": [
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "aliases": {
+    "issuing_authority": [
+      "منطقة رأس الخيمة الاقتصادية"
+    ]
+  },
+  "list_aliases": {
+    "activities": [
+      [
+        "Perfumes and Cosmetics Trading",
+        "تجارة العطور ومستحضرات التجميل"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "arabic_indic_digits",
+    "hijri_date"
+  ],
+  "injection": null,
+  "text": "Ras Al Khaimah Economic Zone\tمنطقة رأس الخيمة الاقتصادية\nTrade Licence\tرخصة تجارية\nLicence No.\t٣١٨٧١٩٥\tرقم الرخصة\nTrade Name in English\tWadi Al Sidr Perfumes FZ-LLC\tالاسم التجاري بالإنجليزية\nTrade Name in Arabic\tوادي السدر للعطور منطقة حرة ذ.م.م\tالاسم التجاري بالعربية\nLegal Form\tFree Zone Limited Liability Company\tالشكل القانوني\nLicence Type\tIndustrial\tنوع الرخصة\nIssue Date\t٢١/٠٥/٢٠٢٥ الموافق ٢٣/١١/١٤٤٦ هـ\tتاريخ الإصدار\nExpiry Date\t٢٠/٠٥/٢٠٢٦ الموافق ٠٣/١٢/١٤٤٧ هـ\tتاريخ الانتهاء\nRegistration No.\t٤١١٨٣٩١\tرقم التسجيل\nAddress\tOffice 1791, Al Hamra Industrial Zone, Ras Al Khaimah\tالعنوان\nManager\tLayla Mahmoud Saleh\tالمدير\nOwners and Partners\tالملاك والشركاء\nName\tNationality\tShare\nالاسم\tالجنسية\tالحصة\nLayla Mahmoud Saleh\tEgypt\t٧٠٪\nImran Tariq Qureshi\tPakistan\t٣٠٪\nLicensed Activities\tالأنشطة المرخصة\nCode\tActivity\tActivity in Arabic\nالرمز\tالنشاط\tالنشاط بالعربية\n4772.01\tPerfumes and Cosmetics Trading\tتجارة العطور ومستحضرات التجميل\nVerify this document at verify.docbench.example with code 5GAR-ANLE\tللتحقق من صحة هذه الوثيقة استخدم الرمز 5GAR-ANLE على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-bi-04"
+}

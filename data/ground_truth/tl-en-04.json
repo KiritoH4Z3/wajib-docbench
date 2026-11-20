@@ -1,0 +1,41 @@
+{
+  "doc_id": "tl-en-04",
+  "base_doc_id": "tl-en-04",
+  "doc_type": "trade_licence",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/tl-en-04.pdf",
+  "fields": {
+    "licence_number": "9599018",
+    "company_name_ar": null,
+    "company_name_en": "Al Fajr IT Solutions FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2024-01-28",
+    "expiry_date": "2025-01-27",
+    "activities": [
+      "IT Consultancy",
+      "Management Consultancy"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "IT Consultancy"
+      ],
+      [
+        "Management Consultancy"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Ras Al Khaimah Economic Zone\nTrade Licence\nLicence No.\t9599018\nTrade Name\tAl Fajr IT Solutions FZE\nLegal Form\tFree Zone Establishment\nLicence Type\tIndustrial\nIssue Date\t28 January 2024\nExpiry Date\t27 January 2025\nRegistration No.\t5420224\nAddress\tWarehouse 1780, Al Hamra Industrial Zone, Ras Al Khaimah\nManager\tMariam Yousef Al Hammadi\nOwners and Partners\nName\tNationality\tShare\nMariam Yousef Al Hammadi\tUnited Arab Emirates\t100%\nLicensed Activities\nCode\tActivity\n6202.01\tIT Consultancy\n7020.01\tManagement Consultancy\nVerify this document at verify.docbench.example with code PSJ6-FD72\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-en-04"
+}

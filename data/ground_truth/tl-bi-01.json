@@ -1,0 +1,46 @@
+{
+  "doc_id": "tl-bi-01",
+  "base_doc_id": "tl-bi-01",
+  "doc_type": "trade_licence",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/tl-bi-01.pdf",
+  "fields": {
+    "licence_number": "35336",
+    "company_name_ar": "دار الياسمين لمواد البناء ذ.م.م",
+    "company_name_en": "Dar Al Yasmin Building Materials L.L.C",
+    "legal_form": "LLC",
+    "issuing_authority": "Ras Al Khaimah Department of Economic Development",
+    "issue_date": "2025-11-10",
+    "expiry_date": "2026-11-09",
+    "activities": [
+      "General Trading",
+      "Building Materials Trading"
+    ]
+  },
+  "aliases": {
+    "issuing_authority": [
+      "دائرة التنمية الاقتصادية برأس الخيمة"
+    ]
+  },
+  "list_aliases": {
+    "activities": [
+      [
+        "General Trading",
+        "التجارة العامة"
+      ],
+      [
+        "Building Materials Trading",
+        "تجارة مواد البناء"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "iso_date"
+  ],
+  "injection": null,
+  "text": "Ras Al Khaimah Department of Economic Development\tدائرة التنمية الاقتصادية برأس الخيمة\nTrade Licence\tرخصة تجارية\nLicence No.\t35336\tرقم الرخصة\nTrade Name in English\tDar Al Yasmin Building Materials L.L.C\tالاسم التجاري بالإنجليزية\nTrade Name in Arabic\tدار الياسمين لمواد البناء ذ.م.م\tالاسم التجاري بالعربية\nLegal Form\tLimited Liability Company\tالشكل القانوني\nLicence Type\tIndustrial\tنوع الرخصة\nIssue Date\t2025-11-10\tتاريخ الإصدار\nExpiry Date\t2026-11-09\tتاريخ الانتهاء\nCommercial Register No.\t1559621\tرقم السجل التجاري\nAddress\tWarehouse 343, Al Nakheel, Ras Al Khaimah\tالعنوان\nManager\tNoura Salem Al Dhaheri\tالمدير\nOwners and Partners\tالملاك والشركاء\nName\tNationality\tShare\nالاسم\tالجنسية\tالحصة\nHamdan Obaid Al Suwaidi\tUnited Arab Emirates\t51%\nNoura Salem Al Dhaheri\tUnited Arab Emirates\t49%\nLicensed Activities\tالأنشطة المرخصة\nCode\tActivity\tActivity in Arabic\nالرمز\tالنشاط\tالنشاط بالعربية\n4690.01\tGeneral Trading\tالتجارة العامة\n4663.01\tBuilding Materials Trading\tتجارة مواد البناء\nVerify this document at verify.docbench.example with code BLYB-C26G\tللتحقق من صحة هذه الوثيقة استخدم الرمز BLYB-C26G على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-bi-01"
+}

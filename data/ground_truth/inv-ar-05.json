@@ -1,0 +1,32 @@
+{
+  "doc_id": "inv-ar-05",
+  "base_doc_id": "inv-ar-05",
+  "doc_type": "tax_invoice",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/inv-ar-05.pdf",
+  "fields": {
+    "supplier_name": "فرع النخلة لخدمات التنظيف",
+    "supplier_trn": "100360467758927",
+    "invoice_number": "INV-2026-98823",
+    "invoice_date": "2026-05-05",
+    "customer_name": "شركة الثريا لتنظيم الفعاليات",
+    "customer_trn": "100430626515821",
+    "subtotal": "22895.00",
+    "vat_amount": "1144.75",
+    "total": "24039.75",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "فرع النخلة لخدمات التنظيف\nمحل ١١٥، المجاز ٢، الشارقة\nهاتف +٩٧١ ٦ ٦٢٠ ٧٨٦٤  |  ص.ب ٢٣١٧\nفاتورة ضريبية\nالرقم الضريبي للمورد\t١٠٠٣٦٠٤٦٧٧٥٨٩٢٧\nرقم الفاتورة\tINV-2026-98823\nتاريخ الفاتورة\t٠٥-٠٥-٢٠٢٦\nفاتورة إلى\nاسم العميل\tشركة الثريا لتنظيم الفعاليات\nالرقم الضريبي للعميل\t١٠٠٤٣٠٦٢٦٥١٥٨٢١\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ AED\n١\tعقد تنظيف مكاتب شهري\t٣\t٥٬٥٦٧٫٥٠\t٥٪\t١٦٬٧٠٢٫٥٠\n٢\tمجموعة مواد التنظيف\t٢٣\t١٦٩٫٠٠\t٥٪\t٣٬٨٨٧٫٠٠\n٣\tتنظيف عميق للزيارة الواحدة\t٣\t٧٦٨٫٥٠\t٥٪\t٢٬٣٠٥٫٥٠\nالإجمالي قبل الضريبة\tAED ٢٢٬٨٩٥٫٠٠\nضريبة القيمة المضافة ٥٪\tAED ١٬١٤٤٫٧٥\nالإجمالي شامل الضريبة\tAED ٢٤٬٠٣٩٫٧٥\nشروط الدفع\tالدفع نقدا أو بالبطاقة عند التسليم\nرقم الحساب المصرفي الدولي\tAE79 1410 1194 8323 3174 289\nللتحقق من صحة هذه الوثيقة استخدم الرمز JQMA-PA3Q على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-ar-05"
+}

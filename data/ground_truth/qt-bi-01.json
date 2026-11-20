@@ -1,0 +1,34 @@
+{
+  "doc_id": "qt-bi-01",
+  "base_doc_id": "qt-bi-01",
+  "doc_type": "quotation",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/qt-bi-01.pdf",
+  "fields": {
+    "quote_number": "QTN-07017",
+    "quote_date": "2025-04-28",
+    "valid_until": "2025-05-12",
+    "client_name": "Barq Al Shamal Cleaning Services Est.",
+    "line_item_count": 4,
+    "subtotal": "9342.75",
+    "vat_amount": "467.14",
+    "total": "9809.89"
+  },
+  "aliases": {
+    "client_name": [
+      "مؤسسة برق الشمال لخدمات التنظيف"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "iso_date",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Marjan General Trading FZ-LLC\tالمرجان للتجارة العامة منطقة حرة ذ.م.م\nOffice 651, Deira, Al Rigga, Dubai\tمكتب 651، ديرة، الرقة، دبي\nTel +971 4 760 2479  |  P.O. Box 9103\tهاتف +971 4 760 2479  |  ص.ب 9103\nQuotation\tعرض سعر\nQuotation No.\tQTN-07017\tرقم عرض السعر\nDate\t2025-04-28\tالتاريخ\nValid Until\t2025-05-12\tصالح حتى\nClient in English\tBarq Al Shamal Cleaning Services Est.\tالعميل بالإنجليزية\nClient in Arabic\tمؤسسة برق الشمال لخدمات التنظيف\tالعميل بالعربية\nAttention\tMaria Santos Cruz\tعناية\nNo.\tDescription\tQty\tUnit Price\tAmount AED\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ AED\n1\tA4 copy paper, carton of 5 reams\t24\t145.25\t3,486.00\n2\tOffice desk, 160 cm\t2\t1,800.00\t3,600.00\n3\tDelivery charges\t1\t84.00\t84.00\n4\tFiling cabinet, 4 drawers\t3\t724.25\t2,172.75\nSubtotal excl. VAT\tAED 9,342.75\tالإجمالي قبل الضريبة\nVAT 5%\tAED 467.14\tضريبة القيمة المضافة 5%\nGrand Total\tAED 9,809.89\tالإجمالي\nPayment Terms\t100% on delivery\tشروط الدفع\nDelivery\tEx stock, subject to prior sale\tالتسليم\nPrepared by\tImran Tariq Qureshi\tأعده\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-bi-01"
+}

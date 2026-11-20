@@ -1,0 +1,54 @@
+{
+  "doc_id": "tl-bi-03.scan",
+  "base_doc_id": "tl-bi-03",
+  "doc_type": "trade_licence",
+  "layout": "bi",
+  "variant": "scanned",
+  "input_file": "data/docs/tl-bi-03.scan.jpg",
+  "fields": {
+    "licence_number": "4955763",
+    "company_name_ar": "المنارة للخدمات اللوجستية م.م.ح",
+    "company_name_en": "Al Manara Logistics FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2025-05-28",
+    "expiry_date": "2026-05-27",
+    "activities": [
+      "Cargo Services",
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "aliases": {
+    "issuing_authority": [
+      "منطقة رأس الخيمة الاقتصادية"
+    ]
+  },
+  "list_aliases": {
+    "activities": [
+      [
+        "Cargo Services",
+        "خدمات الشحن"
+      ],
+      [
+        "Perfumes and Cosmetics Trading",
+        "تجارة العطور ومستحضرات التجميل"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "written_month"
+  ],
+  "injection": null,
+  "text": "Ras Al Khaimah Economic Zone\tمنطقة رأس الخيمة الاقتصادية\nTrade Licence\tرخصة تجارية\nLicence No.\t4955763\tرقم الرخصة\nTrade Name in English\tAl Manara Logistics FZE\tالاسم التجاري بالإنجليزية\nTrade Name in Arabic\tالمنارة للخدمات اللوجستية م.م.ح\tالاسم التجاري بالعربية\nLegal Form\tFree Zone Establishment\tالشكل القانوني\nLicence Type\tCommercial\tنوع الرخصة\nIssue Date\t28 May 2025\tتاريخ الإصدار\nExpiry Date\t27 May 2026\tتاريخ الانتهاء\nRegistration No.\t8887613\tرقم التسجيل\nAddress\tWarehouse 2257, Al Hamra Industrial Zone, Ras Al Khaimah\tالعنوان\nManager\tYousef Ibrahim Haddad\tالمدير\nOwners and Partners\tالملاك والشركاء\nName\tNationality\tShare\nالاسم\tالجنسية\tالحصة\nYousef Ibrahim Haddad\tJordan\t100%\nLicensed Activities\tالأنشطة المرخصة\nCode\tActivity\tActivity in Arabic\nالرمز\tالنشاط\tالنشاط بالعربية\n5229.01\tCargo Services\tخدمات الشحن\n4772.01\tPerfumes and Cosmetics Trading\tتجارة العطور ومستحضرات التجميل\nVerify this document at verify.docbench.example with code FUGJ-8546\tللتحقق من صحة هذه الوثيقة استخدم الرمز FUGJ-8546 على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": -1.868,
+    "blur_radius": 0.749,
+    "noise_sigma": 8.5,
+    "speckle_density": 0.00208,
+    "jpeg_quality": 53.0,
+    "noise_seed": 107058577.0
+  },
+  "seed": "docbench-v1:tl-bi-03.scan"
+}

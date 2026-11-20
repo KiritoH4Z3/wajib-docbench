@@ -1,0 +1,26 @@
+{
+  "doc_id": "trc-en-03",
+  "base_doc_id": "trc-en-03",
+  "doc_type": "tax_certificate",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/trc-en-03.pdf",
+  "fields": {
+    "trn": "100066312085688",
+    "legal_name_ar": null,
+    "legal_name_en": "Al Manara Foodstuff Trading Co.",
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2026-02-15"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "iso_date",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Federal Tax Authority\nCorporate Tax Registration Certificate\nTax Registration Number\t100066312085688\nLegal Name\tAl Manara Foodstuff Trading Co.\nRegistered Address\tWarehouse 2400, Al Qusais Industrial Area 2, Dubai\nEffective Registration Date\t2026-02-15\nDate of Issue\t2026-06-08\nFinancial Year\t1 January to 31 December\nThis certificate confirms registration with the Federal Tax Authority.\nVerify this document at verify.docbench.example with code QSZ5-LW5K\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:trc-en-03"
+}

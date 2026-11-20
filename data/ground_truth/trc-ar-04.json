@@ -1,0 +1,26 @@
+{
+  "doc_id": "trc-ar-04",
+  "base_doc_id": "trc-ar-04",
+  "doc_type": "tax_certificate",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/trc-ar-04.pdf",
+  "fields": {
+    "trn": "100965152225478",
+    "legal_name_ar": "الهدف لتنظيم الفعاليات ش.م.ح",
+    "legal_name_en": null,
+    "tax_type": "VAT",
+    "effective_date": "2026-06-26"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "الهيئة الاتحادية للضرائب\nشهادة التسجيل في ضريبة القيمة المضافة\nرقم التسجيل الضريبي\t100965152225478\nالاسم القانوني\tالهدف لتنظيم الفعاليات ش.م.ح\nالعنوان المسجل\tمكتب 939، آل نهيان، أبوظبي\nتاريخ سريان التسجيل\t26 يونيو 2026\nتاريخ إصدار الشهادة\t13 أكتوبر 2026\nالفترة الضريبية\tشهرية\nتؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية للضرائب.\nللتحقق من صحة هذه الوثيقة استخدم الرمز X4JW-65TV على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:trc-ar-04"
+}

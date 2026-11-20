@@ -1,0 +1,48 @@
+{
+  "doc_id": "inv-bi-03.scan",
+  "base_doc_id": "inv-bi-03",
+  "doc_type": "tax_invoice",
+  "layout": "bi",
+  "variant": "scanned",
+  "input_file": "data/docs/inv-bi-03.scan.jpg",
+  "fields": {
+    "supplier_name": "Durrat Al Shati Interior Design FZ-LLC",
+    "supplier_trn": "100355473619034",
+    "invoice_number": "INV-2026-045122",
+    "invoice_date": "2026-05-11",
+    "customer_name": "Rajesh Kumar Nair",
+    "customer_trn": null,
+    "subtotal": "14404.50",
+    "vat_amount": "720.23",
+    "total": "15124.73",
+    "currency": "AED"
+  },
+  "aliases": {
+    "supplier_name": [
+      "درة الشاطئ للتصميم الداخلي منطقة حرة ذ.م.م"
+    ],
+    "customer_name": [
+      "راجيش كومار ناير"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "aed_marker",
+    "thousands_commas",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Durrat Al Shati Interior Design FZ-LLC\tدرة الشاطئ للتصميم الداخلي منطقة حرة ذ.م.م\nOffice 454, Al Nahyan, Abu Dhabi\tمكتب 454، آل نهيان، أبوظبي\nTel +971 2 452 6378  |  P.O. Box 81205\tهاتف +971 2 452 6378  |  ص.ب 81205\nTax Invoice\tفاتورة ضريبية\nSupplier TRN\t100355473619034\tالرقم الضريبي للمورد\nInvoice No.\tINV-2026-045122\tرقم الفاتورة\nInvoice Date\t11 May 2026\tتاريخ الفاتورة\nDate of Supply\t11 May 2026\tتاريخ التوريد\nBill To\tفاتورة إلى\nCustomer Name in English\tRajesh Kumar Nair\tاسم العميل بالإنجليزية\nCustomer Name in Arabic\tراجيش كومار ناير\tاسم العميل بالعربية\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ AED\n1\tOffice desk, 160 cm\t3\t1,615.00\t5%\t4,845.00\n2\tA4 copy paper, carton of 5 reams\t21\t132.50\t5%\t2,782.50\n3\tFiling cabinet, 4 drawers\t9\t753.00\t5%\t6,777.00\nSubtotal excl. VAT\t14,404.50 AED\tالإجمالي قبل الضريبة\nVAT 5%\t720.23 AED\tضريبة القيمة المضافة 5%\nTotal incl. VAT\t15,124.73 AED\tالإجمالي شامل الضريبة\nAmount in words: UAE Dirhams Fifteen Thousand One Hundred Twenty-Four and Seventy-Three Fils Only\nPayment Terms\tPayment within 30 days by bank transfer\tشروط الدفع\nDue Date\t10 June 2026\tتاريخ الاستحقاق\nIBAN\tAE87 0274 0890 9010 6804 505\tرقم الحساب المصرفي الدولي\nVerify this document at verify.docbench.example with code 8HR8-M3XY\tللتحقق من صحة هذه الوثيقة استخدم الرمز 8HR8-M3XY على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": -1.809,
+    "blur_radius": 0.67,
+    "noise_sigma": 8.48,
+    "speckle_density": 0.0007,
+    "jpeg_quality": 41.0,
+    "noise_seed": 2125368648.0
+  },
+  "seed": "docbench-v1:inv-bi-03.scan"
+}

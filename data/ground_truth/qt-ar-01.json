@@ -1,0 +1,31 @@
+{
+  "doc_id": "qt-ar-01",
+  "base_doc_id": "qt-ar-01",
+  "doc_type": "quotation",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/qt-ar-01.pdf",
+  "fields": {
+    "quote_number": "QT-2026-7403",
+    "quote_date": "2026-05-09",
+    "valid_until": "2026-05-24",
+    "client_name": "سما الخليج للخدمات اللوجستية ش.م.ح",
+    "line_item_count": 4,
+    "subtotal": "4542.17",
+    "vat_amount": "227.11",
+    "total": "4769.28"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "written_month",
+    "arabic_currency_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "المنارة للخدمات الفنية م.م.ح\nمكتب ١٤، ديرة، الرقة، دبي\nهاتف +٩٧١ ٤ ٨٨٧ ٦٣٢٩  |  ص.ب ٢١٨٥٣\nعرض سعر\nرقم عرض السعر\tQT-2026-7403\nالتاريخ\t٩ مايو ٢٠٢٦\nصالح حتى\t٢٤ مايو ٢٠٢٦\nالعميل\tسما الخليج للخدمات اللوجستية ش.م.ح\nعناية\tفاطمة علي المنصوري\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ د.إ\n١\tإسمنت، كيس 50 كجم\t٢٤\t٢٢٫٧٥\t٥٤٦٫٠٠\n٢\tإضاءة لوحية 60x60\t٤\t٨٠٫١٣\t٣٢٠٫٥٢\n٣\tبلاط سيراميك للمتر المربع\t٣٢\t٤١٫٠٦\t١٬٣١٣٫٩٢\n٤\tصيانة مكيفات الهواء\t٧\t٣٣٧٫٣٩\t٢٬٣٦١٫٧٣\nالإجمالي قبل الضريبة\tد.إ ٤٬٥٤٢٫١٧\nضريبة القيمة المضافة ٥٪\tد.إ ٢٢٧٫١١\nالإجمالي\tد.إ ٤٬٧٦٩٫٢٨\nشروط الدفع\t٣٠ يوما من تاريخ الفاتورة\nالتسليم\tخلال ١٤ يوما من أمر الشراء\nأعده\tعمر حسن الشامسي\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-ar-01"
+}

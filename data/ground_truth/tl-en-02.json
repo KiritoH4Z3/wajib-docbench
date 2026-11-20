@@ -1,0 +1,36 @@
+{
+  "doc_id": "tl-en-02",
+  "base_doc_id": "tl-en-02",
+  "doc_type": "trade_licence",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/tl-en-02.pdf",
+  "fields": {
+    "licence_number": "DMCC-647448",
+    "company_name_ar": null,
+    "company_name_en": "Al Mizan Perfumes FZCO",
+    "legal_form": "FZCO",
+    "issuing_authority": "Dubai Multi Commodities Centre",
+    "issue_date": "2024-08-03",
+    "expiry_date": "2025-08-02",
+    "activities": [
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "Perfumes and Cosmetics Trading"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Dubai Multi Commodities Centre\nTrade Licence\nLicence No.\tDMCC-647448\nTrade Name\tAl Mizan Perfumes FZCO\nLegal Form\tFree Zone Company\nLicence Type\tCommercial\nIssue Date\t03/08/2024\nExpiry Date\t02/08/2025\nRegistration No.\t7081379\nAddress\tShop 210, Jumeirah Lakes Towers, Dubai\nManager\tYousef Ibrahim Haddad\nOwners and Partners\nName\tNationality\tShare\nTariq Nabil Khoury\tLebanon\t50%\nYousef Ibrahim Haddad\tJordan\t37%\nKhalid Rashid Al Nuaimi\tUnited Arab Emirates\t13%\nLicensed Activities\nCode\tActivity\n4772.01\tPerfumes and Cosmetics Trading\nVerify this document at verify.docbench.example with code 2H25-BEFU\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-en-02"
+}

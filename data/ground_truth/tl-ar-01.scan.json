@@ -1,0 +1,50 @@
+{
+  "doc_id": "tl-ar-01.scan",
+  "base_doc_id": "tl-ar-01",
+  "doc_type": "trade_licence",
+  "layout": "ar",
+  "variant": "scanned",
+  "input_file": "data/docs/tl-ar-01.scan.jpg",
+  "fields": {
+    "licence_number": "58177",
+    "company_name_ar": "فرع نجم الصحراء للتجارة العامة",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصادية بعجمان",
+    "issue_date": "2026-06-02",
+    "expiry_date": "2027-06-01",
+    "activities": [
+      "تجارة الأجهزة المنزلية",
+      "تجارة الأثاث"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "تجارة الأجهزة المنزلية"
+      ],
+      [
+        "تجارة الأثاث"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "arabic_indic_digits",
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "دائرة التنمية الاقتصادية بعجمان\nرخصة تجارية\nرقم الرخصة\t٥٨١٧٧\nالاسم التجاري\tفرع نجم الصحراء للتجارة العامة\nالشكل القانوني\tفرع شركة أجنبية\nنوع الرخصة\tتجارية\nتاريخ الإصدار\t٢ يونيو ٢٠٢٦\nتاريخ الانتهاء\t١ يونيو ٢٠٢٧\nرقم السجل التجاري\t٦٨٧٥١٨٤\nالعنوان\tمستودع ١٤٣٨، الجرف الصناعية ١، عجمان\nالمدير\tليلى محمود صالح\nالملاك والشركاء\nالاسم\tالجنسية\tالحصة\nليلى محمود صالح\tمصر\t١٠٠٪\nالأنشطة المرخصة\nالرمز\tالنشاط\n4649.01\tتجارة الأجهزة المنزلية\n4759.01\tتجارة الأثاث\nللتحقق من صحة هذه الوثيقة استخدم الرمز 3UUQ-MDZU على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": -0.916,
+    "blur_radius": 1.08,
+    "noise_sigma": 4.83,
+    "speckle_density": 0.00102,
+    "jpeg_quality": 55.0,
+    "noise_seed": 1871431921.0
+  },
+  "seed": "docbench-v1:tl-ar-01.scan"
+}

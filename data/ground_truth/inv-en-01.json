@@ -1,0 +1,32 @@
+{
+  "doc_id": "inv-en-01",
+  "base_doc_id": "inv-en-01",
+  "doc_type": "tax_invoice",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/inv-en-01.pdf",
+  "fields": {
+    "supplier_name": "Al Marjan Foodstuff Trading FZ-LLC",
+    "supplier_trn": "100848358215705",
+    "invoice_number": "INV/2025/68012",
+    "invoice_date": "2025-12-20",
+    "customer_name": "Durrat Al Shati Events Branch",
+    "customer_trn": "100557424795750",
+    "subtotal": "11121.70",
+    "vat_amount": "556.09",
+    "total": "11677.79",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Marjan Foodstuff Trading FZ-LLC\nShop 673, Al Khalidiyah, Abu Dhabi\nTel +971 2 590 7692  |  P.O. Box 7326\nTax Invoice\nSupplier TRN\t100848358215705\nInvoice No.\tINV/2025/68012\nInvoice Date\t20 December 2025\nBill To\nCustomer Name\tDurrat Al Shati Events Branch\nCustomer TRN\t100557424795750\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\n1\tDates, premium, 5 kg box\t27\t166.85\t5%\t4,504.95\n2\tMineral water, carton of 24\t18\t25.50\t5%\t459.00\n3\tBasmati rice, 20 kg bag\t27\t85.00\t5%\t2,295.00\n4\tSunflower oil, 1.8 litres\t32\t23.00\t5%\t736.00\n5\tBasmati rice, 20 kg bag\t33\t94.75\t5%\t3,126.75\nSubtotal excl. VAT\tAED 11,121.70\nVAT 5%\tAED 556.09\nTotal incl. VAT\tAED 11,677.79\nPayment Terms\tCash or card on delivery\nDue Date\t19 January 2026\nIBAN\tAE26 0266 7735 7627 7507 207\nVerify this document at verify.docbench.example with code 5XEV-6829\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-en-01"
+}

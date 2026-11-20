@@ -1,0 +1,30 @@
+{
+  "doc_id": "qt-ar-05",
+  "base_doc_id": "qt-ar-05",
+  "doc_type": "quotation",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/qt-ar-05.pdf",
+  "fields": {
+    "quote_number": "Q/24/7595",
+    "quote_date": "2024-05-04",
+    "valid_until": "2024-06-03",
+    "client_name": "المرجان لتنظيم الفعاليات ش.م.ح",
+    "line_item_count": 3,
+    "subtotal": "6443.86",
+    "vat_amount": "322.19",
+    "total": "6766.05"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "دار الياسمين للتجارة العامة منطقة حرة ذ.م.م\nمستودع ٢٣١٢، النخيل، رأس الخيمة\nهاتف +٩٧١ ٧ ٥٥٣ ١١٥٧  |  ص.ب ٧٨٦٢٢\nعرض سعر\nرقم عرض السعر\tQ/24/7595\nالتاريخ\t٠٤-٠٥-٢٠٢٤\nصالح حتى\t٠٣-٠٦-٢٠٢٤\nالعميل\tالمرجان لتنظيم الفعاليات ش.م.ح\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ AED\n١\tورق تصوير A4، كرتونة 5 رزم\t١٨\t١٣٨٫٧٥\t٢٬٤٩٧٫٥٠\n٢\tمكتب عمل 160 سم\t٢\t١٬٨٤٥٫٥٠\t٣٬٦٩١٫٠٠\n٣\tرسوم التوصيل\t١\t٢٥٥٫٣٦\t٢٥٥٫٣٦\nالإجمالي قبل الضريبة\t٦٬٤٤٣٫٨٦ AED\nضريبة القيمة المضافة ٥٪\t٣٢٢٫١٩ AED\nالإجمالي\t٦٬٧٦٦٫٠٥ AED\nشروط الدفع\t٣٠ يوما من تاريخ الفاتورة\nالتسليم\tمن المخزون حسب التوفر\nأعده\tيوسف إبراهيم حداد\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-ar-05"
+}

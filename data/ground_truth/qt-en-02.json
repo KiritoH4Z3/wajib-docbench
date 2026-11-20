@@ -1,0 +1,29 @@
+{
+  "doc_id": "qt-en-02",
+  "base_doc_id": "qt-en-02",
+  "doc_type": "quotation",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/qt-en-02.pdf",
+  "fields": {
+    "quote_number": "QTN-07815",
+    "quote_date": "2027-01-12",
+    "valid_until": "2027-02-11",
+    "client_name": "Al Fajr Foodstuff Trading Est.",
+    "line_item_count": 2,
+    "subtotal": "13291.00",
+    "vat_amount": "664.55",
+    "total": "13955.55"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Waha Consultancy L.L.C\nOffice 1647, Al Nuaimiya, Ajman\nTel +971 6 550 7505  |  P.O. Box 94436\nQuotation\nQuotation No.\tQTN-07815\nDate\t12-01-2027\nValid Until\t11-02-2027\nClient\tAl Fajr Foodstuff Trading Est.\nAttention\tAhmed Saeed Al Ketbi\nNo.\tDescription\tQty\tUnit Price\tAmount AED\n1\tReport preparation\t1\t4,768.00\t4,768.00\n2\tProcess review workshop\t1\t8,523.00\t8,523.00\nSubtotal excl. VAT\t13,291.00 AED\nVAT 5%\t664.55 AED\nGrand Total\t13,955.55 AED\nPayment Terms\t30 days from invoice date\nDelivery\tEx stock, subject to prior sale\nPrepared by\tLayla Mahmoud Saleh\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-en-02"
+}

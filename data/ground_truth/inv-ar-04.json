@@ -1,0 +1,34 @@
+{
+  "doc_id": "inv-ar-04",
+  "base_doc_id": "inv-ar-04",
+  "doc_type": "tax_invoice",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/inv-ar-04.pdf",
+  "fields": {
+    "supplier_name": "فرع النور لخدمات التنظيف",
+    "supplier_trn": "100188133674148",
+    "invoice_number": "2027/89278",
+    "invoice_date": "2027-09-30",
+    "customer_name": "يوسف إبراهيم حداد",
+    "customer_trn": null,
+    "subtotal": "5909.40",
+    "vat_amount": "295.47",
+    "total": "6204.87",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "arabic_currency_marker",
+    "thousands_commas",
+    "absent_field",
+    "masked_trn"
+  ],
+  "injection": null,
+  "text": "فرع النور لخدمات التنظيف\nمحل 745، النخيل، رأس الخيمة\nهاتف +971 7 209 8033  |  ص.ب 13780\nفاتورة ضريبية\nالرقم الضريبي للمورد\t100-1881-3367-4148\nرقم الفاتورة\t2027/89278\nتاريخ الفاتورة\t30 سبتمبر 2027\nفاتورة إلى\nاسم العميل\tيوسف إبراهيم حداد\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ د.إ\n1\tمجموعة مواد التنظيف\t35\t168.84\t5%\t5,909.40\nالإجمالي قبل الضريبة\t5,909.40 د.إ\nضريبة القيمة المضافة 5%\t295.47 د.إ\nالإجمالي شامل الضريبة\t6,204.87 د.إ\nشروط الدفع\tالدفع خلال 15 يوما من تاريخ الفاتورة\nتاريخ الاستحقاق\t30 أكتوبر 2027\nرقم الحساب المصرفي الدولي\tAE73 0996 6167 6160 5353 036\nللتحقق من صحة هذه الوثيقة استخدم الرمز N9AF-2T4D على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-ar-04"
+}

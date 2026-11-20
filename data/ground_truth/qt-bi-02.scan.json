@@ -1,0 +1,41 @@
+{
+  "doc_id": "qt-bi-02.scan",
+  "base_doc_id": "qt-bi-02",
+  "doc_type": "quotation",
+  "layout": "bi",
+  "variant": "scanned",
+  "input_file": "data/docs/qt-bi-02.scan.jpg",
+  "fields": {
+    "quote_number": "QTN-01871",
+    "quote_date": "2024-12-31",
+    "valid_until": "2025-01-15",
+    "client_name": "Al Reem IT Solutions FZ-LLC",
+    "line_item_count": 4,
+    "subtotal": "13338.30",
+    "vat_amount": "666.92",
+    "total": "14005.22"
+  },
+  "aliases": {
+    "client_name": [
+      "الريم لحلول تقنية المعلومات منطقة حرة ذ.م.م"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_currency_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Fajr Building Materials FZ-LLC\tالفجر لمواد البناء منطقة حرة ذ.م.م\nOffice 394, Mussafah Industrial Area, Abu Dhabi\tمكتب 394، منطقة مصفح الصناعية، أبوظبي\nTel +971 2 259 3349  |  P.O. Box 84299\tهاتف +971 2 259 3349  |  ص.ب 84299\nQuotation\tعرض سعر\nQuotation No.\tQTN-01871\tرقم عرض السعر\nDate\t31/12/2024\tالتاريخ\nValid Until\t15/01/2025\tصالح حتى\nClient in English\tAl Reem IT Solutions FZ-LLC\tالعميل بالإنجليزية\nClient in Arabic\tالريم لحلول تقنية المعلومات منطقة حرة ذ.م.م\tالعميل بالعربية\nAttention\tDavid John Wilson\tعناية\nNo.\tDescription\tQty\tUnit Price\tAmount د.إ\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ د.إ\n1\tLED panel light 60x60\t30\t92.50\t2,775.00\n2\tCeramic floor tiles, per sqm\t31\t44.19\t1,369.89\n3\tSteel rebar, per tonne\t3\t2,965.72\t8,897.16\n4\tCement, 50 kg bag\t15\t19.75\t296.25\nSubtotal excl. VAT\t13,338.30 د.إ\tالإجمالي قبل الضريبة\nVAT 5%\t666.92 د.إ\tضريبة القيمة المضافة 5%\nGrand Total\t14,005.22 د.إ\tالإجمالي\nPayment Terms\t50% advance, balance on delivery\tشروط الدفع\nDelivery\tWithin 7 working days\tالتسليم\nPrepared by\tLayla Mahmoud Saleh\tأعده\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": 1.601,
+    "blur_radius": 0.765,
+    "noise_sigma": 6.43,
+    "speckle_density": 0.00093,
+    "jpeg_quality": 35.0,
+    "noise_seed": 1107666629.0
+  },
+  "seed": "docbench-v1:qt-bi-02.scan"
+}

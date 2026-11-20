@@ -1,0 +1,39 @@
+{
+  "doc_id": "inv-bi-01",
+  "base_doc_id": "inv-bi-01",
+  "doc_type": "tax_invoice",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/inv-bi-01.pdf",
+  "fields": {
+    "supplier_name": "Al Reem Foodstuff Trading Co.",
+    "supplier_trn": "100011606085045",
+    "invoice_number": "INV/2027/32351",
+    "invoice_date": "2027-09-17",
+    "customer_name": "Sahil Al Dhahab Building Materials FZ-LLC",
+    "customer_trn": "100632171572014",
+    "subtotal": "15330.25",
+    "vat_amount": "766.51",
+    "total": "16096.76",
+    "currency": "AED"
+  },
+  "aliases": {
+    "supplier_name": [
+      "شركة الريم لتجارة المواد الغذائية"
+    ],
+    "customer_name": [
+      "ساحل الذهب لمواد البناء منطقة حرة ذ.م.م"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "iso_date",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Reem Foodstuff Trading Co.\tشركة الريم لتجارة المواد الغذائية\nWarehouse 2379, Al Nakheel, Ras Al Khaimah\tمستودع 2379، النخيل، رأس الخيمة\nTel +971 7 357 8332  |  P.O. Box 89540\tهاتف +971 7 357 8332  |  ص.ب 89540\nTax Invoice\tفاتورة ضريبية\nSupplier TRN\t100011606085045\tالرقم الضريبي للمورد\nInvoice No.\tINV/2027/32351\tرقم الفاتورة\nInvoice Date\t2027-09-17\tتاريخ الفاتورة\nDate of Supply\t2027-09-08\tتاريخ التوريد\nBill To\tفاتورة إلى\nCustomer Name in English\tSahil Al Dhahab Building Materials FZ-LLC\tاسم العميل بالإنجليزية\nCustomer Name in Arabic\tساحل الذهب لمواد البناء منطقة حرة ذ.م.م\tاسم العميل بالعربية\nCustomer TRN\t100632171572014\tالرقم الضريبي للعميل\nCustomer Address\tShop 771, Mussafah Industrial Area, Abu Dhabi\tعنوان العميل\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ AED\n1\tDates, premium, 5 kg box\t29\t169.25\t5%\t4,908.25\n2\tSunflower oil, 1.8 litres\t21\t22.00\t5%\t462.00\n3\tMineral water, carton of 24\t3\t26.00\t5%\t78.00\n4\tBasmati rice, 20 kg bag\t6\t114.50\t5%\t687.00\n5\tConsultancy, per day\t3\t3,065.00\t5%\t9,195.00\nSubtotal excl. VAT\t15,330.25 AED\tالإجمالي قبل الضريبة\nVAT 5%\t766.51 AED\tضريبة القيمة المضافة 5%\nTotal incl. VAT\t16,096.76 AED\tالإجمالي شامل الضريبة\nAmount in words: UAE Dirhams Sixteen Thousand Ninety-Six and Seventy-Six Fils Only\nPayment Terms\tPayment within 15 days of invoice date\tشروط الدفع\nDue Date\t2027-10-17\tتاريخ الاستحقاق\nIBAN\tAE10 4710 1571 6858 4496 850\tرقم الحساب المصرفي الدولي\nVerify this document at verify.docbench.example with code SK3X-7RG7\tللتحقق من صحة هذه الوثيقة استخدم الرمز SK3X-7RG7 على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-bi-01"
+}

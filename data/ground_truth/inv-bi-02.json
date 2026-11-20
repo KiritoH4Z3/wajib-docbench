@@ -1,0 +1,39 @@
+{
+  "doc_id": "inv-bi-02",
+  "base_doc_id": "inv-bi-02",
+  "doc_type": "tax_invoice",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/inv-bi-02.pdf",
+  "fields": {
+    "supplier_name": "Wadi Al Sidr Interior Design Branch",
+    "supplier_trn": "100349144549580",
+    "invoice_number": "INV-2025-086566",
+    "invoice_date": "2025-08-20",
+    "customer_name": "Najm Al Sahra IT Solutions Branch",
+    "customer_trn": "100865001217320",
+    "subtotal": "27396.00",
+    "vat_amount": "1369.80",
+    "total": "28765.80",
+    "currency": "AED"
+  },
+  "aliases": {
+    "supplier_name": [
+      "فرع وادي السدر للتصميم الداخلي"
+    ],
+    "customer_name": [
+      "فرع نجم الصحراء لحلول تقنية المعلومات"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_currency_marker",
+    "thousands_commas",
+    "masked_trn"
+  ],
+  "injection": null,
+  "text": "Wadi Al Sidr Interior Design Branch\tفرع وادي السدر للتصميم الداخلي\nWarehouse 1549, Deira, Al Rigga, Dubai\tمستودع 1549، ديرة، الرقة، دبي\nTel +971 4 800 5514  |  P.O. Box 50214\tهاتف +971 4 800 5514  |  ص.ب 50214\nTax Invoice\tفاتورة ضريبية\nSupplier TRN\t100-3491-4454-9580\tالرقم الضريبي للمورد\nInvoice No.\tINV-2025-086566\tرقم الفاتورة\nInvoice Date\t20/08/2025\tتاريخ الفاتورة\nBill To\tفاتورة إلى\nCustomer Name in English\tNajm Al Sahra IT Solutions Branch\tاسم العميل بالإنجليزية\nCustomer Name in Arabic\tفرع نجم الصحراء لحلول تقنية المعلومات\tاسم العميل بالعربية\nCustomer TRN\t100-8650-0121-7320\tالرقم الضريبي للعميل\nCustomer Address\tWarehouse 938, Al Khalidiyah, Abu Dhabi\tعنوان العميل\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount د.إ\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ د.إ\n1\tDelivery charges\t1\t103.25\t5%\t103.25\n2\tFiling cabinet, 4 drawers\t24\t952.50\t5%\t22,860.00\n3\tOffice desk, 160 cm\t2\t1,229.00\t5%\t2,458.00\n4\tErgonomic office chair\t3\t658.25\t5%\t1,974.75\nSubtotal excl. VAT\t27,396.00 د.إ\tالإجمالي قبل الضريبة\nVAT 5%\t1,369.80 د.إ\tضريبة القيمة المضافة 5%\nTotal incl. VAT\t28,765.80 د.إ\tالإجمالي شامل الضريبة\nAmount in words: UAE Dirhams Twenty-Eight Thousand Seven Hundred Sixty-Five and Eighty Fils Only\nPayment Terms\tCash or card on delivery\tشروط الدفع\nDue Date\t19/09/2025\tتاريخ الاستحقاق\nIBAN\tAE71 9584 4713 0148 7361 235\tرقم الحساب المصرفي الدولي\nVerify this document at verify.docbench.example with code HHFR-JCNT\tللتحقق من صحة هذه الوثيقة استخدم الرمز HHFR-JCNT على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-bi-02"
+}

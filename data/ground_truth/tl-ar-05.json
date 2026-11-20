@@ -1,0 +1,37 @@
+{
+  "doc_id": "tl-ar-05",
+  "base_doc_id": "tl-ar-05",
+  "doc_type": "trade_licence",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/tl-ar-05.pdf",
+  "fields": {
+    "licence_number": "67604",
+    "company_name_ar": "النخلة للعطور ش.م.ح",
+    "company_name_en": null,
+    "legal_form": "FZCO",
+    "issuing_authority": "سلطة المنطقة الحرة الدولية",
+    "issue_date": "2026-04-19",
+    "expiry_date": "2027-04-18",
+    "activities": [
+      "تجارة العطور ومستحضرات التجميل"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "تجارة العطور ومستحضرات التجميل"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "arabic_indic_digits",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "سلطة المنطقة الحرة الدولية\nرخصة تجارية\nرقم الرخصة\t٦٧٦٠٤\nالاسم التجاري\tالنخلة للعطور ش.م.ح\nالشكل القانوني\tشركة منطقة حرة\nنوع الرخصة\tصناعية\nتاريخ الإصدار\t١٩.٠٤.٢٠٢٦\nتاريخ الانتهاء\t١٨.٠٤.٢٠٢٧\nرقم التسجيل\t٧٦١٤٦٤٠\nالعنوان\tمكتب ٢٠٠٤، واحة دبي للسيليكون، دبي\nالمدير\tليلى محمود صالح\nالملاك والشركاء\nالاسم\tالجنسية\tالحصة\nنورة سالم الظاهري\tالإمارات\t٦٠٪\nليلى محمود صالح\tمصر\t٤٠٪\nالأنشطة المرخصة\nالرمز\tالنشاط\n4772.01\tتجارة العطور ومستحضرات التجميل\nللتحقق من صحة هذه الوثيقة استخدم الرمز C8EB-VUYT على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-ar-05"
+}

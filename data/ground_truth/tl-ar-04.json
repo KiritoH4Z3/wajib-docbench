@@ -1,0 +1,41 @@
+{
+  "doc_id": "tl-ar-04",
+  "base_doc_id": "tl-ar-04",
+  "doc_type": "trade_licence",
+  "layout": "ar",
+  "variant": "clean",
+  "input_file": "data/docs/tl-ar-04.pdf",
+  "fields": {
+    "licence_number": "CN-5938994",
+    "company_name_ar": "فرع برق الشمال لمواد البناء",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصادية في أبوظبي",
+    "issue_date": "2026-05-30",
+    "expiry_date": "2027-05-29",
+    "activities": [
+      "تجارة مواد البناء",
+      "التجارة العامة"
+    ]
+  },
+  "aliases": {},
+  "list_aliases": {
+    "activities": [
+      [
+        "تجارة مواد البناء"
+      ],
+      [
+        "التجارة العامة"
+      ]
+    ]
+  },
+  "hard_cases": [
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "دائرة التنمية الاقتصادية في أبوظبي\nرخصة تجارية\nرقم الرخصة\tCN-5938994\nالاسم التجاري\tفرع برق الشمال لمواد البناء\nالشكل القانوني\tفرع شركة أجنبية\nنوع الرخصة\tتجارية\nتاريخ الإصدار\t30 أيار 2026\nتاريخ الانتهاء\t29 أيار 2027\nرقم السجل التجاري\t8883715\nالعنوان\tمكتب 1006، منطقة مصفح الصناعية، أبوظبي\nالمدير\tنورة سالم الظاهري\nالملاك والشركاء\nالاسم\tالجنسية\tالحصة\nنورة سالم الظاهري\tالإمارات\t100%\nالأنشطة المرخصة\nالرمز\tالنشاط\n4663.01\tتجارة مواد البناء\n4690.01\tالتجارة العامة\nللتحقق من صحة هذه الوثيقة استخدم الرمز B7GC-TQZL على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:tl-ar-04"
+}

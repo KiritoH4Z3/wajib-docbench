@@ -1,0 +1,43 @@
+[project]
+name = "wajib-docbench"
+version = "0.1.0"
+description = "Open Arabic models against a commercial API on synthetic UAE business documents: accuracy, latency and cost per 1,000 documents."
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "pydantic>=2.9",
+  "typer>=0.15",
+  "openai>=1.60",
+  "pyyaml>=6.0",
+  "jinja2>=3.1",
+  "playwright>=1.49",
+  "pypdfium2>=4.30",
+  "pillow>=11.0",
+  "rapidfuzz>=3.10",
+  "hijridate>=2.5",
+  "python-dateutil>=2.9",
+  "matplotlib>=3.9",
+  "numpy>=2.1",
+  "python-dotenv>=1.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "ruff>=0.8"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+  "slow: renders PDFs or runs Docker; skipped unless RUN_SLOW=1",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["data/docs", "results"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

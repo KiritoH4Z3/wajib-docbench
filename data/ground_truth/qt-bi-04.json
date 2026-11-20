@@ -1,0 +1,34 @@
+{
+  "doc_id": "qt-bi-04",
+  "base_doc_id": "qt-bi-04",
+  "doc_type": "quotation",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/qt-bi-04.pdf",
+  "fields": {
+    "quote_number": "QT-2025-9359",
+    "quote_date": "2025-12-17",
+    "valid_until": "2026-01-01",
+    "client_name": "Durrat Al Shati Cleaning Services Est.",
+    "line_item_count": 5,
+    "subtotal": "10320.05",
+    "vat_amount": "516.00",
+    "total": "10836.05"
+  },
+  "aliases": {
+    "client_name": [
+      "مؤسسة درة الشاطئ لخدمات التنظيف"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "arabic_currency_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Al Marjan General Trading Branch\tفرع المرجان للتجارة العامة\nShop 1994, Deira, Al Rigga, Dubai\tمحل ١٩٩٤، ديرة، الرقة، دبي\nTel +971 4 706 4132  |  P.O. Box 75732\tهاتف +٩٧١ ٤ ٧٠٦ ٤١٣٢  |  ص.ب ٧٥٧٣٢\nQuotation\tعرض سعر\nQuotation No.\tQT-2025-9359\tرقم عرض السعر\nDate\t١٧/١٢/٢٠٢٥\tالتاريخ\nValid Until\t٠١/٠١/٢٠٢٦\tصالح حتى\nClient in English\tDurrat Al Shati Cleaning Services Est.\tالعميل بالإنجليزية\nClient in Arabic\tمؤسسة درة الشاطئ لخدمات التنظيف\tالعميل بالعربية\nAttention\tHamdan Obaid Al Suwaidi\tعناية\nNo.\tDescription\tQty\tUnit Price\tAmount د.إ\nم\tالوصف\tالكمية\tسعر الوحدة\tالمبلغ د.إ\n١\tErgonomic office chair\t١\t٩٤٤٫٠٠\t٩٤٤٫٠٠\n٢\tOffice desk, 160 cm\t٣\t١٬٧٧٦٫٠٠\t٥٬٣٢٨٫٠٠\n٣\tFiling cabinet, 4 drawers\t٥\t٦٦١٫٠٠\t٣٬٣٠٥٫٠٠\n٤\tA4 copy paper, carton of 5 reams\t٥\t١١٥٫٣٦\t٥٧٦٫٨٠\n٥\tDelivery charges\t١\t١٦٦٫٢٥\t١٦٦٫٢٥\nSubtotal excl. VAT\tد.إ ١٠٬٣٢٠٫٠٥\tالإجمالي قبل الضريبة\nVAT ٥٪\tد.إ ٥١٦٫٠٠\tضريبة القيمة المضافة ٥٪\nGrand Total\tد.إ ١٠٬٨٣٦٫٠٥\tالإجمالي\nPayment Terms\t50% advance, balance on delivery\tشروط الدفع\nDelivery\tWithin 7 working days\tالتسليم\nPrepared by\tOmar Hassan Al Shamsi\tأعده\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-bi-04"
+}

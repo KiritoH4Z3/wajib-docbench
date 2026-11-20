@@ -1,0 +1,38 @@
+{
+  "doc_id": "inv-bi-04",
+  "base_doc_id": "inv-bi-04",
+  "doc_type": "tax_invoice",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/inv-bi-04.pdf",
+  "fields": {
+    "supplier_name": "Sahil Al Dhahab Foodstuff Trading Est.",
+    "supplier_trn": "100888284829621",
+    "invoice_number": "INV-2024-023011",
+    "invoice_date": "2024-04-03",
+    "customer_name": "Al Thuraya Interior Design FZCO",
+    "customer_trn": "100889771078220",
+    "subtotal": "224.00",
+    "vat_amount": "11.20",
+    "total": "235.20",
+    "currency": "AED"
+  },
+  "aliases": {
+    "supplier_name": [
+      "مؤسسة ساحل الذهب لتجارة المواد الغذائية"
+    ],
+    "customer_name": [
+      "الثريا للتصميم الداخلي ش.م.ح"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "arabic_indic_digits",
+    "arabic_currency_marker"
+  ],
+  "injection": null,
+  "text": "Sahil Al Dhahab Foodstuff Trading Est.\tمؤسسة ساحل الذهب لتجارة المواد الغذائية\nShop 2247, Al Jurf Industrial 1, Ajman\tمحل ٢٢٤٧، الجرف الصناعية ١، عجمان\nTel +971 6 885 2007  |  P.O. Box 65503\tهاتف +٩٧١ ٦ ٨٨٥ ٢٠٠٧  |  ص.ب ٦٥٥٠٣\nTax Invoice\tفاتورة ضريبية\nSupplier TRN\t١٠٠٨٨٨٢٨٤٨٢٩٦٢١\tالرقم الضريبي للمورد\nInvoice No.\tINV-2024-023011\tرقم الفاتورة\nInvoice Date\t٠٣/٠٤/٢٠٢٤\tتاريخ الفاتورة\nDate of Supply\t٣١/٠٣/٢٠٢٤\tتاريخ التوريد\nBill To\tفاتورة إلى\nCustomer Name in English\tAl Thuraya Interior Design FZCO\tاسم العميل بالإنجليزية\nCustomer Name in Arabic\tالثريا للتصميم الداخلي ش.م.ح\tاسم العميل بالعربية\nCustomer TRN\t١٠٠٨٨٩٧٧١٠٧٨٢٢٠\tالرقم الضريبي للعميل\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount د.إ\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ د.إ\n١\tSunflower oil, 1.8 litres\t٨\t٢٨٫٠٠\t٥٪\t٢٢٤٫٠٠\nSubtotal excl. VAT\t٢٢٤٫٠٠ د.إ\tالإجمالي قبل الضريبة\nVAT ٥٪\t١١٫٢٠ د.إ\tضريبة القيمة المضافة ٥٪\nTotal incl. VAT\t٢٣٥٫٢٠ د.إ\tالإجمالي شامل الضريبة\nAmount in words: UAE Dirhams Two Hundred Thirty-Five and Twenty Fils Only\nPayment Terms\tCash or card on delivery\tشروط الدفع\nIBAN\tAE14 0318 5464 9565 0134 180\tرقم الحساب المصرفي الدولي\nVerify this document at verify.docbench.example with code WEL4-ZZXM\tللتحقق من صحة هذه الوثيقة استخدم الرمز WEL4-ZZXM على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-bi-04"
+}

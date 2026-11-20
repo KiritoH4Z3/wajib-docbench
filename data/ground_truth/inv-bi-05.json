@@ -1,0 +1,39 @@
+{
+  "doc_id": "inv-bi-05",
+  "base_doc_id": "inv-bi-05",
+  "doc_type": "tax_invoice",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/inv-bi-05.pdf",
+  "fields": {
+    "supplier_name": "Al Thuraya Auto Parts Co.",
+    "supplier_trn": "100459031245481",
+    "invoice_number": "INV-2026-039576",
+    "invoice_date": "2026-10-21",
+    "customer_name": "Sama Al Khaleej General Trading FZE",
+    "customer_trn": "100544732946030",
+    "subtotal": "9063.75",
+    "vat_amount": "453.19",
+    "total": "9516.94",
+    "currency": "AED"
+  },
+  "aliases": {
+    "supplier_name": [
+      "شركة الثريا لقطع غيار السيارات"
+    ],
+    "customer_name": [
+      "سما الخليج للتجارة العامة م.م.ح"
+    ]
+  },
+  "list_aliases": {},
+  "hard_cases": [
+    "aed_marker",
+    "thousands_commas",
+    "masked_trn"
+  ],
+  "injection": null,
+  "text": "Al Thuraya Auto Parts Co.\tشركة الثريا لقطع غيار السيارات\nWarehouse 1487, Al Hamra, Ras Al Khaimah\tمستودع 1487، الحمراء، رأس الخيمة\nTel +971 7 614 3848  |  P.O. Box 25833\tهاتف +971 7 614 3848  |  ص.ب 25833\nTax Invoice\tفاتورة ضريبية\nSupplier TRN\t100-4590-3124-5481\tالرقم الضريبي للمورد\nInvoice No.\tINV-2026-039576\tرقم الفاتورة\nInvoice Date\t21/10/2026\tتاريخ الفاتورة\nBill To\tفاتورة إلى\nCustomer Name in English\tSama Al Khaleej General Trading FZE\tاسم العميل بالإنجليزية\nCustomer Name in Arabic\tسما الخليج للتجارة العامة م.م.ح\tاسم العميل بالعربية\nCustomer TRN\t100-5447-3294-6030\tالرقم الضريبي للعميل\nCustomer Address\tOffice 687, Al Hamra, Ras Al Khaimah\tعنوان العميل\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\nم\tالوصف\tالكمية\tسعر الوحدة\tالضريبة\tالمبلغ AED\n1\tBrake pads, front set\t15\t319.00\t5%\t4,785.00\n2\tCar battery, 70 Ah\t2\t378.00\t5%\t756.00\n3\tEngine oil, 4 litres\t33\t106.75\t5%\t3,522.75\nSubtotal excl. VAT\t9,063.75 AED\tالإجمالي قبل الضريبة\nVAT 5%\t453.19 AED\tضريبة القيمة المضافة 5%\nTotal incl. VAT\t9,516.94 AED\tالإجمالي شامل الضريبة\nPayment Terms\tCash or card on delivery\tشروط الدفع\nIBAN\tAE16 4451 6694 2543 9606 173\tرقم الحساب المصرفي الدولي\nVerify this document at verify.docbench.example with code 5ALJ-J55N\tللتحقق من صحة هذه الوثيقة استخدم الرمز 5ALJ-J55N على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-bi-05"
+}

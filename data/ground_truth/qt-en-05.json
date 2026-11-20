@@ -1,0 +1,29 @@
+{
+  "doc_id": "qt-en-05",
+  "base_doc_id": "qt-en-05",
+  "doc_type": "quotation",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/qt-en-05.pdf",
+  "fields": {
+    "quote_number": "QTN-05624",
+    "quote_date": "2027-02-12",
+    "valid_until": "2027-02-27",
+    "client_name": "Durrat Al Shati Foodstuff Trading FZCO",
+    "line_item_count": 4,
+    "subtotal": "24801.51",
+    "vat_amount": "1240.08",
+    "total": "26041.59"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Barq Al Shamal Cleaning Services FZE\nOffice 1195, Al Nahyan, Abu Dhabi\nTel +971 2 351 3776  |  P.O. Box 58429\nQuotation\nQuotation No.\tQTN-05624\nDate\t12.02.2027\nValid Until\t27.02.2027\nClient\tDurrat Al Shati Foodstuff Trading FZCO\nNo.\tDescription\tQty\tUnit Price\tAmount AED\n1\tCleaning supplies kit\t3\t134.50\t403.50\n2\tDeep cleaning, per visit\t1\t861.44\t861.44\n3\tWindow cleaning, per floor\t14\t560.00\t7,840.00\n4\tOffice cleaning, monthly contract\t3\t5,232.19\t15,696.57\nSubtotal excl. VAT\t24,801.51 AED\nVAT 5%\t1,240.08 AED\nGrand Total\t26,041.59 AED\nPayment Terms\t30 days from invoice date\nDelivery\tWithin 7 working days\nPrepared by\tMariam Yousef Al Hammadi\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:qt-en-05"
+}

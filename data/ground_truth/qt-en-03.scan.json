@@ -1,0 +1,38 @@
+{
+  "doc_id": "qt-en-03.scan",
+  "base_doc_id": "qt-en-03",
+  "doc_type": "quotation",
+  "layout": "en",
+  "variant": "scanned",
+  "input_file": "data/docs/qt-en-03.scan.jpg",
+  "fields": {
+    "quote_number": "Q/27/8260",
+    "quote_date": "2027-03-23",
+    "valid_until": "2027-04-22",
+    "client_name": "Al Hadaf Building Materials LLC",
+    "line_item_count": 7,
+    "subtotal": "32749.25",
+    "vat_amount": "1637.46",
+    "total": "34386.71"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "iso_date",
+    "aed_marker",
+    "thousands_commas"
+  ],
+  "injection": null,
+  "text": "Dar Al Yasmin Cleaning Services Branch\nWarehouse 2085, Al Jurf Industrial 1, Ajman\nTel +971 6 803 3683  |  P.O. Box 60572\nQuotation\nQuotation No.\tQ/27/8260\nDate\t2027-03-23\nValid Until\t2027-04-22\nClient\tAl Hadaf Building Materials LLC\nAttention\tOmar Hassan Al Shamsi\nNo.\tDescription\tQty\tUnit Price\tAmount AED\n1\tOffice cleaning, monthly contract\t1\t4,052.50\t4,052.50\n2\tWindow cleaning, per floor\t12\t305.00\t3,660.00\n3\tDeep cleaning, per visit\t3\t1,642.00\t4,926.00\n4\tCleaning supplies kit\t6\t221.00\t1,326.00\n5\tBakhoor, 500 g\t34\t324.00\t11,016.00\n6\tContainer freight, local\t1\t2,264.75\t2,264.75\n7\tCar battery, 70 Ah\t16\t344.00\t5,504.00\nSubtotal excl. VAT\tAED 32,749.25\nVAT 5%\tAED 1,637.46\nGrand Total\tAED 34,386.71\nPayment Terms\t100% on delivery\nDelivery\tWithin 14 days of purchase order\nPrepared by\tSara Ahmed Al Zaabi\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": {
+    "dpi": 200.0,
+    "rotation_deg": 2.028,
+    "blur_radius": 0.606,
+    "noise_sigma": 8.06,
+    "speckle_density": 0.00103,
+    "jpeg_quality": 51.0,
+    "noise_seed": 1959188193.0
+  },
+  "seed": "docbench-v1:qt-en-03.scan"
+}

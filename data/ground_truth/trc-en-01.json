@@ -1,0 +1,26 @@
+{
+  "doc_id": "trc-en-01",
+  "base_doc_id": "trc-en-01",
+  "doc_type": "tax_certificate",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/trc-en-01.pdf",
+  "fields": {
+    "trn": "100107999112743",
+    "legal_name_ar": null,
+    "legal_name_en": "Sama Al Khaleej Building Materials FZ-LLC",
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2024-02-24"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Federal Tax Authority\nCorporate Tax Registration Certificate\nTax Registration Number\t100107999112743\nLegal Name\tSama Al Khaleej Building Materials FZ-LLC\nRegistered Address\tWarehouse 2072, Business Bay, Dubai\nEffective Registration Date\tFebruary 24, 2024\nDate of Issue\tMarch 4, 2024\nFinancial Year\t1 January to 31 December\nThis certificate confirms registration with the Federal Tax Authority.\nVerify this document at verify.docbench.example with code TUHG-TZD5\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:trc-en-01"
+}

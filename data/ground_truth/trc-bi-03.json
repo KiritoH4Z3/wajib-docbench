@@ -1,0 +1,25 @@
+{
+  "doc_id": "trc-bi-03",
+  "base_doc_id": "trc-bi-03",
+  "doc_type": "tax_certificate",
+  "layout": "bi",
+  "variant": "clean",
+  "input_file": "data/docs/trc-bi-03.pdf",
+  "fields": {
+    "trn": "100634582043848",
+    "legal_name_ar": "وادي السدر لخدمات التنظيف م.م.ح",
+    "legal_name_en": "Wadi Al Sidr Cleaning Services FZE",
+    "tax_type": "VAT",
+    "effective_date": "2024-06-17"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "written_month"
+  ],
+  "injection": null,
+  "text": "Federal Tax Authority\tالهيئة الاتحادية للضرائب\nValue Added Tax Registration Certificate\tشهادة التسجيل في ضريبة القيمة المضافة\nTax Registration Number\t100634582043848\tرقم التسجيل الضريبي\nLegal Name in English\tWadi Al Sidr Cleaning Services FZE\tالاسم القانوني بالإنجليزية\nLegal Name in Arabic\tوادي السدر لخدمات التنظيف م.م.ح\tالاسم القانوني بالعربية\nRegistered Address\tShop 449, Al Majaz 2, Sharjah\tالعنوان المسجل\nEffective Registration Date\t17 June 2024\tتاريخ سريان التسجيل\nDate of Issue\t13 September 2024\tتاريخ إصدار الشهادة\nTax Period\tQuarterly\tالفترة الضريبية\nThis certificate confirms registration with the Federal Tax Authority.\tتؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية للضرائب.\nVerify this document at verify.docbench.example with code C6WR-6F6G\tللتحقق من صحة هذه الوثيقة استخدم الرمز C6WR-6F6G على الموقع verify.docbench.example\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:trc-bi-03"
+}

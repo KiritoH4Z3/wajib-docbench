@@ -1,0 +1,31 @@
+{
+  "doc_id": "inv-en-05",
+  "base_doc_id": "inv-en-05",
+  "doc_type": "tax_invoice",
+  "layout": "en",
+  "variant": "clean",
+  "input_file": "data/docs/inv-en-05.pdf",
+  "fields": {
+    "supplier_name": "Al Reem Technical Services Branch",
+    "supplier_trn": "100378653017276",
+    "invoice_number": "TI-29040",
+    "invoice_date": "2027-03-11",
+    "customer_name": "Tariq Nabil Khoury",
+    "customer_trn": null,
+    "subtotal": "178.00",
+    "vat_amount": "8.90",
+    "total": "186.90",
+    "currency": "AED"
+  },
+  "aliases": {},
+  "list_aliases": {},
+  "hard_cases": [
+    "aed_marker",
+    "absent_field"
+  ],
+  "injection": null,
+  "text": "Al Reem Technical Services Branch\nShop 40, Business Bay, Dubai\nTel +971 4 516 4143  |  P.O. Box 15106\nTax Invoice\nSupplier TRN\t100378653017276\nInvoice No.\tTI-29040\nInvoice Date\t11/03/2027\nDate of Supply\t09/03/2027\nBill To\nCustomer Name\tTariq Nabil Khoury\nNo.\tDescription\tQty\tUnit Price\tVAT\tAmount AED\n1\tCeramic floor tiles, per sqm\t2\t55.00\t5%\t110.00\n2\tCement, 50 kg bag\t4\t17.00\t5%\t68.00\nSubtotal excl. VAT\t178.00 AED\nVAT 5%\t8.90 AED\nTotal incl. VAT\t186.90 AED\nPayment Terms\tPayment within 30 days by bank transfer\nDue Date\t10/04/2027\nIBAN\tAE44 6344 3370 0498 4015 457\nVerify this document at verify.docbench.example with code 4TND-TWWQ\nSynthetic sample for benchmarking / نموذج اصطناعي للاختبار",
+  "hidden_text": "",
+  "scan": null,
+  "seed": "docbench-v1:inv-en-05"
+}
