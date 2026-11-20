@@ -142,13 +142,16 @@ def test_matching_rules():
     assert values_match("tax_invoice", "customer_trn", None, None)
     assert not values_match("tax_invoice", "customer_trn", "100123456789123", None)
     assert not values_match("tax_invoice", "customer_trn", None, "100123456789123")
-    assert values_match(
-        "trade_licence",
-        "activities",
-        ["General Trading", "تجارة عامة"][::-1],
-        ["General Trading", "Building Materials Trading"],
-        item_aliases=[["General Trading", "تجارة عامة"], ["Building Materials Trading"]],
-    ) is False  # two predicted items, but both map to the first gold item
+    assert (
+        values_match(
+            "trade_licence",
+            "activities",
+            ["General Trading", "تجارة عامة"][::-1],
+            ["General Trading", "Building Materials Trading"],
+            item_aliases=[["General Trading", "تجارة عامة"], ["Building Materials Trading"]],
+        )
+        is False
+    )  # two predicted items, but both map to the first gold item
     assert values_match(
         "trade_licence",
         "activities",
@@ -161,3 +164,32 @@ def test_matching_rules():
 def test_empty_values_are_null():
     assert is_null(None) and is_null("") and is_null("  ") and is_null([])
     assert not is_null(0) and not is_null("0")
+
+
+def test_amount_next_to_another_number_still_grounds():
+    # Tesseract reads the "د.إ" marker as "1.5"; the amount after it is still printed.
+    idx = TextIndex("Subtotal excl. VAT 1.5 27,396.00\nVAT 5% 1.2 1,369.80")
+    assert value_present("tax_invoice", "subtotal", "27396.00", idx)
+    assert value_present("tax_invoice", "vat_amount", "1369.80", idx)
+    assert not value_present("tax_invoice", "subtotal", "527396.00", idx)
+
+
+def test_masked_trn_with_spaces_or_hyphens_grounds_but_neighbours_do_not_merge():
+    assert value_present(
+        "tax_invoice", "supplier_trn", "100123456789123", TextIndex("TRN 100 1234 5678 9123")
+    )
+    assert value_present(
+        "tax_invoice", "supplier_trn", "100123456789123", TextIndex("TRN 100-1234-5678-9123")
+    )
+    assert not value_present(
+        "tax_invoice", "supplier_trn", "100123456789123", TextIndex("TRN 100-1234-5678-91234")
+    )
+
+
+def test_written_date_with_the_year_glued_to_the_month_grounds():
+    assert value_present(
+        "tax_invoice", "invoice_date", "2027-09-30", TextIndex("الفاتورة 30 سبتمبر2027")
+    )
+    assert not value_present(
+        "tax_invoice", "invoice_date", "2027-09-30", TextIndex("الفاتورة 130 سبتمبر2027")
+    )

@@ -1,0 +1,35 @@
+Dar Al Yasmin Interior Design Co.
+
+Office 705, Al Nahda, Sharjah
+Tel +971 6 722 4130 | P.O. Box 44192
+
+Tax Invoice
+
+Supplier TRN                                100270620226214
+
+Invoice No.                          TI-07505
+
+Invoice Date                        01/04/2025
+
+Date of Supply                             22/03/2025
+
+Bill To
+
+Customer Name                       Khalid Rashid Al Nuaimi
+
+No.       Description                                                      Qty            Unit Price            VAT            Amount AED
+
+1         Office desk, 160 cm                                           4               700.00            5%                 2,800.00
+Subtotal excl. VAT                                          AED 2,800.00
+VAT 5%                                                        AED 140.00
+Total incl. VAT                                             AED 2,940.00
+
+Amount in words: UAE Dirhams Two Thousand Nine Hundred Forty Only
+
+Payment Terms                             Payment within 30 days by bank transfer
+Due Date                             01/05/2025
+IBAN                                       AE57 3442 5938 2135 9246 035
+
+Verify this document at verify.docbench.example with code KAPP-A2Z]
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

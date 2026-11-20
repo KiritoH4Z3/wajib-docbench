@@ -1,0 +1,25 @@
+Ras Al Khaimah Economic Zone ‏منطقة رأس الخيمة                                                            الاقتصادية‎
+
+Trade Licence ‏رخصة                                                                   تجارية‎
+Licence No.                       4981737 ‏رقم                                                                           الرخصة‎
+Trade Name in English           Al Noor Events FZE ‏الاسم التجاري                                                      بالإنجليزية‎
+Trade Name in Arabic ‏الاسم التجاري                                                              بالعربية النور لتنظيم الفعاليات               م.م.ح‎
+Legal Form                         Free Zone Establishment ‏الشكل                                                        القانوني‎
+Licence Type                      Professional                                                                       Las Jl ‏نوع‎
+‎Issue Date                         09-12-2026 ‏تاريخ                                                                       الإصدار‎
+Expiry Date                        08-12-2027 ‏تاريخ                                                                        الانتهاء‎
+Registration No.                5689928 ‏رقم                                                                  التسجيل‎
+Address                               Warehouse 674, Al Hamra Industrial Zone, Ras Al Khaimah                                    ‏العنوان‎
+‎Manager                         Tariq Nabil Khoury                                                                 ‏المدير‎
+‎Owners and Partners ‏الملاك                                                                                                             والشركاء‎
+Name                                                     Nationality                      Share
+                  ‏الحصة                                   الجنسيةالاسم‎
+Tariq Nabil Khoury                                                        Lebanon                                 100%
+Licensed Activities ‏الأنشطة                                                                                              المرخصة‎
+Code             Activity                                                                                  Activity in Arabic
+ ‏النشاط                                                                                             بالعربية               النشاطالرمز‎
+1811.01           Commercial Printing ‏الطباعة                                                                                 التجارية‎
+4759.01           Furniture Trading ‏تجارة                                                                                   الأثاث‎
+Verify this document at verify.docbench.example with code CN29-ZA3F       verify.docbench.example ‏على الموقع‎ CN29-ZA3F ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

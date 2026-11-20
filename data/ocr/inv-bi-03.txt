@@ -1,0 +1,28 @@
+ درة الشاطئ للتصميم الداخلي منطقة حرة                                ذ.م.م‎Durrat Al Shati Interior Design FZ-LLC‏
+
+Office 454, Al Nahyan, Abu Dhabi ‏نهيان,                                                                                                أبوظبي‎ J1454 ‏مكتب‎
+‎Tel +971 2 452 6378 | P.O. Box 81205                                                                        81205 ‏هاتف 6378 452 2 971+ | ص.ب‎
+Tax Invoice ‏فاتورة                                                  ضريبية‎
+Supplier TRN                            100355473619034 ‏الضريبي                                                                         للمورد‎ @8
+Invoice No.                              INV-2026-045122 ‏رقم                                                                                  الفاتورة‎
+Invoice Date                            11 May 2026 ‏تاريخ                                                                                      الفاتورة‎
+Date of Supply                           11 May 2026 ‏تاريخ                                                                                          التوريد‎
+Bill To ‏فاتورة                                                                                                                                                       إلى‎
+Customer Name in English          Rajesh Kumar Nair ‏اسم العميل                                                              بالإنجليزية‎
+Customer Name in Arabic ‏اسم العميل                                                                               بالعربية راجيش كومار            ناير‎
+No.       Description                                                        Qty             Unit Price             VAT              Amount AED
+           ‏الضريبة سعر              الوحدة                                                               الكمية          الوصفم‎                   AED gall
+1           Office desk, 160 cm                                                     3                 1,615.00               5%                     4,845.00
+2          A4 copy paper, carton of 5 reams                               21                  132.50              5%                    2,782.50
+3          Filing cabinet, 4 drawers                                            9                  753.00              5%                     6,777.00
+Subtotal excl. VAT                                    14,404.50 AED ‏الإجمالي قبل                      الضريبة‎
+VAT 5%                                                           720.23 AED                     5% ‏ضريبة القيمة المضافة‎
+Total incl. VAT                                             15,124.73 AED ‏الإجمالي شامل                        الضريبة‎
+Amount in words: UAE Dirhams Fifteen Thousand One Hundred Twenty-Four and Seventy-Three Fils Only
+Payment Terms                            Payment within 30 days by bank transfer ‏شروط                                                           الدفع‎
+Due Date                                10 June 2026 ‏تاريخ                                                                                   الاستحقاق‎
+IBAN                                            AE87 0274 0890 9010 6804 505 ‏رقم الحساب المصرفي                                                          الدولي‎
+
+Verify this document at verify.docbench.example with code 8HR8-M3XY  verify.docbench.example ‏على الموقع‎ 8HR8-M3XY ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

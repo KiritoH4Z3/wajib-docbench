@@ -1,0 +1,37 @@
+Al Reem Technical Services Branch
+
+Shop 40, Business Bay, Dubai
+Tel +971 4516 4143 | P.O. Box 15106
+
+Tax Invoice
+
+Supplier TRN                               100378653017276
+
+Invoice No.                            TI-29040
+
+Invoice Date                           11/03/2027
+
+Date of Supply                            09/03/2027
+
+Bill To
+
+Customer Name                    Tariq Nabil Khoury
+
+No.      Description                                                   Qty           Unit Price            VAT           Amount AED
+
+1            Ceramic floor tiles, per sqm                                        2                     55.00               5%                         110.00
+
+2         Cement, 50 kg bag                                         4                17.00            5%                    68.00
+Subtotal excl. VAT                                                178.00 AED
+VAT 5%                                                                  8.90 AED
+Total incl. VAT                                                   186.90 AED
+
+Payment Terms                           Payment within 30 days by bank transfer
+
+Due Date                             10/04/2027
+
+IBAN                                            AE44 6344 3370 0498 4015 457
+
+Verify this document at verify.docbench.example with code 4TND-TWWQ
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

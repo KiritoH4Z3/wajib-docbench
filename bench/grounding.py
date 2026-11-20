@@ -40,17 +40,17 @@ class TextIndex:
     compacted: str = field(init=False)
     idform: str = field(init=False)
     numeric: str = field(init=False)
+    western: str = field(init=False)
     dateview: str = field(init=False)
 
     def __post_init__(self) -> None:
         western = to_western_digits(unicodedata.normalize("NFKC", self.raw))
+        self.western = western
         self.spaced = f" {norm_text(self.raw)} "
         self.compacted = compact(self.raw)
         self.idform = norm_id(self.raw)
         # Thousands separators between digit groups removed: "12,500.00" -> "12500.00".
         self.numeric = re.sub(r"(?<=\d)[,٬](?=\d{3}(?!\d))", "", western)
-        # Spaces and hyphens inside digit runs removed so a masked TRN reads as 15 digits.
-        self.numeric = re.sub(r"(?<=\d)[ \-](?=\d)", "", self.numeric)
         # Date separators unified to "/" for numeric date matching.
         self.dateview = re.sub(r"\s*[/\-.]\s*", "/", western)
 
@@ -76,7 +76,11 @@ def trn_present(value: str, idx: TextIndex) -> bool:
     digits = norm_trn(value)
     if len(digits) < 5:
         return False
-    return re.search(rf"(?<!\d){digits}(?!\d)", idx.numeric) is not None
+    # Masked TRNs print as 100-1234-5678-9123 or with spaces, so one optional space or hyphen
+    # may sit between any two digits. The text itself is never rewritten: joining digit runs
+    # across spaces would glue an amount to its neighbour ("1.5 27,396.00").
+    pattern = r"[ \-]?".join(digits)
+    return re.search(rf"(?<!\d){pattern}(?!\d)", idx.western) is not None
 
 
 def amount_present(value: object, idx: TextIndex) -> bool:
@@ -114,6 +118,11 @@ def date_present(value: object, idx: TextIndex) -> bool:
         for dd in {str(day), f"{day:02d}"}:
             for form in (f"{dd} {name} {year}", f"{name} {dd} {year}"):
                 if f" {norm_text(form)} " in idx.spaced:
+                    return True
+                # OCR often drops the space between a month name and the year
+                # ("30 سبتمبر2027"); digit boundaries keep "130 ..." from matching "30 ...".
+                packed = re.escape(compact(form))
+                if re.search(rf"(?<!\d){packed}(?!\d)", idx.compacted):
                     return True
     return False
 

@@ -226,7 +226,7 @@ def render_block(results: dict) -> str:
                 )
         lines.append("")
     ocr = results.get("ocr") or {}
-    by_layout = _get(ocr, "aggregates", "by_layout") or {}
+    by_layout = _get(ocr, "by_layout") or {}
     if by_layout:
         parts = [
             f"{name} {_pct(_get(by_layout, key, 'cer_norm'))}"

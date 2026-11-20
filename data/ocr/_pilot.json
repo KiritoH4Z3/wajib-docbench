@@ -1,0 +1,25 @@
+{
+  "selected_psm": 4,
+  "rule": "highest field grounding recall; lower normalised CER breaks ties",
+  "documents": "base (variant clean)",
+  "per_psm": {
+    "3": {
+      "n_docs": 60,
+      "n_values": 425,
+      "field_grounding_recall": 0.7741176470588236,
+      "cer_norm": 0.33244869102876323
+    },
+    "4": {
+      "n_docs": 60,
+      "n_values": 425,
+      "field_grounding_recall": 0.7764705882352941,
+      "cer_norm": 0.10038419792747016
+    },
+    "6": {
+      "n_docs": 60,
+      "n_values": 425,
+      "field_grounding_recall": 0.7576470588235295,
+      "cer_norm": 0.11558115940817745
+    }
+  }
+}

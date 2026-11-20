@@ -1,0 +1,14 @@
+Federal Tax Authority ‏الهيئة الاتحادية                                                                                                                                      للضرائب‎
+
+Value Added Tax Registration Certificate ‏شهادة التسجيل في ضريبة القيمة          المضافة‎
+Tax Registration Number          100-6662-4957-8598 ‏رقم التسجيل                                                     الضريبي‎
+Legal Name in English             Al Thuraya Events Co. ‏الاسم القانوني                                                    بالإنجليزية‎
+Legal Name in Arabic ‏الاسم القانوني                                                       بالعربية شركة الثريا لتنظيم              الفعاليات‎
+Registered Address                Warehouse 13, Al Nuaimiya, Ajman ‏العنوان                                              المسجل‎
+Effective Registration Date        09/07/2026 ‏تاريخ سريان                                                                 التسجيل‎
+Date of Issue                          15/08/2026 ‏تاريخ إصدار                                                                            الشهادة‎
+Tax Period                             Quarterly ‏الفترة                                                                                   الضريبية‎
+This certificate confirms registration with the Federal Tax Authority. ‏تؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية                                     للضرائب.‎
+Verify this document at verify.docbench.example with code 6EVS-WSUK          verify.docbench.example ‏على الموقع‎ BEVS-WSUK ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

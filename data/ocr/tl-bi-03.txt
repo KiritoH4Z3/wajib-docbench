@@ -1,0 +1,26 @@
+Ras Al Khaimah Economic Zone ‏منطقة رأس الخيمة                                                                الاقتصادية‎
+
+Trade Licence ‏رخصة                                                                                                        تجارية‎
+Licence No.                            4955763 ‏رقم                                                                                      الرخصة‎
+Trade Name in English               Al Manara Logistics FZE ‏الاسم التجاري                                                        بالإنجليزية‎
+Trade Name in Arabic ‏الاسم التجاري                                                          بالعربية المنارة للخدمات اللوجستية                م.م6.ح‎
+Legal Form                           Free Zone Establishment ‏الشكل                                                               القانوني‎
+Licence Type                             Commercial ‏نوع                                                                                           الرخصة‎
+Issue Date                              28 May 2025 ‏تاريخ                                                                                   الإصدار‎
+Expiry Date                             27 May 2026 ‏تاريخ                                                                                   الانتهاء‎
+Registration No.                    8887613 ‏رقم                                                                             التسجيل‎
+Address                                Warehouse 2257, Al Hamra Industrial Zone, Ras Al Khaimah                                      ‏العنوان‎
+‎Manager                                 Yousef Ibrahim Haddad                                                                               ‏المدير‎
+‎Owners and Partners ‏الملاك                                                                                                                 والشركاء‎
+Name                                                           Nationality                          Share
+                                     ‏الحصة                                                                        الجنسيةالاسم‎
+Yousef Ibrahim Haddad                                                                   Jordan                                               100%
+Licensed Activities                                                                                                                    Los yall ‏الأنشطة‎
+‎Code                 Activity                                                                                                           Activity in Arabic
+ ‏النشاط                                                                                                                       بالعربية                   النشاطالرمز‎
+5229.01             Cargo Services ‏خدمات                                                                                                الشحن‎
+4772.01              Perfumes and Cosmetics Trading ‏تجارة العطور ومستحضرات                                                               التجميل‎
+
+Verify this document at verify.docbench.example with code FUGJ-8546      verify.docbench.example ‏على الموقع‎ FUG)-8546 ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

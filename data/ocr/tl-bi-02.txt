@@ -1,0 +1,27 @@
+International Free Zone Authority ‏سلطة المنطقة الحرة                                                                  الدولية‎
+
+Trade Licence ‏رخصة                                           تجارية‎
+Licence No.                        94874 ‏رقم                                                                               الرخصة‎
+Trade Name in English             Najm Al Sahra Auto Parts FZCO ‏الاسم التجاري                                           بالإنجليزية‎
+Trade Name in Arabic ‏الاسم التجاري                                             بالعربية نجم الصحراء لقطع غيار السيارات              ش.م.ح‎
+Legal Form                          Free Zone Company ‏الشكل                                                                 القانوني‎
+Licence Type                          Commercial                                                                                   das yl ‏نوع‎
+‎Issue Date ‏تاريخ                                                   الإصدار 6 الموافق 12/09/1447                         ه‎
+Expiry Date ‏تاريخ                                                      الانتهاء 7 الموافق 21/09/1448                         ه‎
+Registration No.                    7821422 ‏رقم                                                                              التسجيل‎
+Address                            Shop 1366, Dubai Silicon Oasis, Dubai                                                 ‏العنوان‎
+‎Manager                            Layla Mahmoud Saleh                                                                     ‏المدير‎
+‎Owners and Partners ‏الملاك                                                                                                                 والشركاء‎
+Name                                                        Nationality                        Share
+                         ‏الحصة                                                 الجنسيةالاسم‎
+Imran Tariq Qureshi                                                                         Pakistan                                              51%
+Omar Hassan Al Shamsi                                                                      United Arab Emirates                              34%
+Layla Mahmoud Saleh                                                           Egypt                                          15%
+Licensed Activities                                                                                                                      Los yall ‏الأنشطة‎
+‎Code                Activity                                                                                                        Activity in Arabic
+ ‏النشاط                                                                                                                     بالعربية                  النشاطالرمز‎
+4530.01             Auto Spare Parts Trading ‏غيار                                                                               السيارات‎ glad ‏تجارة‎
+‎4772.01            Perfumes and Cosmetics Trading ‏تجارة العطور ومستحضرات                                                      التجميل‎
+Verify this document at verify.docbench.example with code K9FD-EF3G           verify.docbench.example ‏على الموقع‎ KIFD-EF3G ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

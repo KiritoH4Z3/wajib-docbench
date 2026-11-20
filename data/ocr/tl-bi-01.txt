@@ -1,0 +1,26 @@
+Ras Al Khaimah Department of Economic Development ‏دائرة التنمية الاقتصادية برأس                                الخيمة‎
+
+Trade Licence ‏رخصة                                                                   تجارية‎
+Licence No.                       35336 ‏رقم                                                                              الرخصة‎
+Trade Name in English          Dar Al Yasmin Building Materials L.L.C ‏الاسم التجاري                             بالإنجليزية‎
+Trade Name in Arabic ‏الاسم التجاري                                                            بالعربية دار الياسمين لمواد البناء              ذ.م.م‎
+Legal Form                       Limited Liability Company ‏الشكل                                                   القانوني‎
+Licence Type                      Industrial                                                                          Las Jl ‏نوع‎
+‎Issue Date                         2025-11-10 ‏تاريخ                                                                       الإصدار‎
+Expiry Date                        2026-11-09 ‏تاريخ                                                                        الانتهاء‎
+Commercial Register No.        1559621 ‏رقم السجل                                                                      التجاري‎
+Address                              Warehouse 343, Al Nakheel, Ras Al Khaimah                                            ‏العنوان‎
+‎Manager                          Noura Salem Al Dhaheri                                                               ‏المدير‎
+‎Owners and Partners ‏الملاك                                                                                                             والشركاء‎
+Name                                                     Nationality                      Share
+                       ‏الحصة                                               الجنسيةالاسم‎
+Hamdan Obaid Al Suwaidi                                                       United Arab Emirates                       51%
+Noura Salem Al Dhaheri                                                          United Arab Emirates                        49%
+Licensed Activities ‏الأنشطة                                                                                              المرخصة‎
+Code             Activity                                                                                  Activity in Arabic
+ ‏النشاط                                                                                             بالعربية               النشاطالرمز‎
+4690.01            General Trading ‏التجارة                                                                                               العامة‎
+4663.01            Building Materials Trading ‏تجارة مواد                                                                            البناء‎
+Verify this document at verify.docbench.example with code BLYB-C26G           verify.docbench.example ‏على الموقع‎ BLYB-C26G ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

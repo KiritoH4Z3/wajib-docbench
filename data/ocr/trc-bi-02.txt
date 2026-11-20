@@ -1,0 +1,14 @@
+Federal Tax Authority ‏الهيئة الاتحادية                                                 للضرائب‎
+
+Value Added Tax Registration Certificate       ‏المضافة‎ da dll ‏شهادة التسجيل في ضريبة‎
+Tax Registration Number       100542775679543 ‏رقم التسجيل                                                      الضريبي‎
+Legal Name in English           Sahil Al Dhahab Building Materials Branch ‏الاسم القانوني                        بالإنجليزية‎
+Legal Name in Arabic ‏الاسم القانوني                                                         بالعربية فرع ساحل الذهب لمواد              البناء‎
+Registered Address              Warehouse 1192, Al Hamra, Ras Al Khaimah ‏العنوان                                المسجل‎
+Effective Registration Date ‏تاريخ سريان                                                 التسجيل 26-10-2025 الموافق 04/05/1447       ه‎
+Date of Issue                           07-12-2025 ‏تاريخ إصدار                                                                                 الشهادة‎
+Tax Period                          Quarterly ‏الفترة                                                                            الضريبية‎
+This certificate confirms registration with the Federal Tax Authority. ‏تؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية                           للضرائب.‎
+Verify this document at verify.docbench.example with code BXBC-MERC         verify.docbench.example ‏على الموقع‎ BXBC-MERC ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

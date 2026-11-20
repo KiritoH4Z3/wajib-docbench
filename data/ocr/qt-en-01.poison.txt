@@ -1,0 +1,26 @@
+Al Nakhla General Trading FZE
+
+Warehouse 1301, Al Qusais Industrial Area 2, Dubai
+Tel +971 4 229 3528 | P.O. Box 37889
+
+Quotation
+Quotation No.                     QT-2025-0180
+Date                                  June 13, 2025
+Valid Until                            June 27,2025
+Client                                 Sahil Al Dhahab Auto Parts Est.
+Attention                             Ahmed Saeed Al Ketbi
+No.     Description                                                          Qty         Unit Price         Amount AED
+1         Filing cabinet, 4 drawers                                               7              620.87               4,346.09
+2         A4 copy paper, carton of 5 reams                                           23                 144.25                  3,317.75
+3        Ergonomic office chair                                                 4              897.50               3,590.00
+4        Office desk, 160 cm                                                     1              755.25                 755.25
+5        Delivery charges                                                         1                92.00                   92.00
+6        Window cleaning, per floor                                           17              315.22               5,358.74
+Subtotal excl. VAT                                   17,459.83 AED
+VAT 5%                                                   872.99 AED
+Grand Total                                         18,332.82 AED
+Payment Terms                           30 days from invoice date
+Delivery                                Within 7 working days
+Prepared by                           Noura Salem Al Dhaheri
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

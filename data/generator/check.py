@@ -319,7 +319,9 @@ def check_null_policy(golds: dict[str, GoldDoc]) -> list[str]:
             if value_present(g.doc_type, name, value, idx):
                 problems.append(f"{doc_id}: {name} is null in gold but {value!r} is printed")
         if doc.plan.b2c:
-            trns = re.findall(r"(?<!\d)100\d{12}(?!\d)", idx.numeric)
+            # Masked TRNs print in groups; join digit runs only for this count.
+            joined = re.sub(r"(?<=\d)[ \-](?=\d)", "", idx.western)
+            trns = re.findall(r"(?<!\d)100\d{12}(?!\d)", joined)
             if g.fields["customer_trn"] is not None:
                 problems.append(f"{doc_id}: B2C invoice has a customer TRN in gold, expected null")
             if len(trns) != 1:

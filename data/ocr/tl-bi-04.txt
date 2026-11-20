@@ -1,0 +1,25 @@
+Ras Al Khaimah Economic Zone ‏منطقة رأس الخيمة                                                          الاقتصادية‎
+
+Trade Licence ‏رخصة                                                                                                      تجارية‎
+Licence No.                        0 ‏رقم                                                                               الرخصة‎
+Trade Name in English             Wadi Al Sidr Perfumes FZ-LLC ‏الاسم التجاري                                            بالإنجليزية‎
+Trade Name in Arabic ‏الاسم التجاري                                                  بالعربية وادي السدر للعطور منطقة حرة              .م.م‎
+Legal Form                        Free Zone Limited Liability Company ‏الشكل                                           القانوني‎
+Licence Type                          Industrial ‏نوع                                                                                      الرخصة‎
+Issue Date ‏الموافق 17/11/1647                           ه‎ ١/0/0 ‏تاريخ                                                            الإصدار‎
+Expiry Date                             ‏ه‎ ١7/17/1290/ ‏الموافق‎ ١/7 ‏تاريخ                                                                    الانتهاء‎
+Registration No. ‏رقم                                                                                 التسجيل                    الا‎
+Address                           Office 1791, Al Hamra Industrial Zone, Ras Al Khaimah                              ‏العنوان‎
+‎Manager                            Layla Mahmoud Saleh                                                                     ‏المدير‎
+‎Owners and Partners ‏الملاك                                                                                                                 والشركاء‎
+Name                                                        Nationality                        Share
+                         ‏الحصة                                                 الجنسيةالاسم‎
+Layla Mahmoud Saleh                                                           Egypt                                            Ver
+Imran Tariq Qureshi                                                                         Pakistan                                                Ye
+Licensed Activities                                                                                                                      Los yall ‏الأنشطة‎
+‎Code                Activity                                                                                                        Activity in Arabic
+ ‏النشاط                                                                                                                     بالعربية                  النشاطالرمز‎
+4772.01            Perfumes and Cosmetics Trading ‏تجارة العطور ومستحضرات                                                      التجميل‎
+Verify this document at verify.docbench.example with code 5GAR-ANLE          verify.docbench.example ‏على الموقع‎ SGAR-ANLE ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

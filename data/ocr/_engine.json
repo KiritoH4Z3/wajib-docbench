@@ -1,0 +1,15 @@
+{
+  "tesseract_version": "5.3.4",
+  "tessdata": "tessdata_best@e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+  "tessdata_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+  "image": "wajib-docbench-ocr:1",
+  "image_id": "sha256:f87ddd3fce12764509d3acce9df7507a8bf504f33bc7e43026bf29e25460a1e2",
+  "base_image": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+  "langs": "ara+eng",
+  "oem": 1,
+  "psm": 4,
+  "dpi": 300,
+  "config": [
+    "preserve_interword_spaces=1"
+  ]
+}

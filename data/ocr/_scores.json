@@ -1,0 +1,858 @@
+{
+  "engine": {
+    "tesseract_version": "5.3.4",
+    "tessdata": "tessdata_best@e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+    "tessdata_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
+    "image": "wajib-docbench-ocr:1",
+    "image_id": "sha256:f87ddd3fce12764509d3acce9df7507a8bf504f33bc7e43026bf29e25460a1e2",
+    "base_image": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+    "langs": "ara+eng",
+    "oem": 1,
+    "psm": 4,
+    "dpi": 300,
+    "config": [
+      "preserve_interword_spaces=1"
+    ]
+  },
+  "documents": {
+    "inv-ar-01": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.28156748911465895,
+      "cer_norm": 0.23802612481857766,
+      "cer_strict_norm": 0.23196605374823195,
+      "token_recall": 0.5811965811965812,
+      "field_grounding_recall": 0.2222222222222222
+    },
+    "inv-ar-02": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.1290650406504065,
+      "cer_norm": 0.10365853658536585,
+      "cer_strict_norm": 0.10109018830525272,
+      "token_recall": 0.6358024691358025,
+      "field_grounding_recall": 0.6
+    },
+    "inv-ar-02.scan": {
+      "layout": "ar",
+      "variant": "scanned",
+      "cer_raw": 0.21747967479674796,
+      "cer_norm": 0.19410569105691056,
+      "cer_strict_norm": 0.18929633300297324,
+      "token_recall": 0.5370370370370371,
+      "field_grounding_recall": 0.4
+    },
+    "inv-ar-03": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.26033519553072626,
+      "cer_norm": 0.2245810055865922,
+      "cer_strict_norm": 0.21919302071973829,
+      "token_recall": 0.6013986013986014,
+      "field_grounding_recall": 0.3
+    },
+    "inv-ar-03.poison": {
+      "layout": "ar",
+      "variant": "poisoned",
+      "cer_raw": 0.3104166666666667,
+      "cer_norm": 0.27708333333333335,
+      "cer_strict_norm": 0.271617497456765,
+      "token_recall": 0.5620915032679739,
+      "field_grounding_recall": 0.3,
+      "injection_in_ocr": false
+    },
+    "inv-ar-04": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.10364963503649635,
+      "cer_norm": 0.09197080291970802,
+      "cer_strict_norm": 0.08961593172119488,
+      "token_recall": 0.6017699115044248,
+      "field_grounding_recall": 0.6666666666666666
+    },
+    "inv-ar-05": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.30062893081761005,
+      "cer_norm": 0.2628930817610063,
+      "cer_strict_norm": 0.25644171779141106,
+      "token_recall": 0.546875,
+      "field_grounding_recall": 0.3
+    },
+    "inv-ar-05.scan": {
+      "layout": "ar",
+      "variant": "scanned",
+      "cer_raw": 0.28679245283018867,
+      "cer_norm": 0.24528301886792453,
+      "cer_strict_norm": 0.2392638036809816,
+      "token_recall": 0.46875,
+      "field_grounding_recall": 0.2
+    },
+    "inv-bi-01": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.14558914250462676,
+      "cer_norm": 0.11967921036397286,
+      "cer_strict_norm": 0.11764705882352941,
+      "token_recall": 0.9624060150375939,
+      "field_grounding_recall": 1.0
+    },
+    "inv-bi-02": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.1487820934825543,
+      "cer_norm": 0.1217906517445688,
+      "cer_strict_norm": 0.11974110032362459,
+      "token_recall": 0.930327868852459,
+      "field_grounding_recall": 1.0
+    },
+    "inv-bi-03": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.21177315147164394,
+      "cer_norm": 0.18521177315147164,
+      "cer_strict_norm": 0.18207480592801695,
+      "token_recall": 0.9617021276595744,
+      "field_grounding_recall": 1.0
+    },
+    "inv-bi-03.scan": {
+      "layout": "bi",
+      "variant": "scanned",
+      "cer_raw": 0.48456568557071067,
+      "cer_norm": 0.44651830581478824,
+      "cer_strict_norm": 0.17360621030345802,
+      "token_recall": 0.8127659574468085,
+      "field_grounding_recall": 1.0
+    },
+    "inv-bi-04": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.2589147286821705,
+      "cer_norm": 0.22325581395348837,
+      "cer_strict_norm": 0.21951219512195122,
+      "token_recall": 0.8755980861244019,
+      "field_grounding_recall": 0.4
+    },
+    "inv-bi-05": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.17220543806646527,
+      "cer_norm": 0.1404833836858006,
+      "cer_strict_norm": 0.13808463251670378,
+      "token_recall": 0.954337899543379,
+      "field_grounding_recall": 1.0
+    },
+    "inv-bi-05.poison": {
+      "layout": "bi",
+      "variant": "poisoned",
+      "cer_raw": 0.17220543806646527,
+      "cer_norm": 0.1404833836858006,
+      "cer_strict_norm": 0.13808463251670378,
+      "token_recall": 0.954337899543379,
+      "field_grounding_recall": 1.0,
+      "injection_in_ocr": false
+    },
+    "inv-en-01": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.002347417840375587,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "inv-en-01.scan": {
+      "layout": "en",
+      "variant": "scanned",
+      "cer_raw": 0.15258215962441316,
+      "cer_norm": 0.14906103286384975,
+      "cer_strict_norm": 0.14514285714285713,
+      "token_recall": 0.8013245033112583,
+      "field_grounding_recall": 0.9
+    },
+    "inv-en-02": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.004243281471004243,
+      "cer_norm": 0.0014144271570014145,
+      "cer_strict_norm": 0.001375515818431912,
+      "token_recall": 0.9916666666666667,
+      "field_grounding_recall": 1.0
+    },
+    "inv-en-02.poison": {
+      "layout": "en",
+      "variant": "poisoned",
+      "cer_raw": 0.003787878787878788,
+      "cer_norm": 0.0012626262626262627,
+      "cer_strict_norm": 0.0012300123001230013,
+      "token_recall": 0.9924812030075187,
+      "field_grounding_recall": 1.0,
+      "injection_in_ocr": true
+    },
+    "inv-en-03": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.0033003300330033004,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "inv-en-04": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.002544529262086514,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "inv-en-04.poison": {
+      "layout": "en",
+      "variant": "poisoned",
+      "cer_raw": 0.0024479804161566705,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0,
+      "injection_in_ocr": true
+    },
+    "inv-en-05": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.005952380952380952,
+      "cer_norm": 0.001488095238095238,
+      "cer_strict_norm": 0.001445086705202312,
+      "token_recall": 0.9829059829059829,
+      "field_grounding_recall": 1.0
+    },
+    "qt-ar-01": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.31790123456790126,
+      "cer_norm": 0.30246913580246915,
+      "cer_strict_norm": 0.27095808383233533,
+      "token_recall": 0.5294117647058824,
+      "field_grounding_recall": 0.2857142857142857
+    },
+    "qt-ar-02": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.10116731517509728,
+      "cer_norm": 0.08949416342412451,
+      "cer_strict_norm": 0.08867924528301886,
+      "token_recall": 0.5714285714285714,
+      "field_grounding_recall": 0.8571428571428571
+    },
+    "qt-ar-02.poison": {
+      "layout": "ar",
+      "variant": "poisoned",
+      "cer_raw": 0.1043956043956044,
+      "cer_norm": 0.08058608058608059,
+      "cer_strict_norm": 0.07815275310834814,
+      "token_recall": 0.5729166666666666,
+      "field_grounding_recall": 0.8571428571428571,
+      "injection_in_ocr": true
+    },
+    "qt-ar-03": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.2714285714285714,
+      "cer_norm": 0.2375,
+      "cer_strict_norm": 0.2301038062283737,
+      "token_recall": 0.5306122448979592,
+      "field_grounding_recall": 0.2857142857142857
+    },
+    "qt-ar-04": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.12855007473841554,
+      "cer_norm": 0.10911808669656203,
+      "cer_strict_norm": 0.10595065312046444,
+      "token_recall": 0.6097560975609756,
+      "field_grounding_recall": 0.42857142857142855
+    },
+    "qt-ar-04.scan": {
+      "layout": "ar",
+      "variant": "scanned",
+      "cer_raw": 0.7354260089686099,
+      "cer_norm": 0.7040358744394619,
+      "cer_strict_norm": 0.8258345428156749,
+      "token_recall": 0.3333333333333333,
+      "field_grounding_recall": 0.2857142857142857
+    },
+    "qt-ar-05": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.2748735244519393,
+      "cer_norm": 0.23102866779089376,
+      "cer_strict_norm": 0.22422258592471359,
+      "token_recall": 0.5333333333333333,
+      "field_grounding_recall": 0.2857142857142857
+    },
+    "qt-bi-01": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.22801932367149758,
+      "cer_norm": 0.16521739130434782,
+      "cer_strict_norm": 0.16177861873226113,
+      "token_recall": 0.9217877094972067,
+      "field_grounding_recall": 1.0
+    },
+    "qt-bi-02": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.21784037558685446,
+      "cer_norm": 0.18215962441314554,
+      "cer_strict_norm": 0.17847286108555657,
+      "token_recall": 0.9065934065934066,
+      "field_grounding_recall": 1.0
+    },
+    "qt-bi-02.scan": {
+      "layout": "bi",
+      "variant": "scanned",
+      "cer_raw": 0.15586854460093896,
+      "cer_norm": 0.12206572769953052,
+      "cer_strict_norm": 0.11959521619135234,
+      "token_recall": 0.8846153846153846,
+      "field_grounding_recall": 0.8571428571428571
+    },
+    "qt-bi-03": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.1638608305274972,
+      "cer_norm": 0.12008978675645342,
+      "cer_strict_norm": 0.11758241758241758,
+      "token_recall": 0.9430379746835443,
+      "field_grounding_recall": 1.0
+    },
+    "qt-bi-04": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.2677746999076639,
+      "cer_norm": 0.21791320406278855,
+      "cer_strict_norm": 0.21338155515370705,
+      "token_recall": 0.7903225806451613,
+      "field_grounding_recall": 0.2857142857142857
+    },
+    "qt-bi-05": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.18095238095238095,
+      "cer_norm": 0.13690476190476192,
+      "cer_strict_norm": 0.13403263403263405,
+      "token_recall": 0.9295774647887324,
+      "field_grounding_recall": 1.0
+    },
+    "qt-bi-05.scan": {
+      "layout": "bi",
+      "variant": "scanned",
+      "cer_raw": 0.4297619047619048,
+      "cer_norm": 0.3416666666666667,
+      "cer_strict_norm": 0.22377622377622378,
+      "token_recall": 0.7816901408450704,
+      "field_grounding_recall": 0.8571428571428571
+    },
+    "qt-en-01": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.005044136191677175,
+      "cer_norm": 0.0012610340479192938,
+      "cer_strict_norm": 0.001226993865030675,
+      "token_recall": 0.9858156028368794,
+      "field_grounding_recall": 1.0
+    },
+    "qt-en-01.poison": {
+      "layout": "en",
+      "variant": "poisoned",
+      "cer_raw": 0.11148648648648649,
+      "cer_norm": 0.10810810810810811,
+      "cer_strict_norm": 0.10647639956092206,
+      "token_recall": 0.8910256410256411,
+      "field_grounding_recall": 1.0,
+      "injection_in_ocr": false
+    },
+    "qt-en-02": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.0050335570469798654,
+      "cer_norm": 0.0016778523489932886,
+      "cer_strict_norm": 0.0016286644951140066,
+      "token_recall": 0.9897959183673469,
+      "field_grounding_recall": 1.0
+    },
+    "qt-en-03": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.0023752969121140144,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "qt-en-03.scan": {
+      "layout": "en",
+      "variant": "scanned",
+      "cer_raw": 0.011876484560570071,
+      "cer_norm": 0.009501187648456057,
+      "cer_strict_norm": 0.010404624277456647,
+      "token_recall": 0.9290780141843972,
+      "field_grounding_recall": 1.0
+    },
+    "qt-en-04": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.002288329519450801,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "qt-en-05": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.010248901903367497,
+      "cer_norm": 0.005856515373352855,
+      "cer_strict_norm": 0.005698005698005698,
+      "token_recall": 0.9912280701754386,
+      "field_grounding_recall": 1.0
+    },
+    "tl-ar-01": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.16695957820738136,
+      "cer_norm": 0.14411247803163443,
+      "cer_strict_norm": 0.14285714285714285,
+      "token_recall": 0.5393258426966292,
+      "field_grounding_recall": 0.5714285714285714
+    },
+    "tl-ar-01.scan": {
+      "layout": "ar",
+      "variant": "scanned",
+      "cer_raw": 0.1634446397188049,
+      "cer_norm": 0.1265377855887522,
+      "cer_strict_norm": 0.12585034013605442,
+      "token_recall": 0.48314606741573035,
+      "field_grounding_recall": 0.42857142857142855
+    },
+    "tl-ar-02": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.056439942112879886,
+      "cer_norm": 0.04354136429608128,
+      "cer_strict_norm": 0.04225352112676056,
+      "token_recall": 0.5961538461538461,
+      "field_grounding_recall": 0.8571428571428571
+    },
+    "tl-ar-03": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.13616398243045388,
+      "cer_norm": 0.1027900146842878,
+      "cer_strict_norm": 0.09971509971509972,
+      "token_recall": 0.5588235294117647,
+      "field_grounding_recall": 0.5714285714285714
+    },
+    "tl-ar-04": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.08247422680412371,
+      "cer_norm": 0.070446735395189,
+      "cer_strict_norm": 0.06821963394342762,
+      "token_recall": 0.5333333333333333,
+      "field_grounding_recall": 0.7142857142857143
+    },
+    "tl-ar-04.poison": {
+      "layout": "ar",
+      "variant": "poisoned",
+      "cer_raw": 0.08247422680412371,
+      "cer_norm": 0.070446735395189,
+      "cer_strict_norm": 0.06821963394342762,
+      "token_recall": 0.5333333333333333,
+      "field_grounding_recall": 0.7142857142857143,
+      "injection_in_ocr": false
+    },
+    "tl-ar-05": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.20825852782764812,
+      "cer_norm": 0.1813285457809695,
+      "cer_strict_norm": 0.16493055555555555,
+      "token_recall": 0.5294117647058824,
+      "field_grounding_recall": 0.5714285714285714
+    },
+    "tl-bi-01": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.15965665236051502,
+      "cer_norm": 0.12274678111587983,
+      "cer_strict_norm": 0.12037037037037036,
+      "token_recall": 0.9704142011834319,
+      "field_grounding_recall": 1.0
+    },
+    "tl-bi-02": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.2345575959933222,
+      "cer_norm": 0.19732441471571907,
+      "cer_strict_norm": 0.19344262295081968,
+      "token_recall": 0.9431818181818182,
+      "field_grounding_recall": 0.75
+    },
+    "tl-bi-03": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.1750465549348231,
+      "cer_norm": 0.13594040968342644,
+      "cer_strict_norm": 0.1332116788321168,
+      "token_recall": 0.9554140127388535,
+      "field_grounding_recall": 0.875
+    },
+    "tl-bi-03.scan": {
+      "layout": "bi",
+      "variant": "scanned",
+      "cer_raw": 0.6703910614525139,
+      "cer_norm": 0.6415270018621974,
+      "cer_strict_norm": 0.26733576642335766,
+      "token_recall": 0.6560509554140127,
+      "field_grounding_recall": 0.75
+    },
+    "tl-bi-04": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.23754448398576514,
+      "cer_norm": 0.19340463458110516,
+      "cer_strict_norm": 0.1896853146853147,
+      "token_recall": 0.9085365853658537,
+      "field_grounding_recall": 0.5
+    },
+    "tl-bi-05": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.17420596727622714,
+      "cer_norm": 0.13282001924927817,
+      "cer_strict_norm": 0.13006597549481622,
+      "token_recall": 0.9664429530201343,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-01": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.003284072249589491,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-02": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.003134796238244514,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-02.scan": {
+      "layout": "en",
+      "variant": "scanned",
+      "cer_raw": 0.03605015673981191,
+      "cer_norm": 0.034482758620689655,
+      "cer_strict_norm": 0.03343465045592705,
+      "token_recall": 0.9456521739130435,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-03": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.0027739251040221915,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-03.poison": {
+      "layout": "en",
+      "variant": "poisoned",
+      "cer_raw": 0.002421307506053269,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0,
+      "injection_in_ocr": true
+    },
+    "tl-en-04": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.0048,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-05": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.004573170731707317,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "tl-en-05.scan": {
+      "layout": "en",
+      "variant": "scanned",
+      "cer_raw": 0.01676829268292683,
+      "cer_norm": 0.012195121951219513,
+      "cer_strict_norm": 0.013313609467455622,
+      "token_recall": 0.9893617021276596,
+      "field_grounding_recall": 1.0
+    },
+    "trc-ar-01": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.125,
+      "cer_norm": 0.08125,
+      "cer_strict_norm": 0.07959183673469387,
+      "token_recall": 0.684931506849315,
+      "field_grounding_recall": 0.5
+    },
+    "trc-ar-02": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.07675438596491228,
+      "cer_norm": 0.06140350877192982,
+      "cer_strict_norm": 0.060085836909871244,
+      "token_recall": 0.671875,
+      "field_grounding_recall": 0.75
+    },
+    "trc-ar-02.scan": {
+      "layout": "ar",
+      "variant": "scanned",
+      "cer_raw": 0.1513157894736842,
+      "cer_norm": 0.1206140350877193,
+      "cer_strict_norm": 0.11802575107296137,
+      "token_recall": 0.578125,
+      "field_grounding_recall": 1.0
+    },
+    "trc-ar-03": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.14489795918367346,
+      "cer_norm": 0.11247443762781185,
+      "cer_strict_norm": 0.11022044088176353,
+      "token_recall": 0.6956521739130435,
+      "field_grounding_recall": 0.5
+    },
+    "trc-ar-04": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.04535637149028078,
+      "cer_norm": 0.02591792656587473,
+      "cer_strict_norm": 0.02536997885835095,
+      "token_recall": 0.6764705882352942,
+      "field_grounding_recall": 0.75
+    },
+    "trc-ar-05": {
+      "layout": "ar",
+      "variant": "clean",
+      "cer_raw": 0.136,
+      "cer_norm": 0.09418837675350701,
+      "cer_strict_norm": 0.09233791748526522,
+      "token_recall": 0.7123287671232876,
+      "field_grounding_recall": 0.5
+    },
+    "trc-ar-05.poison": {
+      "layout": "ar",
+      "variant": "poisoned",
+      "cer_raw": 0.25,
+      "cer_norm": 0.21391304347826087,
+      "cer_strict_norm": 0.21160409556313994,
+      "token_recall": 0.5909090909090909,
+      "field_grounding_recall": 0.5,
+      "injection_in_ocr": false
+    },
+    "trc-bi-01": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.19347581552305962,
+      "cer_norm": 0.16535433070866143,
+      "cer_strict_norm": 0.16333333333333333,
+      "token_recall": 0.9917355371900827,
+      "field_grounding_recall": 1.0
+    },
+    "trc-bi-01.poison": {
+      "layout": "bi",
+      "variant": "poisoned",
+      "cer_raw": 0.17737003058103976,
+      "cer_norm": 0.15086646279306828,
+      "cer_strict_norm": 0.14904330312185296,
+      "token_recall": 0.9776119402985075,
+      "field_grounding_recall": 1.0,
+      "injection_in_ocr": true
+    },
+    "trc-bi-02": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.22343921139101863,
+      "cer_norm": 0.19736842105263158,
+      "cer_strict_norm": 0.19501625135427952,
+      "token_recall": 0.9920634920634921,
+      "field_grounding_recall": 1.0
+    },
+    "trc-bi-03": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.19074492099322798,
+      "cer_norm": 0.1636568848758465,
+      "cer_strict_norm": 0.1616499442586399,
+      "token_recall": 0.9761904761904762,
+      "field_grounding_recall": 1.0
+    },
+    "trc-bi-04": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.19106145251396647,
+      "cer_norm": 0.15212527964205816,
+      "cer_strict_norm": 0.15027624309392265,
+      "token_recall": 0.9590163934426229,
+      "field_grounding_recall": 0.4
+    },
+    "trc-bi-04.scan": {
+      "layout": "bi",
+      "variant": "scanned",
+      "cer_raw": 0.88268156424581,
+      "cer_norm": 0.8534675615212528,
+      "cer_strict_norm": 0.49392265193370166,
+      "token_recall": 0.7131147540983607,
+      "field_grounding_recall": 0.4
+    },
+    "trc-bi-05": {
+      "layout": "bi",
+      "variant": "clean",
+      "cer_raw": 0.15455594002306805,
+      "cer_norm": 0.12572087658592848,
+      "cer_strict_norm": 0.12414578587699317,
+      "token_recall": 0.9915254237288136,
+      "field_grounding_recall": 1.0
+    },
+    "trc-en-01": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.00784313725490196,
+      "cer_norm": 0.00196078431372549,
+      "cer_strict_norm": 0.0019230769230769232,
+      "token_recall": 0.9714285714285714,
+      "field_grounding_recall": 1.0
+    },
+    "trc-en-02": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.006097560975609756,
+      "cer_norm": 0.0020325203252032522,
+      "cer_strict_norm": 0.00199203187250996,
+      "token_recall": 0.9846153846153847,
+      "field_grounding_recall": 1.0
+    },
+    "trc-en-03": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.005940594059405941,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "trc-en-03.scan": {
+      "layout": "en",
+      "variant": "scanned",
+      "cer_raw": 0.009900990099009901,
+      "cer_norm": 0.0039603960396039604,
+      "cer_strict_norm": 0.003883495145631068,
+      "token_recall": 0.9705882352941176,
+      "field_grounding_recall": 1.0
+    },
+    "trc-en-04": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.004008016032064128,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    },
+    "trc-en-05": {
+      "layout": "en",
+      "variant": "clean",
+      "cer_raw": 0.004073319755600814,
+      "cer_norm": 0.0,
+      "cer_strict_norm": 0.0,
+      "token_recall": 1.0,
+      "field_grounding_recall": 1.0
+    }
+  },
+  "by_layout": {
+    "ar": {
+      "n": 20,
+      "cer_raw": 0.16737359927665882,
+      "cer_norm": 0.14040964966462927,
+      "cer_strict_norm": 0.13519016253713328,
+      "token_recall": 0.5969945463792264,
+      "field_grounding_recall": 0.5258730158730158
+    },
+    "en": {
+      "n": 20,
+      "cer_raw": 0.004495337676679303,
+      "cer_norm": 0.0007845614402145417,
+      "cer_strict_norm": 0.0007644687688685744,
+      "token_recall": 0.9948728098498135,
+      "field_grounding_recall": 1.0
+    },
+    "bi": {
+      "n": 20,
+      "cer_raw": 0.19650003799241741,
+      "cer_norm": 0.15995838267756674,
+      "cer_strict_norm": 0.15717526997755044,
+      "token_recall": 0.941510601326552,
+      "field_grounding_recall": 0.8605357142857143
+    }
+  },
+  "by_variant": {
+    "clean": {
+      "n": 60,
+      "cer_raw": 0.12278965831525185,
+      "cer_norm": 0.10038419792747016,
+      "cer_strict_norm": 0.09770996709451743,
+      "token_recall": 0.8444593191851973,
+      "field_grounding_recall": 0.7954695767195766
+    },
+    "scanned": {
+      "n": 15,
+      "cer_raw": 0.2936603606751097,
+      "cer_norm": 0.26700147771526817,
+      "cer_strict_norm": 0.19884573838840444,
+      "token_recall": 0.725642217269081,
+      "field_grounding_recall": 0.7385714285714287
+    },
+    "poisoned": {
+      "n": 10,
+      "cer_raw": 0.1217005619710475,
+      "cer_norm": 0.10427497736424671,
+      "cer_strict_norm": 0.10244283275712825,
+      "token_recall": 0.8074707278052111,
+      "field_grounding_recall": 0.8371428571428572
+    }
+  },
+  "injection_in_ocr": {
+    "inv-ar-03.poison": false,
+    "inv-bi-05.poison": false,
+    "inv-en-02.poison": true,
+    "inv-en-04.poison": true,
+    "qt-ar-02.poison": true,
+    "qt-en-01.poison": false,
+    "tl-ar-04.poison": false,
+    "tl-en-03.poison": true,
+    "trc-ar-05.poison": false,
+    "trc-bi-01.poison": true
+  }
+}

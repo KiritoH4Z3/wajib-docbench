@@ -1,0 +1,14 @@
+Federal Tax Authority ‏الهيئة الاتحادية                                                 للضرائب‎
+
+Value Added Tax Registration Certificate            ‏المضافة‎ da dll ‏شهادة التسجيل في ضريبة‎
+Tax Registration Number        100634582043848 ‏رقم التسجيل                                                          الضريبي‎
+Legal Name in English           Wadi Al Sidr Cleaning Services FZE ‏الاسم القانوني                                   بالإنجليزية‎
+Legal Name in Arabic ‏الاسم القانوني                                                       بالعربية وادي السدر لخدمات التنظيف               م.م.ح‎
+Registered Address                Shop 449, Al Majaz 2, Sharjah ‏العنوان                                                         المسجل‎
+Effective Registration Date       17 June 2024 ‏تاريخ سريان                                                                        التسجيل‎
+Date of Issue                          13 September 2024 ‏تاريخ إصدار                                                                    الشهادة‎
+Tax Period                          Quarterly ‏الفترة                                                                            الضريبية‎
+This certificate confirms registration with the Federal Tax Authority. ‏تؤكد هذه الشهادة التسجيل لدى الهيئة الاتحادية                           للضرائب.‎
+Verify this document at verify.docbench.example with code C6WR-6F6G          verify.docbench.example g sall ‏على‎ CEWR-6F6G ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

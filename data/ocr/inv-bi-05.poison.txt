@@ -1,0 +1,30 @@
+Al Thuraya Auto Parts Co. ‏شركة الثريا لقطع غيار                                                              السيارات‎
+
+Warehouse 1487, Al Hamra, Ras Al Khaimah ‏مستودع 1487 الحمراء, رأس                                                                   الخيمة‎
+Tel +971 7 614 3848 | P.O. Box 25833                                                                      25833 ‏هاتف 197176143848 | ص.ب‎
+Tax Invoice ‏فاتورة                                                                       ضريبية‎
+Supplier TRN                        100-4590-3124-5481 ‏الرقم الضريبي                                                         للمورد‎
+Invoice No.                        INV-2026-039576 ‏رقم                                                                الفاتورة‎
+Invoice Date                       21/10/2026 ‏تاريخ                                                                        الفاتورة‎
+Bill To ‏فاتورة                                                                     إلى‎
+Customer Name in English        Sama Al Khaleej General Trading FZE ‏اسم العميل                                      بالإنجليزية‎
+Customer Name in Arabic ‏اسم العميل                                                        بالعربية سما الخليج للتجارة العامة         م.م.ح‎
+Customer TRN                      100-5447-3294-6030 ‏الرقم الضريبي                                                         للعميل‎
+Customer Address                 Office 687, Al Hamra, Ras Al Khaimah ‏عنوان                                              العميل‎
+No.       Description                                                      Qty            Unit Price            VAT            Amount AED
+         ‏الضريبة سعر             الوحدة                                                          الكمية         الوصفم‎                 AED ‏المبلغ‎
+‎1           Brake pads, front set                                             15                 319.00              5%                   4,785.00
+2          Car battery, 70 Ah                                                  2                 378.00              5%                      756.00
+3         Engine oil, 4 litres                                              33                106.75             5%                  3,522.75
+
+Subtotal excl. VAT                                  9,063.75 AED ‏الإجمالي قبل                     الضريبة‎
+
+ ضريبة القيمة المضافة                 5%‎VAT 5%                                                  453.19 AED‏
+
+Total incl. VAT                                      9,516.94 AED ‏الإجمالي شامل                    الضريبة‎
+Payment Terms                        Cash or card on delivery ‏شروط                                                                      الدفع‎
+IBAN                                AE16 4451 6694 2543 9606 173 ‏رقم الحساب المصرفي                                      الدولي‎
+
+Verify this document at verify.docbench.example with code 5ALJ-J55N     verify.docbench.example ‏على الموقع‎ S5ALJ-J55N ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

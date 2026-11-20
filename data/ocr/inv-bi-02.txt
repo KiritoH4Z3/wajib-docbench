@@ -1,0 +1,29 @@
+Wadi Al Sidr Interior Design Branch ‏فرع وادي السدر للتصميم                                  الداخلي‎
+
+Warehouse 1549, Deira, Al Rigga, Dubai ‏مستودع 1549 8333 الرقة,                                                                      دبي‎
+Tel +971 4800 5514 | P.O. Box 4                                                                               50214 ‏هاتف 5514 4800 971+ | ص.ب‎
+Tax Invoice ‏فاتورة                                         ضريبية‎
+Supplier TRN                           100-3491-4454-9580 ‏الرقم الضريبي                                                                   للمورد‎
+Invoice No.                         INV-2025-086566 ‏رقم                                                                      الفاتورة‎
+Invoice Date                        20/08/2025 ‏تاريخ                                                                            الفاتورة‎
+Bill To ‏فاتورة                                                                                                                            إلى‎
+Customer Name in English       Najm Al Sahra IT Solutions Branch ‏اسم العميل                                            بالإنجليزية‎
+Customer Name in Arabic ‏اسم العميل                                                   بالعربية فرع نجم الصحراء لحلول تقنية        المعلومات‎
+Customer TRN                         100-8650-0121-7320 ‏الرقم الضريبي                                                                   للعميل‎
+Customer Address                Warehouse 938, Al Khalidiyah, Abu Dhabi ‏عنوان                                        العميل‎
+No.      Description                                              Qty          Unit Price           VAT            Amount ‏د.!‎
+ ‏المبلغ                  د.!        الضريبة سعر           الوحدة                                                     الكمية         الوصفمم‎
+1           Delivery charges                                                    1                  103.25              5%                      103.25
+2          Filing cabinet, 4 drawers                                     24                952.50             5%                 22,860.00
+3          Office desk, 160 cm                                               2               1,229.00              5%                   2,458.00
+4          Ergonomic office chair                                         3                658.25             5%                   1,974.75
+Subtotal excl. VAT                                       1.5 27,396.00 ‏الإجمالي قبل                        الضريبة‎
+VAT 5%                                                    1.2 1,369.80                 5% ‏ضريبة القيمة المضافة‎
+Total incl. VAT                                      1.5 28,765.80 ‏الإجمالي شامل                  الضريبة‎
+Amount in words: UAE Dirhams Twenty-Eight Thousand Seven Hundred Sixty-Five and Eighty Fils Only
+Payment Terms                   Cash or card on delivery ‏شروط                                                           الدفع‎
+Due Date                          19/09/2025 ‏تاريخ                                                                     الاستحقاق‎
+IBAN                                     AE71 9584 47130148 7361 235 ‏رقم الحساب المصرفي                                          الدولي‎
+Verify this document at verify.docbench.example with code HHFR-JCNT           verify.docbench.example ‏على الموقع‎ HHFR-JONT ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

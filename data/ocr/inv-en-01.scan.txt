@@ -1,0 +1,28 @@
+Al Marjan Foodstuff Trading fz LLC
+Shop 673, Al Khalidiyah; Abu Dhabi
+Tel +971 2 590 7692 | P.O. Box 7326
+
+Tax Invoice
+
+Supplier TRN                                   100848358215705
+Invoice No.              INV/2025/68012
+Invoice Date                                     20 December 2025
+Bill To
+"Customer Name                         Durrat Al Shati Events Branch
+Customer 7                             100557424795750
+No. Description               0                                Qty            Unit Price            VAT             Amount AED
+1 = "Dates, premium, 5 kg box ©                                    27                 166.85           5%                    4,504.95
+2. Mirersl water 00 ‏4ه‎                                      18                   25.50              5%             © 459.00
+3         Basmati rice, 20 kg bag                                        27                  85.00           5%.            2,295.00
+4         Sunflower oil, 1.8litres          a         ‏ا‎              230 - sy               7600
+5       Basmati rice, 20 kg bag                           0-7       75           5%              3,126.75
+Subtotal excl. VAT                                          AED 11,121.70
+VAT 5%                                                                           AED 556.00
+                                                               Total incl. VAT                                                  AED 11,677.79
+Payment Terms                              Cash or card on delivery                                                                          :
+_ DuéDate --                       19 January 2026
+IBAN                                                   AE26 0266 7735 7627 7507 207
+
+Verify. this document at i docbench.exai i with code 5XEV-6829
+
+ ا          :                        ا نموذج اصطتاعي للاختيار /‎Synthetic sample for benchimarking‏

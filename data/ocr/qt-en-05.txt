@@ -1,0 +1,23 @@
+8310 Al Shamal Cleaning Services FZE
+
+Office 1195, Al Nahyan, Abu Dhabi
+Tel +971 2 351 3776 | P.O. Box 58429
+
+Quotation
+Quotation No.                     QTN-05624
+Date                                                       12.02.2027
+Valid Until                          27.02.2027
+Client                                Durrat Al Shati Foodstuff Trading FZCO
+No.     Description                                                          Qty         Unit Price         Amount AED
+1        Cleaning supplies kit                                                   3              134.50                 403.50
+2        Deep cleaning, per visit                                                 1              861.44                 861.44
+3        Window cleaning, per floor                                           14              560.00               7,840.00
+4        Office cleaning, monthly contract                                     3            5,232.19              15,696.57
+Subtotal excl. VAT                                 24,801.51 AED
+VAT 5%                                                 1,240.08 AED
+Grand Total                                         26,041.59 AED
+Payment Terms                           30 days from invoice date
+Delivery                                Within 7 working days
+Prepared by                         Mariam Yousef Al Hammadi
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

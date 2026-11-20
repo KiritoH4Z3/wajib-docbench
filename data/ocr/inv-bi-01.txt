@@ -1,0 +1,37 @@
+Al Reem Foodstuff Trading Co. ‏شركة الريم لتجارة المواد                                                 الغذائية‎
+
+Warehouse 2379, Al Nakheel, Ras Al Khaimah ‏مستودع 2379 النخيل. رأس                                                                       الخيمة‎
+Tel +971 7 357 8332 | P.O. Box 89540                                                                     89540 ‏هاتف 8332 357 9717+ | ص.ب‎
+Tax Invoice ‏فاتورة                                                                            ضريبية‎
+Supplier TRN                            100011606085045 ‏الرقم الضريبي                                                                         للمورد‎
+Invoice No.                              INV/2027/32351 ‏رقم                                                                                    الفاتورة‎
+Invoice Date                           2027-09-17 ‏تاريخ                                                                                     الفاتورة‎
+Date of Supply                          2027-09-08 ‏تاريخ                                                                                        التوريد‎
+Bill To ‏فاتورة                                                                                                                                                       إلى‎
+Customer Name in English          Sahil Al Dhahab Building Materials FZ-LLC ‏اسم العميل                                      بالإنجليزية‎
+Customer Name in Arabic ‏اسم العميل                                                       بالعربية ساحل الذهب لمواد البناء منطقة حرة            .م.م‎
+Customer TRN                          100632171572014 ‏الرقم الضريبي                                                                        للعميل‎
+Customer Address                    Shop 771, Mussafah Industrial Area, Abu Dhabi ‏عنوان                                           العميل‎
+No.       Description                                                        Qty             Unit Price             VAT              Amount AED
+           ‏الضريبة سعر              الوحدة                                                               الكمية          الوصفم‎                   AED gall
+1         Dates, premium, 5 kg box                                   29                169.25            5%                  4,908.25
+2         Sunflower oil, 1.8 litres                                         21                   22.00             5%                     462.00
+3         Mineral water, carton of 24                                      3                  26.00             5%                      78.00
+4          Basmati rice, 20 kg bag                                            6                  114.50              5%                      687.00
+5          Consultancy, per day                                              3               3,065.00              5%                    9,195.00
+
+Subtotal excl. VAT                                    15,330.25 AED ‏الإجمالي قبل                      الضريبة‎
+
+ ضريبة القيمة المضافة                  5%‎VAT 5%                                                 766.51 AED‏
+
+Total incl. VAT                                             16,096.76 AED ‏الإجمالي شامل                        الضريبة‎
+
+Amount in words: UAE Dirhams Sixteen Thousand Ninety-Six and Seventy-Six Fils Only
+
+Payment Terms                           Payment within 15 days of invoice date ‏شروط                                                            الدفع‎
+Due Date                                2027-10-17 ‏تاريخ                                                                                     الاستحقاق‎
+IBAN                                       AE10 4710 1571 6858 4496 850 ‏رقم الحساب المصرفي                                                    الدولي‎
+
+Verify this document at verify.docbench.example with code SK3X-7RG7      verify.docbench.example ‏على الموقع‎ SK3X-7RG7 ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

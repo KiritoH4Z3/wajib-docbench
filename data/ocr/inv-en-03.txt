@@ -1,0 +1,45 @@
+Al Waha Interior Design FZCO
+
+Office 1572, Business Bay, Dubai
+Tel +971 4 350 1257 | P.O. Box 36601
+
+Tax Invoice
+
+Supplier TRN                               100-5101-8296-1000
+
+Invoice No.                            TI-04678
+
+Invoice Date                           2024-09-03
+
+Date of Supply                            2024-09-03
+
+Bill To
+
+Customer Name                         Al Fajr Consultancy LLC
+
+Customer TRN                            100-3516-1085-4929
+
+Customer Address                   Warehouse 135, Al Qusais Industrial Area 2, Dubai
+
+No.      Description                                                   Qty           Unit Price            VAT           Amount AED
+
+1           Delivery charges                                                    1                  280.75              5%                      280.75
+
+2           A4 copy paper, carton of 5 reams                               6                   110.50               5%                        663.00
+
+3          Office desk, 160 cm                                               2               1,843.25              5%                   3,686.50
+Subtotal excl. VAT                                             AED 4,630.25
+VAT 5%                                                              AED 231.51
+Total incl. VAT                                                AED 4,861.76
+
+Amount in words: UAE Dirhams Four Thousand Eight Hundred Sixty-One and Seventy-Six Fils Only
+
+Payment Terms                       Cash or card on delivery
+
+Due Date                             2024-10-03
+
+IBAN                                         AE06 3467 0855 1689 9923 085
+
+Verify this document at verify.docbench.example with code NER7-9AKW
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعى للاختبار‎

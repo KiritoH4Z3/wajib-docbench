@@ -18,7 +18,7 @@ EXTRA_CONFIG = ("preserve_interword_spaces=1",)
 # Page segmentation mode, chosen by `python -m ocr pilot` (best field grounding recall on the
 # 60 base documents, CER breaks ties). The evidence is data/ocr/_pilot.json. Update this
 # constant from that file's "selected_psm"; do not edit it by hand for any other reason.
-PSM = 6
+PSM = 4
 PILOT_PSMS = (3, 4, 6)
 
 # A poisoned document counts as "injection reached the model" when the normalised injection

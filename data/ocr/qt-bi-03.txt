@@ -1,0 +1,25 @@
+Al Nakhla Auto Parts FZCO ‏النخلة لقطع غيار السيارات                                                      ش.م.ح‎
+
+Office 480, Al Jurf Industrial 1, Ajman ‏مكتب 480 الجرف الصناعية 1,                                                                                   عجمان‎
+Tel +971 6 381 5416 | P.O. Box 6                                                                    37136 ‏هاتف 5416 6381 971+ | ص.ب‎
+Quotation ‏عرض                                                    سعر‎
+Quotation No.                       Q/27/0056 ‏رقم عرض                                                                            السعر‎
+Date                                 31 May 2027                                                                                ‏التاريخ‎
+‎Valid Until                                  15 June 2027 ‏صالح                                                                                               حتى‎
+Client in English                       Al Dana Auto Parts Est. ‏العميل                                                                   بالإنجليزية‎
+Client in Arabic ‏العميل                                                                    بالعربية مؤسسة الدانة لقطع غيار                         السيارات‎
+Attention                                  David John Wilson                                                                                          ‏عناية‎
+‎No.       Description                                                                          Qty             Unit Price              Amount AED
+ ‏سعر              الوحدة                                                                                 الكمية          الوصفم‎                   AED gall
+1           Car battery, 70 Ah                                                                     12                  334.50                    4,014.00
+
+Subtotal excl. VAT                                     AED 4,014.00 ‏الإجمالي قبل                      الضريبة‎
+
+ ضريبة القيمة المضافة                     5% 200.70‎VAT 5%                                                           AED‏
+
+Grand Total                                                 AED 4,214.70                                      ‏الإجمالي‎
+‎Payment Terms                          100% on delivery ‏شروط                                                                                     الدفع‎
+Delivery                                     Within 14 days of purchase order                                                                         ‏التسليم‎
+‎Prepared by                            David John Wilson                                                                                       ‏أعده‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

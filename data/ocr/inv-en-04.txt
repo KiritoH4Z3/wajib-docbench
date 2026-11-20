@@ -1,0 +1,35 @@
+Al Safwa Building Materials LLC
+
+Office 282, Al Nakheel, Ras Al Khaimah
+Tel +971 7 677 4957 | P.O. Box 74233
+
+Tax Invoice
+
+Supplier TRN                                100503301910114
+
+Invoice No.                          INV/2026/39712
+
+Invoice Date                        08-Mar-2026
+
+Bill To
+
+Customer Name                      Sama Al Khaleej Events Co.
+
+Customer TRN                              100254864736427
+
+Customer Address                      Shop 2108, Mussafah Industrial Area, Abu Dhabi
+
+No.       Description                                                      Qty            Unit Price            VAT            Amount AED
+
+1         Steel rebar, per tonne                                       3            3,197.00            5%                9,591.00
+Subtotal excl. VAT                                          AED 9,591.00
+VAT 5%                                                               AED 479.55
+Total incl. VAT                                          AED 10,070.55
+
+Amount in words: UAE Dirhams Ten Thousand Seventy and Fifty-Five Fils Only
+Payment Terms                            Payment within 30 days by bank transfer
+IBAN                                        AE17 5889 3004 0956 6134 772
+
+Verify this document at verify.docbench.example with code KH2F-2GGQ
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎

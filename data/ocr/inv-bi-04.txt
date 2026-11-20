@@ -1,0 +1,30 @@
+Sahil Al Dhahab Foodstuff Trading Est. ‏مؤسسة ساحل الذهب لتجارة المواد                      الغذائية‎
+
+Shop 2247, Al Jurf Industrial 1, Ajman                                                                                      ‏عجمان‎ ,١ ‏محل /79, الجرف الصناعية‎
+Tel +971 6 885 2007 | P.O. Box 65503                                                                              100. ‏ص.ب‎ | FAV TAAO Yo ‏هاتف‎
+‎Tax Invoice ‏فاتورة                                                                       ضريبية‎
+Supplier TRN                            V+ JAMYALAYATY ‏الرقم الضريبي                                                                               للمورد‎
+Invoice No.                        INV-2024-023011 ‏رقم                                                                 الفاتورة‎
+Invoice Date                      1/1 ‏تاريخ                                                                       الفاتورة‎
+Date of Supply                          0/1/6 ‏تاريخ                                                                                             التوريد‎
+Bill To ‏فاتورة                                                                                         إلى‎
+Customer Name in English        Al Thuraya Interior Design FZCO ‏اسم العميل                                            بالإنجليزية‎
+Customer Name in Arabic ‏اسم العميل                                                            بالعربية الثريا للتصميم الداخلي          ش.م.ح‎
+Customer TRN                          V+ AAIVV-VAYY- ‏الرقم الضريبي                                                                                للعميل‎
+No.       Description                                                      Qty            Unit Price            VAT                Amount ‏د.!‎
+ ‏المبلغ                      د.!          الضريبة سعر              الوحدة                                                              الكمية          الوصفم‎
+١           Sunflower oil, 1.8 litres                                             A                     ‏م‎                0                        6
+
+Subtotal excl. VAT                                         Ja YYE ‏الإجمالي قبل                     الضريبة‎
+
+ ضريبة القيمة المضافة                 07 ‎٠‏                                                   د‎VAT ox‏
+
+Total incl. VAT                                             l.aYvo,y. ‏الإجمالي شامل                    الضريبة‎
+
+Amount in words: UAE Dirhams Two Hundred Thirty-Five and Twenty Fils Only
+
+Payment Terms                        Cash or card on delivery ‏شروط                                                                      الدفع‎
+IBAN                                   AE14 0318 5464 9565 0134 180 ‏رقم الحساب المصرفي                                          الدولي‎
+Verify this document at verify.docbench.example with code WEL4-ZZXM           verify.docbench.example ‏على الموقع‎ WEL4-ZZXM ‏للتحقق من صحة هذه الوثيقة استخدم الرمز‎
+
+Synthetic sample for benchmarking / ‏نموذج اصطناعي للاختبار‎
