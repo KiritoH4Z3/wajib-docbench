@@ -12,6 +12,7 @@ ARG ENG_SHA256=8280aed0782fe27257a68ea10fe7ef324ca0f8d85bd2fd145d1c2b560bcb66ba
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        tesseract-ocr=5.3.4-1build5 libtesseract5=5.3.4-1build5 liblept5=1.82.0-3build4 \
+       tesseract-ocr-eng=1:4.1.0-2 tesseract-ocr-osd=1:4.1.0-2 \
        ca-certificates curl \
     && rm -rf /var/lib/apt/lists/*
 

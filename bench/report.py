@@ -243,6 +243,65 @@ def _row(m: dict) -> str:
     )
 
 
+# How each SCOPE target reads in the README. The limit itself comes from eval.targets.
+_TARGET_ROWS: dict[str, tuple[str, str]] = {
+    "field_f1_ar": ("F1, Arabic and bilingual docs", "f1"),
+    "field_f1_en": ("F1, English docs", "f1"),
+    "critical_exact_match": ("Critical fields exact", "pct"),
+    "hallucination_rate": ("Hallucinated values", "pct"),
+    "schema_valid_first_try": ("Valid JSON first try", "pct"),
+    "poisoned_pass_strict_reached": ("Poisoned docs fully correct", "pct"),
+    "human_review_rate": ("Sent to review", "pct"),
+    "ttft_p95_concurrency_4_s": ("TTFT p95 at 4 in flight", "s"),
+}
+_OP_WORDS = {">=": "at least", "<=": "at most", "<": "under"}
+_VERDICT = {True: "met", False: "missed", "inconclusive": "too close to call"}
+
+
+def _fmt(x: float, kind: str) -> str:
+    return {"f1": f"{x:.2f}", "pct": _pct(x, 0), "s": f"{x:.2f} s"}[kind]
+
+
+def _target_label(metric: str) -> str:
+    from eval.targets import _TARGETS
+
+    name, kind = _TARGET_ROWS[metric]
+    _, op, limit = _TARGETS[metric]
+    return f"{name}, {_OP_WORDS[op]} {_fmt(limit, kind)}"
+
+
+def _target_cell(t: dict | None, kind: str) -> str:
+    if not t or t.get("reason"):
+        return "not scored (incomplete run)" if t else "not measured"
+    if t.get("value") is None:
+        return "not measured"
+    value = _fmt(t["value"], kind)
+    if t.get("k") is not None and t.get("n"):
+        value = f"{t['k']}/{t['n']}"
+    ci = t.get("ci95")
+    ci_text = f" ({_fmt(ci[0], kind)} to {_fmt(ci[1], kind)})" if ci else ""
+    unit = "requests" if kind == "s" else "docs"
+    n_text = f", {t['n']} {unit}" if t.get("n") and t.get("k") is None else ""
+    return f"{_VERDICT.get(t.get('met'), 'not measured')}: {value}{ci_text}{n_text}"
+
+
+def _targets_table(models: dict) -> list[str]:
+    scored = [m for m in models.values() if m.get("targets")]
+    if not scored:
+        return []
+    lines = [
+        "Against the scope's targets. A target is too close to call when its 95% interval "
+        "straddles the limit.",
+        "",
+        "| Target | " + " | ".join(m["display_name"] for m in scored) + " |",
+        "|---|" + "---|" * len(scored),
+    ]
+    for metric, (_, kind) in _TARGET_ROWS.items():
+        cells = [_target_cell(m["targets"].get(metric), kind) for m in scored]
+        lines.append(f"| {_target_label(metric)} | " + " | ".join(cells) + " |")
+    return lines + [""]
+
+
 def render_block(results: dict) -> str:
     lines: list[str] = []
     models = results.get("models", {})
@@ -263,6 +322,7 @@ def render_block(results: dict) -> str:
         ]
         lines += [_row(m) for m in models.values()]
         lines.append("")
+        lines += _targets_table(models)
         if (CHARTS / "accuracy_vs_cost.png").exists():
             lines += [
                 "![Field F1 on Arabic and bilingual documents against cost per 1,000 documents]"

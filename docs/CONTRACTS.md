@@ -189,6 +189,7 @@ rates they come from.
           "missing_variants": { "scanned": {}, "poisoned": {} },
           "field_f1": { "overall": 0.0, "en": 0.0, "ar": 0.0, "bi": 0.0, "ar_bi": 0.0,
                         "arabic_script": 0.0, "abstention_errors": {}, "excluded_by_subset": {},
+                        "n_docs": { "overall": 60, "en": 20, "ar": 20, "bi": 20, "ar_bi": 40 },
                         "by_doc_type": {}, "by_field": {} },
           "ci95": { "field_f1.ar_bi": [0.0, 0.0], "field_f1.en": [0.0, 0.0],
                     "critical_exact_match": [0.0, 0.0], "hallucination_rate": [0.0, 0.0],
@@ -227,7 +228,8 @@ rates they come from.
       },
       "cost": { "per_1000_docs_usd": 0.0, "basis": "...", "sensitivity": [] },
       "targets": { "<metric>": { "target": "...", "value": 0.0, "ci95": [],
-                                 "met": "true | false | inconclusive | null", "reason": null } },
+                                 "met": "true | false | inconclusive | null", "reason": null,
+                                 "n": 60, "k": "poisoned target only" } },
       "server": { "image": "...", "parallel": 4, "weights_sha256": "..." }
     }
   },

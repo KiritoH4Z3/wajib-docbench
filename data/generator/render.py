@@ -11,6 +11,7 @@ data/generator/fonts. Two reasons, both measured:
 
 from __future__ import annotations
 
+import io
 import os
 import re
 import tempfile
@@ -237,9 +238,17 @@ def scan_image(pdf: bytes | Path, params: dict[str, float]) -> Image.Image:
     return Image.fromarray(np.clip(pixels, 0, 255).astype(np.uint8))
 
 
+def encode_jpeg(image: Image.Image, quality: float, dpi: int = 200) -> bytes:
+    """The one JPEG encoding the scans use. The check in data/generator/check.py rebuilds a
+    scan through this same function, so a correct scan matches its rebuild pixel for pixel."""
+    buf = io.BytesIO()
+    image.save(buf, format="JPEG", quality=int(quality), optimize=True, dpi=(dpi, dpi))
+    return buf.getvalue()
+
+
 def save_jpeg(image: Image.Image, path: Path, quality: float, dpi: int = 200) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    image.save(path, format="JPEG", quality=int(quality), optimize=True, dpi=(dpi, dpi))
+    path.write_bytes(encode_jpeg(image, quality, dpi))
 
 
 def render_outputs(built: list[Built], out_root: Path) -> RenderStats:

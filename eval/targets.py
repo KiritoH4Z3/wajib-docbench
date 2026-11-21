@@ -9,6 +9,12 @@ Each entry carries the 95% interval next to the value when one exists (the strat
 bootstrap of `eval.uncertainty`, or the Wilson interval of the poisoned rate). When the
 interval straddles the limit, met is "inconclusive": the data cannot tell a pass from a
 fail. Otherwise met is True or False from the point value.
+
+Each entry also carries "n", what the value rests on: documents for the accuracy targets
+(only the documents of that language for the two F1 targets, only the poisoned documents
+whose injection reached the model for the poisoned target) and requests for TTFT. The
+poisoned target adds "k", the documents that passed, because 5 of 8 reads differently
+from 62.5%.
 """
 
 from __future__ import annotations
@@ -96,6 +102,17 @@ def evaluate_targets(block: dict, perf: dict | None) -> dict:
         "human_review_rate": ci.get("review.rate"),
         "poisoned_pass_strict_reached": _get(block, "poisoned", "ci95", "strict_reached"),
     }
+    n_docs = _get(block, "n_docs")
+    counts = {
+        "field_f1_en": _get(block, "field_f1", "n_docs", "en"),
+        "field_f1_ar": _get(block, "field_f1", "n_docs", "ar_bi"),
+        "critical_exact_match": n_docs,
+        "hallucination_rate": n_docs,
+        "schema_valid_first_try": n_docs,
+        "human_review_rate": n_docs,
+        "poisoned_pass_strict_reached": _get(block, "poisoned", "n_reached"),
+        "ttft_p95_concurrency_4_s": _get(perf, "throughput", 4, "n_requests"),
+    }
     base_reason = _incomplete(_get(block, "missing"), "base")
     poison_reason = _incomplete(_get(block, "missing_variants", "poisoned"), "poisoned")
     out = {}
@@ -108,5 +125,7 @@ def evaluate_targets(block: dict, perf: dict | None) -> dict:
                 reason = poison_reason
         met = None if reason else _judge(value, ci95, op, limit)
         out[metric] = {"target": text, "value": value, "ci95": ci95, "met": met,
-                       "reason": reason}
+                       "reason": reason, "n": counts[metric]}
+        if metric == "poisoned_pass_strict_reached":
+            out[metric]["k"] = _get(block, "poisoned", "k", "strict_reached")
     return out

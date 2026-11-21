@@ -15,6 +15,10 @@ EXPECTED_PACKAGES = {
     "tesseract-ocr": "5.3.4-1build5",
     "libtesseract5": "5.3.4-1build5",
     "liblept5": "1.82.0-3build4",
+    # Pulled in by tesseract-ocr. Their traineddata files are never read (TESSDATA_PREFIX
+    # points at the tessdata_best copies), but pinning them keeps the image the same.
+    "tesseract-ocr-eng": "1:4.1.0-2",
+    "tesseract-ocr-osd": "1:4.1.0-2",
 }
 EXPECTED_LEPTONICA = "1.82.0"
 

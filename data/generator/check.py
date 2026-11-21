@@ -449,13 +449,21 @@ def check_determinism(out_root: Path) -> list[str]:
 # ---------------------------------------------------------------- rendered files
 
 
-SCAN_MAX_MEAN_DIFF = 12.0
+# Mean absolute pixel difference allowed between a scan on disk and its rebuild through the
+# same JPEG encoder. Measured on the 15 committed scans (21 November 2026): the correct
+# rebuild differs by 0.00 on every scan, the same page rebuilt with the next noise seed by
+# 2.27 or more (3.41 on average), and another scan of the same size by 10.2 or more. 0.5
+# leaves room for a different libjpeg build and sits far below the smallest wrong-seed
+# difference.
+SCAN_MAX_MEAN_DIFF = 0.5
 
 
 def check_scan_pixels(doc_id: str, g: GoldDoc, path: Path, out_root: Path) -> list[str]:
     """A scan JPEG that is swapped, stale or from another seed still passes a format check.
     Rebuild it from the base PDF and the stored scan parameters and compare pixels."""
-    from data.generator.render import scan_image
+    import io
+
+    from data.generator.render import encode_jpeg, scan_image
 
     problems = []
     with Image.open(path) as image:
@@ -470,7 +478,9 @@ def check_scan_pixels(doc_id: str, g: GoldDoc, path: Path, out_root: Path) -> li
     base_pdf = out_root / "docs" / f"{g.base_doc_id}.pdf"
     if not base_pdf.exists():
         return problems + [f"{doc_id}: base PDF {base_pdf.name} is missing; regenerate"]
-    expected = np.asarray(scan_image(base_pdf, g.scan), dtype=np.float32)
+    rebuilt = encode_jpeg(scan_image(base_pdf, g.scan), g.scan["jpeg_quality"], int(dpi))
+    with Image.open(io.BytesIO(rebuilt)) as decoded:
+        expected = np.asarray(decoded.convert("L"), dtype=np.float32)
     if expected.shape != on_disk.shape:
         problems.append(f"{doc_id}: scan is {on_disk.shape}, rebuilt scan is {expected.shape}")
         return problems

@@ -179,7 +179,8 @@ def field_f1(results: list[DocResult]) -> dict[str, Any]:
     Subsets: "en", "ar" (Arabic layout only), "bi" (bilingual only), "ar_bi" (the two
     pooled, the SCOPE's "Arabic and bilingual") and "arabic_script" (only the (document,
     field) cells whose gold value contains Arabic script). "excluded" lists the overall
-    pairs left out of the mean, "excluded_by_subset" the same per subset."""
+    pairs left out of the mean, "excluded_by_subset" the same per subset. "n_docs" is the
+    number of documents behind each subset, so a target can say what its F1 rests on."""
     table = _pair_table(results)
     subsets = {
         name: _pair_table([r for r in results if r.gold.layout in layouts])
@@ -198,6 +199,13 @@ def field_f1(results: list[DocResult]) -> dict[str, Any]:
         "by_field": {k: v for k, v in by_field.items() if v is not None},
         "excluded": _excluded(table),
         "excluded_by_subset": {name: _excluded(sub) for name, sub in subsets.items()},
+        "n_docs": {
+            "overall": len(results),
+            **{
+                name: sum(1 for r in results if r.gold.layout in layouts)
+                for name, layouts in LAYOUT_SUBSETS.items()
+            },
+        },
         "abstention_errors": {
             "overall": _abstention_errors(table),
             **{name: _abstention_errors(sub) for name, sub in subsets.items()},

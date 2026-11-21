@@ -736,7 +736,7 @@ def test_targets_met_missed_and_unmeasurable():
     assert t["hallucination_rate"]["met"] is True
     assert t["schema_valid_first_try"] == {
         "target": "schema-valid first try >= 0.95", "value": None, "ci95": None,
-        "met": None, "reason": None}
+        "met": None, "reason": None, "n": None}
     assert t["poisoned_pass_strict_reached"]["met"] is True
     assert t["human_review_rate"]["met"] is False
     assert t["ttft_p95_concurrency_4_s"]["met"] is False  # strictly under 1.5
@@ -754,6 +754,25 @@ _GOOD_BLOCK = {
 }
 _BLOCK_TARGETS = ("field_f1_en", "field_f1_ar", "critical_exact_match", "hallucination_rate",
                   "schema_valid_first_try", "poisoned_pass_strict_reached", "human_review_rate")
+
+
+def test_targets_carry_what_each_value_rests_on():
+    """Silent failure: a target read "missed" or "met" with no count beside it, so an F1
+    over 20 English documents and a poisoned rate over 8 looked as solid as one over 60."""
+    docs = [invoice(f"e{i}", {}) for i in range(3)] + [
+        invoice(f"a{i}", {}, layout="ar") for i in range(2)] + [invoice("b0", {}, layout="bi")]
+    f1 = metrics.field_f1(docs)
+    assert f1["n_docs"] == {"overall": 6, "en": 3, "ar": 2, "bi": 1, "ar_bi": 3}
+    block = {**_GOOD_BLOCK, "field_f1": {**_GOOD_BLOCK["field_f1"], "n_docs": f1["n_docs"]},
+             "poisoned": {"strict_reached": 0.625, "n_reached": 8, "k": {"strict_reached": 5}}}
+    perf = {"throughput": {"4": {"ttft_p95_s": 1.0, "n_requests": 60}}}
+    t = evaluate_targets(block, perf)
+    assert t["field_f1_en"]["n"] == 3 and t["field_f1_ar"]["n"] == 3
+    assert t["critical_exact_match"]["n"] == 60
+    assert t["poisoned_pass_strict_reached"]["n"] == 8
+    assert t["poisoned_pass_strict_reached"]["k"] == 5
+    assert "k" not in t["field_f1_en"]
+    assert t["ttft_p95_concurrency_4_s"]["n"] == 60
 
 
 @pytest.mark.parametrize("missing", [
@@ -928,6 +947,36 @@ def test_sample_variance_reports_field_disagreement_and_f1_spread(tmp_path, monk
     assert f1["values"] == pytest.approx([1.0, 1.0, 0.95])  # nine pairs 1.0, total 0.5
     assert f1["min"] == pytest.approx(0.95) and f1["max"] == pytest.approx(1.0)
     assert f1["sd"] == pytest.approx(0.028868, abs=1e-6)
+
+
+def test_sample_runs_reach_the_api_row_through_score_model(tmp_path, monkeypatch):
+    """Silent failure: sample_variance was measured by its own function but no test went
+    through score_model, so a dropped assignment would leave every API row labelled a
+    single draw (or a repeated run unlabelled) with every other test green."""
+    from bench import report
+
+    golds = {i: make_gold(i, "tax_invoice", dict(INVOICE_GOLD), INVOICE_TEXT)
+             for i in ("a", "b")}
+    monkeypatch.setattr(uncertainty, "run_dir", lambda s, src, stage: tmp_path / s / src / stage)
+    monkeypatch.setattr(uncertainty, "list_doc_ids", lambda variant=None: sorted(golds))
+    monkeypatch.setattr(uncertainty, "load_gold", lambda i: golds[i])
+    monkeypatch.setattr(score, "list_doc_ids",
+                        lambda variant=None: sorted(golds) if variant == "clean" else [])
+    monkeypatch.setattr(score, "_load_results",
+                        lambda slug, src, ids: [invoice(i, {}, route="accept") for i in ids])
+    monkeypatch.setattr(score, "_load_injection_in_ocr", lambda: None)
+
+    def api_row() -> str:
+        block = score.score_model("m", "ocr")
+        m = {"display_name": "API", "kind": "api", "quant": None,
+             "text_sources": {"ocr": block}, "perf": {}, "cost": {}}
+        return report._row(m)
+
+    _write_sample(tmp_path, "extract", {"a": dict(INVOICE_GOLD), "b": dict(INVOICE_GOLD)})
+    assert "API, single draw" in api_row()
+    _write_sample(tmp_path, "extract-s1", {"a": dict(INVOICE_GOLD), "b": dict(INVOICE_GOLD)})
+    assert score.score_model("m", "ocr")["sample_variance"]["n_samples"] == 2
+    assert "single draw" not in api_row()
 
 
 # --------------------------------------------------------------------- score

@@ -4,12 +4,14 @@
   "packages": {
     "liblept5": "1.82.0-3build4",
     "libtesseract5": "5.3.4-1build5",
-    "tesseract-ocr": "5.3.4-1build5"
+    "tesseract-ocr": "5.3.4-1build5",
+    "tesseract-ocr-eng": "1:4.1.0-2",
+    "tesseract-ocr-osd": "1:4.1.0-2"
   },
   "tessdata": "tessdata_best@e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
   "tessdata_commit": "e12c65a915945e4c28e237a9b52bc4a8f39a0cec",
   "image": "wajib-docbench-ocr:1",
-  "image_id": "sha256:78d5dfa01643913dface91ff1a84fd8905dec1943d7b941c4140e5a5ac24f0b6",
+  "image_id": "sha256:9e8879478cc87d9abc9d443e833362ee3a0a355c521966552a2623d2701906e8",
   "base_image": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
   "langs": "ara+eng",
   "oem": 1,

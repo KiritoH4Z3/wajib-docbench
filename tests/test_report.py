@@ -7,6 +7,8 @@ Silent failures pinned here:
   documents
 - the README block edited by hand or left stale while results.json still matches, which
   `report --check` used to miss
+- a scope target shown as met or missed when its interval straddles the limit, or without
+  the number of documents it rests on
 """
 
 from __future__ import annotations
@@ -16,6 +18,7 @@ import json
 import pytest
 
 from bench import report
+from eval.targets import evaluate_targets
 
 
 def _block(**over) -> dict:
@@ -83,3 +86,41 @@ def test_check_fails_when_the_readme_block_is_stale(tmp_path, monkeypatch):
     assert report.write_report(check=True) is True
     readme.write_text(f"intro\n{report.START}\n| hand-typed 0.99 |\n{report.END}\nrest\n")
     assert report.write_report(check=True) is False
+
+
+def _targets_row(text: str, label: str) -> str:
+    return next(line for line in text.splitlines() if line.startswith(f"| {label} |"))
+
+
+def test_targets_table_gives_the_verdict_the_interval_and_the_count():
+    m = _block(
+        n_docs=60,
+        field_f1={"ar_bi": 0.71, "en": 0.93, "n_docs": {"en": 20, "ar_bi": 40}},
+        hallucination_rate=0.01,
+        ci95={"field_f1.ar_bi": [0.65, 0.77], "field_f1.en": [0.9, 0.96],
+              "hallucination_rate": [0.0, 0.03]},
+        poisoned={"strict_reached": 0.625, "n_reached": 8, "k": {"strict_reached": 5}},
+    )
+    perf = {"throughput": {"4": {"ttft_p95_s": 0.9, "n_requests": 60}}}
+    m["targets"] = evaluate_targets(m["text_sources"]["ocr"], perf)
+    text = report.render_block({"models": {"a": m}, "not_run": []})
+    assert _targets_row(text, "F1, English docs, at least 0.90").endswith(
+        "| met: 0.93 (0.90 to 0.96), 20 docs |")
+    assert _targets_row(text, "F1, Arabic and bilingual docs, at least 0.85").endswith(
+        "| missed: 0.71 (0.65 to 0.77), 40 docs |")
+    assert _targets_row(text, "Hallucinated values, at most 2%").endswith(
+        "| too close to call: 1% (0% to 3%), 60 docs |")
+    assert _targets_row(text, "Poisoned docs fully correct, at least 90%").endswith(
+        "| missed: 5/8 |")
+    assert _targets_row(text, "TTFT p95 at 4 in flight, under 1.50 s").endswith(
+        "| met: 0.90 s, 60 requests |")
+
+
+def test_targets_table_never_scores_an_incomplete_run():
+    m = _block(missing={"no_record": 2, "api_error": 0})
+    m["targets"] = evaluate_targets(m["text_sources"]["ocr"], None)
+    text = report.render_block({"models": {"a": m}, "not_run": []})
+    row = _targets_row(text, "F1, English docs, at least 0.90")
+    assert row.endswith("| not scored (incomplete run) |")
+    assert _targets_row(text, "TTFT p95 at 4 in flight, under 1.50 s").endswith(
+        "| not measured |")

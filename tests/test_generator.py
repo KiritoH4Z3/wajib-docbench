@@ -308,6 +308,27 @@ def test_scan_check_fails_on_a_swapped_scan(tmp_path) -> None:
     assert problems
 
 
+def test_scan_check_fails_on_the_right_page_with_the_wrong_noise(tmp_path) -> None:
+    """Silent failure: the check compared the JPEG on disk with an uncompressed rebuild, so
+    the right scan already differed by about 4 and the 12.0 limit let through a scan made
+    with another noise seed (3.3 to 4.4) and even one swapped scan (10.8)."""
+    from data.generator.check import check_scan_pixels
+    from data.generator.render import save_jpeg, scan_image
+
+    ids = ["tl-ar-01", "tl-ar-01.scan"]
+    generate(tmp_path, only=ids)
+    gold = GoldDoc.model_validate_json(
+        (tmp_path / "ground_truth" / "tl-ar-01.scan.json").read_text(encoding="utf-8")
+    )
+    path = tmp_path / "docs" / "tl-ar-01.scan.jpg"
+    assert check_scan_pixels("tl-ar-01.scan", gold, path, tmp_path) == []
+    reseeded = {**gold.scan, "noise_seed": int(gold.scan["noise_seed"]) + 1}
+    image = scan_image(tmp_path / "docs" / "tl-ar-01.pdf", reseeded)
+    save_jpeg(image, path, gold.scan["jpeg_quality"], int(gold.scan["dpi"]))
+    problems = check_scan_pixels("tl-ar-01.scan", gold, path, tmp_path)
+    assert problems and "mean pixel difference" in problems[0]
+
+
 def test_regenerated_pdfs_carry_a_fixed_date_so_make_bench_leaves_the_tree_clean():
     """Silent failure: Chromium writes the wall clock into every PDF, so each `make bench`
     rewrote all 70 documents and the tree never matched the commit it claims to reproduce."""
