@@ -1,7 +1,6 @@
 """What a wrong extraction does to a Wajib client.
 
-Ported from the Wajib checkout, /home/kiritohaze/Projects/ClaudeCode/wajib at commit
-9e040a9:
+Ported from Wajib (github.com/KiritoH4Z3/wajib) at commit 9e040a9:
 - `src/lib/alerts/schedule.ts`: ALERT_OFFSETS = [90, 60, 30, 7, 1] and
   ALERT_CHANNELS = ["WHATSAPP", "EMAIL"]. `buildAlertSchedule` sends one reminder per
   offset per channel, scheduled `subDays(dueDate, offset)`.

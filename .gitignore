@@ -15,3 +15,6 @@ graphify-out/
 data/raster/
 .venv-aiperf/
 *.part
+
+# Owner-only to-do list, kept local
+FOUNDER-TASKS.md

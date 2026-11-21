@@ -381,12 +381,7 @@ def render_block(results: dict) -> str:
         lines.append("")
         lines += _targets_table(models)
         lines += _throughput_table(models)
-        if (CHARTS / "accuracy_vs_cost.png").exists():
-            lines += [
-                "![Field F1 on Arabic and bilingual documents against cost per 1,000 documents]"
-                "(results/charts/accuracy_vs_cost.png)",
-                "",
-            ]
+        # The chart itself sits in the README's opening section, above this block.
         for m in models.values():
             o = _get(m, "text_sources", "ocr") or {}
             if _incomplete(o):

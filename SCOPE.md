@@ -116,7 +116,7 @@ Your own harness logs per request: input and output tokens, TTFT, inter-token la
 ## 4. What it should highlight (the story)
 
 Lead with these, in this order:
-1. **The headline number.** For example: "A self-hosted UAE-built model reached 0.87 Arabic F1 at $0.40 per 1,000 documents, against 0.93 for the API at $X." Use your real numbers.
+1. **The headline number.** For example: "A self-hosted UAE-built model reached <Arabic F1> at <cost> per 1,000 documents, against <Arabic F1> for the API at <cost>." Use the real numbers.
 2. **Consequences, not just accuracy.** Run the extracted expiry dates through Wajib's rules engine and count how many compliance alerts would have fired on the wrong day. "A 3% date error rate means 3 missed licence renewals per 100 clients" is a business sentence a pre-sales manager remembers.
 3. **The guardrail catching a poisoned invoice** on camera: the injection, the block and the reason logged.
 4. **Data residency:** the documents never leave the machine with the self-hosted setup. That's the sovereign AI angle UAE buyers care about.
@@ -137,7 +137,7 @@ Do **not** lead with the tech stack, the framework names or how hard it was.
 | 4 | **2 to 3 minute video** | First 30 seconds: the problem plus the poisoned invoice being caught. Then the table, the consequence number and the reproducibility. Unlisted YouTube link in the README |
 | 5 | **ADRs** in `docs/adr/` | 001 self-hosted open models plus an API baseline, 002 the OCR choice, 003 guardrail design |
 | 6 | **Write-up** (LinkedIn post or blog) | One chart, three numbers, the repo link and one question to UAE AI leads |
-| 7 | **CV bullet** | "Benchmarked 3 LLMs on 60 synthetic bilingual UAE business documents: 0.87 Arabic field F1, 95% injection resistance, $0.40 per 1,000 documents self-hosted with vLLM." Fill in your real numbers |
+| 7 | **CV bullet** | "Benchmarked 3 LLMs on 60 synthetic bilingual UAE business documents: <Arabic field F1>, <injection result>, <cost> per 1,000 documents self-hosted." Written from the real numbers |
 
 ---
 
@@ -190,4 +190,5 @@ release notes. Full reasoning in [ADR-001](docs/adr/001-models-and-serving.md).
 | Falcon-H1-Arabic 7B | Falcon-H1 7B Instruct (Q4_K_M) | Falcon-H1-Arabic has no downloadable weights, only a chat playground. Falcon-H1 is TII's public model and is trained natively on Arabic. Falcon-H1-Arabic is listed as pending and is the first swap-in if weights appear. |
 | Served with vLLM | Served with llama.cpp locally; a vLLM launch kept for a free Kaggle T4 | Neither model fits 6 GB of free VRAM under vLLM: Falcon-H1 7B GPTQ is 7.8 GB, Jais 2 has no 4-bit checkpoint vLLM can load, and vLLM's GGUF path is experimental. Your risk table already allows llama.cpp. |
 | Commercial API on a free tier | Gemini 3.5 Flash-Lite | Free tier, an OpenAI-compatible endpoint, built for document extraction. It ignores `temperature`, so run-to-run variance is reported. |
+| Example figures in sections 4 and 5 (0.87 F1, 95% injection resistance, $0.40) | Placeholders | They were illustrations written before any model ran. Replaced before the repo went public so they cannot be read as results. The real numbers are in the README. |
 | 60 documents with 15 scanned and 10 poisoned among them | 60 base documents plus 15 scanned and 10 poisoned copies of base documents | Each variant is scored against its clean twin, so the effect of the scan or the injection is measured on its own. The headline numbers still come from the 60. |

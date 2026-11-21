@@ -33,6 +33,7 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import re
 import shutil
 import subprocess
@@ -41,6 +42,7 @@ from pathlib import Path
 
 import pytest
 
+from bench.paths import ROOT
 from bench.records import (
     Attempt,
     ExtractionRecord,
@@ -559,9 +561,13 @@ def test_review_precision_is_none_when_nothing_is_routed():
 
 # -------------------------------------------------------------- consequences
 
+# A Wajib checkout beside this repo (or at WAJIB_REPO). The cross-checks against its
+# TypeScript source skip when it is not there.
+_WAJIB = Path(os.environ.get("WAJIB_REPO", str(ROOT.parent / "wajib")))
+
 
 def _ts_table() -> dict[int, tuple[int, int, int]] | None:
-    path = Path("/home/kiritohaze/Projects/ClaudeCode/wajib/src/lib/rules/uae-compliance-rules.ts")
+    path = _WAJIB / "src" / "lib" / "rules" / "uae-compliance-rules.ts"
     if not path.exists():
         return None
     body = path.read_text(encoding="utf-8").split("ctRegistrationDeadlineByMonth")[1]
@@ -600,7 +606,6 @@ def test_ct_deadline_on_or_after_the_cutoff_is_three_months_after_issue():
         assert ct_registration_deadline(issued) > issued
 
 
-_WAJIB = Path("/home/kiritohaze/Projects/ClaudeCode/wajib")
 _CT_DATES = ["2024-03-01", "2024-03-31", "2024-08-31", "2024-11-30", "2025-01-20",
              "2025-05-31", "2026-12-31", "2027-11-30"]
 

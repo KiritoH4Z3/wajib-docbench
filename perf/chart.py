@@ -1,4 +1,5 @@
-"""The results chart: Arabic field F1 against cost per 1,000 documents."""
+"""The results chart: field F1 on Arabic and bilingual documents against cost per 1,000
+documents."""
 
 from __future__ import annotations
 
@@ -57,8 +58,8 @@ def accuracy_vs_cost_chart(points: list[dict], out_dir: Path) -> list[Path]:
         ax.set_xlim(max(0.0, xlo - span), xhi + span)
     ax.set_xlabel("Cost per 1,000 documents (USD" + (", log scale)" if log_x else ")"),
                   color=INK, fontsize=10)
-    ax.set_ylabel("Arabic field F1", color=INK, fontsize=10)
-    ax.set_title("Arabic accuracy against cost per 1,000 documents", loc="left",
+    ax.set_ylabel("Field F1, Arabic and bilingual documents", color=INK, fontsize=10)
+    ax.set_title("Arabic and bilingual accuracy against cost per 1,000 documents", loc="left",
                  color=INK, fontsize=12, fontweight="bold")
     ax.grid(True, color=GRID, linewidth=0.6, zorder=0)
     ax.tick_params(colors=INK, labelsize=9)
