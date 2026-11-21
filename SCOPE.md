@@ -18,15 +18,15 @@ UAE businesses run on documents in Arabic, English or both: trade licences, tax 
 ### The question this project answers
 **Can a self-hosted open model extract fields from UAE business documents accurately enough to trust in production? And what does that cost compared with a commercial API?**
 
-### Why this project exists (career goal)
-To prove four things to a UAE AI solutions or pre-sales hiring manager, with numbers rather than claims:
-1. I can **evaluate** an AI system, not just build one.
-2. I understand **Arabic and bilingual** document AI, which most candidates cannot show.
-3. I can **self-host and serve** an open model and report latency and cost like an engineer.
-4. I build **guardrails**: the system knows when it is wrong and hands off to a human.
+### Why this project exists
+To show four things with numbers rather than claims:
+1. How to **evaluate** an AI system before trusting it.
+2. How **Arabic and bilingual** documents change the result.
+3. What it takes to **self-host and serve** an open model, with latency and cost reported.
+4. **Guardrails**: the system knows when it is wrong and hands off to a person.
 
 ### Success in one sentence
-A recruiter understands the result in 10 seconds. A technical interviewer finds no hole in the method in 10 minutes.
+A reader understands the result in 10 seconds, and a technical reviewer finds no hole in the method in 10 minutes.
 
 ---
 
@@ -88,7 +88,7 @@ Before you publish anything, confirm the exact Hugging Face IDs, that each model
 5. **Confidence routing:** any failed check sends the document to a human-review queue with the reason attached. The system must say "I'm not sure" instead of guessing.
 
 ### 2.6 Measurement
-Your own harness logs per request: input and output tokens, TTFT, inter-token latency and total time, with streaming on. NVIDIA AIPerf runs load tests at concurrency 1, 4 and 16.
+The benchmark runner logs per request: input and output tokens, TTFT, inter-token latency and total time, with streaming on. NVIDIA AIPerf runs load tests at concurrency 1, 4 and 16.
 
 ---
 
@@ -137,7 +137,6 @@ Do **not** lead with the tech stack, the framework names or how hard it was.
 | 4 | **2 to 3 minute video** | First 30 seconds: the problem plus the poisoned invoice being caught. Then the table, the consequence number and the reproducibility. Unlisted YouTube link in the README |
 | 5 | **ADRs** in `docs/adr/` | 001 self-hosted open models plus an API baseline, 002 the OCR choice, 003 guardrail design |
 | 6 | **Write-up** (LinkedIn post or blog) | One chart, three numbers, the repo link and one question to UAE AI leads |
-| 7 | **CV bullet** | "Benchmarked 3 LLMs on 60 synthetic bilingual UAE business documents: <Arabic field F1>, <injection result>, <cost> per 1,000 documents self-hosted." Written from the real numbers |
 
 ---
 
@@ -156,8 +155,8 @@ Do **not** lead with the tech stack, the framework names or how hard it was.
 | Day | Deliverable |
 |---|---|
 | Fri 20 | Repo, this scope, ADR-001, VRAM known |
-| Sat 21 | Generator plus 60 documents with ground truth (CV rewrite the same day) |
-| Mon 23 | OCR step plus the first model through the harness. First F1 numbers |
+| Sat 21 | Generator plus 60 documents with ground truth |
+| Mon 23 | OCR step plus the first model through the runner. First F1 numbers |
 | Tue 24 | Open model served with vLLM. 2-model results table |
 | Wed 25 | Guardrails plus the 10 poisoned documents |
 | Thu 26 | Latency and throughput runs plus cost per 1,000 documents |
@@ -165,7 +164,7 @@ Do **not** lead with the tech stack, the framework names or how hard it was.
 | Sat 28 | Video recorded |
 | Mon 30 | Top 3 failures fixed, write-up posted |
 
-**If client work lands,** cut in this order: the stretch model, then concurrency 16, then the scanned-look variants. **Never cut the evaluation, the guardrails or the video.**
+**If time runs short,** cut in this order: the stretch model, then concurrency 16, then the scanned-look variants. **Never cut the evaluation, the guardrails or the video.**
 
 ---
 

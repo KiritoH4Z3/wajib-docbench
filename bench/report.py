@@ -131,6 +131,89 @@ def _comparisons(models: dict) -> list[dict]:
     return out
 
 
+def _cmp_n(models: dict, cmp: dict) -> Any:
+    """Documents a paired difference rests on: the language subset for a field F1 metric,
+    the whole base set otherwise. paired_difference reports the base set for every metric."""
+    n_docs = _get(models[cmp["a"]], "text_sources", "ocr", "field_f1", "n_docs") or {}
+    metric = cmp["metric"]
+    if metric.startswith("field_f1."):
+        return n_docs.get(metric.split(".", 1)[1], cmp.get("n_docs"))
+    return n_docs.get("overall", cmp.get("n_docs"))
+
+
+def _detail_tables(models: dict, comparisons: list[dict]) -> list[str]:
+    """Per-model detail as tables (by language and cause, licence renewals) and each open
+    model against the API on the same documents, each column labelled with its document count."""
+    rows = []
+    for m in models.values():
+        o = _get(m, "text_sources", "ocr") or {}
+        if not _incomplete(o):
+            rows.append((m["display_name"], o))
+    out: list[str] = []
+    if rows:
+        out += [
+            "By language, by cause and on scans. A wrong field traces to OCR when the true value "
+            "never reached the model. The scan column is the F1 change on the 15 scanned-look "
+            "copies against the same documents clean.",
+            "",
+            "| Model | F1 Arabic | F1 bilingual | F1 on values in Arabic script "
+            "| Wrong fields from OCR | Wrong fields from the model | F1 change on scans |",
+            "|---|---|---|---|---|---|---|",
+        ]
+        for name, o in rows:
+            f1 = o.get("field_f1") or {}
+            a = o.get("attribution") or {}
+            delta = _get(o, "scanned", "field_f1_delta")
+            out.append(
+                f"| {name} | {_f(f1.get('ar'))} | {_f(f1.get('bi'))} "
+                f"| {_f(f1.get('arabic_script'))} | {a.get('ocr_errors', 'n/a')} "
+                f"| {a.get('model_errors', 'n/a')} "
+                f"| {'n/a' if delta is None else f'{delta:+.2f}'} |"
+            )
+        out.append("")
+        cons = [(name, o.get("consequences")) for name, o in rows if o.get("consequences")]
+        if cons:
+            c0 = cons[0][1]
+            out += [
+                f"Licence renewals, through a port of Wajib's rules engine: of "
+                f"{c0.get('licences')} trade licences, each with {c0.get('alerts_per_licence')} "
+                "reminders, how many would get them on the wrong day or not at all.",
+                "",
+                "| Model | Wrong day, no review | None, no review "
+                "| Wrong day, after review | None, after review |",
+                "|---|---|---|---|---|",
+            ]
+            out += [
+                f"| {name} | {c.get('wrong_day_licences')} | {c.get('missed_licences')} "
+                f"| {c.get('wrong_day_licences_after_review')} "
+                f"| {c.get('missed_licences_after_review')} |"
+                for name, c in cons
+            ]
+            out.append("")
+    cmps = [x for x in comparisons if x.get("diff") is not None]
+    metrics = list(dict.fromkeys(x["metric"] for x in cmps))
+    if cmps:
+        base = models[cmps[0]["b"]]["display_name"]
+        first = {mt: next(x for x in cmps if x["metric"] == mt) for mt in metrics}
+        heads = [f"{_METRIC_LABELS.get(mt, mt)}, {_cmp_n(models, first[mt])} docs"
+                 for mt in metrics]
+        out += [
+            f"Each open model minus {base}, paired on the same documents. Below zero means "
+            "behind the API; an interval that excludes zero is a real gap at 95%.",
+            "",
+            "| Open model | " + " | ".join(h[0].upper() + h[1:] for h in heads) + " |",
+            "|---|" + "---|" * len(heads),
+        ]
+        for a in dict.fromkeys(x["a"] for x in cmps):
+            cells = []
+            for mt in metrics:
+                c = next((x for x in cmps if x["a"] == a and x["metric"] == mt), None)
+                cells.append("n/a" if c is None else f"{c['diff']:+.2f}{_ci(c.get('ci95'))}")
+            out.append(f"| {models[a]['display_name']} | " + " | ".join(cells) + " |")
+        out.append("")
+    return out
+
+
 def build_results() -> dict:
     from eval.score import score_dataset
 
@@ -382,45 +465,7 @@ def render_block(results: dict) -> str:
         lines += _targets_table(models)
         lines += _throughput_table(models)
         # The chart itself sits in the README's opening section, above this block.
-        for m in models.values():
-            o = _get(m, "text_sources", "ocr") or {}
-            if _incomplete(o):
-                continue
-            f1 = o.get("field_f1") or {}
-            c = o.get("consequences") or {}
-            a = o.get("attribution") or {}
-            name = m["display_name"]
-            if f1:
-                lines.append(
-                    f"- **{name}, by language:** F1 {_f(f1.get('ar'))} on Arabic documents, "
-                    f"{_f(f1.get('bi'))} on bilingual ones, {_f(f1.get('arabic_script'))} on the "
-                    f"values written in Arabic script."
-                )
-            if c:
-                lines.append(
-                    f"- **{name}, licence renewals:** of {c.get('licences')} licences, "
-                    f"{c.get('wrong_day_licences')} would get their {c.get('alerts_per_licence')} "
-                    f"renewal reminders on the wrong day and {c.get('missed_licences')} would get "
-                    f"none, without the guardrails. After a person reviews the routed documents: "
-                    f"{c.get('wrong_day_licences_after_review')} and "
-                    f"{c.get('missed_licences_after_review')}."
-                )
-            if a:
-                lines.append(
-                    f"- **{name}, where the errors came from:** {a.get('ocr_errors')} wrong "
-                    f"fields trace to OCR, {a.get('model_errors')} to the model."
-                )
-        for cmp in results.get("comparisons", []):
-            a_name = models[cmp["a"]]["display_name"]
-            b_name = models[cmp["b"]]["display_name"]
-            if cmp.get("diff") is None:
-                continue
-            lines.append(
-                f"- **{a_name} minus {b_name}, "
-                f"{_METRIC_LABELS.get(cmp['metric'], cmp['metric'])}:** {cmp['diff']:+.2f}"
-                f"{_ci(cmp.get('ci95'))}, paired over {cmp.get('n_docs')} documents."
-            )
-        lines.append("")
+        lines += _detail_tables(models, results.get("comparisons", []))
     ocr = results.get("ocr") or {}
     by_layout = _get(ocr, "by_layout") or {}
     if by_layout:

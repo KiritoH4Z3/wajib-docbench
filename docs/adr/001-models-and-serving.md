@@ -133,7 +133,7 @@ switched off (`max_retries=0`) so a rate-limit retry is always visible in the lo
 
 ## Consequences
 
-- The CV line from the scope changes from "self-hosted with vLLM" to "self-hosted with
+- The serving claim in the scope changes from "self-hosted with vLLM" to "self-hosted with
   llama.cpp" unless the Kaggle vLLM run happens.
 - Self-hosted cost is a cloud equivalent: measured throughput on the laptop GPU, priced at an
   AWS g4dn.xlarge (T4 16 GB) at USD 0.526 per hour on demand in us-east-1 (20 November 2026),

@@ -18,6 +18,7 @@ STYLE = {
 }
 INK = "#1F2937"
 GRID = "#D1D5DB"
+TARGET_F1 = 0.85  # the scope's Arabic target (eval/targets.py)
 
 
 def accuracy_vs_cost_chart(points: list[dict], out_dir: Path) -> list[Path]:
@@ -54,12 +55,15 @@ def accuracy_vs_cost_chart(points: list[dict], out_dir: Path) -> list[Path]:
         pad = (xhi / xlo) ** 0.15
         ax.set_xlim(xlo / pad, xhi * pad)
     elif costs:
-        span = (xhi - xlo) * 0.2 + 0.01
-        ax.set_xlim(max(0.0, xlo - span), xhi + span)
+        # From zero, so $0.35 against $0.61 is not drawn as a wide spread.
+        ax.set_xlim(0.0, xhi * 1.25)
+    ax.axhline(TARGET_F1, color=INK, linestyle="--", linewidth=0.9, zorder=2)
+    ax.annotate(f"Target {TARGET_F1:.2f}", (0.01, TARGET_F1), xycoords=("axes fraction", "data"),
+                xytext=(0, 4), textcoords="offset points", fontsize=9, color=INK)
     ax.set_xlabel("Cost per 1,000 documents (USD" + (", log scale)" if log_x else ")"),
                   color=INK, fontsize=10)
     ax.set_ylabel("Field F1, Arabic and bilingual documents", color=INK, fontsize=10)
-    ax.set_title("Arabic and bilingual accuracy against cost per 1,000 documents", loc="left",
+    ax.set_title("Arabic and bilingual F1 against cost per 1,000 docs", loc="left",
                  color=INK, fontsize=12, fontweight="bold")
     ax.grid(True, color=GRID, linewidth=0.6, zorder=0)
     ax.tick_params(colors=INK, labelsize=9)
@@ -71,6 +75,7 @@ def accuracy_vs_cost_chart(points: list[dict], out_dir: Path) -> list[Path]:
         for k in kinds)
     if skipped:
         note += ". Not plotted, no measurement: " + ", ".join(skipped)
+    note += ". Self-hosted: laptop throughput priced at a cloud T4, always busy."
     fig.text(0.01, 0.01, note, fontsize=8, color=INK)
     fig.tight_layout(rect=(0, 0.03, 1, 1))
 
