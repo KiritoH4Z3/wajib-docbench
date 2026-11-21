@@ -1,0 +1,73 @@
+{
+  "doc_id": "trc-ar-05",
+  "model_slug": "jais-2-8b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "trn",
+      "passed": false,
+      "detail": "trn 170001811 has 9 digits, a TRN has 15"
+    },
+    {
+      "name": "date_valid",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "trn",
+      "passed": false,
+      "detail": "trn 170001811 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "legal_name_ar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "tax_type",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "effective_date",
+      "passed": false,
+      "detail": "effective_date 2024-11-01 does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "trn 170001811 has 9 digits, a TRN has 15",
+    "trn 170001811 does not appear in the document text",
+    "effective_date 2024-11-01 does not appear in the document text"
+  ]
+}

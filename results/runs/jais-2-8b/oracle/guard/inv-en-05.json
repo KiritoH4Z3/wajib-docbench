@@ -1,0 +1,23 @@
+{
+  "doc_id": "inv-en-05",
+  "model_slug": "jais-2-8b",
+  "text_source": "oracle",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": false,
+      "detail": "No valid extraction after 2 attempt(s): invoice_date: String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'. Read the document by hand."
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "No valid extraction after 2 attempt(s): invoice_date: String should match pattern '^\\d{4}-\\d{2}-\\d{2}$'. Read the document by hand."
+  ]
+}

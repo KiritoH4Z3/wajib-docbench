@@ -1,0 +1,36 @@
+{
+  "doc_id": "qt-ar-03",
+  "model_slug": "jais-2-8b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "quote_number",
+      "passed": false,
+      "detail": "quote_number is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": false,
+      "detail": "total is empty, a person needs it"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "quote_number is empty, a person needs it",
+    "total is empty, a person needs it"
+  ]
+}

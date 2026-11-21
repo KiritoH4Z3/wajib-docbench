@@ -282,27 +282,29 @@ def _throughput_table(models: dict) -> list[str]:
         "are documents in flight at once.",
         "",
         "| Model | Server slots | Docs a minute at 1, 4, 16 | TTFT p95 at 1, 4, 16 "
-        "| Failed requests |",
-        "|---|---|---|---|---|",
+        "| Server errors | Invalid answers at 1, 4, 16 |",
+        "|---|---|---|---|---|---|",
     ]
     for m in measured:
         levels = _get(m, "perf", "throughput") or {}
-        rate, ttft, failed = [], [], 0
+        rate, ttft, invalid, errors = [], [], [], 0
         for lv in LEVELS:
             x = levels.get(lv) or {}
             if x.get("skipped") or x.get("docs_per_min") is None:
                 rate.append("n/a")
                 ttft.append("n/a")
+                invalid.append("n/a")
                 continue
             rate.append(f"{x['docs_per_min']:.1f}")
             ttft.append(f"{x['ttft_p95_s']:.2f} s" if x.get("ttft_p95_s") is not None else "n/a")
-            failed += (x.get("api_errors") or 0) + (x.get("invalid_outputs") or 0)
+            invalid.append(str(x.get("invalid_outputs") or 0))
+            errors += x.get("api_errors") or 0
         slots = _get(m, "server", "parallel_slots")
         if slots and _get(m, "server", "shared_ctx"):
             slots = f"{slots}, sharing a {m['server']['shared_ctx']:,}-token cache"
         slots = slots or ("1 (API)" if m["kind"] == "api" else "n/a")
         lines.append(f"| {m['display_name']} | {slots} | {', '.join(rate)} | {', '.join(ttft)} "
-                     f"| {failed} |")
+                     f"| {errors} | {', '.join(invalid)} |")
     return lines + [""]
 _VERDICT = {True: "met", False: "missed", "inconclusive": "too close to call"}
 

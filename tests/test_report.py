@@ -147,7 +147,7 @@ def test_throughput_table_names_the_slots_and_never_blanks_a_skipped_level():
     text = report.render_block({"models": {"a": local, "b": api}, "not_run": []})
     row = next(line for line in text.splitlines() if line.startswith("| Model A | 8"))
     assert row == ("| Model A | 8, sharing a 12,288-token cache | 13.5, 20.3, 16.7 "
-                   "| 1.32 s, 4.57 s, 37.97 s | 3 |")
-    assert "| Model B | 1 (API) | 6.9, n/a, n/a | 8.39 s, n/a, n/a | 0 |" in text
+                   "| 1.32 s, 4.57 s, 37.97 s | 2 | 0, 1, 0 |")
+    assert "| Model B | 1 (API) | 6.9, n/a, n/a | 8.39 s, n/a, n/a | 0 | 0, n/a, n/a |" in text
     assert _targets_row(text, "TTFT p95 at 4 in flight, under 1.50 s").endswith(
         "| not measured: the free tier takes one request at a time |")

@@ -281,31 +281,37 @@ def test_low_contrast_injection_is_dark_enough_for_ocr() -> None:
     assert "font-size: 7pt" in css
 
 
+def _committed_scan(tmp_path, scan_id: str):
+    """Copy a committed scan and its base PDF into tmp_path/docs, the layout the check reads.
+    No Chromium: the check only rasterises the PDF with pdfium, so these tests run in CI."""
+    import shutil
+
+    gold = GoldDoc.model_validate_json(
+        (ROOT / "data" / "ground_truth" / f"{scan_id}.json").read_text(encoding="utf-8")
+    )
+    docs = tmp_path / "docs"
+    docs.mkdir(exist_ok=True)
+    shutil.copy(ROOT / "data" / "docs" / f"{gold.base_doc_id}.pdf", docs)
+    shutil.copy(ROOT / "data" / "docs" / f"{scan_id}.jpg", docs)
+    return gold, docs / f"{scan_id}.jpg"
+
+
 def test_scan_check_fails_on_a_swapped_scan(tmp_path) -> None:
     """Silent failure: --check only looked at the JPEG format, so a scan copied from another
     document passed. The pixels must match a rebuild of the base PDF."""
     import shutil
 
-    from data.generator.check import check_scan_pixels
-
-    ids = ["tl-ar-01", "tl-en-02", "tl-ar-01.scan", "tl-en-02.scan"]
-    generate(tmp_path, only=ids)
-    golds_ = {
-        i: GoldDoc.model_validate_json(
-            (tmp_path / "ground_truth" / f"{i}.json").read_text(encoding="utf-8")
-        )
-        for i in ids
-    }
-    good = tmp_path / "docs" / "tl-ar-01.scan.jpg"
-    assert check_scan_pixels("tl-ar-01.scan", golds_["tl-ar-01.scan"], good, tmp_path) == []
     from PIL import Image
 
+    from data.generator.check import check_scan_pixels
+
+    gold, good = _committed_scan(tmp_path, "tl-ar-01.scan")
+    assert check_scan_pixels("tl-ar-01.scan", gold, good, tmp_path) == []
     with Image.open(good) as im:
         assert tuple(round(v) for v in im.info["dpi"]) == (200, 200)
-    assert golds_["tl-ar-01.scan"].scan["dpi"] == 200.0
-    shutil.copy(tmp_path / "docs" / "tl-en-02.scan.jpg", good)
-    problems = check_scan_pixels("tl-ar-01.scan", golds_["tl-ar-01.scan"], good, tmp_path)
-    assert problems
+    assert gold.scan["dpi"] == 200.0
+    shutil.copy(ROOT / "data" / "docs" / "tl-en-02.scan.jpg", good)
+    assert check_scan_pixels("tl-ar-01.scan", gold, good, tmp_path)
 
 
 def test_scan_check_fails_on_the_right_page_with_the_wrong_noise(tmp_path) -> None:
@@ -315,12 +321,7 @@ def test_scan_check_fails_on_the_right_page_with_the_wrong_noise(tmp_path) -> No
     from data.generator.check import check_scan_pixels
     from data.generator.render import save_jpeg, scan_image
 
-    ids = ["tl-ar-01", "tl-ar-01.scan"]
-    generate(tmp_path, only=ids)
-    gold = GoldDoc.model_validate_json(
-        (tmp_path / "ground_truth" / "tl-ar-01.scan.json").read_text(encoding="utf-8")
-    )
-    path = tmp_path / "docs" / "tl-ar-01.scan.jpg"
+    gold, path = _committed_scan(tmp_path, "tl-ar-01.scan")
     assert check_scan_pixels("tl-ar-01.scan", gold, path, tmp_path) == []
     reseeded = {**gold.scan, "noise_seed": int(gold.scan["noise_seed"]) + 1}
     image = scan_image(tmp_path / "docs" / "tl-ar-01.pdf", reseeded)

@@ -1,0 +1,41 @@
+{
+  "model": "jais-2-8b",
+  "image": "ghcr.io/ggml-org/llama.cpp:server-cuda12-b12464",
+  "image_digest": "ghcr.io/ggml-org/llama.cpp@sha256:6b1c681b535a15d406c7270fd2730f5bd36d3598fbb0ca894bfa47857a700fe3",
+  "weights_file": "Q4_K_M.gguf",
+  "weights_sha256": "26aef0cee0f9960cb12cc74ffa1049ca5e35e8159621aa1bacd9f9f703239923",
+  "parallel_slots": 1,
+  "ctx_per_slot": 4096,
+  "shared_ctx": null,
+  "args": [
+    "-m",
+    "/models/jais-2-8b.gguf",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8080",
+    "-np",
+    "1",
+    "-c",
+    "4096",
+    "--alias",
+    "jais-2-8b",
+    "--metrics",
+    "-ngl",
+    "99",
+    "-fa",
+    "on",
+    "-ctk",
+    "q8_0",
+    "-ctv",
+    "q8_0",
+    "--jinja",
+    "-b",
+    "8"
+  ],
+  "gpu_mib_before": 1492,
+  "gpu_mib_after_load": 7155,
+  "server_log_tail": [
+    "0.01.795.361 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'"
+  ]
+}

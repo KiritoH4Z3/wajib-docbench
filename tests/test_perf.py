@@ -365,6 +365,7 @@ def test_serve_sizes_the_kv_cache_per_slot_or_as_one_shared_pool(tmp_path, monke
     else:
         assert ctx == str(4096 * 16)
         assert "-kvu" not in cmd
+    assert cmd[cmd.index("--cache-ram") + 1] == "0"  # the 8 GB RAM prompt cache stays off
     assert info["shared_ctx"] == shared_ctx
     assert json.loads((tmp_path / "falcon-h1-7b" / "server-np16.json").read_text())["shared_ctx"] \
         == shared_ctx

@@ -1,0 +1,105 @@
+{
+  "doc_id": "qt-bi-02",
+  "model_slug": "jais-2-8b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "quote_number",
+      "passed": false,
+      "detail": "quote_number is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "VAT 66.69 is not 5% of subtotal 1338.30 (expected 66.92)"
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": false,
+      "detail": "total 14005.22 is not subtotal 1338.30 plus VAT 66.69 (expected 1404.99)"
+    },
+    {
+      "name": "date_valid",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_order",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "client_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": false,
+      "detail": "subtotal 1338.30 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 66.69 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "quote_number is empty, a person needs it",
+    "VAT 66.69 is not 5% of subtotal 1338.30 (expected 66.92)",
+    "total 14005.22 is not subtotal 1338.30 plus VAT 66.69 (expected 1404.99)",
+    "subtotal 1338.30 does not appear in the document text",
+    "vat_amount 66.69 does not appear in the document text"
+  ]
+}

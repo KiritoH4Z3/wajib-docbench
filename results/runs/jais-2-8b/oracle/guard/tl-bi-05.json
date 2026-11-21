@@ -1,0 +1,36 @@
+{
+  "doc_id": "tl-bi-05",
+  "model_slug": "jais-2-8b",
+  "text_source": "oracle",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "licence_number",
+      "passed": false,
+      "detail": "licence_number is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "expiry_date",
+      "passed": false,
+      "detail": "expiry_date is empty, a person needs it"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "licence_number is empty, a person needs it",
+    "expiry_date is empty, a person needs it"
+  ]
+}

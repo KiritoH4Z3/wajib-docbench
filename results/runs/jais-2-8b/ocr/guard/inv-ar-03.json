@@ -1,0 +1,105 @@
+{
+  "doc_id": "inv-ar-03",
+  "model_slug": "jais-2-8b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": false,
+      "detail": "total is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "supplier_trn",
+      "passed": false,
+      "detail": "supplier_trn 202480871 has 9 digits, a TRN has 15"
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "customer_trn",
+      "passed": false,
+      "detail": "customer_trn 118330 has 6 digits, a TRN has 15"
+    },
+    {
+      "name": "date_valid",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_date",
+      "passed": false,
+      "detail": "invoice_date 2024-08-01 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "customer_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "customer_trn",
+      "passed": false,
+      "detail": "customer_trn 118T3Y3..0V does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "total is empty, a person needs it",
+    "supplier_trn 202480871 has 9 digits, a TRN has 15",
+    "customer_trn 118330 has 6 digits, a TRN has 15",
+    "invoice_date 2024-08-01 does not appear in the document text",
+    "customer_trn 118T3Y3..0V does not appear in the document text"
+  ]
+}

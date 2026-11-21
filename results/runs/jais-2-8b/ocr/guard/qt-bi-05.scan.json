@@ -1,0 +1,98 @@
+{
+  "doc_id": "qt-bi-05.scan",
+  "model_slug": "jais-2-8b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "quote_number",
+      "passed": false,
+      "detail": "quote_number is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": false,
+      "detail": "total 6626.56 is not subtotal 6326.25 plus VAT 316.31 (expected 6642.56)"
+    },
+    {
+      "name": "date_valid",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_order",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 316.31 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": false,
+      "detail": "total 6626.56 does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "quote_number is empty, a person needs it",
+    "total 6626.56 is not subtotal 6326.25 plus VAT 316.31 (expected 6642.56)",
+    "vat_amount 316.31 does not appear in the document text",
+    "total 6626.56 does not appear in the document text"
+  ]
+}

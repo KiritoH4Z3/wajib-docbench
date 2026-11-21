@@ -1,0 +1,79 @@
+{
+  "doc_id": "trc-ar-01",
+  "model_slug": "jais-2-8b",
+  "text_source": "oracle",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "trn",
+      "passed": false,
+      "detail": "trn 1009925740606 has 13 digits, a TRN has 15"
+    },
+    {
+      "name": "date_valid",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "trn",
+      "passed": false,
+      "detail": "trn 1009925740606 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "legal_name_ar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "legal_name_en",
+      "passed": false,
+      "detail": "legal_name_en Almarjan Interior Design does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "tax_type",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "trn 1009925740606 has 13 digits, a TRN has 15",
+    "trn 1009925740606 does not appear in the document text",
+    "legal_name_en Almarjan Interior Design does not appear in the document text"
+  ]
+}

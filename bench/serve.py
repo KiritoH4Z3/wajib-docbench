@@ -143,6 +143,10 @@ def serve(
         "-np", str(parallel), "-c", str(shared_ctx or ctx_per_slot * parallel),
         *(["-kvu", "--kv-unified-per-slot", str(ctx_per_slot)] if shared_ctx else []),
         "--alias", model.model, "--metrics",
+        # llama.cpp keeps a prompt cache in system RAM, 8 GB by default in this build. During
+        # the Jais 2 run it took the laptop's 16 GB to the point where processes were killed.
+        # It never changes an answer, so it is off for every model.
+        "--cache-ram", "0",
         *[str(a) for a in model.serve.get("args", [])],
         *(extra_args or []),
     ]

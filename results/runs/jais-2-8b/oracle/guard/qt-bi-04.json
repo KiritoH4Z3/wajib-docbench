@@ -1,0 +1,23 @@
+{
+  "doc_id": "qt-bi-04",
+  "model_slug": "jais-2-8b",
+  "text_source": "oracle",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": false,
+      "detail": "No valid extraction after 2 attempt(s): subtotal: Decimal input should have no more than 2 decimal places; total: Decimal input should have no more than 2 decimal places. Read the document by hand."
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "No valid extraction after 2 attempt(s): subtotal: Decimal input should have no more than 2 decimal places; total: Decimal input should have no more than 2 decimal places. Read the document by hand."
+  ]
+}

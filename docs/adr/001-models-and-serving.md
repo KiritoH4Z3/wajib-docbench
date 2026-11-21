@@ -103,8 +103,24 @@ Launch settings per model live in `config/models.yaml`:
 - Jais 2 8B: all layers on the GPU, 4,096 tokens per slot, q8_0 KV cache. Jais 2 uses full
   multi-head attention (416 KiB of KV cache per token at fp16), so 8,192 tokens would not fit
   next to the weights. Its model card also warns that K-quants may need a small batch size on
-  GPU; the first run compares the default against `-b 8` on 20 documents and records the result
-  here.
+  GPU.
+
+  Measured on 21 November 2026: one slot loads at 5.7 GB. Four private 4,096-token caches
+  would need about 3.5 GB more, so Jais runs on 4 slots that share one 6,144-token cache, each
+  request still capped at 4,096 tokens (`make serve MODEL=jais-2-8b PARALLEL=4
+  SHARED_CTX=6144`), at 7.7 GB. A Jais request is about 1,100 tokens, so four fit; at
+  concurrency 16, twelve wait in the queue. Extraction and the throughput test use this same
+  server. The batch-size check ran 20 base documents (every third) on the oracle text with the
+  default batch and with `-b 8`: 18 of 20 answers were identical, both had 14 of 20 valid and
+  the same fields right, and `-b 8` was slower to the first token (0.81 s median against about
+  0.5 s). The default batch is kept, and the `-b 8` answers were never cached or scored.
+
+Every llama.cpp server starts with `--cache-ram 0`. That prompt cache lives in system RAM, is
+8 GB by default in this build, and during the first Jais 2 run it pushed the laptop's 16 GB so
+far that the run was killed. It never changes an answer. Falcon-H1's extraction ran before this
+change with the cache on, where it reused the shared system prompt (106,434 prompt tokens over
+197 requests); that shortens extraction latency only. The throughput test sends
+`cache_prompt: false` and measured 0 reused prompt tokens at every level for both models.
 
 A vLLM launch is kept in the Makefile for a free Kaggle T4 run, which needs driver 580 or later
 for the v0.34.0 image. That run is optional and would be reported as a separate row.

@@ -1,0 +1,74 @@
+{
+  "doc_id": "qt-en-03",
+  "model_slug": "jais-2-8b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "quote_number",
+      "passed": false,
+      "detail": "quote_number is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "VAT 1637.46 is not 5% of subtotal 24749.25 (expected 1237.46)"
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": false,
+      "detail": "total 34386.71 is not subtotal 24749.25 plus VAT 1637.46 (expected 26386.71)"
+    },
+    {
+      "name": "grounding",
+      "field": "client_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": false,
+      "detail": "subtotal 24749.25 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "quote_number is empty, a person needs it",
+    "VAT 1637.46 is not 5% of subtotal 24749.25 (expected 1237.46)",
+    "total 34386.71 is not subtotal 24749.25 plus VAT 1637.46 (expected 26386.71)",
+    "subtotal 24749.25 does not appear in the document text"
+  ]
+}

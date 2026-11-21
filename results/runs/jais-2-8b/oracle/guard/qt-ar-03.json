@@ -1,0 +1,113 @@
+{
+  "doc_id": "qt-ar-03",
+  "model_slug": "jais-2-8b",
+  "text_source": "oracle",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "quote_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "VAT 393.36 is not 5% of subtotal 2896.62 (expected 144.83)"
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": false,
+      "detail": "total 3290.98 is not subtotal 2896.62 plus VAT 393.36 (expected 3289.98)"
+    },
+    {
+      "name": "date_valid",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_order",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "quote_number",
+      "passed": false,
+      "detail": "quote_number N#TN-07897 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "client_name",
+      "passed": false,
+      "detail": "client_name Al Hadaf Logistics LLC does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": false,
+      "detail": "subtotal 2896.62 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 393.36 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": false,
+      "detail": "total 3290.98 does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "VAT 393.36 is not 5% of subtotal 2896.62 (expected 144.83)",
+    "total 3290.98 is not subtotal 2896.62 plus VAT 393.36 (expected 3289.98)",
+    "quote_number N#TN-07897 does not appear in the document text",
+    "client_name Al Hadaf Logistics LLC does not appear in the document text",
+    "subtotal 2896.62 does not appear in the document text",
+    "vat_amount 393.36 does not appear in the document text",
+    "total 3290.98 does not appear in the document text"
+  ]
+}

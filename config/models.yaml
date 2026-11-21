@@ -54,6 +54,7 @@ models:
       # Multi-head attention makes the KV cache large (416 KiB per token at fp16), so the
       # context is 4096 per slot with a q8_0 cache. Measured fit is recorded in ADR-001.
       ctx_per_slot: 4096
+      weights_sha256: 26aef0cee0f9960cb12cc74ffa1049ca5e35e8159621aa1bacd9f9f703239923
       args: ["-ngl", "99", "-fa", "on", "-ctk", "q8_0", "-ctv", "q8_0", "--jinja"]
 
   - slug: gemini-3.5-flash-lite

@@ -1,0 +1,23 @@
+{
+  "doc_id": "tl-en-02.scan",
+  "model_slug": "jais-2-8b",
+  "text_source": "oracle",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": false,
+      "detail": "No valid extraction after 2 attempt(s): legal_form: Input should be 'LLC', 'SOLE_ESTABLISHMENT', 'CIVIL_COMPANY', 'BRANCH', 'FZE', 'FZ_LLC' or 'FZCO'. Read the document by hand."
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "No valid extraction after 2 attempt(s): legal_form: Input should be 'LLC', 'SOLE_ESTABLISHMENT', 'CIVIL_COMPANY', 'BRANCH', 'FZE', 'FZ_LLC' or 'FZCO'. Read the document by hand."
+  ]
+}
