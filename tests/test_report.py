@@ -9,6 +9,8 @@ Silent failures pinned here:
   `report --check` used to miss
 - a scope target shown as met or missed when its interval straddles the limit, or without
   the number of documents it rests on
+- the concurrency-16 level read as 16 parallel slots when the GPU only held 8, or an API
+  level that was never run shown as a blank instead of a reason
 """
 
 from __future__ import annotations
@@ -124,3 +126,28 @@ def test_targets_table_never_scores_an_incomplete_run():
     assert row.endswith("| not scored (incomplete run) |")
     assert _targets_row(text, "TTFT p95 at 4 in flight, under 1.50 s").endswith(
         "| not measured |")
+
+
+def test_throughput_table_names_the_slots_and_never_blanks_a_skipped_level():
+    local = _block()
+    local["perf"] = {"throughput": {
+        "1": {"docs_per_min": 13.5, "ttft_p95_s": 1.32, "api_errors": 0, "invalid_outputs": 0},
+        "4": {"docs_per_min": 20.3, "ttft_p95_s": 4.57, "api_errors": 0, "invalid_outputs": 1},
+        "16": {"docs_per_min": 16.7, "ttft_p95_s": 37.97, "api_errors": 2, "invalid_outputs": 0},
+    }}
+    local["server"] = {"parallel_slots": 8, "shared_ctx": 12288}
+    api = _block()
+    api.update(display_name="Model B", kind="api", quant=None, server=None)
+    api["perf"] = {"throughput": {
+        "1": {"docs_per_min": 6.9, "ttft_p95_s": 8.39},
+        "4": {"skipped": "concurrency 4 is above max_concurrency 1"},
+        "16": {"skipped": "concurrency 16 is above max_concurrency 1"},
+    }}
+    api["targets"] = evaluate_targets(api["text_sources"]["ocr"], api["perf"])
+    text = report.render_block({"models": {"a": local, "b": api}, "not_run": []})
+    row = next(line for line in text.splitlines() if line.startswith("| Model A | 8"))
+    assert row == ("| Model A | 8, sharing a 12,288-token cache | 13.5, 20.3, 16.7 "
+                   "| 1.32 s, 4.57 s, 37.97 s | 3 |")
+    assert "| Model B | 1 (API) | 6.9, n/a, n/a | 8.39 s, n/a, n/a | 0 |" in text
+    assert _targets_row(text, "TTFT p95 at 4 in flight, under 1.50 s").endswith(
+        "| not measured: the free tier takes one request at a time |")

@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"Q/25/9333\",\n  \"quote_date\": \"2025-05-24\",\n  \"valid_until\": \"2025-06-23\",\n  \"client_name\": \"Al Safwa Cleaning Services Branch\",\n  \"line_item_count\": 1,\n  \"subtotal\": 6326.25,\n  \"vat_amount\": 316.31,\n  \"total\": 6642.56\n}",
+  "usage": {
+    "prompt_tokens": 989,
+    "completion_tokens": 129,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.5673025030000645,
+    "itl_s": [
+      0.01332864799996969,
+      0.0659792199999174,
+      0.048209687000053236,
+      0.043823273000271,
+      0.04209223199995904,
+      0.05829786999993303
+    ],
+    "total_s": 1.8401471710003534
+  },
+  "started_at": "2026-11-21T13:32:24.791+00:00",
+  "finish_reason": "stop"
+}

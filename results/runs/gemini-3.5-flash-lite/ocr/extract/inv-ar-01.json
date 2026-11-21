@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-ar-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"مؤسسة دار الياسمينللعطور\",\n  \"supplier_trn\": \"001110\",\n  \"invoice_number\": \"01021113\",\n  \"invoice_date\": \"2017-02-01\",\n  \"customer_name\": \"راجيش كومارناير\",\n  \"customer_trn\": null,\n  \"subtotal\": 1100.0,\n  \"vat_amount\": 282.48,\n  \"total\": 1382.48,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "مؤسسة دار الياسمينللعطور",
+        "supplier_trn": "001110",
+        "invoice_number": "01021113",
+        "invoice_date": "2017-02-01",
+        "customer_name": "راجيش كومارناير",
+        "customer_trn": null,
+        "subtotal": "1100.00",
+        "vat_amount": "282.48",
+        "total": "1382.48",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 966,
+      "completion_tokens": 148,
+      "usage_estimated": false,
+      "ttft_s": 1.150735999999597,
+      "itl_s": [
+        0.0004140800001550815,
+        0.029605431000163662,
+        0.11890027099980216,
+        0.00044255400007386925,
+        0.03717865599992365,
+        0.044911503000093944,
+        0.09200595899983455
+      ],
+      "total_s": 1.5290310639998097,
+      "started_at": "2026-11-21T13:28:00.777+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "مؤسسة دار الياسمينللعطور",
+    "supplier_trn": "001110",
+    "invoice_number": "01021113",
+    "invoice_date": "2017-02-01",
+    "customer_name": "راجيش كومارناير",
+    "customer_trn": null,
+    "subtotal": "1100.00",
+    "vat_amount": "282.48",
+    "total": "1382.48",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

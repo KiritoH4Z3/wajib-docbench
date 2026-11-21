@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"licence_number\": null,\n  \"company_name_ar\": \"النور لتجارة المواد الغذائيةش.م.ح\",\n  \"company_name_en\": null,\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"منطقة رأس الخيمةالاقتصادية\",\n  \"issue_date\": null,\n  \"expiry_date\": null,\n  \"activities\": [\n    \"التجارةالعامة\",\n    \"تجارة قطع غيارالسيارات\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1005,
+    "completion_tokens": 125,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.1732560329996886,
+    "itl_s": [
+      0.00042438900027264026,
+      0.016538312999728078,
+      0.284876610000083,
+      0.08954477399993266,
+      0.04377410699999018,
+      0.04571239799997784,
+      0.04383001299993339
+    ],
+    "total_s": 1.707054694999897
+  },
+  "started_at": "2026-11-21T13:51:10.671+00:00",
+  "finish_reason": "stop"
+}

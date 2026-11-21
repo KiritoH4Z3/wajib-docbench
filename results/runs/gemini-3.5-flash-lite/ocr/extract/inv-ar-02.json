@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-ar-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"الفجر لحلول تقنية المعلوماتم.م.ح\",\n  \"supplier_trn\": \"100092582697449\",\n  \"invoice_number\": \"INV-2024-11973\",\n  \"invoice_date\": \"2024-10-03\",\n  \"customer_name\": \"فرع الريمللعطور\",\n  \"customer_trn\": \"100425977913858\",\n  \"subtotal\": 48477.93,\n  \"vat_amount\": 2423.89,\n  \"total\": 50901.82,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "الفجر لحلول تقنية المعلوماتم.م.ح",
+        "supplier_trn": "100092582697449",
+        "invoice_number": "INV-2024-11973",
+        "invoice_date": "2024-10-03",
+        "customer_name": "فرع الريمللعطور",
+        "customer_trn": "100425977913858",
+        "subtotal": "48477.93",
+        "vat_amount": "2423.89",
+        "total": "50901.82",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1207,
+      "completion_tokens": 182,
+      "usage_estimated": false,
+      "ttft_s": 1.0777436059997854,
+      "itl_s": [
+        0.00043286600021019694,
+        0.012256849000095826,
+        0.050242855999840685,
+        0.08382020899989584,
+        0.04032961100028842,
+        0.04416130099980364,
+        0.08727823200024432,
+        0.06552587599981052
+      ],
+      "total_s": 1.4736164920000192,
+      "started_at": "2026-11-21T13:28:08.760+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "الفجر لحلول تقنية المعلوماتم.م.ح",
+    "supplier_trn": "100092582697449",
+    "invoice_number": "INV-2024-11973",
+    "invoice_date": "2024-10-03",
+    "customer_name": "فرع الريمللعطور",
+    "customer_trn": "100425977913858",
+    "subtotal": "48477.93",
+    "vat_amount": "2423.89",
+    "total": "50901.82",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

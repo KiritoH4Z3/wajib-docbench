@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-ar-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"CN-5938994\",\n  \"company_name_ar\": \"فرع برق الشمال لموادالبناء\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصادية فيأبوظبي\",\n  \"issue_date\": \"2026-05-05\",\n  \"expiry_date\": \"2027-05-09\",\n  \"activities\": [\n    \"تجارة موادالبناء\",\n    \"التجارةالعامة\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "CN-5938994",
+        "company_name_ar": "فرع برق الشمال لموادالبناء",
+        "company_name_en": null,
+        "legal_form": "BRANCH",
+        "issuing_authority": "دائرة التنمية الاقتصادية فيأبوظبي",
+        "issue_date": "2026-05-05",
+        "expiry_date": "2027-05-09",
+        "activities": [
+          "تجارة موادالبناء",
+          "التجارةالعامة"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 979,
+      "completion_tokens": 148,
+      "usage_estimated": false,
+      "ttft_s": 2.666887876999681,
+      "itl_s": [
+        0.0005946890000814165,
+        0.036689461000150914,
+        0.046873605999735446,
+        0.11347643800036167,
+        0.03822574799960421,
+        0.0948659100004079
+      ],
+      "total_s": 3.0247410329998274,
+      "started_at": "2026-11-21T13:51:18.664+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "CN-5938994",
+    "company_name_ar": "فرع برق الشمال لموادالبناء",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصادية فيأبوظبي",
+    "issue_date": "2026-05-05",
+    "expiry_date": "2027-05-09",
+    "activities": [
+      "تجارة موادالبناء",
+      "التجارةالعامة"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

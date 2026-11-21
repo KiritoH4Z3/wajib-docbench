@@ -1,0 +1,62 @@
+{
+  "doc_id": "inv-ar-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"الفجر لحلول تقنية المعلومات م.م.ح\",\n  \"supplier_trn\": \"100092582697449\",\n  \"invoice_number\": \"INV-2024-11973\",\n  \"invoice_date\": \"2024-10-03\",\n  \"customer_name\": \"فرع الريم للعطور\",\n  \"customer_trn\": \"100425977913858\",\n  \"subtotal\": 48476.97,\n  \"vat_amount\": 2423.85,\n  \"total\": 50900.82,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "الفجر لحلول تقنية المعلومات م.م.ح",
+        "supplier_trn": "100092582697449",
+        "invoice_number": "INV-2024-11973",
+        "invoice_date": "2024-10-03",
+        "customer_name": "فرع الريم للعطور",
+        "customer_trn": "100425977913858",
+        "subtotal": "48476.97",
+        "vat_amount": "2423.85",
+        "total": "50900.82",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1173,
+      "completion_tokens": 182,
+      "usage_estimated": false,
+      "ttft_s": 0.8431226569996397,
+      "itl_s": [
+        0.0007088380002642225,
+        0.046472945000004984,
+        0.04407240599994111,
+        0.044253437999941525,
+        0.07900688800009448,
+        0.041294403999927454,
+        0.05249871600017286,
+        0.32398474899991925,
+        0.0757740079998257,
+        0.037826209000286326
+      ],
+      "total_s": 1.6028167719996418,
+      "started_at": "2026-11-21T13:56:25.478+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "الفجر لحلول تقنية المعلومات م.م.ح",
+    "supplier_trn": "100092582697449",
+    "invoice_number": "INV-2024-11973",
+    "invoice_date": "2024-10-03",
+    "customer_name": "فرع الريم للعطور",
+    "customer_trn": "100425977913858",
+    "subtotal": "48476.97",
+    "vat_amount": "2423.85",
+    "total": "50900.82",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

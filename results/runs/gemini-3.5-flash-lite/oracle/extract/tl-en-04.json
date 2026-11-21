@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-en-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"9599018\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Fajr IT Solutions FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2024-01-28\",\n  \"expiry_date\": \"2025-01-27\",\n  \"activities\": [\n    \"IT Consultancy\",\n    \"Management Consultancy\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "9599018",
+        "company_name_ar": null,
+        "company_name_en": "Al Fajr IT Solutions FZE",
+        "legal_form": "FZE",
+        "issuing_authority": "Ras Al Khaimah Economic Zone",
+        "issue_date": "2024-01-28",
+        "expiry_date": "2025-01-27",
+        "activities": [
+          "IT Consultancy",
+          "Management Consultancy"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 900,
+      "completion_tokens": 135,
+      "usage_estimated": false,
+      "ttft_s": 0.6962321129994962,
+      "itl_s": [
+        0.00035257200033811387,
+        0.08564224000019749,
+        0.036401338999894506,
+        0.061083865000000515,
+        0.04367913599980966,
+        0.047752157999639167
+      ],
+      "total_s": 1.0042106749997401,
+      "started_at": "2026-11-21T14:03:47.137+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "9599018",
+    "company_name_ar": null,
+    "company_name_en": "Al Fajr IT Solutions FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2024-01-28",
+    "expiry_date": "2025-01-27",
+    "activities": [
+      "IT Consultancy",
+      "Management Consultancy"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

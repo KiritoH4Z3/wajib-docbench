@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100107999112743\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Sama Al Khaleej Building Materials FZ-LLC\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2024-02-24\"\n}",
+  "usage": {
+    "prompt_tokens": 643,
+    "completion_tokens": 89,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.7553106870000192,
+    "itl_s": [
+      0.00226263900003687,
+      0.010231635000309325,
+      0.11510861499937164,
+      0.0003424830001677037
+    ],
+    "total_s": 0.942967076000059
+  },
+  "started_at": "2026-11-21T14:09:30.979+00:00",
+  "finish_reason": "stop"
+}

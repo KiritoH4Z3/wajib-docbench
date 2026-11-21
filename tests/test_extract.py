@@ -205,6 +205,21 @@ def test_fresh_ignores_cache_but_still_stores(env):
     assert len(list((paths.CACHE / "fake").glob("*.json"))) == 1
 
 
+@pytest.mark.parametrize("fresh", [False, True])
+def test_identical_inputs_in_one_run_share_one_call(env, monkeypatch, fresh):
+    """Silent failure: a scanned copy and its original have the same oracle text, so they share
+    a cache key. At concurrency 4 both were sent at once, the second answer overwrote the
+    first, and replaying the cache gave the first document an answer it was never scored on."""
+    monkeypatch.setattr(runner, "load_input_text", lambda d, s: "Invoice text, same for both")
+    other = {**INVOICE_OK, "invoice_number": "INV-9999"}
+    env.script = [reply(INVOICE_OK), reply(other)]
+    a, b = run(make_model(max_concurrency=4), ids=("inv-1", "inv-1.scan"), concurrency=4,
+               fresh=fresh)
+    assert len(env.requests) == 1
+    assert a.final == b.final
+    assert len(list((paths.CACHE / "fake").glob("*.json"))) == 1
+
+
 def test_missing_key_with_empty_cache_raises(env, monkeypatch):
     monkeypatch.delenv("FAKE_KEY")
     with pytest.raises(MissingApiKey, match="FAKE_KEY"):

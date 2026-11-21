@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"trn\": \"100666249578598\",\n  \"legal_name_ar\": \"شركة الثريا لتنظيم الفعاليات\",\n  \"legal_name_en\": \"Al Thuraya Events Co.\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-07-09\"\n}",
+  "usage": {
+    "prompt_tokens": 772,
+    "completion_tokens": 91,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.0326321999991706,
+    "itl_s": [
+      0.32742336400042404,
+      0.03702035900005285,
+      0.037680735000321874,
+      0.04028540099989186,
+      0.0373073659993679
+    ],
+    "total_s": 1.5280183999993824
+  },
+  "started_at": "2026-11-21T14:05:33.608+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-ar-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"فرع النور لخدماتالتنظيف\",\n  \"supplier_trn\": \"100188133674148\",\n  \"invoice_number\": \"2027/89278\",\n  \"invoice_date\": \"2027-09-30\",\n  \"customer_name\": \"يوسف إبراهيمحداد\",\n  \"customer_trn\": null,\n  \"subtotal\": 5909.40,\n  \"vat_amount\": 295.47,\n  \"total\": null,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "فرع النور لخدماتالتنظيف",
+        "supplier_trn": "100188133674148",
+        "invoice_number": "2027/89278",
+        "invoice_date": "2027-09-30",
+        "customer_name": "يوسف إبراهيمحداد",
+        "customer_trn": null,
+        "subtotal": "5909.40",
+        "vat_amount": "295.47",
+        "total": null,
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 954,
+      "completion_tokens": 154,
+      "usage_estimated": false,
+      "ttft_s": 0.8936180430000604,
+      "itl_s": [
+        0.0011927669997930934,
+        0.044474009000168735,
+        0.20605765599975712,
+        0.0006109209998612641,
+        0.00042301700023017474,
+        0.4374008039999353,
+        0.0006595330000891408
+      ],
+      "total_s": 1.5853544980000152,
+      "started_at": "2026-11-21T13:28:40.763+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "فرع النور لخدماتالتنظيف",
+    "supplier_trn": "100188133674148",
+    "invoice_number": "2027/89278",
+    "invoice_date": "2027-09-30",
+    "customer_name": "يوسف إبراهيمحداد",
+    "customer_trn": null,
+    "subtotal": "5909.40",
+    "vat_amount": "295.47",
+    "total": null,
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

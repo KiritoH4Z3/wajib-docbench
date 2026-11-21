@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-05624\",\n  \"quote_date\": \"2027-02-12\",\n  \"valid_until\": \"2027-02-27\",\n  \"client_name\": \"Durrat Al Shati Foodstuff Trading FZCO\",\n  \"line_item_count\": 4,\n  \"subtotal\": 24801.51,\n  \"vat_amount\": 1240.08,\n  \"total\": 26041.59\n}",
+  "usage": {
+    "prompt_tokens": 851,
+    "completion_tokens": 136,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.5838063319997673,
+    "itl_s": [
+      0.0022853320006106514,
+      0.01879039399955218,
+      0.21521547399970586,
+      0.09216862599987508,
+      0.05658403400047973,
+      0.0442155869995986,
+      0.2169967940008064,
+      0.0005225459999564919
+    ],
+    "total_s": 2.231600936000177
+  },
+  "started_at": "2026-11-21T14:01:39.110+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"licence_number\": \"66489\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Technical Services L.L.C\",\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"Ajman Department of Economic Development\",\n  \"issue_date\": \"2025-03-31\",\n  \"expiry_date\": \"2099-12-31\",\n  \"activities\": [\n    \"Building Cleaning Services\",\n    \"Electrical Fittings Contracting\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1047,
+    "completion_tokens": 138,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.6570652600003086,
+    "itl_s": [
+      0.0004832499998883577,
+      0.0004923880001115322,
+      0.0003987409995716007,
+      0.015303477000088606,
+      0.05460282500007452,
+      0.09483076200012874
+    ],
+    "total_s": 1.8579547940003067
+  },
+  "started_at": "2026-11-21T13:53:03.512+00:00",
+  "finish_reason": "stop"
+}

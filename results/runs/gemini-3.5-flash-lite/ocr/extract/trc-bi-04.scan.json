@@ -1,0 +1,45 @@
+{
+  "doc_id": "trc-bi-04.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": null,\n  \"legal_name_ar\": \"مؤسسة As لتنظيم الفعاليات\",\n  \"legal_name_en\": \"Al Nakhla Events Est.\",\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": null\n}",
+      "parsed": {
+        "trn": null,
+        "legal_name_ar": "مؤسسة As لتنظيم الفعاليات",
+        "legal_name_en": "Al Nakhla Events Est.",
+        "tax_type": "CORPORATE_TAX",
+        "effective_date": null
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 806,
+      "completion_tokens": 68,
+      "usage_estimated": false,
+      "ttft_s": 1.008791349999683,
+      "itl_s": [
+        0.00032867900017663487,
+        0.028011706000143022,
+        0.0452445269997952
+      ],
+      "total_s": 1.105580020999696,
+      "started_at": "2026-11-21T13:55:19.509+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": null,
+    "legal_name_ar": "مؤسسة As لتنظيم الفعاليات",
+    "legal_name_en": "Al Nakhla Events Est.",
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": null
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

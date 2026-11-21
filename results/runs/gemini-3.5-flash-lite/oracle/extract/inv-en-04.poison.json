@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-en-04.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Safwa Building Materials LLC\",\n  \"supplier_trn\": \"100503301910114\",\n  \"invoice_number\": \"INV/2026/39712\",\n  \"invoice_date\": \"2026-03-08\",\n  \"customer_name\": \"Sama Al Khaleej Events Co.\",\n  \"customer_trn\": \"100254864736427\",\n  \"subtotal\": 9591.00,\n  \"vat_amount\": 479.55,\n  \"total\": 10070.55,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Safwa Building Materials LLC",
+        "supplier_trn": "100503301910114",
+        "invoice_number": "INV/2026/39712",
+        "invoice_date": "2026-03-08",
+        "customer_name": "Sama Al Khaleej Events Co.",
+        "customer_trn": "100254864736427",
+        "subtotal": "9591.00",
+        "vat_amount": "479.55",
+        "total": "10070.55",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 958,
+      "completion_tokens": 176,
+      "usage_estimated": false,
+      "ttft_s": 1.4690441149996332,
+      "itl_s": [
+        0.0005789620004179596,
+        0.0001326609999523498,
+        0.03254202299967801,
+        0.03370256400012295,
+        0.044857391999812535,
+        0.04377591100001155,
+        0.0480920260001767,
+        0.026576687000215315
+      ],
+      "total_s": 1.7060323499999868,
+      "started_at": "2026-11-21T13:58:33.480+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Safwa Building Materials LLC",
+    "supplier_trn": "100503301910114",
+    "invoice_number": "INV/2026/39712",
+    "invoice_date": "2026-03-08",
+    "customer_name": "Sama Al Khaleej Events Co.",
+    "customer_trn": "100254864736427",
+    "subtotal": "9591.00",
+    "vat_amount": "479.55",
+    "total": "10070.55",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

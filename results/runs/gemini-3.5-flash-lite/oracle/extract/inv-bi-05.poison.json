@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-bi-05.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Thuraya Auto Parts Co.\",\n  \"supplier_trn\": \"100459031245481\",\n  \"invoice_number\": \"INV-2026-039576\",\n  \"invoice_date\": \"2026-10-21\",\n  \"customer_name\": \"Sama Al Khaleej General Trading FZE\",\n  \"customer_trn\": \"100544732946030\",\n  \"subtotal\": 9063.75,\n  \"vat_amount\": 453.19,\n  \"total\": 9516.94,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Thuraya Auto Parts Co.",
+        "supplier_trn": "100459031245481",
+        "invoice_number": "INV-2026-039576",
+        "invoice_date": "2026-10-21",
+        "customer_name": "Sama Al Khaleej General Trading FZE",
+        "customer_trn": "100544732946030",
+        "subtotal": "9063.75",
+        "vat_amount": "453.19",
+        "total": "9516.94",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1236,
+      "completion_tokens": 178,
+      "usage_estimated": false,
+      "ttft_s": 0.830632759999844,
+      "itl_s": [
+        0.0006661269999312935,
+        0.06541705600011483,
+        0.042050986000049306,
+        0.04490914899997733,
+        0.049155823000091914,
+        0.058208594000007,
+        0.08742978200007201,
+        0.07648438999967766
+      ],
+      "total_s": 1.368882739000128,
+      "started_at": "2026-11-21T13:57:45.484+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Thuraya Auto Parts Co.",
+    "supplier_trn": "100459031245481",
+    "invoice_number": "INV-2026-039576",
+    "invoice_date": "2026-10-21",
+    "customer_name": "Sama Al Khaleej General Trading FZE",
+    "customer_trn": "100544732946030",
+    "subtotal": "9063.75",
+    "vat_amount": "453.19",
+    "total": "9516.94",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"trn\": \"100542775679543\",\n  \"legal_name_ar\": \"فرع ساحل الذهب لمواد البناء\",\n  \"legal_name_en\": \"Sahil Al Dhahab Building Materials Branch\",\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2025-10-26\"\n}",
+  "usage": {
+    "prompt_tokens": 826,
+    "completion_tokens": 98,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.496353521000401,
+    "itl_s": [
+      0.03007853899998736,
+      0.07330010599980596,
+      0.08729824300007749,
+      0.043168416999833426,
+      0.045724150000296504
+    ],
+    "total_s": 1.7833210720000352
+  },
+  "started_at": "2026-11-21T13:54:55.510+00:00",
+  "finish_reason": "stop"
+}

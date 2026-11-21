@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-ar-03.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"النور لتنظيم الفعاليات منطقة حرةذ.م.م\",\n  \"supplier_trn\": null,\n  \"invoice_number\": \"INV-2024-80871\",\n  \"invoice_date\": null,\n  \"customer_name\": \"فرع المرجان لموادالبناء\",\n  \"customer_trn\": \"1181133307\",\n  \"subtotal\": 131.0,\n  \"vat_amount\": 6.55,\n  \"total\": 137.55,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "النور لتنظيم الفعاليات منطقة حرةذ.م.م",
+        "supplier_trn": null,
+        "invoice_number": "INV-2024-80871",
+        "invoice_date": null,
+        "customer_name": "فرع المرجان لموادالبناء",
+        "customer_trn": "1181133307",
+        "subtotal": "131.00",
+        "vat_amount": "6.55",
+        "total": "137.55",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1075,
+      "completion_tokens": 151,
+      "usage_estimated": false,
+      "ttft_s": 1.01352450100012,
+      "itl_s": [
+        0.05716262099986125,
+        0.0005573799999183393,
+        0.03866945500021757,
+        0.10297615399986171,
+        0.05004188700013401,
+        0.16730376299983618,
+        0.00036150999994788435
+      ],
+      "total_s": 1.4313588360000722,
+      "started_at": "2026-11-21T13:28:32.768+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "النور لتنظيم الفعاليات منطقة حرةذ.م.م",
+    "supplier_trn": null,
+    "invoice_number": "INV-2024-80871",
+    "invoice_date": null,
+    "customer_name": "فرع المرجان لموادالبناء",
+    "customer_trn": "1181133307",
+    "subtotal": "131.00",
+    "vat_amount": "6.55",
+    "total": "137.55",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

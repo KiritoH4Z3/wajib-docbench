@@ -254,7 +254,56 @@ _TARGET_ROWS: dict[str, tuple[str, str]] = {
     "human_review_rate": ("Sent to review", "pct"),
     "ttft_p95_concurrency_4_s": ("TTFT p95 at 4 in flight", "s"),
 }
+_PERF_ROWS = frozenset({"ttft_p95_concurrency_4_s"})
 _OP_WORDS = {">=": "at least", "<=": "at most", "<": "under"}
+_METRIC_LABELS = {
+    "field_f1.ar_bi": "F1 on Arabic and bilingual docs",
+    "field_f1.en": "F1 on English docs",
+    "critical_exact_match": "critical fields exact",
+}
+LEVELS = ("1", "4", "16")
+
+
+def _level_skipped(m: dict, level: int) -> str | None:
+    """Why a throughput level was not run (the free-tier API takes one request at a time)."""
+    if _get(m, "perf", "throughput", str(level), "skipped"):
+        if m.get("kind") == "api":
+            return "the free tier takes one request at a time"
+        return "above this model's concurrency limit"
+    return None
+
+
+def _throughput_table(models: dict) -> list[str]:
+    measured = [m for m in models.values() if _get(m, "perf", "throughput", "1")]
+    if not measured:
+        return []
+    lines = [
+        "Throughput over the 60 base documents, each run fresh with no cached prompts. Columns "
+        "are documents in flight at once.",
+        "",
+        "| Model | Server slots | Docs a minute at 1, 4, 16 | TTFT p95 at 1, 4, 16 "
+        "| Failed requests |",
+        "|---|---|---|---|---|",
+    ]
+    for m in measured:
+        levels = _get(m, "perf", "throughput") or {}
+        rate, ttft, failed = [], [], 0
+        for lv in LEVELS:
+            x = levels.get(lv) or {}
+            if x.get("skipped") or x.get("docs_per_min") is None:
+                rate.append("n/a")
+                ttft.append("n/a")
+                continue
+            rate.append(f"{x['docs_per_min']:.1f}")
+            ttft.append(f"{x['ttft_p95_s']:.2f} s" if x.get("ttft_p95_s") is not None else "n/a")
+            failed += (x.get("api_errors") or 0) + (x.get("invalid_outputs") or 0)
+        slots = _get(m, "server", "parallel_slots")
+        if slots and _get(m, "server", "shared_ctx"):
+            slots = f"{slots}, sharing a {m['server']['shared_ctx']:,}-token cache"
+        slots = slots or ("1 (API)" if m["kind"] == "api" else "n/a")
+        lines.append(f"| {m['display_name']} | {slots} | {', '.join(rate)} | {', '.join(ttft)} "
+                     f"| {failed} |")
+    return lines + [""]
 _VERDICT = {True: "met", False: "missed", "inconclusive": "too close to call"}
 
 
@@ -270,7 +319,9 @@ def _target_label(metric: str) -> str:
     return f"{name}, {_OP_WORDS[op]} {_fmt(limit, kind)}"
 
 
-def _target_cell(t: dict | None, kind: str) -> str:
+def _target_cell(t: dict | None, kind: str, skipped: str | None = None) -> str:
+    if skipped:
+        return f"not measured: {skipped}"
     if not t or t.get("reason"):
         return "not scored (incomplete run)" if t else "not measured"
     if t.get("value") is None:
@@ -297,7 +348,11 @@ def _targets_table(models: dict) -> list[str]:
         "|---|" + "---|" * len(scored),
     ]
     for metric, (_, kind) in _TARGET_ROWS.items():
-        cells = [_target_cell(m["targets"].get(metric), kind) for m in scored]
+        cells = [
+            _target_cell(m["targets"].get(metric), kind,
+                         _level_skipped(m, 4) if metric in _PERF_ROWS else None)
+            for m in scored
+        ]
         lines.append(f"| {_target_label(metric)} | " + " | ".join(cells) + " |")
     return lines + [""]
 
@@ -323,6 +378,7 @@ def render_block(results: dict) -> str:
         lines += [_row(m) for m in models.values()]
         lines.append("")
         lines += _targets_table(models)
+        lines += _throughput_table(models)
         if (CHARTS / "accuracy_vs_cost.png").exists():
             lines += [
                 "![Field F1 on Arabic and bilingual documents against cost per 1,000 documents]"
@@ -363,7 +419,8 @@ def render_block(results: dict) -> str:
             if cmp.get("diff") is None:
                 continue
             lines.append(
-                f"- **{a_name} minus {b_name}, {cmp['metric']}:** {cmp['diff']:+.2f}"
+                f"- **{a_name} minus {b_name}, "
+                f"{_METRIC_LABELS.get(cmp['metric'], cmp['metric'])}:** {cmp['diff']:+.2f}"
                 f"{_ci(cmp.get('ci95'))}, paired over {cmp.get('n_docs')} documents."
             )
         lines.append("")

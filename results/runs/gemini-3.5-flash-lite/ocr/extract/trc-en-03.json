@@ -1,0 +1,45 @@
+{
+  "doc_id": "trc-en-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100066312085688\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Al Manara Foodstuff Trading Co.\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-02-15\"\n}",
+      "parsed": {
+        "trn": "100066312085688",
+        "legal_name_ar": null,
+        "legal_name_en": "Al Manara Foodstuff Trading Co.",
+        "tax_type": "VAT",
+        "effective_date": "2026-02-15"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 648,
+      "completion_tokens": 83,
+      "usage_estimated": false,
+      "ttft_s": 1.221285240999805,
+      "itl_s": [
+        0.0005288080001264461,
+        0.021086611000100675,
+        0.008288840999739477
+      ],
+      "total_s": 1.2621471480001674,
+      "started_at": "2026-11-21T13:55:51.496+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100066312085688",
+    "legal_name_ar": null,
+    "legal_name_en": "Al Manara Foodstuff Trading Co.",
+    "tax_type": "VAT",
+    "effective_date": "2026-02-15"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

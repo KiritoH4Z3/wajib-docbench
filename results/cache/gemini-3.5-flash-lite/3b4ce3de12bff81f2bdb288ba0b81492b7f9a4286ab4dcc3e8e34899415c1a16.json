@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"licence_number\": \"73436\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Building Materials Est.\",\n  \"legal_form\": \"SOLE_ESTABLISHMENT\",\n  \"issuing_authority\": \"Ajman Department of Economic Development\",\n  \"issue_date\": \"2026-02-15\",\n  \"expiry_date\": \"2027-02-14\",\n  \"activities\": [\n    \"Building Materials Trading\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 895,
+    "completion_tokens": 131,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.6888661600000887,
+    "itl_s": [
+      0.004084883999894373,
+      0.03152302200032864,
+      0.05317080499980875,
+      0.16943764999996347,
+      0.0006185890001688676,
+      0.05330602300000464
+    ],
+    "total_s": 1.0087081579999904
+  },
+  "started_at": "2026-11-21T13:52:23.491+00:00",
+  "finish_reason": "stop"
+}

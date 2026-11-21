@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-bi-05",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"4981737\",\n  \"company_name_ar\": \"النور لتنظيم الفعاليات م.م.ح\",\n  \"company_name_en\": \"Al Noor Events FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2026-12-09\",\n  \"expiry_date\": \"2027-12-08\",\n  \"activities\": [\n    \"Commercial Printing\",\n    \"Furniture Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "4981737",
+        "company_name_ar": "النور لتنظيم الفعاليات م.م.ح",
+        "company_name_en": "Al Noor Events FZE",
+        "legal_form": "FZE",
+        "issuing_authority": "Ras Al Khaimah Economic Zone",
+        "issue_date": "2026-12-09",
+        "expiry_date": "2027-12-08",
+        "activities": [
+          "Commercial Printing",
+          "Furniture Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1064,
+      "completion_tokens": 146,
+      "usage_estimated": false,
+      "ttft_s": 1.9634029230001033,
+      "itl_s": [
+        0.0003297690000181319,
+        0.16147147599986056,
+        0.0005856389998371014,
+        0.034392669000226306,
+        0.08588349299952824,
+        0.049682752000080654,
+        0.046996109999781766
+      ],
+      "total_s": 2.3499977510000463,
+      "started_at": "2026-11-21T14:03:07.134+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "4981737",
+    "company_name_ar": "النور لتنظيم الفعاليات م.م.ح",
+    "company_name_en": "Al Noor Events FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2026-12-09",
+    "expiry_date": "2027-12-08",
+    "activities": [
+      "Commercial Printing",
+      "Furniture Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

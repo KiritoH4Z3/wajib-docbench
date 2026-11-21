@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"QT-2026-6834\",\n  \"quote_date\": \"2026-02-03\",\n  \"valid_until\": \"2026-02-07\",\n  \"client_name\": \"مؤسسة الصفوةللعطور\",\n  \"line_item_count\": 5,\n  \"subtotal\": 35344.50,\n  \"vat_amount\": null,\n  \"total\": null\n}",
+  "usage": {
+    "prompt_tokens": 951,
+    "completion_tokens": 121,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.218437312000333,
+    "itl_s": [
+      0.0007365469996329921,
+      0.00040527400005885283,
+      0.026022009000371327,
+      0.04042696599981355,
+      0.05699245999994673,
+      0.06278158700024505
+    ],
+    "total_s": 1.40786400900015
+  },
+  "started_at": "2026-11-21T13:31:20.769+00:00",
+  "finish_reason": "stop"
+}

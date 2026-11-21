@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Wadi Al Sidr Interior Design Branch\",\n  \"supplier_trn\": \"100349144549580\",\n  \"invoice_number\": \"INV-2025-086566\",\n  \"invoice_date\": \"2025-08-20\",\n  \"customer_name\": \"Najm Al Sahra IT Solutions Branch\",\n  \"customer_trn\": \"100865001217320\",\n  \"subtotal\": 27396.00,\n  \"vat_amount\": 1369.80,\n  \"total\": 28765.80,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1368,
+    "completion_tokens": 181,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.753070839999964,
+    "itl_s": [
+      0.0006219520000740886,
+      0.00013658700027008308,
+      0.02295405099994241,
+      0.07847327599984055,
+      0.03212488500003019,
+      0.04577480999978434,
+      0.06210825800008024,
+      0.035733203000290814
+    ],
+    "total_s": 2.046926208000059
+  },
+  "started_at": "2026-11-21T13:29:12.791+00:00",
+  "finish_reason": "stop"
+}

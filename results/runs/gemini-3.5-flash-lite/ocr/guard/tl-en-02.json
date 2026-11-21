@@ -1,0 +1,99 @@
+{
+  "doc_id": "tl-en-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "licence_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "issue_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_order",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "licence_validity_plausible",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "licence_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "company_name_en",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "legal_form",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "issuing_authority",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "issue_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "activities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "accept",
+  "reasons": []
+}

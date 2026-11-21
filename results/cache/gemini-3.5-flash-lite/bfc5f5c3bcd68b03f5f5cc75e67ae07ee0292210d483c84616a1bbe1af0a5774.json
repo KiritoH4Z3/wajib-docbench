@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"quote_number\": \"QT-2025-9359\",\n  \"quote_date\": null,\n  \"valid_until\": null,\n  \"client_name\": \"Durrat Al Shati Cleaning Services Est.\",\n  \"line_item_count\": 5,\n  \"subtotal\": 4545.0,\n  \"vat_amount\": 227.25,\n  \"total\": 4772.25\n}",
+  "usage": {
+    "prompt_tokens": 1065,
+    "completion_tokens": 112,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.5092879479998373,
+    "itl_s": [
+      0.0009911270003613026,
+      0.015338363999944704,
+      0.08333603599976414,
+      0.055950988999939,
+      0.06414602700033356
+    ],
+    "total_s": 1.7489727500001209
+  },
+  "started_at": "2026-11-21T13:32:16.772+00:00",
+  "finish_reason": "stop"
+}

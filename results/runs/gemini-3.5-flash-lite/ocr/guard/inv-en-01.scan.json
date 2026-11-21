@@ -1,0 +1,138 @@
+{
+  "doc_id": "inv-en-01.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "customer_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "VAT 556.00 is not 5% of subtotal 11121.70 (expected 556.09)"
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": false,
+      "detail": "total 11677.79 is not subtotal 11121.70 plus VAT 556.00 (expected 11677.70)"
+    },
+    {
+      "name": "date_valid",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "customer_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "customer_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "currency",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "VAT 556.00 is not 5% of subtotal 11121.70 (expected 556.09)",
+    "total 11677.79 is not subtotal 11121.70 plus VAT 556.00 (expected 11677.70)"
+  ]
+}

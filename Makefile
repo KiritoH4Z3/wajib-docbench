@@ -5,6 +5,7 @@
 MODEL ?= falcon-h1-7b
 SOURCE ?= ocr
 PARALLEL ?= 4
+SHARED_CTX ?= 0
 FRESH ?= 0
 PY := uv run python
 
@@ -49,7 +50,7 @@ models:
 	$(PY) -m bench models --model $(MODEL)
 
 serve:
-	$(PY) -m bench serve --model $(MODEL) --parallel $(PARALLEL)
+	$(PY) -m bench serve --model $(MODEL) --parallel $(PARALLEL) --shared-ctx $(SHARED_CTX)
 
 stop:
 	$(PY) -m bench stop

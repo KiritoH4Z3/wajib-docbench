@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-bi-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Sahil Al Dhahab Foodstuff Trading Est.\",\n  \"supplier_trn\": \"100888284829621\",\n  \"invoice_number\": \"INV-2024-023011\",\n  \"invoice_date\": \"2024-04-03\",\n  \"customer_name\": \"Al Thuraya Interior Design FZCO\",\n  \"customer_trn\": \"100889771078220\",\n  \"subtotal\": 224.00,\n  \"vat_amount\": 11.20,\n  \"total\": 235.20,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Sahil Al Dhahab Foodstuff Trading Est.",
+        "supplier_trn": "100888284829621",
+        "invoice_number": "INV-2024-023011",
+        "invoice_date": "2024-04-03",
+        "customer_name": "Al Thuraya Interior Design FZCO",
+        "customer_trn": "100889771078220",
+        "subtotal": "224.00",
+        "vat_amount": "11.20",
+        "total": "235.20",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1164,
+      "completion_tokens": 177,
+      "usage_estimated": false,
+      "ttft_s": 0.883448583000245,
+      "itl_s": [
+        0.000567191999834904,
+        0.02146768800002974,
+        0.03747071199995844,
+        0.15495384799987733,
+        0.0003496399999676214,
+        0.0003360949999660079,
+        0.015096762000212038,
+        0.07766791499989267
+      ],
+      "total_s": 1.197513312999945,
+      "started_at": "2026-11-21T13:57:29.451+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Sahil Al Dhahab Foodstuff Trading Est.",
+    "supplier_trn": "100888284829621",
+    "invoice_number": "INV-2024-023011",
+    "invoice_date": "2024-04-03",
+    "customer_name": "Al Thuraya Interior Design FZCO",
+    "customer_trn": "100889771078220",
+    "subtotal": "224.00",
+    "vat_amount": "11.20",
+    "total": "235.20",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

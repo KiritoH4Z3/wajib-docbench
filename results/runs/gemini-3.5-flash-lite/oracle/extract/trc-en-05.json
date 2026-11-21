@@ -1,0 +1,46 @@
+{
+  "doc_id": "trc-en-05",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\"trn\": \"100716316798689\", \"legal_name_ar\": null, \"legal_name_en\": \"Al Marjan Perfumes FZ-LLC\", \"tax_type\": \"VAT\", \"effective_date\": \"2025-11-19\"}",
+      "parsed": {
+        "trn": "100716316798689",
+        "legal_name_ar": null,
+        "legal_name_en": "Al Marjan Perfumes FZ-LLC",
+        "tax_type": "VAT",
+        "effective_date": "2025-11-19"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 642,
+      "completion_tokens": 73,
+      "usage_estimated": false,
+      "ttft_s": 1.062821394999446,
+      "itl_s": [
+        0.0004303539999455097,
+        0.0004851160001635435,
+        0.023477444000491232,
+        0.13155671399999846
+      ],
+      "total_s": 1.220166430000063,
+      "started_at": "2026-11-21T14:06:21.579+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100716316798689",
+    "legal_name_ar": null,
+    "legal_name_en": "Al Marjan Perfumes FZ-LLC",
+    "tax_type": "VAT",
+    "effective_date": "2025-11-19"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

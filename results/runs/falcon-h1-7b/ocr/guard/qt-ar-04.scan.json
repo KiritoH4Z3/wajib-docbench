@@ -1,0 +1,23 @@
+{
+  "doc_id": "qt-ar-04.scan",
+  "model_slug": "falcon-h1-7b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": false,
+      "detail": "No valid extraction after 2 attempt(s): no JSON object found in the reply. Read the document by hand."
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "No valid extraction after 2 attempt(s): no JSON object found in the reply. Read the document by hand."
+  ]
+}

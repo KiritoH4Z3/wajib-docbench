@@ -1,0 +1,58 @@
+{
+  "doc_id": "inv-ar-05.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"فزع النخلة لخدماتالتنظيف\",\n  \"supplier_trn\": \"71\",\n  \"invoice_number\": \"INV-2026-98823\",\n  \"invoice_date\": null,\n  \"customer_name\": \"شركة الثريا لتنظيمالفعاليات\",\n  \"customer_trn\": \"101710197\",\n  \"subtotal\": 540,\n  \"vat_amount\": 10,\n  \"total\": 56,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "فزع النخلة لخدماتالتنظيف",
+        "supplier_trn": "71",
+        "invoice_number": "INV-2026-98823",
+        "invoice_date": null,
+        "customer_name": "شركة الثريا لتنظيمالفعاليات",
+        "customer_trn": "101710197",
+        "subtotal": "540.00",
+        "vat_amount": "10.00",
+        "total": "56.00",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1002,
+      "completion_tokens": 141,
+      "usage_estimated": false,
+      "ttft_s": 1.0028408660000423,
+      "itl_s": [
+        0.0005956919999334787,
+        0.00033465100023022387,
+        0.01951087399993412,
+        0.05309175200000027,
+        0.05771024399973612,
+        0.11516255000015008
+      ],
+      "total_s": 1.3511147049998726,
+      "started_at": "2026-11-21T13:28:56.775+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "فزع النخلة لخدماتالتنظيف",
+    "supplier_trn": "71",
+    "invoice_number": "INV-2026-98823",
+    "invoice_date": null,
+    "customer_name": "شركة الثريا لتنظيمالفعاليات",
+    "customer_trn": "101710197",
+    "subtotal": "540.00",
+    "vat_amount": "10.00",
+    "total": "56.00",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

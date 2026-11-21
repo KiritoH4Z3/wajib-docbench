@@ -1,0 +1,45 @@
+{
+  "doc_id": "trc-ar-05.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": null,\n  \"legal_name_ar\": \"سما الخليج لحلول تقنية المعلوماتم.م.ح\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": null\n}",
+      "parsed": {
+        "trn": null,
+        "legal_name_ar": "سما الخليج لحلول تقنية المعلوماتم.م.ح",
+        "legal_name_en": null,
+        "tax_type": "VAT",
+        "effective_date": null
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 720,
+      "completion_tokens": 64,
+      "usage_estimated": false,
+      "ttft_s": 0.8776088220001839,
+      "itl_s": [
+        0.00046811099991828087,
+        0.017435122999813757,
+        0.04630779000035545
+      ],
+      "total_s": 0.9478012829999898,
+      "started_at": "2026-11-21T13:54:31.492+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": null,
+    "legal_name_ar": "سما الخليج لحلول تقنية المعلوماتم.م.ح",
+    "legal_name_en": null,
+    "tax_type": "VAT",
+    "effective_date": null
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

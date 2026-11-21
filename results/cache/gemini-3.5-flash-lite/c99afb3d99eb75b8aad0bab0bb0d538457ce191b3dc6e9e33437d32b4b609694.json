@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Al Reem Technical Services Branch\",\n  \"supplier_trn\": \"100378653017276\",\n  \"invoice_number\": \"TI-29040\",\n  \"invoice_date\": \"2027-03-11\",\n  \"customer_name\": \"Tariq Nabil Khoury\",\n  \"customer_trn\": null,\n  \"subtotal\": 178.00,\n  \"vat_amount\": 8.90,\n  \"total\": 186.90,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 922,
+    "completion_tokens": 150,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.1039496950002103,
+    "itl_s": [
+      0.0003245519997108204,
+      0.0002500020000297809,
+      0.05939154599991525,
+      0.051590747000318515,
+      0.04139575999988665,
+      0.0757506850000027,
+      0.04446751600016796
+    ],
+    "total_s": 1.3844441020000886
+  },
+  "started_at": "2026-11-21T13:58:41.481+00:00",
+  "finish_reason": "stop"
+}

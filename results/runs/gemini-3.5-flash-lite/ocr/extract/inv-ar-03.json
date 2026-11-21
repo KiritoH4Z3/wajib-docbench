@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-ar-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"النور لتنظيم الفعاليات منطقة حرةذ.م.م\",\n  \"supplier_trn\": null,\n  \"invoice_number\": \"INV-2024-80871\",\n  \"invoice_date\": null,\n  \"customer_name\": \"فرع المرجان لموادالبناء\",\n  \"customer_trn\": null,\n  \"subtotal\": 5262.5,\n  \"vat_amount\": 263.13,\n  \"total\": 5525.63,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "النور لتنظيم الفعاليات منطقة حرةذ.م.م",
+        "supplier_trn": null,
+        "invoice_number": "INV-2024-80871",
+        "invoice_date": null,
+        "customer_name": "فرع المرجان لموادالبناء",
+        "customer_trn": null,
+        "subtotal": "5262.50",
+        "vat_amount": "263.13",
+        "total": "5525.63",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1045,
+      "completion_tokens": 145,
+      "usage_estimated": false,
+      "ttft_s": 1.3817720060001193,
+      "itl_s": [
+        0.002874965000046359,
+        0.0003238099998270627,
+        0.03454228999999032,
+        0.03761332500016579,
+        0.035045106999859854,
+        0.04381596000030186,
+        0.04112247499961086
+      ],
+      "total_s": 1.5848154630002682,
+      "started_at": "2026-11-21T13:28:24.779+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "النور لتنظيم الفعاليات منطقة حرةذ.م.م",
+    "supplier_trn": null,
+    "invoice_number": "INV-2024-80871",
+    "invoice_date": null,
+    "customer_name": "فرع المرجان لموادالبناء",
+    "customer_trn": null,
+    "subtotal": "5262.50",
+    "vat_amount": "263.13",
+    "total": "5525.63",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

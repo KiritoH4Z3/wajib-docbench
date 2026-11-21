@@ -1,0 +1,66 @@
+{
+  "doc_id": "trc-en-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"",
+      "parsed": null,
+      "schema_valid": false,
+      "error": "no JSON object found in the reply",
+      "prompt_tokens": 639,
+      "completion_tokens": 7,
+      "usage_estimated": false,
+      "ttft_s": 0.7647012759998688,
+      "itl_s": [
+        0.24443880200033163
+      ],
+      "total_s": 1.0581436209995445,
+      "started_at": "2026-11-21T14:06:05.596+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    },
+    {
+      "raw": "{\n  \"trn\": \"100867512609848\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Al Mizan Events FZE\",\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2025-11-26\"\n}",
+      "parsed": {
+        "trn": "100867512609848",
+        "legal_name_ar": null,
+        "legal_name_en": "Al Mizan Events FZE",
+        "tax_type": "CORPORATE_TAX",
+        "effective_date": "2025-11-26"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 672,
+      "completion_tokens": 85,
+      "usage_estimated": false,
+      "ttft_s": 0.7991185520004365,
+      "itl_s": [
+        0.005198251999900094,
+        0.00031246500020643,
+        0.03798901199934335,
+        0.030631567000455107
+      ],
+      "total_s": 0.8821933620001801,
+      "started_at": "2026-11-21T14:06:13.575+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100867512609848",
+    "legal_name_ar": null,
+    "legal_name_en": "Al Mizan Events FZE",
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2025-11-26"
+  },
+  "schema_valid_first_try": false,
+  "api_error": null
+}

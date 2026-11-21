@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-bi-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"4955763\",\n  \"company_name_ar\": \"المنارة للخدمات اللوجستية م.م.ح\",\n  \"company_name_en\": \"Al Manara Logistics FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2025-05-28\",\n  \"expiry_date\": \"2026-05-27\",\n  \"activities\": [\n    \"Cargo Services\",\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "4955763",
+        "company_name_ar": "المنارة للخدمات اللوجستية م.م.ح",
+        "company_name_en": "Al Manara Logistics FZE",
+        "legal_form": "FZE",
+        "issuing_authority": "Ras Al Khaimah Economic Zone",
+        "issue_date": "2025-05-28",
+        "expiry_date": "2026-05-27",
+        "activities": [
+          "Cargo Services",
+          "Perfumes and Cosmetics Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1072,
+      "completion_tokens": 152,
+      "usage_estimated": false,
+      "ttft_s": 1.003599311000471,
+      "itl_s": [
+        0.0005307949995767558,
+        0.00015526100014540134,
+        0.03448409300017374,
+        0.03878477800026303,
+        0.050104724999982864,
+        0.028699305999907665,
+        0.042505755000092904
+      ],
+      "total_s": 1.2130226839999523,
+      "started_at": "2026-11-21T14:02:51.126+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "4955763",
+    "company_name_ar": "المنارة للخدمات اللوجستية م.م.ح",
+    "company_name_en": "Al Manara Logistics FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2025-05-28",
+    "expiry_date": "2026-05-27",
+    "activities": [
+      "Cargo Services",
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

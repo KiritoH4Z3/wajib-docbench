@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-en-01.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Marjan Foodstuff Trading fz LLC\",\n  \"supplier_trn\": \"100848358215705\",\n  \"invoice_number\": \"INV/2025/68012\",\n  \"invoice_date\": \"2025-12-20\",\n  \"customer_name\": \"Durrat Al Shati Events Branch\",\n  \"customer_trn\": \"100557424795750\",\n  \"subtotal\": 11121.70,\n  \"vat_amount\": 556.00,\n  \"total\": 11677.79,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Marjan Foodstuff Trading fz LLC",
+        "supplier_trn": "100848358215705",
+        "invoice_number": "INV/2025/68012",
+        "invoice_date": "2025-12-20",
+        "customer_name": "Durrat Al Shati Events Branch",
+        "customer_trn": "100557424795750",
+        "subtotal": "11121.70",
+        "vat_amount": "556.00",
+        "total": "11677.79",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1079,
+      "completion_tokens": 179,
+      "usage_estimated": false,
+      "ttft_s": 1.4034347819997492,
+      "itl_s": [
+        0.03952766200018232,
+        0.04088070899979357,
+        0.07455501499998718,
+        0.047861120000106894,
+        0.0806712260000495,
+        0.041742283000075986,
+        0.09228038499986724
+      ],
+      "total_s": 1.8273934339999869,
+      "started_at": "2026-11-21T13:29:52.770+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Marjan Foodstuff Trading fz LLC",
+    "supplier_trn": "100848358215705",
+    "invoice_number": "INV/2025/68012",
+    "invoice_date": "2025-12-20",
+    "customer_name": "Durrat Al Shati Events Branch",
+    "customer_trn": "100557424795750",
+    "subtotal": "11121.70",
+    "vat_amount": "556.00",
+    "total": "11677.79",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

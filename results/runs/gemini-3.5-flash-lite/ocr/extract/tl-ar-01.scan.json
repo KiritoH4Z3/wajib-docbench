@@ -1,0 +1,59 @@
+{
+  "doc_id": "tl-ar-01.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"0/1177\",\n  \"company_name_ar\": \"فزع نجم الصحراء للتجارةالعامة\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصاديةبعجمان\",\n  \"issue_date\": null,\n  \"expiry_date\": null,\n  \"activities\": [\n    \"تجارة الأجهزةالمنزلية\",\n    \"تجارةالأثاث\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "0/1177",
+        "company_name_ar": "فزع نجم الصحراء للتجارةالعامة",
+        "company_name_en": null,
+        "legal_form": "BRANCH",
+        "issuing_authority": "دائرة التنمية الاقتصاديةبعجمان",
+        "issue_date": null,
+        "expiry_date": null,
+        "activities": [
+          "تجارة الأجهزةالمنزلية",
+          "تجارةالأثاث"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 979,
+      "completion_tokens": 128,
+      "usage_estimated": false,
+      "ttft_s": 0.948306225000124,
+      "itl_s": [
+        0.0007190839996837894,
+        0.0005588430003626854,
+        0.026575030999993032,
+        0.034229019999656884,
+        0.05474588900005983
+      ],
+      "total_s": 1.1072328569998717,
+      "started_at": "2026-11-21T13:33:44.788+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "0/1177",
+    "company_name_ar": "فزع نجم الصحراء للتجارةالعامة",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصاديةبعجمان",
+    "issue_date": null,
+    "expiry_date": null,
+    "activities": [
+      "تجارة الأجهزةالمنزلية",
+      "تجارةالأثاث"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

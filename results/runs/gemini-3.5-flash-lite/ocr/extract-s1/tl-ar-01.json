@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-ar-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": null,\n  \"company_name_ar\": \"فرع نجم الصحراء للتجارة العامة\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصادية بعجمان\",\n  \"issue_date\": null,\n  \"expiry_date\": null,\n  \"activities\": [\n    \"تجارة الأجهزة المنزلية\",\n    \"تجارة الأثاث\"\n  ]\n}",
+      "parsed": {
+        "licence_number": null,
+        "company_name_ar": "فرع نجم الصحراء للتجارة العامة",
+        "company_name_en": null,
+        "legal_form": "BRANCH",
+        "issuing_authority": "دائرة التنمية الاقتصادية بعجمان",
+        "issue_date": null,
+        "expiry_date": null,
+        "activities": [
+          "تجارة الأجهزة المنزلية",
+          "تجارة الأثاث"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 966,
+      "completion_tokens": 119,
+      "usage_estimated": false,
+      "ttft_s": 0.9335575150007571,
+      "itl_s": [
+        0.22856215499996324,
+        0.05489011400004529,
+        0.047059352999895054,
+        0.037988786999449076,
+        0.05908399899999495,
+        0.08896442700006446
+      ],
+      "total_s": 1.5612476109999989,
+      "started_at": "2026-11-21T14:07:19.607+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": null,
+    "company_name_ar": "فرع نجم الصحراء للتجارة العامة",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصادية بعجمان",
+    "issue_date": null,
+    "expiry_date": null,
+    "activities": [
+      "تجارة الأجهزة المنزلية",
+      "تجارة الأثاث"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

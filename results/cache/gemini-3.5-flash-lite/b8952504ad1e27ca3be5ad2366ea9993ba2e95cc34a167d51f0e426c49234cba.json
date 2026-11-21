@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100075528469398\",\n  \"legal_name_ar\": \"سما الخليج لحلول تقنية المعلومات م.م.ح\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-11-07\"\n}",
+  "usage": {
+    "prompt_tokens": 703,
+    "completion_tokens": 90,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.9559036150003521,
+    "itl_s": [
+      0.00034281399985047756,
+      0.00044822099971497664,
+      0.00027668900020216824,
+      0.059731698999712535
+    ],
+    "total_s": 1.0282274139999572
+  },
+  "started_at": "2026-11-21T14:04:37.569+00:00",
+  "finish_reason": "stop"
+}

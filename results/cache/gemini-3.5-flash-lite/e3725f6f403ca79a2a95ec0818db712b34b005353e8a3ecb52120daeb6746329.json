@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100965152225478\",\n  \"legal_name_ar\": \"الهدف لتنظيم الفعاليات ش.م.ح\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2026-06-26\"\n}",
+  "usage": {
+    "prompt_tokens": 687,
+    "completion_tokens": 92,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 10.278228461999788,
+    "itl_s": [
+      0.000455213999885018,
+      0.00024784500055829994,
+      0.14355088799948135,
+      0.0015003560001787264
+    ],
+    "total_s": 10.446143260000099
+  },
+  "started_at": "2026-11-21T14:04:27.115+00:00",
+  "finish_reason": "stop"
+}

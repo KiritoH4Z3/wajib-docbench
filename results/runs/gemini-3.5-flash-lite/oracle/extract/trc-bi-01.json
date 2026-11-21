@@ -1,0 +1,47 @@
+{
+  "doc_id": "trc-bi-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100099643885633\",\n  \"legal_name_ar\": \"بيت الخليج للاستشارات منطقة حرة ذ.م.م\",\n  \"legal_name_en\": \"Bait Al Khaleej Consultancy FZ-LLC\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-03-19\"\n}",
+      "parsed": {
+        "trn": "100099643885633",
+        "legal_name_ar": "بيت الخليج للاستشارات منطقة حرة ذ.م.م",
+        "legal_name_en": "Bait Al Khaleej Consultancy FZ-LLC",
+        "tax_type": "VAT",
+        "effective_date": "2026-03-19"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 778,
+      "completion_tokens": 102,
+      "usage_estimated": false,
+      "ttft_s": 0.9667608399995515,
+      "itl_s": [
+        0.0006154749999041087,
+        0.02954437100015639,
+        0.06281211900022754,
+        0.040433915999528836,
+        0.11619812900062243
+      ],
+      "total_s": 1.2173944520000077,
+      "started_at": "2026-11-21T14:04:53.604+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100099643885633",
+    "legal_name_ar": "بيت الخليج للاستشارات منطقة حرة ذ.م.م",
+    "legal_name_en": "Bait Al Khaleej Consultancy FZ-LLC",
+    "tax_type": "VAT",
+    "effective_date": "2026-03-19"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

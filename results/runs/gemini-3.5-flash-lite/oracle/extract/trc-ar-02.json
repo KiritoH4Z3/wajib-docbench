@@ -1,0 +1,46 @@
+{
+  "doc_id": "trc-ar-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100520211579105\",\n  \"legal_name_ar\": \"مؤسسة الواحة لمواد البناء\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2025-02-16\"\n}",
+      "parsed": {
+        "trn": "100520211579105",
+        "legal_name_ar": "مؤسسة الواحة لمواد البناء",
+        "legal_name_en": null,
+        "tax_type": "CORPORATE_TAX",
+        "effective_date": "2025-02-16"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 688,
+      "completion_tokens": 88,
+      "usage_estimated": false,
+      "ttft_s": 1.0503594750007323,
+      "itl_s": [
+        0.000337372999638319,
+        0.0005262670001684455,
+        0.000522139999702631,
+        0.4852399689998492
+      ],
+      "total_s": 1.5387436930004696,
+      "started_at": "2026-11-21T14:04:11.134+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100520211579105",
+    "legal_name_ar": "مؤسسة الواحة لمواد البناء",
+    "legal_name_en": null,
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2025-02-16"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

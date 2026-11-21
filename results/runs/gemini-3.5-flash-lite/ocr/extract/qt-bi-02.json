@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-bi-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QTN-01871\",\n  \"quote_date\": \"2024-12-31\",\n  \"valid_until\": \"2025-01-15\",\n  \"client_name\": \"Al Reem IT Solutions FZ-LLC\",\n  \"line_item_count\": 4,\n  \"subtotal\": 13338.3,\n  \"vat_amount\": 666.92,\n  \"total\": 14005.22\n}",
+      "parsed": {
+        "quote_number": "QTN-01871",
+        "quote_date": "2024-12-31",
+        "valid_until": "2025-01-15",
+        "client_name": "Al Reem IT Solutions FZ-LLC",
+        "line_item_count": 4,
+        "subtotal": "13338.30",
+        "vat_amount": "666.92",
+        "total": "14005.22"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1111,
+      "completion_tokens": 133,
+      "usage_estimated": false,
+      "ttft_s": 1.1961228949999168,
+      "itl_s": [
+        0.0005374329998630856,
+        0.00026673200000004726,
+        0.0003316550000818097,
+        0.0004571210001813597,
+        0.04384237899967047,
+        0.04681445799997164
+      ],
+      "total_s": 1.32198396900003,
+      "started_at": "2026-11-21T13:31:52.791+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QTN-01871",
+    "quote_date": "2024-12-31",
+    "valid_until": "2025-01-15",
+    "client_name": "Al Reem IT Solutions FZ-LLC",
+    "line_item_count": 4,
+    "subtotal": "13338.30",
+    "vat_amount": "666.92",
+    "total": "14005.22"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

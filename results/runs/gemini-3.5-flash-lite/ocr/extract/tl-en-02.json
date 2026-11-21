@@ -1,0 +1,58 @@
+{
+  "doc_id": "tl-en-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"DMCC-647448\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Mizan Perfumes FZCO\",\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"Dubai Multi Commodities Centre\",\n  \"issue_date\": \"2024-08-03\",\n  \"expiry_date\": \"2025-08-02\",\n  \"activities\": [\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "DMCC-647448",
+        "company_name_ar": null,
+        "company_name_en": "Al Mizan Perfumes FZCO",
+        "legal_form": "FZCO",
+        "issuing_authority": "Dubai Multi Commodities Centre",
+        "issue_date": "2024-08-03",
+        "expiry_date": "2025-08-02",
+        "activities": [
+          "Perfumes and Cosmetics Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 932,
+      "completion_tokens": 133,
+      "usage_estimated": false,
+      "ttft_s": 1.1810467949999293,
+      "itl_s": [
+        0.020588575000147102,
+        0.0004855150000366848,
+        0.1658128819999547,
+        0.0004499570000007225,
+        0.0002745530000538565,
+        0.016023455999857106
+      ],
+      "total_s": 1.4261929179997423,
+      "started_at": "2026-11-21T13:52:31.510+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "DMCC-647448",
+    "company_name_ar": null,
+    "company_name_en": "Al Mizan Perfumes FZCO",
+    "legal_form": "FZCO",
+    "issuing_authority": "Dubai Multi Commodities Centre",
+    "issue_date": "2024-08-03",
+    "expiry_date": "2025-08-02",
+    "activities": [
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

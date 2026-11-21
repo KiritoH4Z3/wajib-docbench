@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100867512609848\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Al Mizan Events FZE\",\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2025-11-26\"\n}",
+  "usage": {
+    "prompt_tokens": 672,
+    "completion_tokens": 85,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.7991185520004365,
+    "itl_s": [
+      0.005198251999900094,
+      0.00031246500020643,
+      0.03798901199934335,
+      0.030631567000455107
+    ],
+    "total_s": 0.8821933620001801
+  },
+  "started_at": "2026-11-21T14:06:13.575+00:00",
+  "finish_reason": "stop"
+}

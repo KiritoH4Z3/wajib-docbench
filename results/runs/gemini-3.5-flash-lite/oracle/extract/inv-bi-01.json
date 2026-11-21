@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-bi-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Reem Foodstuff Trading Co.\",\n  \"supplier_trn\": \"100011606085045\",\n  \"invoice_number\": \"INV/2027/32351\",\n  \"invoice_date\": \"2027-09-17\",\n  \"customer_name\": \"Sahil Al Dhahab Building Materials FZ-LLC\",\n  \"customer_trn\": \"100632171572014\",\n  \"subtotal\": 15330.25,\n  \"vat_amount\": 766.51,\n  \"total\": 16096.76,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Reem Foodstuff Trading Co.",
+        "supplier_trn": "100011606085045",
+        "invoice_number": "INV/2027/32351",
+        "invoice_date": "2027-09-17",
+        "customer_name": "Sahil Al Dhahab Building Materials FZ-LLC",
+        "customer_trn": "100632171572014",
+        "subtotal": "15330.25",
+        "vat_amount": "766.51",
+        "total": "16096.76",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1339,
+      "completion_tokens": 183,
+      "usage_estimated": false,
+      "ttft_s": 0.8952137310002399,
+      "itl_s": [
+        0.00927227700003641,
+        0.069286049999846,
+        0.03910056099994108,
+        0.0631329640000331,
+        0.0370742230002179,
+        0.08785633299976325,
+        0.04160956200030341,
+        0.05492679099961606
+      ],
+      "total_s": 1.306779705000281,
+      "started_at": "2026-11-21T13:57:05.485+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Reem Foodstuff Trading Co.",
+    "supplier_trn": "100011606085045",
+    "invoice_number": "INV/2027/32351",
+    "invoice_date": "2027-09-17",
+    "customer_name": "Sahil Al Dhahab Building Materials FZ-LLC",
+    "customer_trn": "100632171572014",
+    "subtotal": "15330.25",
+    "vat_amount": "766.51",
+    "total": "16096.76",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

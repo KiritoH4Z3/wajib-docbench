@@ -47,11 +47,14 @@ def models(model: str = typer.Option(..., help="Model slug from config/models.ya
 def serve(
     model: str = typer.Option(...),
     parallel: int = typer.Option(4, help="Server slots (concurrent requests)"),
+    shared_ctx: int = typer.Option(
+        0, help="One KV pool of this many tokens shared by all slots (0 = one per slot)"
+    ),
 ) -> None:
     """Start llama.cpp for a local model and wait until it answers."""
     from bench.serve import serve as start
 
-    info = start(get_model(model), parallel=parallel)
+    info = start(get_model(model), parallel=parallel, shared_ctx=shared_ctx or None)
     typer.echo(
         f"{model} is up on {get_model(model).base_url} with {parallel} slots. "
         f"GPU memory in use: {info['gpu_mib_after_load']} MiB."

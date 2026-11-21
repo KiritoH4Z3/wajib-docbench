@@ -1,0 +1,55 @@
+{
+  "doc_id": "qt-ar-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QT-2026-7403\",\n  \"quote_date\": \"2026-05-09\",\n  \"valid_until\": \"2026-05-24\",\n  \"client_name\": \"سما الخليج للخدمات اللوجستية ش.م.ح\",\n  \"line_item_count\": 4,\n  \"subtotal\": 4542.17,\n  \"vat_amount\": 227.11,\n  \"total\": 4769.28\n}",
+      "parsed": {
+        "quote_number": "QT-2026-7403",
+        "quote_date": "2026-05-09",
+        "valid_until": "2026-05-24",
+        "client_name": "سما الخليج للخدمات اللوجستية ش.م.ح",
+        "line_item_count": 4,
+        "subtotal": "4542.17",
+        "vat_amount": "227.11",
+        "total": "4769.28"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 913,
+      "completion_tokens": 141,
+      "usage_estimated": false,
+      "ttft_s": 1.3800265049999325,
+      "itl_s": [
+        0.00038252200010902015,
+        0.0003243319997636718,
+        0.03748559899986503,
+        0.09209689800036358,
+        0.08825363699997979,
+        0.06871292200003154,
+        0.041072876999805885
+      ],
+      "total_s": 1.7552415269997255,
+      "started_at": "2026-11-21T13:58:49.458+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QT-2026-7403",
+    "quote_date": "2026-05-09",
+    "valid_until": "2026-05-24",
+    "client_name": "سما الخليج للخدمات اللوجستية ش.م.ح",
+    "line_item_count": 4,
+    "subtotal": "4542.17",
+    "vat_amount": "227.11",
+    "total": "4769.28"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

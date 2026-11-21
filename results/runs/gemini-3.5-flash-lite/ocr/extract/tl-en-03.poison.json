@@ -1,0 +1,81 @@
+{
+  "doc_id": "tl-en-03.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"66489\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Technical Services L.",
+      "parsed": null,
+      "schema_valid": false,
+      "error": "no JSON object found in the reply",
+      "prompt_tokens": 977,
+      "completion_tokens": 44,
+      "usage_estimated": false,
+      "ttft_s": 0.8270709359999273,
+      "itl_s": [
+        0.0006440029997065722,
+        0.00013727900022786343
+      ],
+      "total_s": 1.0416797529996984,
+      "started_at": "2026-11-21T13:52:55.512+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    },
+    {
+      "raw": "{\n  \"licence_number\": \"66489\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Technical Services L.L.C\",\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"Ajman Department of Economic Development\",\n  \"issue_date\": \"2025-03-31\",\n  \"expiry_date\": \"2099-12-31\",\n  \"activities\": [\n    \"Building Cleaning Services\",\n    \"Electrical Fittings Contracting\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "66489",
+        "company_name_ar": null,
+        "company_name_en": "Al Marjan Technical Services L.L.C",
+        "legal_form": "LLC",
+        "issuing_authority": "Ajman Department of Economic Development",
+        "issue_date": "2025-03-31",
+        "expiry_date": "2099-12-31",
+        "activities": [
+          "Building Cleaning Services",
+          "Electrical Fittings Contracting"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1047,
+      "completion_tokens": 138,
+      "usage_estimated": false,
+      "ttft_s": 1.6570652600003086,
+      "itl_s": [
+        0.0004832499998883577,
+        0.0004923880001115322,
+        0.0003987409995716007,
+        0.015303477000088606,
+        0.05460282500007452,
+        0.09483076200012874
+      ],
+      "total_s": 1.8579547940003067,
+      "started_at": "2026-11-21T13:53:03.512+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "66489",
+    "company_name_ar": null,
+    "company_name_en": "Al Marjan Technical Services L.L.C",
+    "legal_form": "LLC",
+    "issuing_authority": "Ajman Department of Economic Development",
+    "issue_date": "2025-03-31",
+    "expiry_date": "2099-12-31",
+    "activities": [
+      "Building Cleaning Services",
+      "Electrical Fittings Contracting"
+    ]
+  },
+  "schema_valid_first_try": false,
+  "api_error": null
+}

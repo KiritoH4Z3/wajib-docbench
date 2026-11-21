@@ -1,0 +1,132 @@
+{
+  "doc_id": "inv-ar-05.scan",
+  "model_slug": "falcon-h1-7b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "supplier_trn",
+      "passed": false,
+      "detail": "supplier_trn is empty, a person needs it"
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "customer_trn",
+      "passed": false,
+      "detail": "customer_trn 101710197 has 9 digits, a TRN has 15"
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "VAT 1.00 is not 5% of subtotal 67.00 (expected 3.35)"
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_date",
+      "passed": false,
+      "detail": "invoice_date 2026-07-02 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "customer_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "customer_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": false,
+      "detail": "subtotal 67.00 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 1.00 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": false,
+      "detail": "total 68.00 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "currency",
+      "passed": false,
+      "detail": "currency AED does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "supplier_trn is empty, a person needs it",
+    "customer_trn 101710197 has 9 digits, a TRN has 15",
+    "VAT 1.00 is not 5% of subtotal 67.00 (expected 3.35)",
+    "invoice_date 2026-07-02 does not appear in the document text",
+    "subtotal 67.00 does not appear in the document text",
+    "vat_amount 1.00 does not appear in the document text",
+    "total 68.00 does not appear in the document text",
+    "currency AED does not appear in the document text"
+  ]
+}

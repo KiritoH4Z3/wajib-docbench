@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-bi-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Wadi Al Sidr Interior Design Branch\",\n  \"supplier_trn\": \"100349144549580\",\n  \"invoice_number\": \"INV-2025-086566\",\n  \"invoice_date\": \"2025-08-20\",\n  \"customer_name\": \"Najm Al Sahra IT Solutions Branch\",\n  \"customer_trn\": \"100865001217320\",\n  \"subtotal\": 27396.00,\n  \"vat_amount\": 1369.80,\n  \"total\": 28765.80,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Wadi Al Sidr Interior Design Branch",
+        "supplier_trn": "100349144549580",
+        "invoice_number": "INV-2025-086566",
+        "invoice_date": "2025-08-20",
+        "customer_name": "Najm Al Sahra IT Solutions Branch",
+        "customer_trn": "100865001217320",
+        "subtotal": "27396.00",
+        "vat_amount": "1369.80",
+        "total": "28765.80",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1287,
+      "completion_tokens": 181,
+      "usage_estimated": false,
+      "ttft_s": 1.5620410310002626,
+      "itl_s": [
+        0.0015668909995838476,
+        0.043485034000241285,
+        0.07051821699997163,
+        0.05160902299985537,
+        0.03854170600016005,
+        0.052610645000186196,
+        0.03365049399963027
+      ],
+      "total_s": 1.8621773569998368,
+      "started_at": "2026-11-21T13:57:13.483+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Wadi Al Sidr Interior Design Branch",
+    "supplier_trn": "100349144549580",
+    "invoice_number": "INV-2025-086566",
+    "invoice_date": "2025-08-20",
+    "customer_name": "Najm Al Sahra IT Solutions Branch",
+    "customer_trn": "100865001217320",
+    "subtotal": "27396.00",
+    "vat_amount": "1369.80",
+    "total": "28765.80",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

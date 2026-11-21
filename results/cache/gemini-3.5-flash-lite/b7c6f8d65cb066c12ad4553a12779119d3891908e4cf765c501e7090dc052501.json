@@ -1,0 +1,20 @@
+{
+  "raw": "{\n  \"trn\": \"",
+  "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 7,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.7647012759998688,
+    "itl_s": [
+      0.24443880200033163
+    ],
+    "total_s": 1.0581436209995445
+  },
+  "started_at": "2026-11-21T14:06:05.596+00:00",
+  "finish_reason": null
+}

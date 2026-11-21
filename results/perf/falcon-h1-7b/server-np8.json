@@ -1,0 +1,38 @@
+{
+  "model": "falcon-h1-7b",
+  "image": "ghcr.io/ggml-org/llama.cpp:server-cuda12-b12464",
+  "image_digest": "ghcr.io/ggml-org/llama.cpp@sha256:6b1c681b535a15d406c7270fd2730f5bd36d3598fbb0ca894bfa47857a700fe3",
+  "weights_file": "Falcon-H1-7B-Instruct-Q4_K_M.gguf",
+  "weights_sha256": "145def0b4cd36500bf538ed7ac895b5c1851e02e802b2d1c12ffa6afdbaff25d",
+  "parallel_slots": 8,
+  "ctx_per_slot": 4096,
+  "shared_ctx": 12288,
+  "args": [
+    "-m",
+    "/models/falcon-h1-7b.gguf",
+    "--host",
+    "0.0.0.0",
+    "--port",
+    "8080",
+    "-np",
+    "8",
+    "-c",
+    "12288",
+    "-kvu",
+    "--kv-unified-per-slot",
+    "4096",
+    "--alias",
+    "falcon-h1-7b",
+    "--metrics",
+    "-ngl",
+    "99",
+    "-fa",
+    "on",
+    "--jinja"
+  ],
+  "gpu_mib_before": 1501,
+  "gpu_mib_after_load": 7507,
+  "server_log_tail": [
+    "0.01.742.515 I srv    load_model: initializing, n_slots = 8, n_ctx_slot = 4096, kv_unified = 'true'"
+  ]
+}

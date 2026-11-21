@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-ar-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"فرع النور لخدمات التنظيف\",\n  \"supplier_trn\": \"100188133674148\",\n  \"invoice_number\": \"2027/89278\",\n  \"invoice_date\": \"2027-09-30\",\n  \"customer_name\": \"يوسف إبراهيم حداد\",\n  \"customer_trn\": null,\n  \"subtotal\": 5909.40,\n  \"vat_amount\": 295.47,\n  \"total\": 6204.87,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "فرع النور لخدمات التنظيف",
+        "supplier_trn": "100188133674148",
+        "invoice_number": "2027/89278",
+        "invoice_date": "2027-09-30",
+        "customer_name": "يوسف إبراهيم حداد",
+        "customer_trn": null,
+        "subtotal": "5909.40",
+        "vat_amount": "295.47",
+        "total": "6204.87",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 956,
+      "completion_tokens": 160,
+      "usage_estimated": false,
+      "ttft_s": 0.8483597120002742,
+      "itl_s": [
+        0.00040380199970968533,
+        0.0003565040001376474,
+        0.01821082500009652,
+        0.04539619499973924,
+        0.09129876699989836,
+        0.06637181300038719,
+        0.07794934699995792
+      ],
+      "total_s": 1.172558577000018,
+      "started_at": "2026-11-21T13:56:49.481+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "فرع النور لخدمات التنظيف",
+    "supplier_trn": "100188133674148",
+    "invoice_number": "2027/89278",
+    "invoice_date": "2027-09-30",
+    "customer_name": "يوسف إبراهيم حداد",
+    "customer_trn": null,
+    "subtotal": "5909.40",
+    "vat_amount": "295.47",
+    "total": "6204.87",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

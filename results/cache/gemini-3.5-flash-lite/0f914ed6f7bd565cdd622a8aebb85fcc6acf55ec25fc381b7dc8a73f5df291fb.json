@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"trn\": \"100812597714122\",\n  \"legal_name_ar\": \"مؤسسة النخلة لتنظيم الفعاليات\",\n  \"legal_name_en\": \"Al Nakhla Events Est.\",\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2025-10-05\"\n}",
+  "usage": {
+    "prompt_tokens": 784,
+    "completion_tokens": 96,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8313083960001677,
+    "itl_s": [
+      0.010281167999892205,
+      0.03918594300012046,
+      0.049199800000678806,
+      0.07687815999997838,
+      0.08396684999934223
+    ],
+    "total_s": 1.128077489000134
+  },
+  "started_at": "2026-11-21T14:05:25.580+00:00",
+  "finish_reason": "stop"
+}

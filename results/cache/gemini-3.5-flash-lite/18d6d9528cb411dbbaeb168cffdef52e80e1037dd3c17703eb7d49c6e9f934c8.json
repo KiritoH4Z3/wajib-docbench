@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100716316798689\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Al Marjan Perfumes FZ-LLC\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2025-11-19\"\n}",
+  "usage": {
+    "prompt_tokens": 648,
+    "completion_tokens": 86,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.9568747299999814,
+    "itl_s": [
+      0.004441360999862809,
+      0.03196551000019099,
+      0.08766117899995152,
+      0.0822856459999457
+    ],
+    "total_s": 1.1992204539997147
+  },
+  "started_at": "2026-11-21T13:56:15.510+00:00",
+  "finish_reason": "stop"
+}

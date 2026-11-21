@@ -1,0 +1,58 @@
+{
+  "doc_id": "tl-bi-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"3187195\",\n  \"company_name_ar\": \"وادي السدر للعطور منطقة حرة ذ.م.م\",\n  \"company_name_en\": \"Wadi Al Sidr Perfumes FZ-LLC\",\n  \"legal_form\": \"FZ_LLC\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2025-05-21\",\n  \"expiry_date\": \"2026-05-20\",\n  \"activities\": [\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "3187195",
+        "company_name_ar": "وادي السدر للعطور منطقة حرة ذ.م.م",
+        "company_name_en": "Wadi Al Sidr Perfumes FZ-LLC",
+        "legal_form": "FZ_LLC",
+        "issuing_authority": "Ras Al Khaimah Economic Zone",
+        "issue_date": "2025-05-21",
+        "expiry_date": "2026-05-20",
+        "activities": [
+          "Perfumes and Cosmetics Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1098,
+      "completion_tokens": 153,
+      "usage_estimated": false,
+      "ttft_s": 0.9910999629992148,
+      "itl_s": [
+        0.0005282300007820595,
+        0.04936916499991639,
+        0.08084876499924576,
+        0.05073371400067117,
+        0.04238610099946527,
+        0.08979758500026946
+      ],
+      "total_s": 1.3118032729998959,
+      "started_at": "2026-11-21T14:02:59.145+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "3187195",
+    "company_name_ar": "وادي السدر للعطور منطقة حرة ذ.م.م",
+    "company_name_en": "Wadi Al Sidr Perfumes FZ-LLC",
+    "legal_form": "FZ_LLC",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2025-05-21",
+    "expiry_date": "2026-05-20",
+    "activities": [
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

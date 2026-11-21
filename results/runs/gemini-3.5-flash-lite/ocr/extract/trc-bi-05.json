@@ -1,0 +1,47 @@
+{
+  "doc_id": "trc-bi-05",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100666249578598\",\n  \"legal_name_ar\": \"شركة الثريا لتنظيم الفعاليات\",\n  \"legal_name_en\": \"Al Thuraya Events Co.\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-07-09\"\n}",
+      "parsed": {
+        "trn": "100666249578598",
+        "legal_name_ar": "شركة الثريا لتنظيم الفعاليات",
+        "legal_name_en": "Al Thuraya Events Co.",
+        "tax_type": "VAT",
+        "effective_date": "2026-07-09"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 819,
+      "completion_tokens": 91,
+      "usage_estimated": false,
+      "ttft_s": 1.362716420000197,
+      "itl_s": [
+        0.02057943499994508,
+        0.01564125300001251,
+        0.4867936139999074,
+        0.06630027000028349,
+        0.04305931999988388
+      ],
+      "total_s": 2.0050840280000557,
+      "started_at": "2026-11-21T13:55:27.481+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100666249578598",
+    "legal_name_ar": "شركة الثريا لتنظيم الفعاليات",
+    "legal_name_en": "Al Thuraya Events Co.",
+    "tax_type": "VAT",
+    "effective_date": "2026-07-09"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

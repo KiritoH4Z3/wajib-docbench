@@ -1,0 +1,46 @@
+{
+  "doc_id": "trc-ar-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"943455600722100\",\n  \"legal_name_ar\": \"فرع دار الياسمين للخدمات اللوجستية\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2027-02-12\"\n}",
+      "parsed": {
+        "trn": "943455600722100",
+        "legal_name_ar": "فرع دار الياسمين للخدمات اللوجستية",
+        "legal_name_en": null,
+        "tax_type": "VAT",
+        "effective_date": "2027-02-12"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 706,
+      "completion_tokens": 89,
+      "usage_estimated": false,
+      "ttft_s": 0.8037380019995908,
+      "itl_s": [
+        0.000536315999852377,
+        0.03160327499972482,
+        0.04615797700080293,
+        0.06181797299996106
+      ],
+      "total_s": 0.9525997559994721,
+      "started_at": "2026-11-21T14:04:19.112+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "943455600722100",
+    "legal_name_ar": "فرع دار الياسمين للخدمات اللوجستية",
+    "legal_name_en": null,
+    "tax_type": "VAT",
+    "effective_date": "2027-02-12"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

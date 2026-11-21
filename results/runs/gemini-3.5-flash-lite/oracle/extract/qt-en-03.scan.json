@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-en-03.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"Q/27/8260\",\n  \"quote_date\": \"2027-03-23\",\n  \"valid_until\": \"2027-04-22\",\n  \"client_name\": \"Al Hadaf Building Materials LLC\",\n  \"line_item_count\": 7,\n  \"subtotal\": 32749.25,\n  \"vat_amount\": 1637.46,\n  \"total\": 34386.71\n}",
+      "parsed": {
+        "quote_number": "Q/27/8260",
+        "quote_date": "2027-03-23",
+        "valid_until": "2027-04-22",
+        "client_name": "Al Hadaf Building Materials LLC",
+        "line_item_count": 7,
+        "subtotal": "32749.25",
+        "vat_amount": "1637.46",
+        "total": "34386.71"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 954,
+      "completion_tokens": 133,
+      "usage_estimated": false,
+      "ttft_s": 2.989477545999762,
+      "itl_s": [
+        0.043545221999920614,
+        0.06011000699982105,
+        0.035692095000740665,
+        0.09134025299954374,
+        0.09433034399989992,
+        0.039813461000449024
+      ],
+      "total_s": 3.4651738709999336,
+      "started_at": "2026-11-21T14:01:18.111+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "Q/27/8260",
+    "quote_date": "2027-03-23",
+    "valid_until": "2027-04-22",
+    "client_name": "Al Hadaf Building Materials LLC",
+    "line_item_count": 7,
+    "subtotal": "32749.25",
+    "vat_amount": "1637.46",
+    "total": "34386.71"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

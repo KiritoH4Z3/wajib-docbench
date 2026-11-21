@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Al Reem Foodstuff Trading Co.\",\n  \"supplier_trn\": \"100011606085045\",\n  \"invoice_number\": \"INV/2027/32351\",\n  \"invoice_date\": \"2027-09-17\",\n  \"customer_name\": \"Sahil Al Dhahab Building Materials FZ-LLC\",\n  \"customer_trn\": \"100632171572014\",\n  \"subtotal\": 15330.25,\n  \"vat_amount\": 766.51,\n  \"total\": 16096.76,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1339,
+    "completion_tokens": 183,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8952137310002399,
+    "itl_s": [
+      0.00927227700003641,
+      0.069286049999846,
+      0.03910056099994108,
+      0.0631329640000331,
+      0.0370742230002179,
+      0.08785633299976325,
+      0.04160956200030341,
+      0.05492679099961606
+    ],
+    "total_s": 1.306779705000281
+  },
+  "started_at": "2026-11-21T13:57:05.485+00:00",
+  "finish_reason": "stop"
+}

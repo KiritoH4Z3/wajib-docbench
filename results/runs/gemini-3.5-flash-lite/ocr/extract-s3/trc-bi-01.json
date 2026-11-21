@@ -1,0 +1,53 @@
+{
+  "doc_id": "trc-bi-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\"trn\": \"100099643885633\", \"legal_name_ar\": \"\\u0628\\u064a\\u062a \\u0627\\u0644\\u062e\\u0644\\u064a\\u062c \\u0644\\u0644\\u0627\\u0633\\u062a\\u0634\\u0627\\u0631\\u0627\\u062a \\u0645\\u0646\\u0637\\u0642\\u0629 \\u062d\\u0631\\u0629             \\u0630.\\u0645.\\u0645\", \"legal_name_en\": \"Bait Al Khaleej Consultancy FZ-LLC\", \"tax_type\": \"VAT\", \"effective_date\": \"2026-03-19\"}",
+      "parsed": {
+        "trn": "100099643885633",
+        "legal_name_ar": "بيت الخليج للاستشارات منطقة حرة             ذ.م.م",
+        "legal_name_en": "Bait Al Khaleej Consultancy FZ-LLC",
+        "tax_type": "VAT",
+        "effective_date": "2026-03-19"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 824,
+      "completion_tokens": 255,
+      "usage_estimated": false,
+      "ttft_s": 1.4955103709999094,
+      "itl_s": [
+        0.0004588629999489058,
+        0.00017076099993573735,
+        0.03356574899953557,
+        0.06274526500055799,
+        0.04715740000028745,
+        0.10586956699989969,
+        0.0006032549999872572,
+        0.038462320999315125,
+        0.05387446600070689,
+        0.04061124399959226,
+        0.04208021700014797
+      ],
+      "total_s": 1.9281375919999846,
+      "started_at": "2026-11-21T14:10:51.938+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100099643885633",
+    "legal_name_ar": "بيت الخليج للاستشارات منطقة حرة             ذ.م.م",
+    "legal_name_en": "Bait Al Khaleej Consultancy FZ-LLC",
+    "tax_type": "VAT",
+    "effective_date": "2026-03-19"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

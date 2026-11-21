@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-ar-02.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"Q/27/2845\",\n  \"quote_date\": \"2027-02-14\",\n  \"valid_until\": \"2027-03-31\",\n  \"client_name\": \"ساحل الذهب للتصميم الداخلي zoe\",\n  \"line_item_count\": 1,\n  \"subtotal\": 4545.75,\n  \"vat_amount\": 227.29,\n  \"total\": 4773.04\n}",
+      "parsed": {
+        "quote_number": "Q/27/2845",
+        "quote_date": "2027-02-14",
+        "valid_until": "2027-03-31",
+        "client_name": "ساحل الذهب للتصميم الداخلي zoe",
+        "line_item_count": 1,
+        "subtotal": "4545.75",
+        "vat_amount": "227.29",
+        "total": "4773.04"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 857,
+      "completion_tokens": 133,
+      "usage_estimated": false,
+      "ttft_s": 0.783064376999846,
+      "itl_s": [
+        0.0005784499999208492,
+        0.036123167000368994,
+        0.04793056099970272,
+        0.04432169200026692,
+        0.36642755599996235,
+        0.00047037600006660796
+      ],
+      "total_s": 1.2800658749997638,
+      "started_at": "2026-11-21T13:31:04.770+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "Q/27/2845",
+    "quote_date": "2027-02-14",
+    "valid_until": "2027-03-31",
+    "client_name": "ساحل الذهب للتصميم الداخلي zoe",
+    "line_item_count": 1,
+    "subtotal": "4545.75",
+    "vat_amount": "227.29",
+    "total": "4773.04"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

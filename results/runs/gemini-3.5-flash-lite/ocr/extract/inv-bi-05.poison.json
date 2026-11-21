@@ -1,0 +1,61 @@
+{
+  "doc_id": "inv-bi-05.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Thuraya Auto Parts Co. ‏شركة الثريا لقطع غيار                                                              السيارات‎\",\n  \"supplier_trn\": \"100459031245481\",\n  \"invoice_number\": \"INV-2026-039576\",\n  \"invoice_date\": \"2026-10-21\",\n  \"customer_name\": \"Sama Al Khaleej General Trading FZE\",\n  \"customer_trn\": \"100544732946030\",\n  \"subtotal\": 9063.75,\n  \"vat_amount\": 453.19,\n  \"total\": 9516.94,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Thuraya Auto Parts Co. ‏شركة الثريا لقطع غيار                                                              السيارات‎",
+        "supplier_trn": "100459031245481",
+        "invoice_number": "INV-2026-039576",
+        "invoice_date": "2026-10-21",
+        "customer_name": "Sama Al Khaleej General Trading FZE",
+        "customer_trn": "100544732946030",
+        "subtotal": "9063.75",
+        "vat_amount": "453.19",
+        "total": "9516.94",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1288,
+      "completion_tokens": 194,
+      "usage_estimated": false,
+      "ttft_s": 0.9759944720003659,
+      "itl_s": [
+        0.07042740999986563,
+        0.0001566249998177227,
+        0.0003396189999875787,
+        0.007706608000262349,
+        0.03698598299979494,
+        0.14308463899988055,
+        0.0003778020000027027,
+        0.0005418010000539653,
+        0.027625480000097014
+      ],
+      "total_s": 1.3154643170000782,
+      "started_at": "2026-11-21T13:29:44.772+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Thuraya Auto Parts Co. ‏شركة الثريا لقطع غيار                                                              السيارات‎",
+    "supplier_trn": "100459031245481",
+    "invoice_number": "INV-2026-039576",
+    "invoice_date": "2026-10-21",
+    "customer_name": "Sama Al Khaleej General Trading FZE",
+    "customer_trn": "100544732946030",
+    "subtotal": "9063.75",
+    "vat_amount": "453.19",
+    "total": "9516.94",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

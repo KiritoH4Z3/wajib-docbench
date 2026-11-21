@@ -1,0 +1,46 @@
+{
+  "doc_id": "trc-en-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100107999112743\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Sama Al Khaleej Building Materials FZ-LLC\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2024-02-24\"\n}",
+      "parsed": {
+        "trn": "100107999112743",
+        "legal_name_ar": null,
+        "legal_name_en": "Sama Al Khaleej Building Materials FZ-LLC",
+        "tax_type": "VAT",
+        "effective_date": "2024-02-24"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 643,
+      "completion_tokens": 89,
+      "usage_estimated": false,
+      "ttft_s": 6.1202881889998935,
+      "itl_s": [
+        0.00041821900003924384,
+        0.00009665300012784428,
+        0.0510330009997233,
+        0.04666409600031329
+      ],
+      "total_s": 6.225500388,
+      "started_at": "2026-11-21T13:55:35.486+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100107999112743",
+    "legal_name_ar": null,
+    "legal_name_en": "Sama Al Khaleej Building Materials FZ-LLC",
+    "tax_type": "VAT",
+    "effective_date": "2024-02-24"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

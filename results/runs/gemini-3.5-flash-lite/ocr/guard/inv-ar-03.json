@@ -1,0 +1,106 @@
+{
+  "doc_id": "inv-ar-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_date",
+      "passed": false,
+      "detail": "invoice_date is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "supplier_trn",
+      "passed": false,
+      "detail": "supplier_trn is empty, a person needs it"
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "customer_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": false,
+      "detail": "subtotal 5262.50 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 263.13 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": false,
+      "detail": "total 5525.63 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "currency",
+      "passed": false,
+      "detail": "currency AED does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "invoice_date is empty, a person needs it",
+    "supplier_trn is empty, a person needs it",
+    "subtotal 5262.50 does not appear in the document text",
+    "vat_amount 263.13 does not appear in the document text",
+    "total 5525.63 does not appear in the document text",
+    "currency AED does not appear in the document text"
+  ]
+}

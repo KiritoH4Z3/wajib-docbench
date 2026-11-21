@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"licence_number\": \"4981737\",\n  \"company_name_ar\": \"النور لتنظيم الفعاليات م.م.ح\",\n  \"company_name_en\": \"Al Noor Events FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2026-12-09\",\n  \"expiry_date\": \"2027-12-08\",\n  \"activities\": [\n    \"Commercial Printing\",\n    \"Furniture Trading\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1158,
+    "completion_tokens": 146,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.2093072120001125,
+    "itl_s": [
+      0.01473485599990454,
+      0.08483937099981631,
+      0.030028634000245802,
+      0.028586719000031735,
+      0.045018581000022095,
+      0.039609571999790205,
+      0.05189578599993183
+    ],
+    "total_s": 1.5241191899999649
+  },
+  "started_at": "2026-11-21T13:52:15.494+00:00",
+  "finish_reason": "stop"
+}

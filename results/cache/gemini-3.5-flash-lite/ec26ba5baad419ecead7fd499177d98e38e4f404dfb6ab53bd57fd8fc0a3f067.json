@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100520211579103\",\n  \"legal_name_ar\": \"مؤسسة الواحة لمواد البناء\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2025-02-16\"\n}",
+  "usage": {
+    "prompt_tokens": 725,
+    "completion_tokens": 88,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.1577143079998677,
+    "itl_s": [
+      0.0006612449997192016,
+      0.03137761000016326,
+      0.08542093300002307,
+      0.058172369000203616
+    ],
+    "total_s": 1.4423072489998958
+  },
+  "started_at": "2026-11-21T13:53:59.508+00:00",
+  "finish_reason": "stop"
+}

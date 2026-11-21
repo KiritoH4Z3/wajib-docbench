@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"licence_number\": \"4955763\",\n  \"company_name_ar\": \"المنارة للخدمات اللوجستية م.م6.ح\",\n  \"company_name_en\": \"Al Manara Logistics FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2025-05-28\",\n  \"expiry_date\": \"2026-05-27\",\n  \"activities\": [\n    \"Cargo Services\",\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1173,
+    "completion_tokens": 153,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.648724780000066,
+    "itl_s": [
+      0.004110982999918633,
+      0.11281559999997626,
+      0.08716041299976496,
+      0.0007423890001518885,
+      0.05500789799998529,
+      0.04731893400003173,
+      0.0879368760001853
+    ],
+    "total_s": 2.046275381999749
+  },
+  "started_at": "2026-11-21T13:51:51.491+00:00",
+  "finish_reason": "stop"
+}

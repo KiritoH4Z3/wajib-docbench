@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-bi-03.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Durrat Al Shati Interior Design FZ-LLC\",\n  \"supplier_trn\": \"100355473619034\",\n  \"invoice_number\": \"INV-2026-045122\",\n  \"invoice_date\": \"2026-05-11\",\n  \"customer_name\": \"Rajesh Kumar Nair\",\n  \"customer_trn\": null,\n  \"subtotal\": 14404.50,\n  \"vat_amount\": 720.23,\n  \"total\": 15124.73,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Durrat Al Shati Interior Design FZ-LLC",
+        "supplier_trn": "100355473619034",
+        "invoice_number": "INV-2026-045122",
+        "invoice_date": "2026-05-11",
+        "customer_name": "Rajesh Kumar Nair",
+        "customer_trn": null,
+        "subtotal": "14404.50",
+        "vat_amount": "720.23",
+        "total": "15124.73",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1296,
+      "completion_tokens": 165,
+      "usage_estimated": false,
+      "ttft_s": 0.9914454690001548,
+      "itl_s": [
+        0.04511726099963198,
+        0.0003024500001629349,
+        0.035159221999947476,
+        0.04235857399999077,
+        0.09766481799988469,
+        0.03979385299999194,
+        0.0579945280001084,
+        0.046382715000163444
+      ],
+      "total_s": 1.4065394230001402,
+      "started_at": "2026-11-21T13:29:28.791+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Durrat Al Shati Interior Design FZ-LLC",
+    "supplier_trn": "100355473619034",
+    "invoice_number": "INV-2026-045122",
+    "invoice_date": "2026-05-11",
+    "customer_name": "Rajesh Kumar Nair",
+    "customer_trn": null,
+    "subtotal": "14404.50",
+    "vat_amount": "720.23",
+    "total": "15124.73",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

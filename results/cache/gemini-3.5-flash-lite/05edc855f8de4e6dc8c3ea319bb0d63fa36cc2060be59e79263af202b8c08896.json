@@ -1,0 +1,21 @@
+{
+  "raw": "{\n  \"licence_number\": \"66489\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Technical Services L.",
+  "usage": {
+    "prompt_tokens": 977,
+    "completion_tokens": 44,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8270709359999273,
+    "itl_s": [
+      0.0006440029997065722,
+      0.00013727900022786343
+    ],
+    "total_s": 1.0416797529996984
+  },
+  "started_at": "2026-11-21T13:52:55.512+00:00",
+  "finish_reason": null
+}

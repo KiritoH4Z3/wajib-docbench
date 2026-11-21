@@ -1,0 +1,58 @@
+{
+  "doc_id": "tl-en-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"73436\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Building Materials Est.\",\n  \"legal_form\": \"SOLE_ESTABLISHMENT\",\n  \"issuing_authority\": \"Ajman Department of Economic Development\",\n  \"issue_date\": \"2026-02-15\",\n  \"expiry_date\": \"2027-02-14\",\n  \"activities\": [\n    \"Building Materials Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "73436",
+        "company_name_ar": null,
+        "company_name_en": "Al Marjan Building Materials Est.",
+        "legal_form": "SOLE_ESTABLISHMENT",
+        "issuing_authority": "Ajman Department of Economic Development",
+        "issue_date": "2026-02-15",
+        "expiry_date": "2027-02-14",
+        "activities": [
+          "Building Materials Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 895,
+      "completion_tokens": 131,
+      "usage_estimated": false,
+      "ttft_s": 1.2997495050003636,
+      "itl_s": [
+        0.00028451399975892855,
+        0.036054770999726315,
+        0.08701310100059345,
+        0.05834290799975861,
+        0.03971161899971776,
+        0.08901849700032471
+      ],
+      "total_s": 1.6128443280003921,
+      "started_at": "2026-11-21T14:10:35.964+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "73436",
+    "company_name_ar": null,
+    "company_name_en": "Al Marjan Building Materials Est.",
+    "legal_form": "SOLE_ESTABLISHMENT",
+    "issuing_authority": "Ajman Department of Economic Development",
+    "issue_date": "2026-02-15",
+    "expiry_date": "2027-02-14",
+    "activities": [
+      "Building Materials Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

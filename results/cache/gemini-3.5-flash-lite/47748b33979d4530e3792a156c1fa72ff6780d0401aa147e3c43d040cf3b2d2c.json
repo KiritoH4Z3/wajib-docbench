@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-07815\",\n  \"quote_date\": \"2027-01-12\",\n  \"valid_until\": \"2027-02-11\",\n  \"client_name\": \"Al Fajr Foodstuff Trading Est.\",\n  \"line_item_count\": 2,\n  \"subtotal\": 13291.00,\n  \"vat_amount\": 664.55,\n  \"total\": 13955.55\n}",
+  "usage": {
+    "prompt_tokens": 885,
+    "completion_tokens": 131,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.4495277229998464,
+    "itl_s": [
+      0.0084741690006922,
+      0.039281616999687685,
+      0.06375581599968427,
+      0.04974022100032016,
+      0.09026947300026222,
+      0.051670001999809756
+    ],
+    "total_s": 1.7562370089999604
+  },
+  "started_at": "2026-11-21T14:01:10.100+00:00",
+  "finish_reason": "stop"
+}

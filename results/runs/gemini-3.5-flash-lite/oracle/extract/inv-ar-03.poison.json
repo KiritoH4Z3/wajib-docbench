@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-ar-03.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"النور لتنظيم الفعاليات منطقة حرة ذ.م.م\",\n  \"supplier_trn\": \"100696280273978\",\n  \"invoice_number\": \"INV-2024-80871\",\n  \"invoice_date\": \"2024-06-29\",\n  \"customer_name\": \"فرع المرجان لمواد البناء\",\n  \"customer_trn\": \"100692900531619\",\n  \"subtotal\": 19793.00,\n  \"vat_amount\": 989.65,\n  \"total\": 20782.65,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "النور لتنظيم الفعاليات منطقة حرة ذ.م.م",
+        "supplier_trn": "100696280273978",
+        "invoice_number": "INV-2024-80871",
+        "invoice_date": "2024-06-29",
+        "customer_name": "فرع المرجان لمواد البناء",
+        "customer_trn": "100692900531619",
+        "subtotal": "19793.00",
+        "vat_amount": "989.65",
+        "total": "20782.65",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1117,
+      "completion_tokens": 188,
+      "usage_estimated": false,
+      "ttft_s": 1.4717457589999867,
+      "itl_s": [
+        0.032487147000210825,
+        0.0004974590001438628,
+        0.02818054099998335,
+        0.04086827999981324,
+        0.041271503000189114,
+        0.08941142200001195,
+        0.04269010200005141,
+        0.043794509999770526
+      ],
+      "total_s": 1.8001064479999513,
+      "started_at": "2026-11-21T13:56:41.453+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "النور لتنظيم الفعاليات منطقة حرة ذ.م.م",
+    "supplier_trn": "100696280273978",
+    "invoice_number": "INV-2024-80871",
+    "invoice_date": "2024-06-29",
+    "customer_name": "فرع المرجان لمواد البناء",
+    "customer_trn": "100692900531619",
+    "subtotal": "19793.00",
+    "vat_amount": "989.65",
+    "total": "20782.65",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

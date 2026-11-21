@@ -1,0 +1,115 @@
+{
+  "doc_id": "inv-ar-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": false,
+      "detail": "total is empty, a person needs it"
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "supplier_trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "invoice_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "customer_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 295.47 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "currency",
+      "passed": false,
+      "detail": "currency AED does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "total is empty, a person needs it",
+    "vat_amount 295.47 does not appear in the document text",
+    "currency AED does not appear in the document text"
+  ]
+}

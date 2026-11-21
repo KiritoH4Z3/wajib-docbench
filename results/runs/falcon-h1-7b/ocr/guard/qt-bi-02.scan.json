@@ -1,0 +1,109 @@
+{
+  "doc_id": "qt-bi-02.scan",
+  "model_slug": "falcon-h1-7b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "quote_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "vat_5_percent",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "VAT 1666.92 is not 5% of subtotal 113338.30 (expected 5666.92)"
+    },
+    {
+      "name": "total_sum",
+      "field": "total",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_order",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "quote_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "quote_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "valid_until",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "client_name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "subtotal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "vat_amount",
+      "passed": false,
+      "detail": "vat_amount 1666.92 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "total",
+      "passed": false,
+      "detail": "total 115005.22 does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "VAT 1666.92 is not 5% of subtotal 113338.30 (expected 5666.92)",
+    "vat_amount 1666.92 does not appear in the document text",
+    "total 115005.22 does not appear in the document text"
+  ]
+}

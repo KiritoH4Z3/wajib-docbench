@@ -1,0 +1,46 @@
+{
+  "doc_id": "trc-ar-05",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100075528469398\",\n  \"legal_name_ar\": \"سما الخليج لحلول تقنية المعلومات م.م.ح\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-11-07\"\n}",
+      "parsed": {
+        "trn": "100075528469398",
+        "legal_name_ar": "سما الخليج لحلول تقنية المعلومات م.م.ح",
+        "legal_name_en": null,
+        "tax_type": "VAT",
+        "effective_date": "2026-11-07"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 703,
+      "completion_tokens": 90,
+      "usage_estimated": false,
+      "ttft_s": 0.9559036150003521,
+      "itl_s": [
+        0.00034281399985047756,
+        0.00044822099971497664,
+        0.00027668900020216824,
+        0.059731698999712535
+      ],
+      "total_s": 1.0282274139999572,
+      "started_at": "2026-11-21T14:04:37.569+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100075528469398",
+    "legal_name_ar": "سما الخليج لحلول تقنية المعلومات م.م.ح",
+    "legal_name_en": null,
+    "tax_type": "VAT",
+    "effective_date": "2026-11-07"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

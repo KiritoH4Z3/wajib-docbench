@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-ar-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"426712\",\n  \"company_name_ar\": \"الواحة لتجارة المواد الغذائيةذ.م.م\",\n  \"company_name_en\": null,\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"دائرة الاقتصاد والسياحة فيدبي\",\n  \"issue_date\": \"2025-05-04\",\n  \"expiry_date\": \"2026-05-03\",\n  \"activities\": [\n    \"تجارة الموادالغذائية\",\n    \"تجارة الأجهزةالمنزلية\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "426712",
+        "company_name_ar": "الواحة لتجارة المواد الغذائيةذ.م.م",
+        "company_name_en": null,
+        "legal_form": "LLC",
+        "issuing_authority": "دائرة الاقتصاد والسياحة فيدبي",
+        "issue_date": "2025-05-04",
+        "expiry_date": "2026-05-03",
+        "activities": [
+          "تجارة الموادالغذائية",
+          "تجارة الأجهزةالمنزلية"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1048,
+      "completion_tokens": 154,
+      "usage_estimated": false,
+      "ttft_s": 4.96917017800024,
+      "itl_s": [
+        0.0005175039996174746,
+        0.0006714529999953811,
+        0.02759450499979721,
+        0.06424509699991177,
+        0.10688374500023201,
+        0.03143251599976793
+      ],
+      "total_s": 5.206086670000332,
+      "started_at": "2026-11-21T14:11:15.557+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "426712",
+    "company_name_ar": "الواحة لتجارة المواد الغذائيةذ.م.م",
+    "company_name_en": null,
+    "legal_form": "LLC",
+    "issuing_authority": "دائرة الاقتصاد والسياحة فيدبي",
+    "issue_date": "2025-05-04",
+    "expiry_date": "2026-05-03",
+    "activities": [
+      "تجارة الموادالغذائية",
+      "تجارة الأجهزةالمنزلية"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

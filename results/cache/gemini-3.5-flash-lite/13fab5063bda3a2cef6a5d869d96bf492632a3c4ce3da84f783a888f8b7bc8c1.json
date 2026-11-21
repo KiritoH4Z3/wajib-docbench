@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"licence_number\": \"DMCC-647448\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Mizan Perfumes FZCO\",\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"Dubai Multi Commodities Centre\",\n  \"issue_date\": \"2024-08-03\",\n  \"expiry_date\": \"2025-08-02\",\n  \"activities\": [\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 920,
+    "completion_tokens": 133,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 6.492799397000454,
+    "itl_s": [
+      0.0003928870000891038,
+      0.06119532499997149,
+      0.03355574899978819,
+      0.04796333499962202,
+      0.08946940199984965,
+      0.03529461100060871
+    ],
+    "total_s": 6.7709477719999995
+  },
+  "started_at": "2026-11-21T14:03:23.114+00:00",
+  "finish_reason": "stop"
+}

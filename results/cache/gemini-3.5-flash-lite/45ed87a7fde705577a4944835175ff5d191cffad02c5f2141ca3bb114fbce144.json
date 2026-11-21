@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"Q/27/8260\",\n  \"quote_date\": \"2027-03-23\",\n  \"valid_until\": \"2027-04-22\",\n  \"client_name\": \"Al Hadaf Building Materials LLC\",\n  \"line_item_count\": 7,\n  \"subtotal\": 32749.25,\n  \"vat_amount\": 1637.46,\n  \"total\": 34386.71\n}",
+  "usage": {
+    "prompt_tokens": 977,
+    "completion_tokens": 133,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.46890798000004,
+    "itl_s": [
+      0.0005956619997959933,
+      0.0003627440000855131,
+      0.11275502499984214,
+      0.0005233960000623483,
+      0.04094654400023501,
+      0.03921409999975367
+    ],
+    "total_s": 1.7070722180001212
+  },
+  "started_at": "2026-11-21T13:33:04.788+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Al Waha Interior Design FZCO\",\n  \"supplier_trn\": \"100510182961000\",\n  \"invoice_number\": \"TI-04678\",\n  \"invoice_date\": \"2024-09-03\",\n  \"customer_name\": \"Al Fajr Consultancy LLC\",\n  \"customer_trn\": \"100351610854929\",\n  \"subtotal\": 4630.25,\n  \"vat_amount\": 231.51,\n  \"total\": 4861.76,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1039,
+    "completion_tokens": 169,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.4147150240000883,
+    "itl_s": [
+      0.0006213100000422855,
+      0.0011248489995523414,
+      0.04270073900033822,
+      0.07243988999971407,
+      0.09174068900028942,
+      0.055007149999710236,
+      0.037795068000377796,
+      0.04867633499998192
+    ],
+    "total_s": 1.7663476799998534
+  },
+  "started_at": "2026-11-21T13:30:16.793+00:00",
+  "finish_reason": "stop"
+}

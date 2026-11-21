@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-bi-02",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"94874\",\n  \"company_name_ar\": \"نجم الصحراء لقطع غيار السيارات ش.م.ح\",\n  \"company_name_en\": \"Najm Al Sahra Auto Parts FZCO\",\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"International Free Zone Authority\",\n  \"issue_date\": \"2026-03-01\",\n  \"expiry_date\": \"2027-02-28\",\n  \"activities\": [\n    \"Auto Spare Parts Trading\",\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "94874",
+        "company_name_ar": "نجم الصحراء لقطع غيار السيارات ش.م.ح",
+        "company_name_en": "Najm Al Sahra Auto Parts FZCO",
+        "legal_form": "FZCO",
+        "issuing_authority": "International Free Zone Authority",
+        "issue_date": "2026-03-01",
+        "expiry_date": "2027-02-28",
+        "activities": [
+          "Auto Spare Parts Trading",
+          "Perfumes and Cosmetics Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1122,
+      "completion_tokens": 153,
+      "usage_estimated": false,
+      "ttft_s": 0.9685215409999728,
+      "itl_s": [
+        0.0012891370006400393,
+        0.011577970999496756,
+        0.11597904800055403,
+        0.0004891379994660383,
+        0.019261528000242834,
+        0.055248128999664914
+      ],
+      "total_s": 1.187896063000153,
+      "started_at": "2026-11-21T14:02:43.144+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "94874",
+    "company_name_ar": "نجم الصحراء لقطع غيار السيارات ش.م.ح",
+    "company_name_en": "Najm Al Sahra Auto Parts FZCO",
+    "legal_form": "FZCO",
+    "issuing_authority": "International Free Zone Authority",
+    "issue_date": "2026-03-01",
+    "expiry_date": "2027-02-28",
+    "activities": [
+      "Auto Spare Parts Trading",
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

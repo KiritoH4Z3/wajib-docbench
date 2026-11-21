@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-bi-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"35336\",\n  \"company_name_ar\": \"دار الياسمين لمواد البناء ذ.م.م\",\n  \"company_name_en\": \"Dar Al Yasmin Building Materials L.L.C\",\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"Ras Al Khaimah Department of Economic Development\",\n  \"issue_date\": \"2025-11-10\",\n  \"expiry_date\": \"2026-11-09\",\n  \"activities\": [\n    \"General Trading\",\n    \"Building Materials Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "35336",
+        "company_name_ar": "دار الياسمين لمواد البناء ذ.م.م",
+        "company_name_en": "Dar Al Yasmin Building Materials L.L.C",
+        "legal_form": "LLC",
+        "issuing_authority": "Ras Al Khaimah Department of Economic Development",
+        "issue_date": "2025-11-10",
+        "expiry_date": "2026-11-09",
+        "activities": [
+          "General Trading",
+          "Building Materials Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1094,
+      "completion_tokens": 153,
+      "usage_estimated": false,
+      "ttft_s": 0.9038482630003273,
+      "itl_s": [
+        0.0004110099998797523,
+        0.03352446400003828,
+        0.05263761399965006,
+        0.04659211800026242,
+        0.03926035899985436,
+        0.0652041379998991,
+        0.0845979650002846
+      ],
+      "total_s": 1.2361018219999096,
+      "started_at": "2026-11-21T14:02:35.143+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "35336",
+    "company_name_ar": "دار الياسمين لمواد البناء ذ.م.م",
+    "company_name_en": "Dar Al Yasmin Building Materials L.L.C",
+    "legal_form": "LLC",
+    "issuing_authority": "Ras Al Khaimah Department of Economic Development",
+    "issue_date": "2025-11-10",
+    "expiry_date": "2026-11-09",
+    "activities": [
+      "General Trading",
+      "Building Materials Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-07017\",\n  \"quote_date\": \"2025-04-28\",\n  \"valid_until\": \"2025-05-12\",\n  \"client_name\": \"Barq Al Shamal Cleaning Services Est.\",\n  \"line_item_count\": 4,\n  \"subtotal\": 9342.75,\n  \"vat_amount\": 467.14,\n  \"total\": 9809.89\n}",
+  "usage": {
+    "prompt_tokens": 1099,
+    "completion_tokens": 130,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8359631130006164,
+    "itl_s": [
+      0.0005102830000396352,
+      0.0529535659998146,
+      0.055552671999976155,
+      0.06148235000000568,
+      0.0806124529999579,
+      0.05580620500040823
+    ],
+    "total_s": 1.2026306870002372
+  },
+  "started_at": "2026-11-21T14:06:55.599+00:00",
+  "finish_reason": "stop"
+}

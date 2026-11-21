@@ -1,0 +1,46 @@
+{
+  "doc_id": "trc-ar-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": \"100965152225478\",\n  \"legal_name_ar\": \"الهدف لتنظيم الفعاليات ش.م.ح\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2026-06-26\"\n}",
+      "parsed": {
+        "trn": "100965152225478",
+        "legal_name_ar": "الهدف لتنظيم الفعاليات ش.م.ح",
+        "legal_name_en": null,
+        "tax_type": "CORPORATE_TAX",
+        "effective_date": "2026-06-26"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 687,
+      "completion_tokens": 92,
+      "usage_estimated": false,
+      "ttft_s": 10.278228461999788,
+      "itl_s": [
+        0.000455213999885018,
+        0.00024784500055829994,
+        0.14355088799948135,
+        0.0015003560001787264
+      ],
+      "total_s": 10.446143260000099,
+      "started_at": "2026-11-21T14:04:27.115+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": "100965152225478",
+    "legal_name_ar": "الهدف لتنظيم الفعاليات ش.م.ح",
+    "legal_name_en": null,
+    "tax_type": "CORPORATE_TAX",
+    "effective_date": "2026-06-26"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

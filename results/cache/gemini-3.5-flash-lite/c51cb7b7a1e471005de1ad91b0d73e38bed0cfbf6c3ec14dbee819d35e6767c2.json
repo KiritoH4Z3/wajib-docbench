@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100992587740606\",\n  \"legal_name_ar\": \"شركة المرجان للتصميم الداخلي\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2024-06-14\"\n}",
+  "usage": {
+    "prompt_tokens": 679,
+    "completion_tokens": 84,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 2.319221576999553,
+    "itl_s": [
+      0.0003241180002078181,
+      0.0005568750002566958,
+      0.0011196010000276146,
+      0.0006237110001166002
+    ],
+    "total_s": 2.3230425470001137
+  },
+  "started_at": "2026-11-21T14:04:03.113+00:00",
+  "finish_reason": "stop"
+}

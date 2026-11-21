@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-07815\",\n  \"quote_date\": \"2027-01-12\",\n  \"valid_until\": \"2027-02-11\",",
+  "usage": {
+    "prompt_tokens": 803,
+    "completion_tokens": 56,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.9438638089995948,
+    "itl_s": [
+      0.00037902500025666086,
+      0.00022701800025970442,
+      21.825399112000014,
+      0.0073705169997992925
+    ],
+    "total_s": 23.784476195000025
+  },
+  "started_at": "2026-11-21T14:00:46.307+00:00",
+  "finish_reason": null
+}

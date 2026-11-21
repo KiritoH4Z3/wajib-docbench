@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-05563\",\n  \"quote_date\": \"2024-10-13\",\n  \"valid_until\": \"2024-10-28\",\n  \"client_name\": \"Al Dana Events FZE\",\n  \"line_item_count\": 8,\n  \"subtotal\": 26191.06,\n  \"vat_amount\": 1309.55,\n  \"total\": 27500.61\n}",
+  "usage": {
+    "prompt_tokens": 967,
+    "completion_tokens": 130,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 6.556414280000354,
+    "itl_s": [
+      0.0004935010001645423,
+      0.05277981600011117,
+      0.06614233899927058,
+      6.0667262980005034,
+      0.038323478999700455,
+      0.09119822499997099,
+      0.0369295990003593,
+      0.053455532000043604
+    ],
+    "total_s": 12.98012430200015
+  },
+  "started_at": "2026-11-21T14:01:26.122+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"supplier_name\": \"فرع النخلة لخدمات التنظيف\",\n  \"supplier_trn\": \"100360467758927\",\n  \"invoice_number\": \"INV-2026-98823\",\n  \"invoice_date\": \"2026-05-05\",\n  \"customer_name\": \"شركة الثريا لتنظيم الفعاليات\",\n  \"customer_trn\": \"100430626515821\",\n  \"subtotal\": 22895.00,\n  \"vat_amount\": 1144.75,\n  \"total\": 24039.75,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1030,
+    "completion_tokens": 184,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.7461850169997888,
+    "itl_s": [
+      0.06420907800020359,
+      0.0006856549998701666,
+      0.013369839000006323,
+      0.03804234200015344,
+      0.042302520999783155,
+      0.037957610999910685,
+      0.03700350000008257,
+      0.05053920099999232
+    ],
+    "total_s": 1.057564994999666
+  },
+  "started_at": "2026-11-21T13:56:57.484+00:00",
+  "finish_reason": "stop"
+}

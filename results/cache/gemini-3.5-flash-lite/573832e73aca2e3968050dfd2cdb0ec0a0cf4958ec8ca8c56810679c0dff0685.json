@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Sahil Al Dhahab Foodstuff Trading Est.\",\n  \"supplier_trn\": \"100388371800003\",\n  \"invoice_number\": \"INV-2024-023011\",\n  \"invoice_date\": null,\n  \"customer_name\": \"Al Thuraya Interior Design FZCO\",\n  \"customer_trn\": null,\n  \"subtotal\": 224.0,\n  \"vat_amount\": 11.2,\n  \"total\": 235.2,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1186,
+    "completion_tokens": 149,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.4941301630001362,
+    "itl_s": [
+      0.0005540439997275826,
+      0.04487424300032217,
+      0.04153400099994542,
+      0.04656485699979385,
+      0.06028271900004256,
+      0.05912075000014738
+    ],
+    "total_s": 1.7572145849999288
+  },
+  "started_at": "2026-11-21T13:29:36.792+00:00",
+  "finish_reason": "stop"
+}

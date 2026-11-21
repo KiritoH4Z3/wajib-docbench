@@ -1,0 +1,62 @@
+{
+  "doc_id": "tl-en-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"9599018\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Fajr IT Solutions FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2024-01-28\",\n  \"expiry_date\": \"2025-01-27\",\n  \"activities\": [\n    \"IT Consultancy\",\n    \"Management Consultancy\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "9599018",
+        "company_name_ar": null,
+        "company_name_en": "Al Fajr IT Solutions FZE",
+        "legal_form": "FZE",
+        "issuing_authority": "Ras Al Khaimah Economic Zone",
+        "issue_date": "2024-01-28",
+        "expiry_date": "2025-01-27",
+        "activities": [
+          "IT Consultancy",
+          "Management Consultancy"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 906,
+      "completion_tokens": 135,
+      "usage_estimated": false,
+      "ttft_s": 0.862755245000244,
+      "itl_s": [
+        0.0006040079997546854,
+        0.0004919759999211237,
+        0.2906738300002871,
+        0.00032710699997551274,
+        0.09233651299973644,
+        0.06915046800031632,
+        0.024476135999975668,
+        0.07508208099989133
+      ],
+      "total_s": 1.7417551799999273,
+      "started_at": "2026-11-21T13:53:11.500+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "9599018",
+    "company_name_ar": null,
+    "company_name_en": "Al Fajr IT Solutions FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2024-01-28",
+    "expiry_date": "2025-01-27",
+    "activities": [
+      "IT Consultancy",
+      "Management Consultancy"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

@@ -230,7 +230,8 @@ rates they come from.
       "targets": { "<metric>": { "target": "...", "value": 0.0, "ci95": [],
                                  "met": "true | false | inconclusive | null", "reason": null,
                                  "n": 60, "k": "poisoned target only" } },
-      "server": { "image": "...", "parallel": 4, "weights_sha256": "..." }
+      "server": { "image": "...", "image_digest": "...", "parallel_slots": 8, "ctx_per_slot": 4096,
+                  "shared_ctx": 12288, "weights_sha256": "...", "gpu_mib_after_load": 0 }
     }
   },
   "comparisons": [ { "a": "<open model>", "b": "<api model>", "metric": "field_f1.ar_bi",

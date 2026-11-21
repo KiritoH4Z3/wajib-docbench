@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"Q/24/7595\",\n  \"quote_date\": \"2024-05-04\",\n  \"valid_until\": \"2024-06-03\",\n  \"client_name\": \"المرجان لتنظيم الفعاليات ش.م.ح\",\n  \"line_item_count\": 3,\n  \"subtotal\": 6443.86,\n  \"vat_amount\": 322.19,\n  \"total\": 6766.05\n}",
+  "usage": {
+    "prompt_tokens": 873,
+    "completion_tokens": 137,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8456882359996598,
+    "itl_s": [
+      0.0004259940001247742,
+      0.03201313499994285,
+      0.05009902600022542,
+      0.04305107899972427,
+      0.05068394900035855,
+      0.05831993599986163
+    ],
+    "total_s": 1.0871114699998543
+  },
+  "started_at": "2026-11-21T13:59:29.485+00:00",
+  "finish_reason": "stop"
+}

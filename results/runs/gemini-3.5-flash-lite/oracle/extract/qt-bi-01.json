@@ -1,0 +1,53 @@
+{
+  "doc_id": "qt-bi-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QTN-07017\",\n  \"quote_date\": \"2025-04-28\",\n  \"valid_until\": \"2025-05-12\",\n  \"client_name\": \"Barq Al Shamal Cleaning Services Est.\",\n  \"line_item_count\": 4,\n  \"subtotal\": 9342.75,\n  \"vat_amount\": 467.14,\n  \"total\": 9809.89\n}",
+      "parsed": {
+        "quote_number": "QTN-07017",
+        "quote_date": "2025-04-28",
+        "valid_until": "2025-05-12",
+        "client_name": "Barq Al Shamal Cleaning Services Est.",
+        "line_item_count": 4,
+        "subtotal": "9342.75",
+        "vat_amount": "467.14",
+        "total": "9809.89"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1025,
+      "completion_tokens": 130,
+      "usage_estimated": false,
+      "ttft_s": 1.4008868989999428,
+      "itl_s": [
+        0.0003627050000432064,
+        0.05431234400020912,
+        0.03600519699966753,
+        0.05779204899999968,
+        0.062219352000283834
+      ],
+      "total_s": 1.6176707790000364,
+      "started_at": "2026-11-21T13:59:37.456+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QTN-07017",
+    "quote_date": "2025-04-28",
+    "valid_until": "2025-05-12",
+    "client_name": "Barq Al Shamal Cleaning Services Est.",
+    "line_item_count": 4,
+    "subtotal": "9342.75",
+    "vat_amount": "467.14",
+    "total": "9809.89"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

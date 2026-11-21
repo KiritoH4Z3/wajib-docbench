@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-01871\",\n  \"quote_date\": \"2024-12-31\",\n  \"valid_until\": \"2025-01-15\",\n  \"client_name\": \"Al Reem IT Solutions FZ-LLC\",\n  \"line_item_count\": 4,\n  \"subtotal\": 13338.30,\n  \"vat_amount\": 666.92,\n  \"total\": 14005.22\n}",
+  "usage": {
+    "prompt_tokens": 1043,
+    "completion_tokens": 134,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.355157588000111,
+    "itl_s": [
+      0.01616706000004342,
+      0.00774886899989724,
+      0.01667265400010365,
+      0.0798050680000415,
+      0.0007278739999492245,
+      0.03354131800006144
+    ],
+    "total_s": 1.5177771419998862
+  },
+  "started_at": "2026-11-21T13:59:45.467+00:00",
+  "finish_reason": "stop"
+}

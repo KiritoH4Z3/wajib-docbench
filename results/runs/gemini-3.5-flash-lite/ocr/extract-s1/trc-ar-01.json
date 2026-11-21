@@ -1,0 +1,45 @@
+{
+  "doc_id": "trc-ar-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"trn\": null,\n  \"legal_name_ar\": \"شركة المرجان للتصميمالداخلي\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": null\n}",
+      "parsed": {
+        "trn": null,
+        "legal_name_ar": "شركة المرجان للتصميمالداخلي",
+        "legal_name_en": null,
+        "tax_type": "VAT",
+        "effective_date": null
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 693,
+      "completion_tokens": 59,
+      "usage_estimated": false,
+      "ttft_s": 3.498483261999354,
+      "itl_s": [
+        0.0022722100002283696,
+        0.03774677999990672,
+        0.04247131700049067
+      ],
+      "total_s": 3.699139431999356,
+      "started_at": "2026-11-21T14:07:43.622+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "trn": null,
+    "legal_name_ar": "شركة المرجان للتصميمالداخلي",
+    "legal_name_en": null,
+    "tax_type": "VAT",
+    "effective_date": null
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"quote_number\": \"QT-2025-0180\",\n  \"quote_date\": \"2025-06-13\",\n  \"valid_until\": \"2025-06-27\",\n  \"client_name\": \"Sahil Al Dhahab",
+  "usage": {
+    "prompt_tokens": 941,
+    "completion_tokens": 73,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.7501509550002083,
+    "itl_s": [
+      0.0003634649992818595,
+      0.0271789610005726,
+      0.035789798999758204,
+      0.346095277999666,
+      0.0007867430003898335
+    ],
+    "total_s": 1.206119939999553
+  },
+  "started_at": "2026-11-21T14:00:25.483+00:00",
+  "finish_reason": null
+}

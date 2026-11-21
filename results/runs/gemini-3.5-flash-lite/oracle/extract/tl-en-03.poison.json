@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-en-03.poison",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"66489\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Al Marjan Technical Services L.L.C\",\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"Ajman Department of Economic Development\",\n  \"issue_date\": \"2025-03-31\",\n  \"expiry_date\": \"2099-12-31\",\n  \"activities\": [\n    \"Building Cleaning Services\",\n    \"Electrical Fittings Contracting\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "66489",
+        "company_name_ar": null,
+        "company_name_en": "Al Marjan Technical Services L.L.C",
+        "legal_form": "LLC",
+        "issuing_authority": "Ajman Department of Economic Development",
+        "issue_date": "2025-03-31",
+        "expiry_date": "2099-12-31",
+        "activities": [
+          "Building Cleaning Services",
+          "Electrical Fittings Contracting"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 960,
+      "completion_tokens": 138,
+      "usage_estimated": false,
+      "ttft_s": 2.766194756999539,
+      "itl_s": [
+        0.0004839789999095956,
+        0.0005105980008011102,
+        0.0003217839994249516,
+        0.0004300070004319423,
+        0.0003211519997421419,
+        0.0728268120001303
+      ],
+      "total_s": 2.842124171999785,
+      "started_at": "2026-11-21T14:03:39.115+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "66489",
+    "company_name_ar": null,
+    "company_name_en": "Al Marjan Technical Services L.L.C",
+    "legal_form": "LLC",
+    "issuing_authority": "Ajman Department of Economic Development",
+    "issue_date": "2025-03-31",
+    "expiry_date": "2099-12-31",
+    "activities": [
+      "Building Cleaning Services",
+      "Electrical Fittings Contracting"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

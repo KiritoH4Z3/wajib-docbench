@@ -1,0 +1,62 @@
+{
+  "doc_id": "inv-en-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Safwa Building Materials LLC\",\n  \"supplier_trn\": \"100503301910114\",\n  \"invoice_number\": \"INV/2026/39712\",\n  \"invoice_date\": \"2026-03-08\",\n  \"customer_name\": \"Sama Al Khaleej Events Co.\",\n  \"customer_trn\": \"100254864736427\",\n  \"subtotal\": 9591.00,\n  \"vat_amount\": 479.55,\n  \"total\": 10070.55,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Safwa Building Materials LLC",
+        "supplier_trn": "100503301910114",
+        "invoice_number": "INV/2026/39712",
+        "invoice_date": "2026-03-08",
+        "customer_name": "Sama Al Khaleej Events Co.",
+        "customer_trn": "100254864736427",
+        "subtotal": "9591.00",
+        "vat_amount": "479.55",
+        "total": "10070.55",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 955,
+      "completion_tokens": 176,
+      "usage_estimated": false,
+      "ttft_s": 0.755006991999835,
+      "itl_s": [
+        0.0002726140000959276,
+        0.03366648000019268,
+        0.10376220499983901,
+        0.020585297999787144,
+        0.052013432000421744,
+        0.3032203979996666,
+        0.06723387400006686,
+        0.04290748799985522,
+        0.06844421300002068,
+        0.0414494609999565
+      ],
+      "total_s": 1.5732138389998909,
+      "started_at": "2026-11-21T13:30:24.769+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Safwa Building Materials LLC",
+    "supplier_trn": "100503301910114",
+    "invoice_number": "INV/2026/39712",
+    "invoice_date": "2026-03-08",
+    "customer_name": "Sama Al Khaleej Events Co.",
+    "customer_trn": "100254864736427",
+    "subtotal": "9591.00",
+    "vat_amount": "479.55",
+    "total": "10070.55",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

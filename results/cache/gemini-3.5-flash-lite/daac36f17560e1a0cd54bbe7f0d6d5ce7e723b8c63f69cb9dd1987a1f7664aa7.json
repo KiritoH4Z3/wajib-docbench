@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"supplier_name\": \"مؤسسة دار الياسمينللعطور\",\n  \"supplier_trn\": \"001110\",\n  \"invoice_number\": \"01021113\",\n  \"invoice_date\": \"2017-02-01\",\n  \"customer_name\": \"راجيش كومارناير\",\n  \"customer_trn\": null,\n  \"subtotal\": 1105.00,\n  \"vat_amount\": 55.25,\n  \"total\": 1160.25,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 966,
+    "completion_tokens": 148,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8231130399999529,
+    "itl_s": [
+      0.0007274959998539998,
+      0.005315392000738939,
+      0.04518146099962905,
+      0.15008380800009036,
+      0.0004734289996122243,
+      0.008179161000043678,
+      0.049875386000167055
+    ],
+    "total_s": 1.0898877139998149
+  },
+  "started_at": "2026-11-21T14:09:31.931+00:00",
+  "finish_reason": "stop"
+}

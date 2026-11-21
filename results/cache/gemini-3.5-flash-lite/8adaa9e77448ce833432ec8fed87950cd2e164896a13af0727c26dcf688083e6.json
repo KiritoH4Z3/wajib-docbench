@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"licence_number\": \"426712\",\n  \"company_name_ar\": \"الواحة لتجارة المواد الغذائية ذ.م.م\",\n  \"company_name_en\": null,\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"دائرة الاقتصاد والسياحة في دبي\",\n  \"issue_date\": \"2025-05-04\",\n  \"expiry_date\": \"2026-05-03\",\n  \"activities\": [\n    \"تجارة المواد الغذائية\",\n    \"تجارة الأجهزة المنزلية\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1017,
+    "completion_tokens": 151,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.116981166000187,
+    "itl_s": [
+      0.0006174250002004555,
+      0.021576530999482202,
+      0.13409913099985715,
+      0.00032221800029219594,
+      0.027234686999690894,
+      0.052200754000296,
+      0.9451159760001246
+    ],
+    "total_s": 2.3488450140002897
+  },
+  "started_at": "2026-11-21T14:01:55.117+00:00",
+  "finish_reason": "stop"
+}

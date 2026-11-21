@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"licence_number\": \"67604\",\n  \"company_name_ar\": \"النخلة للعطور ش.م.ح\",\n  \"company_name_en\": null,\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"سلطة المنطقة الحرة الدولية\",\n  \"issue_date\": \"2026-04-19\",\n  \"expiry_date\": \"2027-04-18\",\n  \"activities\": [\n    \"تجارة العطور ومستحضرات التجميل\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 949,
+    "completion_tokens": 140,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.0421462720005366,
+    "itl_s": [
+      0.0647892299994055,
+      0.01650961900031689,
+      0.2014830730004178,
+      0.04786996399980126,
+      0.040854187999684655,
+      0.042918729999655625,
+      0.04561567600012495,
+      0.1064049470005557
+    ],
+    "total_s": 1.609940889000427
+  },
+  "started_at": "2026-11-21T14:02:27.144+00:00",
+  "finish_reason": "stop"
+}

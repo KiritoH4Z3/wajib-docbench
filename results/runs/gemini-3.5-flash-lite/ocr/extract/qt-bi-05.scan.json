@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-bi-05.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"Q/25/9333\",\n  \"quote_date\": \"2025-05-24\",\n  \"valid_until\": \"2025-06-23\",\n  \"client_name\": \"Al safwa Cleaning Services Branch\",\n  \"line_item_count\": 1,\n  \"subtotal\": 6326.25,\n  \"vat_amount\": 316.31,\n  \"total\": 6642.56\n}",
+      "parsed": {
+        "quote_number": "Q/25/9333",
+        "quote_date": "2025-05-24",
+        "valid_until": "2025-06-23",
+        "client_name": "Al safwa Cleaning Services Branch",
+        "line_item_count": 1,
+        "subtotal": "6326.25",
+        "vat_amount": "316.31",
+        "total": "6642.56"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 997,
+      "completion_tokens": 129,
+      "usage_estimated": false,
+      "ttft_s": 1.4026381220000985,
+      "itl_s": [
+        0.0008666230000926589,
+        0.00013968299981570453,
+        0.012369921999834332,
+        0.03864939699997194,
+        0.10004037300041091,
+        0.0005845919999956095
+      ],
+      "total_s": 1.556430262000049,
+      "started_at": "2026-11-21T13:32:32.790+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "Q/25/9333",
+    "quote_date": "2025-05-24",
+    "valid_until": "2025-06-23",
+    "client_name": "Al safwa Cleaning Services Branch",
+    "line_item_count": 1,
+    "subtotal": "6326.25",
+    "vat_amount": "316.31",
+    "total": "6642.56"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

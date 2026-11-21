@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-ar-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"CN-5938994\",\n  \"company_name_ar\": \"فرع برق الشمال لمواد البناء\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصادية في أبوظبي\",\n  \"issue_date\": \"2026-05-30\",\n  \"expiry_date\": \"2027-05-29\",\n  \"activities\": [\n    \"تجارة مواد البناء\",\n    \"التجارة العامة\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "CN-5938994",
+        "company_name_ar": "فرع برق الشمال لمواد البناء",
+        "company_name_en": null,
+        "legal_form": "BRANCH",
+        "issuing_authority": "دائرة التنمية الاقتصادية في أبوظبي",
+        "issue_date": "2026-05-30",
+        "expiry_date": "2027-05-29",
+        "activities": [
+          "تجارة مواد البناء",
+          "التجارة العامة"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 954,
+      "completion_tokens": 146,
+      "usage_estimated": false,
+      "ttft_s": 0.870049033000214,
+      "itl_s": [
+        0.051859664999938104,
+        0.0008413570003540372,
+        0.021414707000076305,
+        0.033796734000134165,
+        0.17975074199966912,
+        0.00035135799953422975,
+        0.016259128999990935
+      ],
+      "total_s": 1.1814305930001865,
+      "started_at": "2026-11-21T14:02:11.116+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "CN-5938994",
+    "company_name_ar": "فرع برق الشمال لمواد البناء",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصادية في أبوظبي",
+    "issue_date": "2026-05-30",
+    "expiry_date": "2027-05-29",
+    "activities": [
+      "تجارة مواد البناء",
+      "التجارة العامة"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

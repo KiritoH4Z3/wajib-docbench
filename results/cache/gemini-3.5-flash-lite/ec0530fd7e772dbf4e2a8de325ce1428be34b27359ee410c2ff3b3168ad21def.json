@@ -1,0 +1,26 @@
+{
+  "raw": "{\"supplier_name\": \"النور لتنظيم الفعاليات منطقة حرة ذ.م.م\", \"supplier_trn\": \"100696280273978\", \"invoice_number\": \"INV-2024-80871\", \"invoice_date\": \"2024-06-29\", \"customer_name\": \"فرع المرجان لمواد البناء\", \"customer_trn\": \"100692900531619\", \"subtotal\": 19793.00, \"vat_amount\": 989.65, \"total\": 20782.65, \"currency\": \"AED\"}",
+  "usage": {
+    "prompt_tokens": 1091,
+    "completion_tokens": 165,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.749893800999871,
+    "itl_s": [
+      0.03260792199989737,
+      0.04928279800014934,
+      0.03123498099967037,
+      0.03950921500018012,
+      0.04995481600008134,
+      0.02889510600016365,
+      0.0389322269998047
+    ],
+    "total_s": 1.0317721129999882
+  },
+  "started_at": "2026-11-21T13:56:33.481+00:00",
+  "finish_reason": "stop"
+}

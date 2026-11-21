@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-bi-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QT-2025-9359\",\n  \"quote_date\": \"2025-12-17\",\n  \"valid_until\": \"2026-01-01\",\n  \"client_name\": \"Durrat Al Shati Cleaning Services Est.\",\n  \"line_item_count\": 5,\n  \"subtotal\": 10320.05,\n  \"vat_amount\": 516.00,\n  \"total\": 10836.05\n}",
+      "parsed": {
+        "quote_number": "QT-2025-9359",
+        "quote_date": "2025-12-17",
+        "valid_until": "2026-01-01",
+        "client_name": "Durrat Al Shati Cleaning Services Est.",
+        "line_item_count": 5,
+        "subtotal": "10320.05",
+        "vat_amount": "516.00",
+        "total": "10836.05"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1061,
+      "completion_tokens": 135,
+      "usage_estimated": false,
+      "ttft_s": 0.8476926110001841,
+      "itl_s": [
+        0.0005703349997929763,
+        0.04098643200040897,
+        0.053541433999725996,
+        0.04137433300002158,
+        0.05070406599998023,
+        0.0979269720000957
+      ],
+      "total_s": 1.2224482700003136,
+      "started_at": "2026-11-21T14:00:01.480+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QT-2025-9359",
+    "quote_date": "2025-12-17",
+    "valid_until": "2026-01-01",
+    "client_name": "Durrat Al Shati Cleaning Services Est.",
+    "line_item_count": 5,
+    "subtotal": "10320.05",
+    "vat_amount": "516.00",
+    "total": "10836.05"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

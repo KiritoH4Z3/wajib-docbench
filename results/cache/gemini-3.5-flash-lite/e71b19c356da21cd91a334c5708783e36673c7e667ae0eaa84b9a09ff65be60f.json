@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"licence_number\": \"7171475\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Durrat Al Shati Consultancy FZ-LLC\",\n  \"legal_form\": \"FZ_LLC\",\n  \"issuing_authority\": \"Sharjah Media City\",\n  \"",
+  "usage": {
+    "prompt_tokens": 925,
+    "completion_tokens": 81,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.9060784520002017,
+    "itl_s": [
+      0.0011845599997286627,
+      0.19320231600022453,
+      0.03935018399988621,
+      0.0355947909997667,
+      0.05024367900023208
+    ],
+    "total_s": 1.2480999519998477
+  },
+  "started_at": "2026-11-21T13:53:27.503+00:00",
+  "finish_reason": null
+}

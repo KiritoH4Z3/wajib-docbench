@@ -81,14 +81,25 @@ b8106) and both vendors publish official GGUF files. The server exposes the same
 OpenAI-compatible endpoint, so the client code does not change. The scope's risk table already
 names llama.cpp as the fallback, and the engine comparison itself is out of scope until January.
 
-Pinned image: `ghcr.io/ggml-org/llama.cpp:server-cuda12-b12464`, digest recorded in
-`results/results.json` at run time. The CUDA 13 images are avoided because they require a newer
+Pinned image: `ghcr.io/ggml-org/llama.cpp:server-cuda12-b12464`. The tag's index digest is
+`sha256:ae96e52f8b2106ea82bad786ee2d08bb9b0a8c93403df9c27ae1bf065a118089` and its linux/amd64
+manifest is `sha256:6b1c681b535a15d406c7270fd2730f5bd36d3598fbb0ca894bfa47857a700fe3`, which
+is the digest Docker reports and `results/results.json` records for every run. The CUDA 13 images are avoided because they require a newer
 driver than the 580 series on this machine.
 
 Launch settings per model live in `config/models.yaml`:
 
 - Falcon-H1 7B: all layers on the GPU, 4,096 tokens of context per slot. Only 2 of its KV heads
   are cached per layer, so the cache is small (about 352 MiB at 8k context).
+
+  Measured on 21 November 2026, with about 1.5 GB of VRAM held by desktop apps: 4 slots load
+  at 5.6 GB. Falcon-H1 is a hybrid with Mamba layers, and its recurrent state takes about
+  134 MiB per slot whatever the context, so 16 slots need 2.1 GB for state alone and do not
+  load. Extraction runs on 4 slots. The throughput test runs on 8 slots that share one
+  12,288-token cache, each request still capped at 4,096 tokens (`make serve PARALLEL=8
+  SHARED_CTX=12288`), which loads at 7.5 GB and is the most that fits. At concurrency 16,
+  eight requests wait in the server's queue, and that wait is part of the measured time to
+  first token.
 - Jais 2 8B: all layers on the GPU, 4,096 tokens per slot, q8_0 KV cache. Jais 2 uses full
   multi-head attention (416 KiB of KV cache per token at fp16), so 8,192 tokens would not fit
   next to the weights. Its model card also warns that K-quants may need a small batch size on

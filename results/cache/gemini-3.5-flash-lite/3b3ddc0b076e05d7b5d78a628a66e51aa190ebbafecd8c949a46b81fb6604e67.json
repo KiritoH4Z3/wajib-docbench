@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Al Marjan Foodstuff Trading FZ-LLC\",\n  \"supplier_trn\": \"100848358215705\",\n  \"invoice_number\": \"INV/2025/68012\",\n  \"invoice_date\": \"2025-12-20\",\n  \"customer_name\": \"Durrat Al Shati Events Branch\",\n  \"customer_trn\": \"100557424795750\",\n  \"subtotal\": 11121.70,\n  \"vat_amount\": 556.09,\n  \"total\": 11677.79,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1047,
+    "completion_tokens": 181,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.2623887459999423,
+    "itl_s": [
+      0.0947490230000767,
+      0.0009027129999594763,
+      0.003374867999809794,
+      0.06275094600005104,
+      0.040760882000085985,
+      0.0878604350000387,
+      0.05388834199993653,
+      0.04895872099996268
+    ],
+    "total_s": 1.6637049639998622
+  },
+  "started_at": "2026-11-21T13:57:53.485+00:00",
+  "finish_reason": "stop"
+}

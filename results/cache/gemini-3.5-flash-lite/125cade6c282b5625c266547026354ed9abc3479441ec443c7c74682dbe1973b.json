@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"quote_number\": \"QTN-07897\",\n  \"quote_date\": \"2027-07-18\",\n  \"valid_until\": \"2027-09-16\",\n  \"client_name\": \"الهدف للخدمات اللوجستية م.م.ح\",\n  \"line_item_count\": 2,\n  \"subtotal\": 18787.25,\n  \"vat_amount\": 939.36,\n  \"total\": 19726.61\n}",
+  "usage": {
+    "prompt_tokens": 858,
+    "completion_tokens": 138,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.8032775809997474,
+    "itl_s": [
+      0.30461549100027696,
+      0.040084231999571784,
+      0.07362873600004605,
+      0.09146829200017237,
+      0.0457964689999244,
+      0.10954645699985122,
+      0.0009015010000439361
+    ],
+    "total_s": 2.502521878999687
+  },
+  "started_at": "2026-11-21T13:59:13.479+00:00",
+  "finish_reason": "stop"
+}

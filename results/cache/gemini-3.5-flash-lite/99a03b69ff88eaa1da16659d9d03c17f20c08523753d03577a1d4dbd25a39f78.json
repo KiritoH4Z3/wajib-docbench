@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"943455600722100\",\n  \"legal_name_ar\": \"فرع دار الياسمين للخدمات اللوجستية\",\n  \"legal_name_en\": null,\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2027-02-12\"\n}",
+  "usage": {
+    "prompt_tokens": 706,
+    "completion_tokens": 89,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8037380019995908,
+    "itl_s": [
+      0.000536315999852377,
+      0.03160327499972482,
+      0.04615797700080293,
+      0.06181797299996106
+    ],
+    "total_s": 0.9525997559994721
+  },
+  "started_at": "2026-11-21T14:04:19.112+00:00",
+  "finish_reason": "stop"
+}

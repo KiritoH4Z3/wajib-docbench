@@ -1,0 +1,77 @@
+{
+  "doc_id": "qt-en-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QT-2025-0180\",\n  \"quote_date\": \"2025-06-13\",\n  \"valid_until\": \"2",
+      "parsed": null,
+      "schema_valid": false,
+      "error": "no JSON object found in the reply",
+      "prompt_tokens": 932,
+      "completion_tokens": 49,
+      "usage_estimated": false,
+      "ttft_s": 1.5429114720000143,
+      "itl_s": [
+        0.0005960629996479838,
+        0.03236660299990035,
+        0.21558449799977097,
+        0.045451239000612986
+      ],
+      "total_s": 1.8630420989993581,
+      "started_at": "2026-11-21T14:07:03.591+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    },
+    {
+      "raw": "{\n  \"quote_number\": \"QT-2025-0180\",\n  \"quote_date\": \"2025-06-13\",\n  \"valid_until\": \"2025-06-27\",\n  \"client_name\": \"Sahil Al Dhahab Auto Parts Est.\",\n  \"line_item_count\": 6,\n  \"subtotal\": 17459.83,\n  \"vat_amount\": 872.99,\n  \"total\": 18332.82\n}",
+      "parsed": {
+        "quote_number": "QT-2025-0180",
+        "quote_date": "2025-06-13",
+        "valid_until": "2025-06-27",
+        "client_name": "Sahil Al Dhahab Auto Parts Est.",
+        "line_item_count": 6,
+        "subtotal": "17459.83",
+        "vat_amount": "872.99",
+        "total": "18332.82"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1007,
+      "completion_tokens": 136,
+      "usage_estimated": false,
+      "ttft_s": 1.7020023620007123,
+      "itl_s": [
+        0.0005733909993068664,
+        0.0002791110000543995,
+        0.023419136000484286,
+        0.036409985999853234,
+        0.04880286099978548,
+        0.041223879999961355
+      ],
+      "total_s": 1.8630829760004417,
+      "started_at": "2026-11-21T14:07:11.620+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QT-2025-0180",
+    "quote_date": "2025-06-13",
+    "valid_until": "2025-06-27",
+    "client_name": "Sahil Al Dhahab Auto Parts Est.",
+    "line_item_count": 6,
+    "subtotal": "17459.83",
+    "vat_amount": "872.99",
+    "total": "18332.82"
+  },
+  "schema_valid_first_try": false,
+  "api_error": null
+}

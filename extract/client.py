@@ -12,6 +12,7 @@ import hashlib
 import json
 import math
 import time
+import weakref
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
@@ -403,6 +404,27 @@ def _to_cache(path: Path, r: CallResult) -> None:
     tmp.replace(path)
 
 
+# Documents whose input text is identical share one cache entry: a scanned copy and its
+# original on the oracle source, or a poisoned document whose hidden injection OCR drops.
+# Without a lock, a run at concurrency 4 sends both at once, the second answer overwrites
+# the first in the cache, and `make bench` then replays a different answer than the one
+# that was scored. One lock per key makes the second wait and reuse it. A run is one event
+# loop (each extraction is one asyncio.run), so the state is kept per loop.
+@dataclass
+class _RunState:
+    locks: dict[str, asyncio.Lock] = field(default_factory=dict)
+    written: set[tuple[str, str]] = field(default_factory=set)
+
+
+_RUNS: weakref.WeakKeyDictionary[asyncio.AbstractEventLoop, _RunState] = (
+    weakref.WeakKeyDictionary()
+)
+
+
+def _run_state() -> _RunState:
+    return _RUNS.setdefault(asyncio.get_running_loop(), _RunState())
+
+
 async def get_completion(
     model: ModelConfig,
     messages: list[dict],
@@ -414,16 +436,21 @@ async def get_completion(
 ) -> CallResult:
     """Cached replay when possible, else a real call that is stored. fresh=True skips the
     read but still writes. use_cache=False neither reads nor writes. cache_only=True never
-    calls the server: a miss raises CacheMiss and nothing is written."""
+    calls the server: a miss raises CacheMiss and nothing is written. Identical inputs in one
+    run share a single call, even with fresh=True, so every document with the same text
+    carries the answer the cache holds."""
     key = cache_key(model, messages, sample)
     path = _cache_path(model, key)
-    if use_cache and not fresh:
-        hit = _from_cache(path)
-        if hit is not None:
-            return hit
-    if cache_only:
-        raise CacheMiss("", key, model.slug)
-    result = await call_model(model, messages, pacer)
-    if use_cache:
-        _to_cache(path, result)
-    return result
+    state = _run_state()
+    async with state.locks.setdefault(key, asyncio.Lock()):
+        if use_cache and (not fresh or (model.slug, key) in state.written):
+            hit = _from_cache(path)
+            if hit is not None:
+                return hit
+        if cache_only:
+            raise CacheMiss("", key, model.slug)
+        result = await call_model(model, messages, pacer)
+        if use_cache:
+            _to_cache(path, result)
+            state.written.add((model.slug, key))
+        return result

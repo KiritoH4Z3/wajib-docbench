@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100066312085688\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Al Manara Foodstuff Trading Co.\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-02-15\"\n}",
+  "usage": {
+    "prompt_tokens": 644,
+    "completion_tokens": 83,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8145588790002876,
+    "itl_s": [
+      0.0005188119994272711,
+      0.023058349000166345,
+      0.0488468900002772,
+      0.04848553299962077
+    ],
+    "total_s": 0.9461928809996607
+  },
+  "started_at": "2026-11-21T14:05:57.594+00:00",
+  "finish_reason": "stop"
+}

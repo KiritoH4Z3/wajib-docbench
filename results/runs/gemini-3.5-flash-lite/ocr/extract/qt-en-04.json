@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-en-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QTN-05563\",\n  \"quote_date\": \"2024-10-13\",\n  \"valid_until\": \"2024-10-28\",\n  \"client_name\": \"Al Dana Events FZE\",\n  \"line_item_count\": 8,\n  \"subtotal\": 26191.06,\n  \"vat_amount\": 1309.55,\n  \"total\": 27500.61\n}",
+      "parsed": {
+        "quote_number": "QTN-05563",
+        "quote_date": "2024-10-13",
+        "valid_until": "2024-10-28",
+        "client_name": "Al Dana Events FZE",
+        "line_item_count": 8,
+        "subtotal": "26191.06",
+        "vat_amount": "1309.55",
+        "total": "27500.61"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 992,
+      "completion_tokens": 130,
+      "usage_estimated": false,
+      "ttft_s": 0.9392045289996531,
+      "itl_s": [
+        0.000433707000411232,
+        0.021780249999665102,
+        0.0005856930001755245,
+        0.025825439000072947,
+        0.02434800599985465,
+        0.04031510499999058
+      ],
+      "total_s": 1.0957134870000118,
+      "started_at": "2026-11-21T13:33:20.776+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QTN-05563",
+    "quote_date": "2024-10-13",
+    "valid_until": "2024-10-28",
+    "client_name": "Al Dana Events FZE",
+    "line_item_count": 8,
+    "subtotal": "26191.06",
+    "vat_amount": "1309.55",
+    "total": "27500.61"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

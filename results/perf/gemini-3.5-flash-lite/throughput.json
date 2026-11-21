@@ -1,0 +1,35 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "parallel_slots": null,
+  "levels": {
+    "1": {
+      "docs": 60,
+      "wall_s": 519.9041571999996,
+      "docs_per_min": 6.924353171915746,
+      "docs_answered": 60,
+      "api_errors": 0,
+      "invalid_outputs": 0,
+      "errors": 0,
+      "prompt_cached_tokens": 0,
+      "ttft_p50_s": 1.0088970209999388,
+      "ttft_p95_s": 8.3873924624002,
+      "itl_p50_s": 0.041532258999723126,
+      "itl_p95_s": 0.13677169240008863,
+      "total_p50_s": 1.5163501790002556,
+      "total_p95_s": 10.082220402200436,
+      "mean_prompt_tokens": 967.1904761904761,
+      "mean_completion_tokens": 127.26984126984127,
+      "mean_prompt_tokens_per_doc": 1015.55,
+      "mean_completion_tokens_per_doc": 133.63333333333333,
+      "n_requests": 63,
+      "n_usage_estimated": 0
+    },
+    "4": {
+      "skipped": "concurrency 4 is above max_concurrency 1 for gemini-3.5-flash-lite (see config/models.yaml)"
+    },
+    "16": {
+      "skipped": "concurrency 16 is above max_concurrency 1 for gemini-3.5-flash-lite (see config/models.yaml)"
+    }
+  }
+}

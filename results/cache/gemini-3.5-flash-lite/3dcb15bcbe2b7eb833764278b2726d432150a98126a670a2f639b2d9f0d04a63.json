@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"licence_number\": null,\n  \"company_name_ar\": \"فرع نجم الصحراء للتجارة العامة\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصادية بعجمان\",\n  \"issue_date\": null,\n  \"expiry_date\": null,\n  \"activities\": [\n    \"تجارة الأجهزة المنزلية\",\n    \"تجارة الأثاث\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 966,
+    "completion_tokens": 119,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.9335575150007571,
+    "itl_s": [
+      0.22856215499996324,
+      0.05489011400004529,
+      0.047059352999895054,
+      0.037988786999449076,
+      0.05908399899999495,
+      0.08896442700006446
+    ],
+    "total_s": 1.5612476109999989
+  },
+  "started_at": "2026-11-21T14:07:19.607+00:00",
+  "finish_reason": "stop"
+}

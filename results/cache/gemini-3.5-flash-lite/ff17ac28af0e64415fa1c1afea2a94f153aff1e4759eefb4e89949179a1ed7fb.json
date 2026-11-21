@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"trn\": \"100532571113080\",\n  \"legal_name_ar\": null,\n  \"legal_name_en\": \"Al Reem Technical Services FZ-LLC\",\n  \"tax_type\": \"CORPORATE_TAX\",\n  \"effective_date\": \"2026-09-30\"\n}",
+  "usage": {
+    "prompt_tokens": 647,
+    "completion_tokens": 89,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.1511790209997343,
+    "itl_s": [
+      0.00031993900029192446,
+      0.005947925000327814,
+      0.04071710999960487,
+      0.046499574999870674
+    ],
+    "total_s": 1.256549833000463
+  },
+  "started_at": "2026-11-21T14:05:49.571+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"Q/27/2845\",\n  \"quote_date\": \"2027-02-14\",\n  \"valid_until\": \"2027-03-31\",\n  \"client_name\": \"ساحل الذهب للتصميم الداخلي zee\",\n  \"line_item_count\": 1,\n  \"subtotal\": 4545.75,\n  \"vat_amount\": 227.29,\n  \"total\": 4773.04\n}",
+  "usage": {
+    "prompt_tokens": 826,
+    "completion_tokens": 132,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 4.790973417000259,
+    "itl_s": [
+      0.0005052719998275279,
+      0.0001457140001548396,
+      0.004825089999940246,
+      0.05862053800001377,
+      0.04235142000015912,
+      0.057060789999923145
+    ],
+    "total_s": 4.965664606000246
+  },
+  "started_at": "2026-11-21T13:30:56.786+00:00",
+  "finish_reason": "stop"
+}

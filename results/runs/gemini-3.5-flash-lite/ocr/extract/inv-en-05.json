@@ -1,0 +1,59 @@
+{
+  "doc_id": "inv-en-05",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Reem Technical Services Branch\",\n  \"supplier_trn\": \"100378653017276\",\n  \"invoice_number\": \"TI-29040\",\n  \"invoice_date\": \"2027-03-11\",\n  \"customer_name\": \"Tariq Nabil Khoury\",\n  \"customer_trn\": null,\n  \"subtotal\": 178.00,\n  \"vat_amount\": 8.90,\n  \"total\": 186.90,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Reem Technical Services Branch",
+        "supplier_trn": "100378653017276",
+        "invoice_number": "TI-29040",
+        "invoice_date": "2027-03-11",
+        "customer_name": "Tariq Nabil Khoury",
+        "customer_trn": null,
+        "subtotal": "178.00",
+        "vat_amount": "8.90",
+        "total": "186.90",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 931,
+      "completion_tokens": 150,
+      "usage_estimated": false,
+      "ttft_s": 1.5344793130002472,
+      "itl_s": [
+        0.0005770769998889591,
+        0.01042355600020528,
+        0.01945860499972696,
+        0.04622230299992225,
+        0.09058691500013083,
+        0.042178695000075095,
+        0.0783483699997305
+      ],
+      "total_s": 1.839721961000123,
+      "started_at": "2026-11-21T13:30:40.791+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Reem Technical Services Branch",
+    "supplier_trn": "100378653017276",
+    "invoice_number": "TI-29040",
+    "invoice_date": "2027-03-11",
+    "customer_name": "Tariq Nabil Khoury",
+    "customer_trn": null,
+    "subtotal": "178.00",
+    "vat_amount": "8.90",
+    "total": "186.90",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Durrat Al Shati Interior Design FZ-LLC\",\n  \"supplier_trn\": \"100355473619034\",\n  \"invoice_number\": \"INV-2026-045122\",\n  \"invoice_date\": \"2026-05-11\",\n  \"customer_name\": \"Rajesh Kumar Nair\",\n  \"customer_trn\": null,\n  \"subtotal\": 14404.5,\n  \"vat_amount\": 720.23,\n  \"total\": 15124.73,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1302,
+    "completion_tokens": 164,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.4767582479998964,
+    "itl_s": [
+      0.0006523990000459889,
+      0.00344487999973353,
+      0.0779185100000177,
+      0.0005472110001392139,
+      0.04224248499986061,
+      0.043641251000281045,
+      0.040422736999971676
+    ],
+    "total_s": 1.6881274200000007
+  },
+  "started_at": "2026-11-21T13:29:20.772+00:00",
+  "finish_reason": "stop"
+}

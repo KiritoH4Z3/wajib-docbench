@@ -1,0 +1,29 @@
+{
+  "raw": "{\n  \"supplier_name\": \"الفجر لخلول تقنية المعلوماتم.م.ح\",\n  \"supplier_trn\": \"100092582697449\",\n  \"invoice_number\": \"INV-2024-11973\",\n  \"invoice_date\": \"2024-10-03\",\n  \"customer_name\": \"فرع الريمللعطور\",\n  \"customer_trn\": \"100425977913858\",\n  \"subtotal\": 48479.7,\n  \"vat_amount\": 2421.12,\n  \"total\": 50900.82,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 1193,
+    "completion_tokens": 182,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.930805011999837,
+    "itl_s": [
+      0.0003899739999724261,
+      0.0005461290002131136,
+      0.0005124949998389638,
+      0.0004494270001487166,
+      0.00028569799997058,
+      0.00032406099990112125,
+      0.0005011540001760295,
+      0.00028241199970580055,
+      0.0002532670000618964,
+      0.020230560000072728
+    ],
+    "total_s": 1.966685372000029
+  },
+  "started_at": "2026-11-21T13:28:16.793+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Al Safwa Building Materials LLC\",\n  \"supplier_trn\": \"100503301910114\",\n  \"invoice_number\": \"INV/2026/39712\",\n  \"invoice_date\": \"2026-03-08\",\n  \"customer_name\": \"Sama Al Khaleej Events Co.\",\n  \"customer_trn\": \"100254864736427\",\n  \"subtotal\": 9591.00,\n  \"vat_amount\": 479.55,\n  \"total\": 10070.55,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 958,
+    "completion_tokens": 176,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.4690441149996332,
+    "itl_s": [
+      0.0005789620004179596,
+      0.0001326609999523498,
+      0.03254202299967801,
+      0.03370256400012295,
+      0.044857391999812535,
+      0.04377591100001155,
+      0.0480920260001767,
+      0.026576687000215315
+    ],
+    "total_s": 1.7060323499999868
+  },
+  "started_at": "2026-11-21T13:58:33.480+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"quote_number\": \"Q/27/0056\",\n  \"quote_date\": \"2027-05-31\",\n  \"valid_until\": \"2027-06-15\",\n  \"client_name\": \"Al Dana Auto Parts Est.\",\n  \"line_item_count\": 1,\n  \"subtotal\": 4014.00,\n  \"vat_amount\": 200.70,\n  \"total\": 4214.70\n}",
+  "usage": {
+    "prompt_tokens": 936,
+    "completion_tokens": 128,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.5075290079998922,
+    "itl_s": [
+      0.000512847000209149,
+      0.04407176699987758,
+      0.039999543000249105,
+      0.17868563799993353,
+      0.041458652000073926,
+      0.0584893289997126,
+      0.05947333200037974,
+      0.0739729689998967
+    ],
+    "total_s": 2.0111136870000337
+  },
+  "started_at": "2026-11-21T13:59:53.461+00:00",
+  "finish_reason": "stop"
+}

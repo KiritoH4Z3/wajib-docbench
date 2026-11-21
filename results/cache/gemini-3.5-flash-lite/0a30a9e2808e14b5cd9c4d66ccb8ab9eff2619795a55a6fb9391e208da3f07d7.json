@@ -1,0 +1,24 @@
+{
+  "raw": "{\n  \"trn\": \"100099643885633\",\n  \"legal_name_ar\": \"بيت الخليج للاستشارات منطقة حرة ذ.م.م\",\n  \"legal_name_en\": \"Bait Al Khaleej Consultancy FZ-LLC\",\n  \"tax_type\": \"VAT\",\n  \"effective_date\": \"2026-03-19\"\n}",
+  "usage": {
+    "prompt_tokens": 820,
+    "completion_tokens": 102,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.5525824930000454,
+    "itl_s": [
+      0.00034447699999873294,
+      0.03286483200008661,
+      0.03886447999957454,
+      0.06940064300033555,
+      0.04574806799973885
+    ],
+    "total_s": 1.768256502999975
+  },
+  "started_at": "2026-11-21T14:05:01.605+00:00",
+  "finish_reason": "stop"
+}

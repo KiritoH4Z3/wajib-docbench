@@ -1,0 +1,103 @@
+{
+  "doc_id": "tl-ar-01.scan",
+  "model_slug": "falcon-h1-7b",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "licence_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "issue_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_order",
+      "field": "expiry_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "licence_validity_plausible",
+      "field": "expiry_date",
+      "passed": false,
+      "detail": "expiry_date 2071-06-01 is more than 5 years after issue_date 2017-06-17, which no UAE licence runs"
+    },
+    {
+      "name": "grounding",
+      "field": "licence_number",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "company_name_ar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "legal_form",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "issuing_authority",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "issue_date",
+      "passed": false,
+      "detail": "issue_date 2017-06-17 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "expiry_date",
+      "passed": false,
+      "detail": "expiry_date 2071-06-01 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "activities",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "expiry_date 2071-06-01 is more than 5 years after issue_date 2017-06-17, which no UAE licence runs",
+    "issue_date 2017-06-17 does not appear in the document text",
+    "expiry_date 2071-06-01 does not appear in the document text"
+  ]
+}

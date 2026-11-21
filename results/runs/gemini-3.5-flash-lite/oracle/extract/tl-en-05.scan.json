@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-en-05.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"7171475\",\n  \"company_name_ar\": null,\n  \"company_name_en\": \"Durrat Al Shati Consultancy FZ-LLC\",\n  \"legal_form\": \"FZ_LLC\",\n  \"issuing_authority\": \"Sharjah Media City\",\n  \"issue_date\": \"2025-02-02\",\n  \"expiry_date\": \"2026-02-01\",\n  \"activities\": [\n    \"Management Consultancy\",\n    \"IT Consultancy\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "7171475",
+        "company_name_ar": null,
+        "company_name_en": "Durrat Al Shati Consultancy FZ-LLC",
+        "legal_form": "FZ_LLC",
+        "issuing_authority": "Sharjah Media City",
+        "issue_date": "2025-02-02",
+        "expiry_date": "2026-02-01",
+        "activities": [
+          "Management Consultancy",
+          "IT Consultancy"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 917,
+      "completion_tokens": 139,
+      "usage_estimated": false,
+      "ttft_s": 7.357960209999874,
+      "itl_s": [
+        0.00044011499994667247,
+        0.003404599000532471,
+        0.04880247999972198,
+        0.10450459599996975,
+        0.0004810529999303981,
+        0.088954226000169
+      ],
+      "total_s": 7.626097477999792,
+      "started_at": "2026-11-21T14:03:55.146+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "7171475",
+    "company_name_ar": null,
+    "company_name_en": "Durrat Al Shati Consultancy FZ-LLC",
+    "legal_form": "FZ_LLC",
+    "issuing_authority": "Sharjah Media City",
+    "issue_date": "2025-02-02",
+    "expiry_date": "2026-02-01",
+    "activities": [
+      "Management Consultancy",
+      "IT Consultancy"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

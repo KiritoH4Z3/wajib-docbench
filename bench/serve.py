@@ -111,8 +111,18 @@ def gpu_memory_used_mib() -> int | None:
         return None
 
 
-def serve(model: ModelConfig, parallel: int = 4, extra_args: list[str] | None = None) -> dict:
-    """Start llama-server for `model` with `parallel` slots and wait until it is healthy."""
+def serve(
+    model: ModelConfig,
+    parallel: int = 4,
+    extra_args: list[str] | None = None,
+    shared_ctx: int | None = None,
+) -> dict:
+    """Start llama-server for `model` with `parallel` slots and wait until it is healthy.
+
+    By default every slot gets its own ctx_per_slot tokens of KV cache. With `shared_ctx`
+    the slots draw from one pool of that many tokens (llama.cpp's unified KV cache), each
+    still capped at ctx_per_slot. That is how 16 slots fit on an 8 GB laptop GPU: 16 private
+    4096-token caches need 2.8 GB for Falcon-H1, but 16 real requests use far less."""
     if model.served_by != "llamacpp":
         raise ValueError(f"{model.slug} is not served by llama.cpp")
     weights = weights_path(model)
@@ -130,7 +140,8 @@ def serve(model: ModelConfig, parallel: int = 4, extra_args: list[str] | None = 
         LLAMACPP_IMAGE,
         "-m", f"/models/{weights.name}",
         "--host", "0.0.0.0", "--port", "8080",
-        "-np", str(parallel), "-c", str(ctx_per_slot * parallel),
+        "-np", str(parallel), "-c", str(shared_ctx or ctx_per_slot * parallel),
+        *(["-kvu", "--kv-unified-per-slot", str(ctx_per_slot)] if shared_ctx else []),
         "--alias", model.model, "--metrics",
         *[str(a) for a in model.serve.get("args", [])],
         *(extra_args or []),
@@ -166,6 +177,7 @@ def serve(model: ModelConfig, parallel: int = 4, extra_args: list[str] | None = 
         "weights_sha256": weights_digest,
         "parallel_slots": parallel,
         "ctx_per_slot": ctx_per_slot,
+        "shared_ctx": shared_ctx,
         "args": cmd[cmd.index(LLAMACPP_IMAGE) + 1 :],
         "gpu_mib_before": before,
         "gpu_mib_after_load": gpu_memory_used_mib(),

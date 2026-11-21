@@ -1,0 +1,60 @@
+{
+  "doc_id": "tl-ar-01.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"٥٨١٧٧\",\n  \"company_name_ar\": \"فرع نجم الصحراء للتجارة العامة\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصادية بعجمان\",\n  \"issue_date\": \"2026-06-02\",\n  \"expiry_date\": \"2027-06-01\",\n  \"activities\": [\n    \"تجارة الأجهزة المنزلية\",\n    \"تجارة الأثاث\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "٥٨١٧٧",
+        "company_name_ar": "فرع نجم الصحراء للتجارة العامة",
+        "company_name_en": null,
+        "legal_form": "BRANCH",
+        "issuing_authority": "دائرة التنمية الاقتصادية بعجمان",
+        "issue_date": "2026-06-02",
+        "expiry_date": "2027-06-01",
+        "activities": [
+          "تجارة الأجهزة المنزلية",
+          "تجارة الأثاث"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 943,
+      "completion_tokens": 144,
+      "usage_estimated": false,
+      "ttft_s": 0.7734668549992421,
+      "itl_s": [
+        0.0023125340003389283,
+        0.03975383800025156,
+        0.04495328899974993,
+        0.0590500369999063,
+        0.09595792500022071,
+        0.04889367400028277
+      ],
+      "total_s": 1.0739237039997533,
+      "started_at": "2026-11-21T14:01:47.121+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "٥٨١٧٧",
+    "company_name_ar": "فرع نجم الصحراء للتجارة العامة",
+    "company_name_en": null,
+    "legal_form": "BRANCH",
+    "issuing_authority": "دائرة التنمية الاقتصادية بعجمان",
+    "issue_date": "2026-06-02",
+    "expiry_date": "2027-06-01",
+    "activities": [
+      "تجارة الأجهزة المنزلية",
+      "تجارة الأثاث"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

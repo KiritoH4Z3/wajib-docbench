@@ -23,7 +23,54 @@ fields are right, whether the system knows when it is wrong, how fast it is, and
 documents cost.
 
 <!-- results:start -->
-_Results appear here once `make report` has run._
+## Results
+
+Scored on the 60 base documents, with every model reading the same OCR text. Brackets hold 95% intervals from a bootstrap over documents. Definitions in [CONTRACTS.md](docs/CONTRACTS.md#5-metrics).
+
+| Model | F1, Arabic and bilingual docs | F1, English docs | Critical fields exact | Hallucinated values | Valid JSON first try | Injections obeyed | Poisoned docs fully correct | Sent to review (precision, recall) | TTFT p95 at 4 | Cost per 1,000 docs |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Falcon-H1 7B Instruct (Q4_K_M) | 0.57 (0.50 to 0.64) | 0.98 (0.97 to 0.99) | 64.4% (56% to 73%) | 20.3% | 85% | 4/8 | 3/8 | 55% (100%, 75%) | 4.57 s | $0.43 |
+| Gemini 3.5 Flash-Lite (API) | 0.68 (0.61 to 0.74) | 1.00 (1.00 to 1.00) | 69.3% (62% to 77%) | 10.1% | 100% | 1/8 | 4/8 | 37% (100%, 79%) | n/a | $0.61 |
+
+Against the scope's targets. A target is too close to call when its 95% interval straddles the limit.
+
+| Target | Falcon-H1 7B Instruct | Gemini 3.5 Flash-Lite (API) |
+|---|---|---|
+| F1, Arabic and bilingual docs, at least 0.85 | missed: 0.57 (0.50 to 0.64), 40 docs | missed: 0.68 (0.61 to 0.74), 40 docs |
+| F1, English docs, at least 0.90 | met: 0.98 (0.97 to 0.99), 20 docs | met: 1.00 (1.00 to 1.00), 20 docs |
+| Critical fields exact, at least 95% | missed: 64% (56% to 73%), 60 docs | missed: 69% (62% to 77%), 60 docs |
+| Hallucinated values, at most 2% | missed: 20% (16% to 25%), 60 docs | missed: 10% (6% to 14%), 60 docs |
+| Valid JSON first try, at least 95% | missed: 85%, 60 docs | met: 100%, 60 docs |
+| Poisoned docs fully correct, at least 90% | missed: 3/8 (14% to 69%) | missed: 4/8 (22% to 78%) |
+| Sent to review, at most 15% | missed: 55% (47% to 63%), 60 docs | missed: 37% (28% to 45%), 60 docs |
+| TTFT p95 at 4 in flight, under 1.50 s | missed: 4.57 s, 68 requests | not measured: the free tier takes one request at a time |
+
+Throughput over the 60 base documents, each run fresh with no cached prompts. Columns are documents in flight at once.
+
+| Model | Server slots | Docs a minute at 1, 4, 16 | TTFT p95 at 1, 4, 16 | Failed requests |
+|---|---|---|---|---|
+| Falcon-H1 7B Instruct | 8, sharing a 12,288-token cache | 13.5, 20.3, 16.7 | 1.32 s, 4.57 s, 37.97 s | 0 |
+| Gemini 3.5 Flash-Lite (API) | 1 (API) | 6.9, n/a, n/a | 8.39 s, n/a, n/a | 0 |
+
+![Field F1 on Arabic and bilingual documents against cost per 1,000 documents](results/charts/accuracy_vs_cost.png)
+
+- **Falcon-H1 7B Instruct, by language:** F1 0.35 on Arabic documents, 0.75 on bilingual ones, 0.14 on the values written in Arabic script.
+- **Falcon-H1 7B Instruct, licence renewals:** of 15 licences, 5 would get their 10 renewal reminders on the wrong day and 1 would get none, without the guardrails. After a person reviews the routed documents: 0 and 0.
+- **Falcon-H1 7B Instruct, where the errors came from:** 83 wrong fields trace to OCR, 67 to the model.
+- **Gemini 3.5 Flash-Lite (API), by language:** F1 0.40 on Arabic documents, 0.90 on bilingual ones, 0.19 on the values written in Arabic script.
+- **Gemini 3.5 Flash-Lite (API), licence renewals:** of 15 licences, 1 would get their 10 renewal reminders on the wrong day and 5 would get none, without the guardrails. After a person reviews the routed documents: 0 and 0.
+- **Gemini 3.5 Flash-Lite (API), where the errors came from:** 77 wrong fields trace to OCR, 33 to the model.
+- **Falcon-H1 7B Instruct minus Gemini 3.5 Flash-Lite (API), F1 on Arabic and bilingual docs:** -0.11 (-0.16 to -0.06), paired over 60 documents.
+- **Falcon-H1 7B Instruct minus Gemini 3.5 Flash-Lite (API), F1 on English docs:** -0.02 (-0.03 to -0.01), paired over 60 documents.
+- **Falcon-H1 7B Instruct minus Gemini 3.5 Flash-Lite (API), critical fields exact:** -0.05 (-0.10 to -0.00), paired over 60 documents.
+
+OCR character error rate (normalised, line-aligned): Arabic 13.6%, English 0.1%, bilingual 15.8%. Why Arabic pages lose so many values: [ADR-002](docs/adr/002-ocr.md).
+
+Not in this run:
+
+- Jais 2 8B Chat (not run yet): Gated on Hugging Face (instant approval). Needs HF_TOKEN from an account that has accepted the gate before `make models` can download it.
+- Jais 3 7B (v2): Released October 2026, ungated, Apache-2.0. A reasoning model that always thinks, so it is not a like-for-like comparison with the two non-reasoning extractors in v1, and its Q4_K_M (5.59 GB) does not fit 6 GB of free VRAM with a KV cache.
+- Falcon-H1-Arabic 7B (pending): Announced by TII in January 2026 with a vendor-reported 71.7% on the Open Arabic LLM Leaderboard. Available only at chat.falconllm.tii.ae as of 2026-11-20. First swap-in if weights appear.
 <!-- results:end -->
 
 ## How it works

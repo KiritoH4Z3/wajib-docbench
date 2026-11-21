@@ -1,0 +1,23 @@
+{
+  "raw": "{\n  \"quote_number\": \"QT-2025-0180\",\n  \"quote_date\": \"2025-06-13\",\n  \"valid_until\": \"2",
+  "usage": {
+    "prompt_tokens": 932,
+    "completion_tokens": 49,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.5429114720000143,
+    "itl_s": [
+      0.0005960629996479838,
+      0.03236660299990035,
+      0.21558449799977097,
+      0.045451239000612986
+    ],
+    "total_s": 1.8630420989993581
+  },
+  "started_at": "2026-11-21T14:07:03.591+00:00",
+  "finish_reason": null
+}

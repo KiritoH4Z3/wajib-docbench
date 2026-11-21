@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-ar-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"7235216\",\n  \"company_name_ar\": \"النور لتجارة المواد الغذائية ش.م.ح\",\n  \"company_name_en\": null,\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"منطقة رأس الخيمة الاقتصادية\",\n  \"issue_date\": \"2025-06-21\",\n  \"expiry_date\": \"2026-06-20\",\n  \"activities\": [\n    \"التجارة العامة\",\n    \"تجارة قطع غيار السيارات\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "7235216",
+        "company_name_ar": "النور لتجارة المواد الغذائية ش.م.ح",
+        "company_name_en": null,
+        "legal_form": "FZCO",
+        "issuing_authority": "منطقة رأس الخيمة الاقتصادية",
+        "issue_date": "2025-06-21",
+        "expiry_date": "2026-06-20",
+        "activities": [
+          "التجارة العامة",
+          "تجارة قطع غيار السيارات"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1004,
+      "completion_tokens": 148,
+      "usage_estimated": false,
+      "ttft_s": 3.8517602740002985,
+      "itl_s": [
+        0.0010128499998245388,
+        0.0007332149998546811,
+        0.024012417000449204,
+        0.06836181899961957,
+        0.04002304000005097,
+        0.05497900499995012,
+        0.06065339500037226
+      ],
+      "total_s": 4.114754021000408,
+      "started_at": "2026-11-21T14:02:03.125+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "7235216",
+    "company_name_ar": "النور لتجارة المواد الغذائية ش.م.ح",
+    "company_name_en": null,
+    "legal_form": "FZCO",
+    "issuing_authority": "منطقة رأس الخيمة الاقتصادية",
+    "issue_date": "2025-06-21",
+    "expiry_date": "2026-06-20",
+    "activities": [
+      "التجارة العامة",
+      "تجارة قطع غيار السيارات"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

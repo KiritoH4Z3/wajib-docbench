@@ -1,0 +1,60 @@
+{
+  "doc_id": "inv-en-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"supplier_name\": \"Al Waha Interior Design FZCO\",\n  \"supplier_trn\": \"100510182961000\",\n  \"invoice_number\": \"TI-04678\",\n  \"invoice_date\": \"2024-09-03\",\n  \"customer_name\": \"Al Fajr Consultancy LLC\",\n  \"customer_trn\": \"100351610854929\",\n  \"subtotal\": 4630.25,\n  \"vat_amount\": 231.51,\n  \"total\": 4861.76,\n  \"currency\": \"AED\"\n}",
+      "parsed": {
+        "supplier_name": "Al Waha Interior Design FZCO",
+        "supplier_trn": "100510182961000",
+        "invoice_number": "TI-04678",
+        "invoice_date": "2024-09-03",
+        "customer_name": "Al Fajr Consultancy LLC",
+        "customer_trn": "100351610854929",
+        "subtotal": "4630.25",
+        "vat_amount": "231.51",
+        "total": "4861.76",
+        "currency": "AED"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1030,
+      "completion_tokens": 169,
+      "usage_estimated": false,
+      "ttft_s": 0.8094699279999986,
+      "itl_s": [
+        0.000359387999651517,
+        0.02581653400011419,
+        0.0660429770000519,
+        0.08184964300016873,
+        0.042406235999806086,
+        0.057165676999829884,
+        0.07374193400028162,
+        0.018857943000057276
+      ],
+      "total_s": 1.1843228809998436,
+      "started_at": "2026-11-21T13:58:17.477+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "supplier_name": "Al Waha Interior Design FZCO",
+    "supplier_trn": "100510182961000",
+    "invoice_number": "TI-04678",
+    "invoice_date": "2024-09-03",
+    "customer_name": "Al Fajr Consultancy LLC",
+    "customer_trn": "100351610854929",
+    "subtotal": "4630.25",
+    "vat_amount": "231.51",
+    "total": "4861.76",
+    "currency": "AED"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"supplier_name\": \"فرع النور لخدمات التنظيف\",\n  \"supplier_trn\": \"100188133674148\",\n  \"invoice_number\": \"2027/89278\",\n  \"invoice_date\": \"2027-09-30\",\n  \"customer_name\": \"يوسف إبراهيم حداد\",\n  \"customer_trn\": null,\n  \"subtotal\": 5909.40,\n  \"vat_amount\": 295.47,\n  \"total\": 6204.87,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 956,
+    "completion_tokens": 160,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8483597120002742,
+    "itl_s": [
+      0.00040380199970968533,
+      0.0003565040001376474,
+      0.01821082500009652,
+      0.04539619499973924,
+      0.09129876699989836,
+      0.06637181300038719,
+      0.07794934699995792
+    ],
+    "total_s": 1.172558577000018
+  },
+  "started_at": "2026-11-21T13:56:49.481+00:00",
+  "finish_reason": "stop"
+}

@@ -1,0 +1,27 @@
+{
+  "raw": "{\n  \"licence_number\": \"CN-5938994\",\n  \"company_name_ar\": \"فرع برق الشمال لمواد البناء\",\n  \"company_name_en\": null,\n  \"legal_form\": \"BRANCH\",\n  \"issuing_authority\": \"دائرة التنمية الاقتصادية في أبوظبي\",\n  \"issue_date\": \"2026-05-30\",\n  \"expiry_date\": \"2027-05-29\",\n  \"activities\": [\n    \"تجارة مواد البناء\",\n    \"التجارة العامة\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 986,
+    "completion_tokens": 146,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.7973682530000588,
+    "itl_s": [
+      0.0009437899998374633,
+      0.021486741000444454,
+      0.038808952999715984,
+      0.5740347190003376,
+      0.0005901770000491524,
+      0.0004264089993739617,
+      0.0003202110001438996,
+      0.03487437500007218
+    ],
+    "total_s": 1.4829752089999602
+  },
+  "started_at": "2026-11-21T14:02:19.118+00:00",
+  "finish_reason": "stop"
+}

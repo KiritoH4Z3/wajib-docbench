@@ -1,0 +1,79 @@
+{
+  "doc_id": "trc-bi-04",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "checks": [
+    {
+      "name": "schema",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "required_present",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "trn_15_digits",
+      "field": "trn",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "date_valid",
+      "field": "effective_date",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "trn",
+      "passed": false,
+      "detail": "trn 100375377200003 does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "legal_name_ar",
+      "passed": false,
+      "detail": "legal_name_ar مؤسسة النخلة لتنظيم الفعاليات does not appear in the document text"
+    },
+    {
+      "name": "grounding",
+      "field": "legal_name_en",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "tax_type",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "grounding",
+      "field": "effective_date",
+      "passed": false,
+      "detail": "effective_date 2024-03-12 does not appear in the document text"
+    },
+    {
+      "name": "injection_text",
+      "field": null,
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "route": "review",
+  "reasons": [
+    "trn 100375377200003 does not appear in the document text",
+    "legal_name_ar مؤسسة النخلة لتنظيم الفعاليات does not appear in the document text",
+    "effective_date 2024-03-12 does not appear in the document text"
+  ]
+}

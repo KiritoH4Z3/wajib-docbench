@@ -326,3 +326,45 @@ def test_throughput_separates_api_errors_and_disables_prompt_cache(monkeypatch, 
     assert lvl["prompt_cached_tokens"] == 40
     assert out["parallel_slots"] == 4
     assert json.loads((tmp_path / "m" / "throughput.json").read_text())["parallel_slots"] == 4
+
+
+@pytest.mark.parametrize("shared_ctx", [None, 24576])
+def test_serve_sizes_the_kv_cache_per_slot_or_as_one_shared_pool(tmp_path, monkeypatch, shared_ctx):
+    """Silent failure: 16 private 4096-token caches do not fit beside Falcon-H1 on the 8 GB
+    GPU, so the concurrency-16 level either crashed the server or was quietly run on fewer
+    slots. A shared pool must still cap each request at ctx_per_slot, or a long document gets
+    more context at concurrency 16 than it had during extraction."""
+    from types import SimpleNamespace
+
+    from bench import serve as srv
+    from bench.config import get_model
+
+    model = get_model("falcon-h1-7b")
+    weights = tmp_path / "w.gguf"
+    weights.write_bytes(b"x")
+    calls: list[list[str]] = []
+
+    def fake_run(cmd, check=True):
+        calls.append(cmd)
+        return SimpleNamespace(returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(srv, "weights_path", lambda m: weights)
+    monkeypatch.setattr(srv, "verify_weights", lambda m, p: "abc")
+    monkeypatch.setattr(srv, "stop", lambda: None)
+    monkeypatch.setattr(srv, "gpu_memory_used_mib", lambda: 0)
+    monkeypatch.setattr(srv, "_run", fake_run)
+    monkeypatch.setattr(srv.httpx, "get", lambda *a, **k: SimpleNamespace(status_code=200))
+    monkeypatch.setattr(srv, "PERF", tmp_path)
+    info = srv.serve(model, parallel=16, shared_ctx=shared_ctx)
+    cmd = next(c for c in calls if c[:2] == ["docker", "run"])
+    ctx = cmd[cmd.index("-c") + 1]
+    if shared_ctx:
+        assert ctx == "24576"
+        assert "-kvu" in cmd
+        assert cmd[cmd.index("--kv-unified-per-slot") + 1] == "4096"
+    else:
+        assert ctx == str(4096 * 16)
+        assert "-kvu" not in cmd
+    assert info["shared_ctx"] == shared_ctx
+    assert json.loads((tmp_path / "falcon-h1-7b" / "server-np16.json").read_text())["shared_ctx"] \
+        == shared_ctx

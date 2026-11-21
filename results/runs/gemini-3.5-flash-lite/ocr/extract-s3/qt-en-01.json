@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-en-01",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"QT-2025-0180\",\n  \"quote_date\": \"2025-06-13\",\n  \"valid_until\": \"2025-06-27\",\n  \"client_name\": \"Sahil Al Dhahab Auto Parts Est.\",\n  \"line_item_count\": 6,\n  \"subtotal\": 17459.83,\n  \"vat_amount\": 872.99,\n  \"total\": 18332.82\n}",
+      "parsed": {
+        "quote_number": "QT-2025-0180",
+        "quote_date": "2025-06-13",
+        "valid_until": "2025-06-27",
+        "client_name": "Sahil Al Dhahab Auto Parts Est.",
+        "line_item_count": 6,
+        "subtotal": "17459.83",
+        "vat_amount": "872.99",
+        "total": "18332.82"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 932,
+      "completion_tokens": 136,
+      "usage_estimated": false,
+      "ttft_s": 0.7462055870000768,
+      "itl_s": [
+        0.013296440999511105,
+        0.04196245599996473,
+        0.10093227100060176,
+        0.019963931999882334,
+        0.04512580699974933,
+        0.048011214999860385
+      ],
+      "total_s": 1.0290614320001623,
+      "started_at": "2026-11-21T14:10:11.965+00:00",
+      "concurrency": 1,
+      "cached": false,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "QT-2025-0180",
+    "quote_date": "2025-06-13",
+    "valid_until": "2025-06-27",
+    "client_name": "Sahil Al Dhahab Auto Parts Est.",
+    "line_item_count": 6,
+    "subtotal": "17459.83",
+    "vat_amount": "872.99",
+    "total": "18332.82"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

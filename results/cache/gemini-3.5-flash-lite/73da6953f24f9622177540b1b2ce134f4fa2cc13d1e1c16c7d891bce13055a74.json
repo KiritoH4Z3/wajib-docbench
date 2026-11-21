@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"quote_number\": \"QT-2026-7403\",\n  \"quote_date\": \"2026-03-12\",\n  \"valid_until\": \"2026-03-24\",\n  \"client_name\": \"سما الخليج للخدمات اللوجستيةش.م.ح\",\n  \"line_item_count\": 4,\n  \"subtotal\": 27117.02,\n  \"vat_amount\": 1355.85,\n  \"total\": 28472.87\n}",
+  "usage": {
+    "prompt_tokens": 904,
+    "completion_tokens": 144,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.3668583859998762,
+    "itl_s": [
+      0.000408075999985158,
+      0.016831099000228278,
+      0.034780207999574486,
+      0.0395897389998936,
+      0.08516936900014116,
+      0.03855517699958
+    ],
+    "total_s": 1.5881881039995278
+  },
+  "started_at": "2026-11-21T14:09:55.961+00:00",
+  "finish_reason": "stop"
+}

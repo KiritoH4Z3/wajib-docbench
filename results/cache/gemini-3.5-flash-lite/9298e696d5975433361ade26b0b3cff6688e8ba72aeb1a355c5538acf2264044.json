@@ -1,0 +1,25 @@
+{
+  "raw": "{\n  \"licence_number\": \"0\",\n  \"company_name_ar\": \"وادي السدر للعطور منطقة حرة .م.م\",\n  \"company_name_en\": \"Wadi Al Sidr Perfumes FZ-LLC\",\n  \"legal_form\": \"FZ_LLC\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": null,\n  \"expiry_date\": null,\n  \"activities\": [\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1171,
+    "completion_tokens": 126,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.542303875000016,
+    "itl_s": [
+      0.19186581599979036,
+      0.00035730299987335457,
+      0.0005743320002693508,
+      0.00030460299967671745,
+      0.008076815000094939,
+      0.08273754199990435
+    ],
+    "total_s": 1.930251467999824
+  },
+  "started_at": "2026-11-21T13:52:07.488+00:00",
+  "finish_reason": "stop"
+}

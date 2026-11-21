@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"supplier_name\": \"Dar Al Yasmin Interior Design Co.\",\n  \"supplier_trn\": \"100270620226214\",\n  \"invoice_number\": \"TI-07505\",\n  \"invoice_date\": \"2025-04-01\",\n  \"customer_name\": \"Khalid Rashid Al Nuaimi\",\n  \"customer_trn\": null,\n  \"subtotal\": 2800.00,\n  \"vat_amount\": 140.00,\n  \"total\": 2940.00,\n  \"currency\": \"AED\"\n}",
+  "usage": {
+    "prompt_tokens": 934,
+    "completion_tokens": 155,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 0.8403372850002597,
+    "itl_s": [
+      0.0006084970000301837,
+      0.043936595999639394,
+      0.04082888200036905,
+      0.08278813499964599,
+      0.04626177599993753,
+      0.042017842000404926,
+      0.11355584399962027
+    ],
+    "total_s": 1.2113421640001434
+  },
+  "started_at": "2026-11-21T13:30:00.774+00:00",
+  "finish_reason": "stop"
+}

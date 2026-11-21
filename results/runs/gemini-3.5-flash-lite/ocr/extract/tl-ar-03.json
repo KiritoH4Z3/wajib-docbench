@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-ar-03",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": null,\n  \"company_name_ar\": \"النور لتجارة المواد الغذائيةش.م.ح\",\n  \"company_name_en\": null,\n  \"legal_form\": \"FZCO\",\n  \"issuing_authority\": \"منطقة رأس الخيمةالاقتصادية\",\n  \"issue_date\": null,\n  \"expiry_date\": null,\n  \"activities\": [\n    \"التجارةالعامة\",\n    \"تجارة قطع غيارالسيارات\"\n  ]\n}",
+      "parsed": {
+        "licence_number": null,
+        "company_name_ar": "النور لتجارة المواد الغذائيةش.م.ح",
+        "company_name_en": null,
+        "legal_form": "FZCO",
+        "issuing_authority": "منطقة رأس الخيمةالاقتصادية",
+        "issue_date": null,
+        "expiry_date": null,
+        "activities": [
+          "التجارةالعامة",
+          "تجارة قطع غيارالسيارات"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1005,
+      "completion_tokens": 125,
+      "usage_estimated": false,
+      "ttft_s": 1.1732560329996886,
+      "itl_s": [
+        0.00042438900027264026,
+        0.016538312999728078,
+        0.284876610000083,
+        0.08954477399993266,
+        0.04377410699999018,
+        0.04571239799997784,
+        0.04383001299993339
+      ],
+      "total_s": 1.707054694999897,
+      "started_at": "2026-11-21T13:51:10.671+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": null,
+    "company_name_ar": "النور لتجارة المواد الغذائيةش.م.ح",
+    "company_name_en": null,
+    "legal_form": "FZCO",
+    "issuing_authority": "منطقة رأس الخيمةالاقتصادية",
+    "issue_date": null,
+    "expiry_date": null,
+    "activities": [
+      "التجارةالعامة",
+      "تجارة قطع غيارالسيارات"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

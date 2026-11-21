@@ -1,0 +1,54 @@
+{
+  "doc_id": "qt-ar-05",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "oracle",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"quote_number\": \"Q/24/7595\",\n  \"quote_date\": \"2024-05-04\",\n  \"valid_until\": \"2024-06-03\",\n  \"client_name\": \"المرجان لتنظيم الفعاليات ش.م.ح\",\n  \"line_item_count\": 3,\n  \"subtotal\": 6443.86,\n  \"vat_amount\": 322.19,\n  \"total\": 6766.05\n}",
+      "parsed": {
+        "quote_number": "Q/24/7595",
+        "quote_date": "2024-05-04",
+        "valid_until": "2024-06-03",
+        "client_name": "المرجان لتنظيم الفعاليات ش.م.ح",
+        "line_item_count": 3,
+        "subtotal": "6443.86",
+        "vat_amount": "322.19",
+        "total": "6766.05"
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 873,
+      "completion_tokens": 137,
+      "usage_estimated": false,
+      "ttft_s": 0.8456882359996598,
+      "itl_s": [
+        0.0004259940001247742,
+        0.03201313499994285,
+        0.05009902600022542,
+        0.04305107899972427,
+        0.05068394900035855,
+        0.05831993599986163
+      ],
+      "total_s": 1.0871114699998543,
+      "started_at": "2026-11-21T13:59:29.485+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "quote_number": "Q/24/7595",
+    "quote_date": "2024-05-04",
+    "valid_until": "2024-06-03",
+    "client_name": "المرجان لتنظيم الفعاليات ش.م.ح",
+    "line_item_count": 3,
+    "subtotal": "6443.86",
+    "vat_amount": "322.19",
+    "total": "6766.05"
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}

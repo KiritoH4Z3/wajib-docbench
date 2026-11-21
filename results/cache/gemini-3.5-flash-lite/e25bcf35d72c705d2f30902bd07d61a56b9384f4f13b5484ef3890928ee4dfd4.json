@@ -1,0 +1,26 @@
+{
+  "raw": "{\n  \"licence_number\": \"35336\",\n  \"company_name_ar\": \"دار الياسمين لمواد البناء ذ.م.م\",\n  \"company_name_en\": \"Dar Al Yasmin Building Materials L.L.C\",\n  \"legal_form\": \"LLC\",\n  \"issuing_authority\": \"Ras Al Khaimah Department of Economic Development\",\n  \"issue_date\": \"2025-11-10\",\n  \"expiry_date\": \"2026-11-09\",\n  \"activities\": [\n    \"General Trading\",\n    \"Building Materials Trading\"\n  ]\n}",
+  "usage": {
+    "prompt_tokens": 1184,
+    "completion_tokens": 153,
+    "estimated": false,
+    "reasoning_tokens": null,
+    "prompt_cached_tokens": null,
+    "prompt_evaluated_tokens": null
+  },
+  "timings": {
+    "ttft_s": 1.0708779599999616,
+    "itl_s": [
+      0.000531433999640285,
+      0.00014599299993278692,
+      0.024944274000517908,
+      0.04314481699930184,
+      0.04116477300067345,
+      0.044176345999403566,
+      0.039536307000162196
+    ],
+    "total_s": 1.276375253999504
+  },
+  "started_at": "2026-11-21T14:07:27.603+00:00",
+  "finish_reason": "stop"
+}

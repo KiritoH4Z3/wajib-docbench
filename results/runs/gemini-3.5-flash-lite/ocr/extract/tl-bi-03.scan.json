@@ -1,0 +1,61 @@
+{
+  "doc_id": "tl-bi-03.scan",
+  "model_slug": "gemini-3.5-flash-lite",
+  "text_source": "ocr",
+  "prompt_version": "v1",
+  "attempts": [
+    {
+      "raw": "{\n  \"licence_number\": \"4955763\",\n  \"company_name_ar\": \"المنارة للخذمات اللوجستية\",\n  \"company_name_en\": \"Al Manara Logistics FZE\",\n  \"legal_form\": \"FZE\",\n  \"issuing_authority\": \"Ras Al Khaimah Economic Zone\",\n  \"issue_date\": \"2025-05-28\",\n  \"expiry_date\": \"2026-05-27\",\n  \"activities\": [\n    \"Cargo Services\",\n    \"Perfumes and Cosmetics Trading\"\n  ]\n}",
+      "parsed": {
+        "licence_number": "4955763",
+        "company_name_ar": "المنارة للخذمات اللوجستية",
+        "company_name_en": "Al Manara Logistics FZE",
+        "legal_form": "FZE",
+        "issuing_authority": "Ras Al Khaimah Economic Zone",
+        "issue_date": "2025-05-28",
+        "expiry_date": "2026-05-27",
+        "activities": [
+          "Cargo Services",
+          "Perfumes and Cosmetics Trading"
+        ]
+      },
+      "schema_valid": true,
+      "error": null,
+      "prompt_tokens": 1172,
+      "completion_tokens": 148,
+      "usage_estimated": false,
+      "ttft_s": 1.5020082109999748,
+      "itl_s": [
+        0.0006275220002862625,
+        0.0405483199997434,
+        0.02651941500016619,
+        0.03849262799985809,
+        0.037156151000090176,
+        0.05091247300015311,
+        0.0374199679999947
+      ],
+      "total_s": 1.7396686800002499,
+      "started_at": "2026-11-21T13:51:59.487+00:00",
+      "concurrency": 1,
+      "cached": true,
+      "reasoning_tokens": null,
+      "prompt_cached_tokens": null,
+      "prompt_evaluated_tokens": null
+    }
+  ],
+  "final": {
+    "licence_number": "4955763",
+    "company_name_ar": "المنارة للخذمات اللوجستية",
+    "company_name_en": "Al Manara Logistics FZE",
+    "legal_form": "FZE",
+    "issuing_authority": "Ras Al Khaimah Economic Zone",
+    "issue_date": "2025-05-28",
+    "expiry_date": "2026-05-27",
+    "activities": [
+      "Cargo Services",
+      "Perfumes and Cosmetics Trading"
+    ]
+  },
+  "schema_valid_first_try": true,
+  "api_error": null
+}
